@@ -12,7 +12,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// * Tutte le rotte sono protette con il middleware auth
+Route::middleware('auth')
+    ->prefix('admin')
+    ->name('admin.')
+    ->namespace('Admin')
+    ->group(function () {
+        Route::get('/', 'HomeController@index')->name('home');
+        // Route::resource('users', 'UserController');
+        // Route::resource('products', 'ProductController');
+        // Route::resource('categories', 'CategoryController');
+
+        Route::get('/{any}', function () {
+            abort(404);
+        })->where('any', '.*');
+    });
+
+
+Route::get('{any?}', function () {
+    return view('guest.home');
+})->where("any", ".*");

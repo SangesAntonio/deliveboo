@@ -26,6 +26,15 @@ class UserSeeder extends Seeder
             $user->save();
         }
 
+        $admin = new User();
+        $admin->restaurant_name = 'admin';
+        $admin->address = 'via Duomo';
+        $admin->vat_number = '12345678910';
+        $admin->email = 'admin@bool.it';
+        $admin->password = bcrypt('admin');
+        $admin->image = $faker->imageUrl(360, 360);
+        $admin->save();
+
         $category_ids = Category::all('id');
         $user->each(function (App\User $user) use ($category_ids) {
             $user->category()->attach(
