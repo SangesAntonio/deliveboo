@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Arr;
 use Faker\Generator as Faker;
 use App\Models\Product;
+use App\User;
 
 
 class ProductSeeder extends Seeder
@@ -15,8 +16,8 @@ class ProductSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $user_ids = Product::pluck('id')->toArray();
-        for ($i = 0; $i < 15; $i++) {
+        $user_ids = User::pluck('id')->toArray();
+        for ($i = 0; $i < 100; $i++) {
             $product = new Product();
             $product->user_id = Arr::random($user_ids);
             $product->name = $faker->word();
