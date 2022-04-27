@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use App\Models\Category;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 
@@ -24,5 +25,12 @@ class UserSeeder extends Seeder
 
             $user->save();
         }
+
+        $category_ids = Category::all('id');
+        $user->each(function (App\User $user) use ($category_ids) {
+            $user->category()->attach(
+                $category_ids->random(rand(1, 2))->pluck('id')->toArray()
+            );
+        });
     }
 }
