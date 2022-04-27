@@ -25,7 +25,8 @@ class UserSeeder extends Seeder
 
             $user->save();
         }
-
+        
+        // TODO: eliminare a fine progetto
         $admin = new User();
         $admin->restaurant_name = 'admin';
         $admin->address = 'via Duomo';

@@ -13,11 +13,24 @@ class CategorySeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0; $i < 10; $i++) {
-            $category = new Category();
-            $category->name = $faker->word();
-            $category->color = $faker->hexColor();
-            $category->save();
+        $categories = [
+            ['name' => 'Internazionale'],
+            ['name' => 'Cinese'],
+            ['name' => 'Giapponese'],
+            ['name' => 'Messicano'],
+            ['name' => 'Indiano'],
+            ['name' => 'Pesce'],
+            ['name' => 'Carne'],
+            ['name' => 'Pizza'],
+            ['name' => 'Cucina Mediterranea'],
+            ['name' => 'Dolci'],
+        ];
+
+        foreach ($categories as $category) {
+            $c = new Category();
+            $c->name = $category['name'];
+            $c->color = $faker->hexColor();
+            $c->save();
         }
     }
 }
