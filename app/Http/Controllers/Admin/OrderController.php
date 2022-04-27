@@ -107,7 +107,7 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         $request->validate([
-            'email' => ['email:rfc,dns', 'required', 'email', Rule::unique('orders')->ignore($order->id), 'min:5'],
+            'email' => ['email:rfc,dns', 'required', 'email', Rule::unique('orders')->ignore($order->id), 'min:5', 'regex:/^.+@.+$/i'],
             'name' => 'required|string|min:5|max:50',
             'lastname' => 'required|string|min:5|max:50',
             'city' => 'required',
