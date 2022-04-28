@@ -28,7 +28,7 @@
                                     <div class="card-body">
                                         <div class="media d-flex">
                                             <div class="align-self-center">
-                                                <img src="{{ $product->image }}" alt="{{ $product->name }}">
+                                                <img src="{{ $product->image }}" alt="{{ $product->name }}"class="rounded-lg">
                                             </div>
                                             <div class="media-body text-right">
                                                 <h3>{{ $product->name }}</h3>
@@ -65,7 +65,8 @@
                                     <div class="card-body">
                                         <div class="media d-flex">
                                             <div class="align-self-center">
-                                                <img src="{{ $product->image }}" alt="{{ $product->name }}">
+                                                <img src="{{ $product->image }}" alt="{{ $product->name }}"
+                                                class="rounded-lg">
                                             </div>
                                             <div class="media-body text-right">
                                                 <h3>{{ $product->name }}</h3>

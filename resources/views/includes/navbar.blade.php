@@ -13,7 +13,7 @@
     <header>
       <div class="image-text">
         <span class="image">
-          <img src="{{ Auth::user()->image }}" alt="{{ Auth::user()->restaurant_name }}">
+          <img src="{{ Auth::user()->image }}" alt="{{ Auth::user()->restaurant_name }}" class="rounded-lg">
         </span>
 
         <div class="text logo-text">
