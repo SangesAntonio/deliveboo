@@ -23,6 +23,7 @@ Route::middleware('auth')
     ->group(function () {
         Route::get('/', 'HomeController@index')->name('home');
         Route::get('/statistics', 'UserController@statistics')->name('statistics.index');
+        Route::patch('/products/{product}/toggle', 'ProductControlle@toggle')->name('products.toggle');
 
         Route::resource('users', 'UserController');
         Route::resource('products', 'ProductController');

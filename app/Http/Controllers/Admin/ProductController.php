@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\facades\Storage;
+
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -44,14 +46,14 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Product $product)
+    public function store(Request $request, Product $product, User $user)
     {
         $request->validate([
             'name' => 'required|max:50| min:2',
-            'price' => 'required| max:999| min: 1| numeric',
+            'price' => ['required', 'regex:/^(\d+(\.\d*)?)|(\.\d+)$/', 'max:999', ' min: 1'],
             'description' => 'required| min:4 | max:500',
             'visibility' => 'boolean',
-            'image' => 'image',
+            'image' => 'url',
         ], [
             'name.required' => 'Il nome del prodotto è obbligatorio',
             'description.required' => 'La descrizione è obbligatoria',
@@ -63,14 +65,29 @@ class ProductController extends Controller
             'price.min' => 'Il prezzo deve essere minimo :min euro',
             'price.max' => 'Il prezzo deve essere massimo :max euro',
             'image' => 'Il formato dell\'immagine non è corretto.',
+            'boolean' => 'Deve essere vero o falso'
         ]);
-        if ($request->fails()) {
-            return response()->json(['errors', $request->errors()]);
-        }
+        // if ($request->fails()) {
+        //     return response()->json(['errors', $request->errors()]);
+        // }
         $data = $request->all();
+        $user = Auth::user();
+        if (array_key_exists('visibility', $data)) {
+            $product['visibility'] = true;
+        }
+
         $product = new Product();
+        $product->user_id = $user->id;
         $product->fill($data);
         $product->save();
+        return redirect()->route('admin.products.show', $product->id);
+    }
+
+    public function toggle(Product $product)
+    {
+        $product->visibility = !$product->visibility;
+        $product->save();
+
         return redirect()->route('admin.products.show');
     }
 
@@ -114,7 +131,7 @@ class ProductController extends Controller
             'price' => 'required| max:999| min: 1| numeric',
             'description' => 'required| min:4 | max:500',
             'visibility' => 'boolean',
-            'image' => 'image',
+            'image' => 'url',
         ], [
             'name.required' => 'Il nome del prodotto è obbligatorio',
             'description.required' => 'La descrizione è obbligatoria',
@@ -128,8 +145,15 @@ class ProductController extends Controller
             'image' => 'Il formato dell\'immagine non è corretto.',
         ]);
         $data = $request->all();
+        $data['visibility'] = array_key_exists('visibility', $data) ? 1 : 0;
+        if (array_key_exists('image', $data)) {
+            $image = Storage::put('image', $data['image']);
+            $data['image'] = $image;
+            if ($product->image) Storage::delete($product->image);
+        }
+
         $product->update($data);
-        return redirect()->route('admin.products.show', compact('product'));
+        return redirect()->route('admin.products.show', $product->id);
     }
 
     /**
