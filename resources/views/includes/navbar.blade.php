@@ -13,11 +13,16 @@
     <header>
       <div class="image-text">
         <span class="image">
-          <img src="{{ Auth::user()->image }}" alt="{{ Auth::user()->restaurant_name }}" class="rounded-lg">
+          @guest
+          @else
+            <img src="{{ Auth::user()->image }}" alt="{{ Auth::user()->restaurant_name }}" class="rounded-lg">
+          @endguest
         </span>
 
         <div class="text logo-text">
-          <span class="name"> {{ Auth::user()->restaurant_name }}</span>
+          @auth
+            <span class="name"> {{ Auth::user()->restaurant_name }}</span>
+          @endauth
         </div>
       </div>
 
@@ -77,7 +82,7 @@
 
             <div class="dropdown-menu dropdown-menu-right">
               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                      document.getElementById('logout-form').submit();"><i
+                                                          document.getElementById('logout-form').submit();"><i
                   class="fa-solid fa-right-from-bracket"></i>
                 <span class="text nav-text">{{ __('Logout') }}</span>
 
