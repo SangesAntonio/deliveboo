@@ -64,6 +64,9 @@ class ProductController extends Controller
             'price.max' => 'Il prezzo deve essere massimo :max euro',
             'image' => 'Il formato dell\'immagine non è corretto.',
         ]);
+        if ($request->fails()) {
+            return response()->json(['errors', $request->errors()]);
+        }
         $data = $request->all();
         $product = new Product();
         $product->fill($data);
