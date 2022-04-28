@@ -6,6 +6,9 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\User;
 
 
 class ProductController extends Controller
@@ -17,7 +20,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = DB::table('products')->where('user_id', auth()->id())->get();
+
+
+
         return view('admin.products.index', compact('products'));
     }
 
