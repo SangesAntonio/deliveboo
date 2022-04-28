@@ -21,11 +21,11 @@ class UserSeeder extends Seeder
             $user->password = bcrypt($faker->password());
             $user->address = $faker->address();
             $user->vat_number = '12345678910';
-            $user->image = $faker->imageUrl(360, 360);
+            $user->image = 'https://picsum.photos/360/360';
 
             $user->save();
         }
-        
+
         // TODO: eliminare a fine progetto
         $admin = new User();
         $admin->restaurant_name = 'admin';
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
         $admin->vat_number = '12345678910';
         $admin->email = 'admin@bool.it';
         $admin->password = bcrypt('admin');
-        $admin->image = $faker->imageUrl(360, 360);
+        $admin->image = 'https://picsum.photos/1050/360';
         $admin->save();
 
         $category_ids = Category::all('id');
