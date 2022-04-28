@@ -18,5 +18,11 @@ html body:not(#guest) {
 }
 
 .grey-bg {
-    background-color: #F5F7FA;
+    background-color: #f5f7fa;
+}
+
+#stats-subtitle .media img,
+#minimal-statistics .media img {
+    width: 100px;
+    height: 100px;
 }

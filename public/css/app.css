@@ -11160,9 +11160,14 @@ html body:not(#guest) {
 }
 
 .grey-bg {
-  background-color: #F5F7FA;
+  background-color: #f5f7fa;
 }
 
+#stats-subtitle .media img,
+#minimal-statistics .media img {
+  width: 100px;
+  height: 100px;
+}
 
 .switch {
   position: relative;
@@ -11219,7 +11224,8 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-=======
+}
+
 #statistics .card {
   background-color: #fff;
   border-radius: 10px;
@@ -11285,6 +11291,5 @@ input:checked + .slider:before {
 #statistics .l-bg-cyan {
   background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
   color: #fff;
-
 }
 
