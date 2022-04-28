@@ -22,10 +22,13 @@ Route::middleware('auth')
     ->namespace('Admin')
     ->group(function () {
         Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/statistics', 'UserController@statistics')->name('statistics.index');
+
         Route::resource('users', 'UserController');
         Route::resource('products', 'ProductController');
         Route::resource('categories', 'CategoryController');
-        Route::resource('orders', 'OderController');
+        Route::resource('orders', 'OrderController');
+
 
         Route::get('/{any}', function () {
             abort(404);

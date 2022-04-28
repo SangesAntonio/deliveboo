@@ -20,9 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::namespace('Api')
     ->group(function () {
-        Route::get('/users', 'UserController@index');
-        Route::get('/products', 'ProductController@index');
-        Route::get('/products/{name}', 'ProductController@show');
-        Route::get('/orders', 'OrderController@index');
-        Route::get('/orders/{id}', 'OrderController@show');
+        Route::get('/users/statistics', 'UserController@statistics');
     });
