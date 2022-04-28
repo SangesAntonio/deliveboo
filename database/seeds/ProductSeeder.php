@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
             $product = new Product();
             $product->user_id = Arr::random($user_ids);
             $product->name = $faker->word();
-            $product->price = $faker->randomFloat(2, 5, 100);
+            $product->price = $faker->randomFloat(2, 5, 50);
             $product->description = $faker->paragraph();
             $product->image = 'https://picsum.photos/100/100';
             $product->visibility = $faker->boolean();

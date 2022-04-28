@@ -11079,7 +11079,6 @@ body {
      object-fit: cover;
   width: 60px;
   height: 60px;
-  border-radius: 10px;
 }
 
 .sidebar .menu {
@@ -11163,8 +11162,6 @@ html body:not(#guest) {
 .grey-bg {
   background-color: #F5F7FA;
 }
-
-//statistics
 
 #statistics .card {
   background-color: #fff;
