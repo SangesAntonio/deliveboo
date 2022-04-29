@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->string('city', 20);
-            $table->string('address', 50);
+            $table->string('address', 100);
             $table->decimal('total_amount', 4, 2);
             $table->timestamps();
         });

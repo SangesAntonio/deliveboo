@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
             $product->name = $faker->word();
             $product->price = $faker->randomFloat(2, 5, 50);
             $product->description = $faker->paragraph();
-            $product->image = 'https://picsum.photos/100/100';
+            $product->image = 'https://picsum.photos/600/600';
             $product->visibility = $faker->boolean();
             $product->save();
         }
