@@ -31,7 +31,7 @@ class UserController extends Controller
     // questo user tecnicamente è il nostro login , utilizzare il login dell'auth?
     {
         $User = new User();
-        return view('admin.users.create', compact('User'));
+        return view('admin.users.create', compact('user'));
     }
 
     /**
