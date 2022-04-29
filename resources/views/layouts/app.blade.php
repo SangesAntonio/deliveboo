@@ -19,6 +19,7 @@
 
     <!-- Style -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('additional-css')
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -32,7 +33,7 @@
     <main class="py-4">
         @yield('content')
     </main>
-    
+
 
     @yield('scripts')
 </body>

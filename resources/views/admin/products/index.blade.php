@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('additional-css')
+    <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"
@@ -121,4 +126,8 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/delete-form.js') }}"></script>
 @endsection
