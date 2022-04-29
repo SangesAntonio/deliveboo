@@ -149,9 +149,9 @@ class ProductController extends Controller
         $data = $request->all();
         $data['visibility'] = array_key_exists('visibility', $data) ? 1 : 0;
         if (array_key_exists('image', $data)) {
-            $image = Storage::put('image', $data['image']);
-            $data['image'] = $image;
-            if ($product->image) Storage::delete($product->image);
+            // $image = Storage::put('image', $data['image']);
+            $data['image'] = $data['image'];
+            // if ($product->image) Storage::delete($product->image);
         }
 
         $product->update($data);
