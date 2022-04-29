@@ -47,6 +47,7 @@
                 <div class="input-group-append" id="price">
                     <span class="input-group-text">€</span>
                 </div>
+            </div>
                 
 
             <!--Input immagine-->
