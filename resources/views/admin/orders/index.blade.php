@@ -17,21 +17,21 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">Davide Croce</th>
-                        <td>Via delle Palle sudate 18</td>
-                        <td>Pizza Margherita, Offre Cazzo, Pizza Tonno e Cipolle</td>
+                        <th scope="row">Davìd Croux</th>
+                        <td>via delle rose fiorite</td>
+                        <td>Pizza Margherita, offre margherita, Pizza Tonno e Cipolle</td>
                         <td>20€</td>
                     </tr>
                     <tr>
-                        <th scope="row">Davide Croce</th>
-                        <td>Via delle Palle sudate 18</td>
-                        <td>Pizza Margherita, Offre Cazzo, Pizza Tonno e Cipolle</td>
+                        <th scope="row">David cruz</th>
+                        <td>via delle rose fiorite</td>
+                        <td>Pizza Margherita, offre margherita, Pizza Tonno e Cipolle</td>
                         <td>20€</td>
                     </tr>
                     <tr>
-                        <th scope="row">Davide Croce</th>
-                        <td>Via delle Palle sudate 18</td>
-                        <td>Pizza Margherita, Offre Cazzo, Pizza Tonno e Cipolle</td>
+                        <th scope="row">Davidi crucis</th>
+                        <td>via delle rose fiorite</td>
+                        <td>Pizza Margherita, offre margherita, Pizza Tonno e Cipolle</td>
                         <td>20€</td>
                     </tr>
                 </tbody>
