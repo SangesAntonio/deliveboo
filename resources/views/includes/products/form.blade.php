@@ -83,15 +83,13 @@
 
 
                    @if($product->exists) 
-                   <div>
-
-                   
-                    <button type="submit" class='btn btn-primary'>Modifica</button>
-                        <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-md btn-info shadow-md text-white" type="submit">
-                            Torna indietro
+                   <div class="row justify-content-between w-100">
+                    <button type="submit" class='btn btn-primary ml-3'>Modifica</button>
+                    <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-md btn-info shadow-md text-white" type="submit">
+                        Torna indietro
                         <i class="fas fa-arrow-left"></i>
-                        </a>
-                    </div>
+                    </a>
+                </div>
                   @else
                   
                   <button type="submit" class='btn btn-primary'>Aggiungi</button>
