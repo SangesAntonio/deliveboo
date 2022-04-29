@@ -17,15 +17,11 @@
 
                                 <div class="col-md-6">
                                     <input id="restaurant_name" type="text"
-                                        class="form-control @error('restaurant_name') is-invalid @enderror"
-                                        name="restaurant_name" value="{{ old('restaurant name') }}" required
+                                        class="form-control"
+                                        name="restaurant_name" value="" required
                                         autocomplete="restaurant_name" autofocus>
 
-                                    @error('restaurant_name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    
                                 </div>
                             </div>
 
@@ -33,14 +29,9 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-mail</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" required autocomplete="email">
+                                    <input id="email" type="email" class="form-control"
+                                        name="email" value="" required autocomplete="email">
 
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                             </div>
 
@@ -50,14 +41,9 @@
 
                                 <div class="col-md-6">
                                     <input id="email_verified_at" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email_verified_at"
-                                        value="{{ old('email_verified_at') }}" required autocomplete="email_verified_at">
+                                        class="form-control"
+                                        value="" required autocomplete="email_verified_at">
 
-                                    @error('email_verified_at')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                             </div>
 
@@ -66,14 +52,8 @@
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
-                                        class="form-control @error('address') is-invalid @enderror" name="address"
-                                        value="{{ old('address') }}" required autocomplete="address" autofocus>
-
-                                    @error('address')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                        class="form-control" name="address"
+                                        value="" required autocomplete="address" autofocus>
                                 </div>
                             </div>
 
@@ -83,14 +63,9 @@
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
+                                        class="form-control" name="password"
                                         required autocomplete="new-password">
 
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                             </div>
 
@@ -108,14 +83,9 @@
 
                                 <div class="col-md-6">
                                     <input id="vat_number" type="text"
-                                        class="form-control @error('vat_number') is-invalid @enderror" name="vat_number"
-                                        value="{{ old('vat_number') }}" required autocomplete="vat_number" autofocus>
+                                        class="form-control" name="vat_number"
+                                        value="" required autocomplete="vat_number" autofocus>
 
-                                    @error('vat_number')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                             </div>
 
@@ -133,3 +103,5 @@
         </div>
     </div>
 @endsection
+
+
