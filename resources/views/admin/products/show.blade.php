@@ -14,10 +14,6 @@
                 <h5>Descrizione:</h5>
                 <p>{{ $product->description }}</p>
             </div>
-            <div class="col-3">
-                <h5>Allergeni:</h5>
-                {{-- mettere allergeni --}}
-            </div>
         </div>
 
         {{-- form edit + delete --}}
