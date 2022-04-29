@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             $user->password = bcrypt($faker->password());
             $user->address = $faker->address();
             $user->vat_number = '12345678910';
-            $user->image = 'https://picsum.photos/360/360';
+            $user->image = 'https://picsum.photos/1050/360';
 
             $user->save();
         }
