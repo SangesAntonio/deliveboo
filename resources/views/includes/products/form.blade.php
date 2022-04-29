@@ -48,14 +48,6 @@
                     <span class="input-group-text">€</span>
                 </div>
                 
-                <!--Input prezzo-->
-                  <div class="input-group">
-                      <label for="price" class="col-12 p-0">Inserisci il prezzo </label>
-                    <input type="number" class="form-control" name="price" value="{{old('price', $product->price)}}" step=".01" min="1" max="999">
-                    <div class="input-group-append" id="price">
-                      <span class="input-group-text">€</span>
-                    </div>
-                  </div>
 
             <!--Input immagine-->
             <div class="mb-2 mt-3">
