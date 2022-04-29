@@ -19,5 +19,29 @@
                 {{-- mettere allergeni --}}
             </div>
         </div>
+
+        {{-- form edit + delete --}}
+        <div class="row justify-content-end">
+
+            
+            <a href="{{ route('admin.products.edit', $product->id) }}">
+                <button class="btn btn-md btn-warning shadow-md mr-1" type="submit">
+                    <i class="fas fa-pencil"></i>
+                </button>
+            </a>
+            <form action="{{ route('admin.products.destroy', $product->id) }}"
+                method="post" class="delete-form">
+                @csrf
+                @method('delete')
+
+                <button class="btn btn-md btn-danger shadow-md mr-1" type="submit">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </form>
+        </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/delete-form.js') }}"></script>
 @endsection
