@@ -14,7 +14,10 @@
 
 html body:not(#guest) {
     padding-left: 250px;
-    background-color: #f6f5ff;
+    background-image: url('../../public/img/background/Desktop-Background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .grey-bg {
@@ -25,4 +28,8 @@ html body:not(#guest) {
 #minimal-statistics .media img {
     width: 100px;
     height: 100px;
+}
+
+.box-shadow-profile {
+    box-shadow: 0px 0px 8px 3px rgba(180, 108, 34, 0.8);
 }

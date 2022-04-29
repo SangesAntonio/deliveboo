@@ -14,7 +14,7 @@
         href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css"> --}}
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-    <div class="grey-bg container-fluid" id="products">
+    <div class="container-fluid" id="products">
         <section id="minimal-statistics">
             <div class="row">
                 <div class="col-12 my-1">

@@ -10971,7 +10971,7 @@ a.text-dark:focus {
 :root {
   /* ===== Colors ===== */
   --body-color: #e4e9f7;
-  --sidebar-color: #fff;
+  --sidebar-color: #ffe4be;
   --primary-color: #6cb2eb;
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
@@ -10984,7 +10984,7 @@ body {
 }
 
 .header-logo {
-  background-color: #fff;
+  background-color: #00ccbc;
 }
 
 ::-moz-selection {
@@ -11160,7 +11160,10 @@ a.dropdown-menu {
 
 html body:not(#guest) {
   padding-left: 250px;
-  background-color: #f6f5ff;
+  background-image: url(/images/Desktop-Background.jpg?786d0b88409b6f44eba65c9bed21056a);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .grey-bg {
@@ -11171,6 +11174,10 @@ html body:not(#guest) {
 #minimal-statistics .media img {
   width: 100px;
   height: 100px;
+}
+
+.box-shadow-profile {
+  box-shadow: 0px 0px 8px 3px rgba(180, 108, 34, 0.8);
 }
 
 .switch {
