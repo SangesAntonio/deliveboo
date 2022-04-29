@@ -67,7 +67,15 @@
                     </form> --}}
 
                    @if($product->exists) 
-                  <button type="submit" class='btn btn-primary'>Modifica</button>
+                   <div>
+
+                   
+                    <button type="submit" class='btn btn-primary'>Modifica</button>
+                        <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-md btn-info shadow-md text-white" type="submit">
+                            Torna indietro
+                        <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
                   @else
                   
                   <button type="submit" class='btn btn-primary'>Aggiungi</button>
