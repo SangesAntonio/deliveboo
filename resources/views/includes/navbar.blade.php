@@ -75,16 +75,12 @@
           </ul>
         </div>
         <div class="bottom-content">
-          <li class="nav-link dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" v-pre>
-              <span class="text nav-text">{{ Auth::user()->name }}</span>
-            </a>
+              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 
-            <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                          document.getElementById('logout-form').submit();"><i
-                  class="fa-solid fa-right-from-bracket"></i>
-                <span class="text nav-text">{{ __('Logout') }}</span>
+                <i class="fa-solid fa-right-from-bracket text-danger mx-2"><span class="text-danger mx-2">LOGOUT</span></i>
+                <span class="text nav-text text-danger">{{ __('Logout') }} </span>
+                
+                
 
               </a>
 
