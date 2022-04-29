@@ -64,7 +64,8 @@ class ProductController extends Controller
             'price.numeric' => 'Il prezzo deve essere un numero',
             'price.min' => 'Il prezzo deve essere minimo :min euro',
             'price.max' => 'Il prezzo deve essere massimo :max euro',
-            'image' => 'Il formato dell\'immagine non è corretto.',
+            'price.required' => 'Il prezzo è obbligatorio',
+            'url' => 'Il formato dell\'immagine non è corretto.',
             'boolean' => 'Deve essere vero o falso'
         ]);
         // if ($request->fails()) {
@@ -137,12 +138,13 @@ class ProductController extends Controller
             'description.required' => 'La descrizione è obbligatoria',
             'name.max' => 'La lunghezza non può essere maggiore di :max caratteri',
             'name.min' => 'La lunghezza non può essere minore di :min caratteri',
-            'description.min' => 'La lunghezza non può essere minore di :min caratteri',
-            'description.max' => 'La lunghezza non può essere maggiore di :max caratteri',
+            'description.min' => 'La lunghezza della descrizione non può essere minore di :min caratteri',
+            'description.max' => 'La lunghezza della descrizione non può essere maggiore di :max caratteri',
             'price.numeric' => 'Il prezzo deve essere un numero',
             'price.min' => 'Il prezzo deve essere minimo :min euro',
             'price.max' => 'Il prezzo deve essere massimo :max euro',
-            'image' => 'Il formato dell\'immagine non è corretto.',
+            'price.required' => 'Il prezzo è obbligatorio',
+            'url' => 'Il formato dell\'immagine non è corretto.',
         ]);
         $data = $request->all();
         $data['visibility'] = array_key_exists('visibility', $data) ? 1 : 0;

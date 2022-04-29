@@ -25,20 +25,20 @@
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Nome Prodotto</label>
-                    <input type="text" class="form-control" id="title" placeholder="Nome prodotto" name="name" value=" {{old('name', $product->name)}}">
+                    <input type="text" class="form-control" id="title" placeholder="Nome prodotto" name="name" value=" {{old('name', $product->name)}}"  required trim  minlength="2" maxlength="50">
                   </div>
 
                   <!--Input descrizione-->
 
                 <div class="mb-3">
                     <label for="content" class="form-label">Descrizione Prodotto</label>
-                    <textarea class="form-control" id="content" placeholder="Descrivi il prodotto" name="description" >{{old('description', $product->description)}}</textarea>
+                    <textarea class="form-control" id="content" placeholder="Descrivi il prodotto" name="description" minlength="4" maxlength="500" >{{old('description', $product->description)}}</textarea>
                 </div>
                 
                 <!--Input prezzo-->
                   <div class="input-group">
-                      <label for="price">Inserisci il prezzo </label>
-                    <input type="number" class="form-control" name="price" value="{{old('price', $product->price)}}">
+                      <label for="price" class="col-12 p-0">Inserisci il prezzo </label>
+                    <input type="number" class="form-control" name="price" value="{{old('price', $product->price)}}"  min="1" max="999">
                     <div class="input-group-append" id="price">
                       <span class="input-group-text">€</span>
                     </div>
