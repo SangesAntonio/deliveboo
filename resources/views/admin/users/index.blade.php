@@ -9,8 +9,8 @@
               alt="{{ Auth::user()->restaurant_name }}">
             <div class=" card-body d-flex flex-column align-items-center justify-content-center h-100">
               {{-- nome ristorante --}}
-              <div class="mb-5">
-                <h2 class="card-title">{{ Auth::user()->restaurant_name }}</h2>
+              <div class="mb-2">
+                <h2 class="card-title text-capitalize">{{ Auth::user()->restaurant_name }}</h2>
               </div>
 
               <div class="mr-auto">
@@ -31,13 +31,25 @@
                   <h5>P.IVA:</h5>
                   <span>Partita IVA: {{ Auth::user()->vat_number }}</span>
                 </div>
+
+
+                {{-- categorie --}}
+                <div>
+                  <h5>Categorie:</h5>
+                  @forelse (Auth::user()->categories as $category)
+                    <span class="card-subtitle mb-2">{{ $category->name }}@if (!$loop->last)
+                        ,
+                      @endif
+                    </span>
+                    @empty
+                      <span>-</span>
+                    @endforelse
+                  </div>
+                </div>
               </div>
-
-
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-@endsection
+    </section>
+  @endsection

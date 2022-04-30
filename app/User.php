@@ -40,7 +40,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function category()
+    public function categories()
     {
         return $this->belongsToMany('App\Models\Category');
     }

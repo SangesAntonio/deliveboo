@@ -51,38 +51,38 @@
 
     <!--Input immagine-->
     <div class="mb-2 mt-3">
-      <label for="image" class="form-label">Carica immagine</label>
-      <input type="url" class="form-control" id="image" name="image" value="{{ old('image', $product->image) }}">
+      <div class="custom-file">
+        <label for="image" class="custom-file-label">Carica immagine</label>
+        <input type="file" class="custom-file-input" id="image" name="image">
+      </div>
     </div>
 
 
     <!--visibility check box-->
-    <div class="col-12">
-      <h4>Visibilità</h4>
-      <label class="form-check-label" for="visibility"></label>
+    <div class="col-12 d-flex align-items-center p-0 pb-4">
+      <label class="form-check-label pr-4 d-flex justify-content-center h5" for="visibility">
+        Visibilità
+      </label>
       <input type="checkbox" name="visibility" value="1"
         {{ old('visibility', $product->visibility) ? 'checked="checked"' : '' }}id="visibility"
         class='form-check-label'>
     </div>
-    {{-- <form action="{{ route('admin.products.toggle', $product->id) }}" method="POST">
-                        @method('PATCH')
-                        @csrf
-                        <button class="btn btn-sm" type="submit"><i
-                                class="fa-solid fa-toggle-{{ $product->visibility ? 'on' : 'off' }}"></i>
-                        </button>
-                    </form> --}}
 
-
-    @if ($product->exists)
-      <div class="row justify-content-between w-100">
+    <div class="col-12 p-0 d-flex justify-content-between w-100">
+      @if ($product->exists)
         <button type="submit" class='btn btn-primary ml-3'>Modifica</button>
         <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-md btn-info shadow-md text-white"
           type="submit">
           <i class="fas fa-arrow-left"></i> Indietro
         </a>
-      </div>
-    @else
-      <button type="submit" class='btn btn-primary'>Aggiungi</button>
-    @endif
+      @else
+        <button type="submit" class='btn btn-primary'>Aggiungi</button>
+        <a href="{{ route('admin.products.index', $product->id) }}" class="btn btn-md btn-info shadow-md text-white"
+          type="submit">
+          <i class="fas fa-arrow-left"></i> Indietro
+        </a>
+      @endif
+    </div>
+    </form>
   </div>
 </div>
