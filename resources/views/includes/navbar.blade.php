@@ -74,23 +74,20 @@
 
           </ul>
         </div>
-        <div class="bottom-content">
-              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-
-                <i class="fa-solid fa-right-from-bracket text-danger mx-2"><span class="text-danger mx-2">LOGOUT</span></i>
-                <span class="text nav-text text-danger">{{ __('Logout') }} </span>
-                
-                
-
-              </a>
-
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none text nav-text">
-                @csrf
-              </form>
-            </div>
-          </li>
+        <div class="bottom-content d-inline">
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none text nav-text">
+            @csrf
+          </form>
+          <a href="{{ route('logout') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+            class="d-flex flex-row pb-3 text-decoration-none">
+            <i class="fa-solid fa-right-from-bracket text-danger mx-2"></i>
+            <span class="text nav-text text-danger">{{ __('Logout') }} </span>
+          </a>
         </div>
-      @endauth
-    </div>
-  </nav>
+        </li>
+      </div>
+    @endauth
+</div>
+</nav>
 </div>
