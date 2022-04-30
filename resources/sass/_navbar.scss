@@ -8,7 +8,7 @@
     /* ===== Colors ===== */
     --body-color: #e4e9f7;
     --sidebar-color: #ffe4be;
-    --primary-color: #6cb2eb;
+    --primary-color: #00CCBC;
     --primary-color-light: #f6f5ff;
     --toggle-color: #ddd;
     --text-color: #707070;
@@ -146,12 +146,4 @@ body {
             display: none;
         }
     }
-}
-
-a.dropdown-menu {
-    background-color: red;
-}
-
-.dropdown-toggle::after {
-    color: var(--text-color);
 }

@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
     public function run(Faker $faker)
     {
         $user_ids = User::pluck('id')->toArray();
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $product = new Product();
             $product->user_id = Arr::random($user_ids);
             $product->name = $faker->word();

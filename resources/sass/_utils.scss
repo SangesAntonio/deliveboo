@@ -3,7 +3,7 @@
 }
 
 .full-height-minus-navbar {
-    height: 80vh;
+    height: 90vh;
 }
 
 .flex-center {
@@ -14,7 +14,7 @@
 
 html body:not(#guest) {
     padding-left: 250px;
-    background-image: url('../../public/img/background/Desktop-Background.jpg');
+    background-image: url("../../public/img/background/Desktop-Background.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -32,4 +32,18 @@ html body:not(#guest) {
 
 .box-shadow-profile {
     box-shadow: 0px 0px 8px 3px rgba(180, 108, 34, 0.8);
+}
+
+#home {
+    img {
+        height: 400px;
+        object-fit: cover;
+        object-position: top center;
+    }
+    .card-body {
+        height: 300px;
+        div {
+            margin: 10px 0;
+        }
+    }
 }
