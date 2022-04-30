@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->decimal('price', 4, 2);
             $table->text('description');
             $table->boolean('visibility')->default(0);
-            $table->text('image');
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

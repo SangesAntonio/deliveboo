@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
-use Illuminate\Validation\Rules\Password;
 
 
 class UserController extends Controller
@@ -19,7 +19,8 @@ class UserController extends Controller
     //! Usiamo index come dettaglio dell'user /ristorante
     public function index(User $user)
     {
-        return view('admin.users.index', compact('user'));
+        $categories = Category::all();
+        return view('admin.users.index', compact('user', 'categories'));
     }
 
     /**
