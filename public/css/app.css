@@ -10972,7 +10972,7 @@ a.text-dark:focus {
   /* ===== Colors ===== */
   --body-color: #e4e9f7;
   --sidebar-color: #ffe4be;
-  --primary-color: #6cb2eb;
+  --primary-color: #00CCBC;
   --primary-color-light: #f6f5ff;
   --toggle-color: #ddd;
   --text-color: #707070;
@@ -11136,20 +11136,12 @@ body {
   display: none;
 }
 
-a.dropdown-menu {
-  background-color: red;
-}
-
-.dropdown-toggle::after {
-  color: var(--text-color);
-}
-
 .full-height {
   height: 100vh;
 }
 
 .full-height-minus-navbar {
-  height: 80vh;
+  height: 90vh;
 }
 
 .flex-center {
@@ -11178,6 +11170,22 @@ html body:not(#guest) {
 
 .box-shadow-profile {
   box-shadow: 0px 0px 8px 3px rgba(180, 108, 34, 0.8);
+}
+
+#home img {
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+}
+
+#home .card-body {
+  height: 300px;
+}
+
+#home .card-body div {
+  margin: 10px 0;
 }
 
 .switch {

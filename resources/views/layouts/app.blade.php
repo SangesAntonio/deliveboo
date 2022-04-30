@@ -30,7 +30,7 @@
 <body>
     @include('includes.navbar')
 
-    <main class="py-4">
+    <main class="py-4 full-height-minus-navbar">
         @yield('content')
     </main>
 
