@@ -4,6 +4,7 @@ use App\User;
 use App\Models\Category;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UserSeeder extends Seeder
 {
@@ -21,6 +22,7 @@ class UserSeeder extends Seeder
             $user->password = bcrypt($faker->password());
             $user->address = $faker->address();
             $user->vat_number = '12345678910';
+            $user->email_verified_at = now();
             $user->image = 'https://picsum.photos/1050/360';
 
             $user->save();
