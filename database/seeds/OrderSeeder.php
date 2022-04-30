@@ -29,13 +29,19 @@ class OrderSeeder extends Seeder
             $order->total_amount =  $faker->randomNumber(2, false);
             $order->save();
         }
-
         $product_ids = Product::all('id');
         $order->each(function (App\Models\Order $order) use ($product_ids) {
             $order->products()->attach(
                 $product_ids->random(rand(1, 5))->pluck('id')->toArray(),
-                // [$order->product_quantity = count($product_ids)->where('order_id')->$order->order_id]
             );
+            // $orders = Order::where('id')->get();
+            // foreach ($orders as $order) {
+            //     $order->items = 0;
+            //     foreach ($order->products as $product) {
+            //         $order->items += $product->pivot->product_quantity;
+            //     }
+            //     dd($order);
+            // }
         });
     }
 }
