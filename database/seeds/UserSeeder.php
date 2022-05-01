@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             $user->address = $faker->address();
             $user->vat_number = '12345678910';
             $user->email_verified_at = now();
-
+            $user->image = 'https://picsum.photos/1050/360';
             $user->save();
         }
 

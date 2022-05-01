@@ -51,7 +51,7 @@ class ProductController extends Controller
             'price' => ['required', 'regex:/^(\d+(\.\d*)?)|(\.\d+)$/', 'max:999', ' min: 1'],
             'description' => 'required| min:4 | max:500',
             'visibility' => 'boolean',
-            'image' => 'nullable', 'image',
+            'image' => 'nullable', 'required',
         ], [
             'name.required' => 'Il nome del prodotto è obbligatorio',
             'description.required' => 'La descrizione è obbligatoria',
@@ -136,7 +136,7 @@ class ProductController extends Controller
             'price' => 'required| max:999| min: 1| numeric',
             'description' => 'required| min:4 | max:500',
             'visibility' => 'boolean',
-            'image' => 'nullable', 'image'
+            'image' => 'required', 'image'
         ], [
             'name.required' => 'Il nome del prodotto è obbligatorio',
             'description.required' => 'La descrizione è obbligatoria',

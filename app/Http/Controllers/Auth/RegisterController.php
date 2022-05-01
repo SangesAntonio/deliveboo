@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:4', 'confirmed'],
             'address' => ['string', 'required', 'unique:users', 'min:', 'max:50', 'regex:/^\s*\S+(?:\s+\S+){2}/'],
             'vat_number' => ['string', 'required', 'unique:users', 'size:11'],
-            'image' =>  ['url', 'required']
+            'image' =>  ['image', 'required']
         ]);
     }
 
