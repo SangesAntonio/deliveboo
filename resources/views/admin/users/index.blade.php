@@ -5,17 +5,22 @@
       <div class="row">
         <div class="col-12">
           <div class="card box-shadow-profile">
+            {{-- image --}}
             <img class="img-fluid card-img-top w-100" src="{{ asset('/storage/' . Auth::user()->image) }}"
               alt="{{ Auth::user()->restaurant_name }}">
+              {{-- edit button --}}
+              <button id="button-edit-user-index" class="btn btn-md btn-warning shadow-md" type="submit">
+                <i class="fas fa-pencil"></i>
+              </button>
+
             <div class=" card-body d-flex flex-column align-items-center justify-content-center">
+              
               {{-- nome ristorante --}}
               <div class="mb-5 d-flex ">
                 <h2 class="card-title user-card-title">{{ Auth::user()->restaurant_name }}</h2>
                 <a href="{{ route('admin.users.edit', Auth::user()->id) }}" class="ml-2">
                   <div class="mr-1">
-                    <button class="btn btn-sm btn-warning shadow-sm" type="submit">
-                      <i class="fas fa-pencil"></i>
-                    </button>
+
                   </div>
                 </a>
               </div>
