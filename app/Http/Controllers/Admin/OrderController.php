@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 
+
 class OrderController extends Controller
 {
     /**
@@ -17,10 +18,10 @@ class OrderController extends Controller
     public function index()
     {
         // DESC per Data
-        $data = Order::paginate(9);
+
         $orders = Order::orderBy('updated_at', 'desc')->paginate(9);
 
-        return view('admin.orders.index', compact('orders', 'data'));
+        return view('admin.orders.index', compact('orders',));
     }
 
     /**

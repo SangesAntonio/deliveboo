@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="containter">
+    <div class="container">
         <div class="col text-center">
             <h1>Ordini ricevuti</h1>
         </div>
@@ -29,6 +29,10 @@
                 @endforeach
             </table>
         </div>
-        {!! $data->links() !!}
+        @if($order->id > 8)
+        <div class="d-flex justify-content-center align-items-end">
+            {!! $orders->links() !!}
+        </div>
+        @endif
     </div>
 @endsection
