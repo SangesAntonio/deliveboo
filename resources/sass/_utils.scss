@@ -1,8 +1,9 @@
 *::-webkit-scrollbar {
     width: 0 !important;
+}
+body {
     scrollbar-width: none;
 }
-
 .full-height {
     height: 100vh;
 }
