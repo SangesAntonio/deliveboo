@@ -15,24 +15,29 @@
 
               </div>
 
-              <div class="mr-auto">
+
+              <div class="mr-auto w-100">
+                <hr>
                 {{-- email --}}
-                <div>
-                  <h5><i class="fas fa-envelope"></i></h5>
-                  <p class="card-subtitle mb-2">{{ Auth::user()->email }}</p>
+                <div class="d-flex align-items-center">
+                  <h5><i class="fas fa-envelope h1"></i></h5>
+                  <p class="card-subtitle mb-2 mx-4">{{ Auth::user()->email }}</p>
                 </div>
+                <hr>
 
                 {{-- Indirizzo --}}
-                <div>
-                  <h5><i class="fas fa-map-marker-alt"></i></h5>
-                  <address class="card-subtitle">{{ Auth::user()->address }}</address>
+                <div class="d-flex align-items-center">
+                  <h5><i class="fas fa-map-marker-alt h1"></i></h5>
+                  <address class="card-subtitle mx-4">{{ Auth::user()->address }}</address>
                 </div>
+                <hr>
 
                 {{-- Partita iva --}}
-                <div>
-                  <i class="fas fa-building"></i>
-                  <span>Partita IVA: {{ Auth::user()->vat_number }}</span>
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-building h1"></i>
+                  <span class="mx-4">Partita IVA: {{ Auth::user()->vat_number }}</span>
                 </div>
+                <hr>
 
 
                 {{-- categorie --}}
