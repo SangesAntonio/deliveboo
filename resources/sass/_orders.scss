@@ -16,6 +16,19 @@
     }
 }
 
+//order-list table
+
+.order-list{
+    background-color: rgb(246, 153, 63, 0.5);
+    border: 1px solid #764a1e;
+    tr{
+        border: 1px solid #764a1e;  
+    }
+    thead{
+        background-color: rgb(149, 94, 38, 0.5);
+    }
+}
+
 // show
 #orders-show {
     // show
@@ -23,3 +36,4 @@
         border-bottom: black solid 1px;
     }
 }
+
