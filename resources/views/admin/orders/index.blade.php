@@ -23,17 +23,88 @@
                             <td>{{ $order->address }}</td>
                             <td>{{ $order->email }}</td>
                             <td>{{ $order->total_amount }}&euro;</td>
-                            <td><a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-info">Dettagli</a>
+                            <td>
+                            {{--<a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-info">Dettagli</a> --}}
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#OrderModal-{{ $order->id }}">
+                                    Visualizza
+                                  </button>
                             </td>
                         </tr>
                     </tbody>
-                @endforeach
-            </table>
+
+                    @endforeach
+                </table>
+                @foreach ($orders as $order)
+                {{-- modale per visualizzare gli ordini singoli --}}
+    <div class="modal fade" id="OrderModal-{{ $order->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content p-3">
+            <div class="modal-header">
+                
+              <h5 class="modal-title" id="exampleModalLongTitle">Ordine N.{{$order->id}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body border">
+                <div class="col">
+                    <h2>Informazioni del cliente</h2>
+                    <h3>{{ $order->name }} {{ $order->lastname }}</h3>
+                    <p>Indirizzo:<span class="mx-3"> {{ $order->address }}, {{ $order->city }} </span></p>
+                    <h2>Piatti ordinati</h2>
+                </div>
+                <hr>
+                <div class="col">
+                    <div class="container">
+                        <div class="d-flex justify-content-end">
+                            <table class="table table-hover  table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Prodotto</th>
+                                        <th scope="col">Quantità</th>
+                                        <th scope="col">Prezzo</th>
+                                        <th scope="col">Totale</th>
+                                        
+                                    </tr>
+                                </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="col">Margherita</td>
+                                            <td>2</td>
+                                            <td>4&euro;</td>
+                                            <td>8&euro;</td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="col">Hot Dog</td>
+                                            <td>1</td>
+                                            <td>3&euro;</td>
+                                            <td>3&euro;</td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan='3'>Totale Ordine</th>
+                                            <th>11&euro;</th>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Chiudi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      @endforeach
+
         </div>
         @if ($order->id > 8)
             <div id="pagination-bar" class="d-flex justify-content-center align-items-center">
                 {!! $orders->links() !!}
             </div>
         @endif
+
+        
     </div>
 @endsection
