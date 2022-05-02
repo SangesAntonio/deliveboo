@@ -30,7 +30,7 @@
             </table>
         </div>
         @if($order->id > 8)
-        <div class="d-flex justify-content-center align-items-end">
+        <div id="pagination-bar" class="d-flex justify-content-center align-items-center">
             {!! $orders->links() !!}
         </div>
         @endif

@@ -1,0 +1,17 @@
+#pagination-bar {
+    .page-item.active .page-link {
+        background-color: #955e26;
+        border: 1px solid #764a1e;
+    }
+    .page-link,
+    .page-item.disabled .page-link {
+        background-color: #f6993f;
+        color: black;
+        border: 1px solid rgb(48, 29, 0);
+        &:hover {
+            background-color: #955e26;
+            border: 1px solid #9b6127;
+            color: white;
+        }
+    }
+}
