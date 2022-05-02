@@ -64,7 +64,6 @@
                                         <th scope="col">Quantità</th>
                                         <th scope="col">Prezzo</th>
                                         <th scope="col">Totale</th>
-                                        
                                     </tr>
                                 </thead>
                                     <tbody>
@@ -97,14 +96,11 @@
         </div>
       </div>
       @endforeach
-
         </div>
         @if ($order->id > 8)
             <div id="pagination-bar" class="d-flex justify-content-center align-items-center">
                 {!! $orders->links() !!}
             </div>
         @endif
-
-        
     </div>
 @endsection
