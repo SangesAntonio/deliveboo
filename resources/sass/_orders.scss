@@ -1,16 +1,39 @@
-.page-item.active .page-link {
-    background-color: #955e26;
-    border: 1px solid #764a1e;
-}
-
-.page-link,
-.page-item.disabled .page-link {
-    background-color: #f6993f;
-    color: black;
-    border: 1px solid rgb(48, 29, 0);
-    &:hover {
+#pagination-bar {
+    .page-item.active .page-link {
         background-color: #955e26;
-        border: 1px solid #9b6127;
-        color: white;
+        border: 1px solid #764a1e;
+    }
+    .page-link,
+    .page-item.disabled .page-link {
+        background-color: #f6993f;
+        color: black;
+        border: 1px solid rgb(48, 29, 0);
+        &:hover {
+            background-color: #955e26;
+            border: 1px solid #9b6127;
+            color: white;
+        }
     }
 }
+
+//order-list table
+
+.order-list{
+    background-color: rgb(246, 153, 63, 0.5);
+    border: 1px solid #764a1e;
+    tr{
+        border: 1px solid #764a1e;  
+    }
+    thead{
+        background-color: rgb(149, 94, 38, 0.5);
+    }
+}
+
+// show
+#orders-show {
+    // show
+    .total {
+        border-bottom: black solid 1px;
+    }
+}
+

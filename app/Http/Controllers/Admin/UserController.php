@@ -7,7 +7,8 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -83,6 +84,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        return view('admin.users.show', compact('user'));
     }
 
     /**
@@ -92,10 +94,14 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //! Serve inserire User $User?
-    public function edit(User $User)
+
+    public function edit(User $user)
     {
-        return view('admin.users.edit', compact('user'));
+        $categories = Category::orderBy('name', 'ASC')->get();
+
+        $user_categories_ids = $user->categories->pluck('id')->toArray();
+
+        return view('admin.users.edit', compact('user', 'categories', 'user_categories_ids'));
     }
 
     /**
@@ -110,12 +116,11 @@ class UserController extends Controller
 
         $request->validate(
             [
-                'restaurant_name' => ['required', 'string', 'min:2', 'max:50'],
-                'email' => ['required', 'string', 'unique', 'regex:/^.+@.+$/i', 'email:rfc,dns'],
-                'password' => ['required', 'confirmed', 'password:api'],
-                'address' => 'required|string',
-                'vat_number' => ['unique', 'required', 'string', 'size:11'],
-                'image' =>  ['required', 'image'] //mimes:jpg, png , pdf --> need this to specify the type of the file
+                'restaurant_name' => ['string', 'required', Rule::unique('users')->ignore($user->id), 'min:2', 'max:50'],
+                'email' => ['required', 'string', 'email', Rule::unique('users')->ignore($user->id), 'max:255', 'regex:/^.+@.+$/i', 'email:rfc,dns'],
+                'address' => ['string', 'required', Rule::unique('users')->ignore($user->id), 'max:50', 'regex:/^\s*\S+(?:\s+\S+){2}/'],
+                'vat_number' => ['string', 'required', Rule::unique('users')->ignore($user->id), 'size:11'],
+                'image' =>  ['image', 'nullable']
             ],
             [
                 'required' => 'il campo :attribute è obbligatorio!',
@@ -128,15 +133,25 @@ class UserController extends Controller
                 'email.regex' => 'il campo :attribute contiente caratteri vietati',
                 'email.email' => 'sei sicuro di aver inserito l\'email corretta?',
                 'email.unique' => 'Esiste già un utente con questa mail!',
-                'password.password' => 'la password non rispetta i criteri , inserisci un\'altra password',
 
             ]
         );
 
         $data = $request->all();
+
+        if (array_key_exists('image', $data)) {
+            if ($user->image) Storage::delete($user->image);
+
+            $img = Storage::put('user_images', $data['image']);
+            $data['image'] = $img;
+        }
+
         $user->update($data);
 
-        return redirect()->route('admin.users.show', compact('user'));
+        if (!array_key_exists('categories', $data)) $user->categories()->detach();
+        else $user->categories()->sync($data['categories']);
+
+        return redirect()->route('admin.users.index');
     }
 
     /**

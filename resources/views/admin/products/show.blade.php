@@ -11,7 +11,7 @@
         <div class="row pt-5 d-flex justify-content-around">
             {{-- image --}}
             <div class="col-7">
-                <img id="img-show" class="img-fluid" src="{{ $product->image }}" alt="{{ $product->name }}">
+                <img id="img-show" class="img-fluid" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
             </div>
             
             {{-- description --}}
@@ -27,7 +27,6 @@
 
         {{-- form edit + delete --}}
         <div class="row justify-content-end">
-
 
           <a href="{{ route('admin.products.edit', $product->id) }}">
             <button class="btn btn-md btn-warning shadow-md mr-1" type="submit">
