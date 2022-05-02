@@ -11136,6 +11136,10 @@ body {
   display: none;
 }
 
+*::-webkit-scrollbar {
+  width: 0 !important;
+}
+
 .full-height {
   height: 100vh;
 }
