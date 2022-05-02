@@ -112,6 +112,24 @@
                     </span>
                   @enderror
                 </div>
+                <div class="col-12 pt-4">
+                  <div class=" d-flex flex-wrap justify-content-center align-items-center @error('categories') is-invalid @enderror">
+                    @foreach ($categories as $category)
+                      <div class="form-check mr-3">
+                        <input class="form-check-input" type="checkbox" value="{{ $category->id }}"
+                          id="category-{{ $category->id }}" name="categories[]"
+                          @if (in_array($category->id, old('categories', $post_categories_ids ?? []))) checked @endif>
+                        <label class="form-check-label"
+                          for="category-{{ $category->id }}">{{ $category->name }}</label>
+                      </div>
+                    @endforeach
+                  </div>
+                  @error('tags')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
               </div>
           </div>
           <div class="form-group row mb-2">
