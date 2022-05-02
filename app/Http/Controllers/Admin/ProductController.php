@@ -6,8 +6,6 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\facades\Storage;
-
-use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\User;
@@ -49,11 +47,11 @@ class ProductController extends Controller
     public function store(Request $request, Product $product, User $user)
     {
         $request->validate([
-            'name' => 'required|max:50| min:2',
+            'name' => ['required', 'max:50', 'min:2'],
             'price' => ['required', 'regex:/^(\d+(\.\d*)?)|(\.\d+)$/', 'max:999', ' min: 1'],
             'description' => 'required| min:4 | max:500',
             'visibility' => 'boolean',
-            'image' => 'url',
+            'image' => 'required|image',
         ], [
             'name.required' => 'Il nome del prodotto è obbligatorio',
             'description.required' => 'La descrizione è obbligatoria',
@@ -65,22 +63,28 @@ class ProductController extends Controller
             'price.min' => 'Il prezzo deve essere minimo :min euro',
             'price.max' => 'Il prezzo deve essere massimo :max euro',
             'price.required' => 'Il prezzo è obbligatorio',
-            'url' => 'Il formato dell\'immagine non è corretto.',
-            'boolean' => 'Deve essere vero o falso'
+            'image' => 'Il formato dell\'immagine non è corretto.',
+            'boolean' => 'Deve essere vero o falso',
         ]);
-        // if ($request->fails()) {
-        //     return response()->json(['errors', $request->errors()]);
-        // }
+
         $data = $request->all();
         $user = Auth::user();
+        $product = new Product();
+
+        if (array_key_exists('image', $data)) {
+            $img = Storage::put('product_images', $data['image']);
+            $data['image'] = $img;
+        }
+
+        $product->fill($data);
+
+        $product->user_id = $user->id;
+
         if (array_key_exists('visibility', $data)) {
             $product['visibility'] = true;
         }
-
-        $product = new Product();
-        $product->user_id = $user->id;
-        $product->fill($data);
         $product->save();
+
         return redirect()->route('admin.products.show', $product->id);
     }
 
@@ -132,7 +136,7 @@ class ProductController extends Controller
             'price' => 'required| max:999| min: 1| numeric',
             'description' => 'required| min:4 | max:500',
             'visibility' => 'boolean',
-            'image' => 'url',
+            'image' => 'image|nullable'
         ], [
             'name.required' => 'Il nome del prodotto è obbligatorio',
             'description.required' => 'La descrizione è obbligatoria',
@@ -144,17 +148,22 @@ class ProductController extends Controller
             'price.min' => 'Il prezzo deve essere minimo :min euro',
             'price.max' => 'Il prezzo deve essere massimo :max euro',
             'price.required' => 'Il prezzo è obbligatorio',
-            'url' => 'Il formato dell\'immagine non è corretto.',
+            'image' => 'Il formato dell\'immagine non è corretto.',
         ]);
+
         $data = $request->all();
+
         $data['visibility'] = array_key_exists('visibility', $data) ? 1 : 0;
+
         if (array_key_exists('image', $data)) {
-            // $image = Storage::put('image', $data['image']);
-            $data['image'] = $data['image'];
-            // if ($product->image) Storage::delete($product->image);
+            if ($product->image) Storage::delete($product->image);
+
+            $img = Storage::put('product_images', $data['image']);
+            $data['image'] = $img;
         }
 
         $product->update($data);
+
         return redirect()->route('admin.products.show', $product->id);
     }
 
@@ -166,7 +175,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        if ($product->image) Storage::delete($product->image);
+
         $product->delete();
+
         return redirect()->route('admin.products.index');
     }
 }

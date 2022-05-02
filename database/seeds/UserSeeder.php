@@ -24,7 +24,6 @@ class UserSeeder extends Seeder
             $user->vat_number = '12345678910';
             $user->email_verified_at = now();
             $user->image = 'https://picsum.photos/1050/360';
-
             $user->save();
         }
 
@@ -40,7 +39,7 @@ class UserSeeder extends Seeder
 
         $category_ids = Category::all('id');
         $user->each(function (App\User $user) use ($category_ids) {
-            $user->category()->attach(
+            $user->categories()->attach(
                 $category_ids->random(rand(1, 2))->pluck('id')->toArray()
             );
         });

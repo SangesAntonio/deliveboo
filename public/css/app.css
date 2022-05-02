@@ -11140,6 +11140,10 @@ body {
   height: 100vh;
 }
 
+*::-webkit-scrollbar {
+  width: 0 !important;
+}
+
 .flex-center {
   align-items: center;
   display: flex;
@@ -11151,7 +11155,7 @@ html body:not(#guest) {
   background-image: url(/images/Desktop-Background.jpg?786d0b88409b6f44eba65c9bed21056a);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 
 .grey-bg {
@@ -11160,11 +11164,19 @@ html body:not(#guest) {
 
 #stats-subtitle .media img,
 #minimal-statistics .media img {
-  width: 100px;
+  width: 120px;
   height: 100px;
 }
 
-.box-shadow-profile {
+#stats-subtitle a,
+#minimal-statistics a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #000;
+}
+
+.box-shadow-profile,
+.box-shadow-card {
   box-shadow: 0px 0px 8px 3px rgba(180, 108, 34, 0.8);
 }
 
@@ -11182,6 +11194,11 @@ html body:not(#guest) {
 
 #home .card-body div {
   margin: 10px 0;
+}
+
+#show-product img {
+  width: 300px;
+  height: auto;
 }
 
 .switch {
