@@ -11140,10 +11140,6 @@ body {
   height: 100vh;
 }
 
-*::-webkit-scrollbar {
-  width: 0 !important;
-}
-
 .flex-center {
   align-items: center;
   display: flex;
@@ -11196,7 +11192,7 @@ html body:not(#guest) {
   margin: 10px 0;
 }
 
-#show-product img {
+#home #show-product img {
   width: 300px;
   height: auto;
 }

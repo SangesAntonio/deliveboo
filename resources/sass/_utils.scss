@@ -2,7 +2,6 @@
     height: 100vh;
 }
 
-
 .flex-center {
     align-items: center;
     display: flex;
@@ -51,10 +50,10 @@ html body:not(#guest) {
             margin: 10px 0;
         }
     }
-
-#show-product {
-    img {
-        width: 300px;
-        height: auto;
+    #show-product {
+        img {
+            width: 300px;
+            height: auto;
+        }
     }
 }
