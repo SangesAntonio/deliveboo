@@ -113,6 +113,12 @@
               <button type="submit" class="btn btn-primary">
                 {{ __('Aggiorna') }}
               </button>
+              
+              {{-- previous --}}
+            <a href="{{ url()->previous() }}" class="btn btn-md btn-info shadow-md text-white"
+              type="submit">
+              <i class="fas fa-arrow-left"></i> Indietro
+            </a>
             </div>
           </div>
           </form>
