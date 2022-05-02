@@ -47,11 +47,11 @@ class ProductController extends Controller
     public function store(Request $request, Product $product, User $user)
     {
         $request->validate([
-            'name' => 'required|max:50| min:2',
+            'name' => ['required', 'max:50', 'min:2'],
             'price' => ['required', 'regex:/^(\d+(\.\d*)?)|(\.\d+)$/', 'max:999', ' min: 1'],
             'description' => 'required| min:4 | max:500',
             'visibility' => 'boolean',
-            'image' => 'nullable', 'required',
+            'image' => 'required|image',
         ], [
             'name.required' => 'Il nome del prodotto è obbligatorio',
             'description.required' => 'La descrizione è obbligatoria',
@@ -64,7 +64,7 @@ class ProductController extends Controller
             'price.max' => 'Il prezzo deve essere massimo :max euro',
             'price.required' => 'Il prezzo è obbligatorio',
             'image' => 'Il formato dell\'immagine non è corretto.',
-            'boolean' => 'Deve essere vero o falso'
+            'boolean' => 'Deve essere vero o falso',
         ]);
 
         $data = $request->all();
@@ -136,7 +136,7 @@ class ProductController extends Controller
             'price' => 'required| max:999| min: 1| numeric',
             'description' => 'required| min:4 | max:500',
             'visibility' => 'boolean',
-            'image' => 'required', 'image'
+            'image' => 'image|nullable'
         ], [
             'name.required' => 'Il nome del prodotto è obbligatorio',
             'description.required' => 'La descrizione è obbligatoria',

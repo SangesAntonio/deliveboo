@@ -6,11 +6,9 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header">{{ __('Registra il tuo ristorante') }}</div>
-          <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-            @csrf
-
-            <div class="card-body">
-
+          <div class="card-body">
+            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+              @csrf
               <div class="form-group row">
                 <label for="restaurant_name"
                   class="col-md-4 col-form-label text-md-right">{{ __('Nome ristorante') }}</label>
@@ -115,14 +113,14 @@
                   @enderror
                 </div>
               </div>
+          </div>
+          <div class="form-group row mb-2">
+            <div class="col-md-6 offset-md-4">
+              <button type="submit" class="btn btn-primary">
+                {{ __('Registrati') }}
+              </button>
             </div>
-            <div class="form-group row mb-2">
-              <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary">
-                  {{ __('Registrati') }}
-                </button>
-              </div>
-            </div>
+          </div>
           </form>
         </div>
       </div>
