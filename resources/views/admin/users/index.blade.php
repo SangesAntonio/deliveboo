@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
-  <section id="home" class= ml-3 pt-2 d-flex align-items-center justify-content-center">
+  <section id="home" class=ml-3 pt-2 d-flex align-items-center justify-content-center">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -10,9 +9,15 @@
               alt="{{ Auth::user()->restaurant_name }}">
             <div class=" card-body d-flex flex-column align-items-center justify-content-center">
               {{-- nome ristorante --}}
-       <div class="mb-5">
+              <div class="mb-5 d-flex ">
                 <h2 class="card-title user-card-title">{{ Auth::user()->restaurant_name }}</h2>
-
+                <a href="{{ route('admin.users.edit', Auth::user()->id) }}" class="ml-2">
+                  <div class="mr-1">
+                    <button class="btn btn-sm btn-warning shadow-sm" type="submit">
+                      <i class="fas fa-pencil"></i>
+                    </button>
+                  </div>
+                </a>
               </div>
 
 
@@ -54,6 +59,7 @@
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
