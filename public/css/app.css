@@ -11366,3 +11366,7 @@ input:checked + .slider:before {
   color: white;
 }
 
+#orders-show .total {
+  border-bottom: black solid 1px;
+}
+
