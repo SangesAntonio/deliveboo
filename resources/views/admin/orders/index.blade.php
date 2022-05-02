@@ -5,37 +5,30 @@
         <div class="col text-center">
             <h1>Ordini ricevuti</h1>
         </div>
-        <div class="col p-5">
+        <div class=" p-5">
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Utente</th>
                         <th scope="col">Indirizzo</th>
-                        <th scope="col">Ordine</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Totale</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
+                @foreach($orders as $order)
                 <tbody>
                     <tr>
-                        <th scope="row">Davìd Croux</th>
-                        <td>via delle rose fiorite</td>
-                        <td>Pizza Margherita, offre margherita, Pizza Tonno e Cipolle</td>
-                        <td>20€</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">David cruz</th>
-                        <td>via delle rose fiorite</td>
-                        <td>Pizza Margherita, offre margherita, Pizza Tonno e Cipolle</td>
-                        <td>20€</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Davidi crucis</th>
-                        <td>via delle rose fiorite</td>
-                        <td>Pizza Margherita, offre margherita, Pizza Tonno e Cipolle</td>
-                        <td>20€</td>
+                        <th scope="row">{{$order->name}}</th>
+                        <td>{{$order->address}}</td>
+                        <td>{{$order->email}}</td>
+                        <td>{{$order->total_amount}}&euro;</td>
+                        <td><a href="{{route('admin.orders.show', $order->id)}}" class="btn btn-info">Dettagli</a></td>
                     </tr>
                 </tbody>
+                @endforeach
             </table>
         </div>
+        {!! $data->links() !!}
     </div>
 @endsection
