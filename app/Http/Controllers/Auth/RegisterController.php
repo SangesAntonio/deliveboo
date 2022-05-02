@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Models\Category;
 use Illuminate\Support\facades\Storage;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -73,7 +74,7 @@ class RegisterController extends Controller
             $data['image'] = $img;
         };
 
-        return User::create([
+        $user = User::create([
             'restaurant_name' => $data['restaurant_name'],
             'email' => $data['email'],
             'address' => $data['address'],
@@ -81,5 +82,17 @@ class RegisterController extends Controller
             'vat_number' => $data['vat_number'],
             'image' => $data['image']
         ]);
+
+        if (array_key_exists('categories', $data)) {
+            $user->categories()->attach($data['categories']);
+        }
+
+        return $user;
+    }
+
+    public function showRegistrationForm()
+    {
+        $categories = Category::orderBy('name', 'ASC')->get();
+        return view('auth.register')->with('categories', $categories);
     }
 }
