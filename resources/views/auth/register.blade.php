@@ -46,7 +46,7 @@
 
                 <div class="col-md-6">
                   <input id="address" type="text" class="form-control" name="address"
-                    @error('address') is-invalid @enderror" value="{{ old('address') }}" required
+                    @error('address') is-invalid @enderror value="{{ old('address') }}" required
                     autocomplete="address">
 
                   @error('address')
@@ -62,7 +62,7 @@
 
                 <div class="col-md-6">
                   <input id="password" type="password" class="form-control" name="password"
-                    @error('passsword') is-invalid @enderror" required autocomplete="new-passsword">
+                    @error('passsword') is-invalid @enderror required autocomplete="new-passsword">
 
                   @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -88,7 +88,7 @@
 
                 <div class="col-md-6">
                   <input id="vat_number" type="text" class="form-control" name="vat_number"
-                    @error('vat_number') is-invalid @enderror" value="{{ old('vat_number') }}" required
+                    @error('vat_number') is-invalid @enderror value="{{ old('vat_number') }}" required
                     autocomplete="vat_number">
 
                   @error('vat_number')
@@ -103,7 +103,7 @@
                   class="col-md-4 col-form-label text-md-right">{{ __('Immagine ristorante') }}</label>
 
                 <div class="col-md-6">
-                  <input type="file" class="file-input" id="image" name="image" @error('image') is-invalid @enderror"
+                  <input type="file" class="file-input" id="image" name="image" @error('image') is-invalid @enderror
                     required>
 
                   @error('image')
