@@ -7,6 +7,17 @@
         <div class="card">
           <div class="card-header">{{ __('Registra il tuo ristorante') }}</div>
           <div class="card-body">
+
+            {{-- ERRORI FORM --}}
+            @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
             <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
               @csrf
               <div class="form-group row">

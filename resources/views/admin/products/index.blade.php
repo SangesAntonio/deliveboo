@@ -95,7 +95,7 @@
             @endif
           </a>
         @empty
-          <h3>Non ci sono prodotti</h3>
+          <h3 class="px-3">Non ci sono prodotti</h3>
         @endforelse
       </div>
     </section>

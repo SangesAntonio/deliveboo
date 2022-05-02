@@ -111,15 +111,7 @@ deleteForms.forEach(function (form) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Laravel\deliveboo\resources\js\delete-form.js */"./resources/js/delete-form.js");
-=======
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\user\Desktop\deliveboo\resources\js\delete-form.js */"./resources/js/delete-form.js");
-=======
-module.exports = __webpack_require__(/*! C:\Laravel\deliveboo\resources\js\delete-form.js */"./resources/js/delete-form.js");
->>>>>>> master
->>>>>>> 69d04faedef8741eb25ec1f2c584332b214160c6
+module.exports = __webpack_require__(/*! C:\Users\sange\Downloads\deliveboo-master\deliveboo\resources\js\delete-form.js */"./resources/js/delete-form.js");
 
 
 /***/ })
