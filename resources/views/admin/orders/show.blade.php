@@ -14,13 +14,8 @@
         </div>
         <div class="col">
             <div class="container">
-                <div class="row card">
-                    <div class="col-6">
-                        Nome Prodotto
-                    </div>
-                    <div class="col-6">
-                        Immagine Prodotto
-                    </div>
+                <div class="d-flex justify-content-end">
+                    <h3>Totale:{{$order->total_amount}}&euro;</h3>
                 </div>
             </div>
         </div>
