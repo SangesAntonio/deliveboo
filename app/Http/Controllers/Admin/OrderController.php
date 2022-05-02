@@ -15,13 +15,13 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Order $order)
     {
         // DESC per Data
 
         $orders = Order::orderBy('updated_at', 'desc')->paginate(9);
 
-        return view('admin.orders.index', compact('orders',));
+        return view('admin.orders.index', compact('orders', 'order'));
     }
 
     /**
