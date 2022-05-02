@@ -11366,6 +11366,19 @@ input:checked + .slider:before {
   color: white;
 }
 
+.order-list {
+  background-color: rgba(246, 153, 63, 0.5);
+  border: 1px solid #764a1e;
+}
+
+.order-list tr {
+  border: 1px solid #764a1e;
+}
+
+.order-list thead {
+  background-color: rgba(149, 94, 38, 0.5);
+}
+
 #orders-show .total {
   border-bottom: black solid 1px;
 }

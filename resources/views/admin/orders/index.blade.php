@@ -6,7 +6,7 @@
             <h1>Ordini ricevuti</h1>
         </div>
         <div class=" p-5">
-            <table class="table table-hover rounded">
+            <table class="table table-hover rounded order-list table-borderless">
                 <thead>
                     <tr>
                         <th scope="col">Utente</th>
