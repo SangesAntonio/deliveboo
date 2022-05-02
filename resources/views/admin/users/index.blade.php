@@ -9,9 +9,13 @@
             <img class="img-fluid card-img-top w-100" src="{{ asset('/storage/' . Auth::user()->image) }}"
               alt="{{ Auth::user()->restaurant_name }}">
               {{-- edit button --}}
-              <button id="button-edit-user-index" class="btn btn-md btn-warning shadow-md" type="submit">
-                <i class="fas fa-pencil"></i>
-              </button>
+              <a href="{{ route('admin.users.edit', Auth::user()->id) }}">
+                <div class="mr-1">
+                  <button class="btn btn-sm btn-warning shadow-sm" type="submit">
+                    <i class="fas fa-pencil"></i>
+                  </button>
+                </div>
+              </a>
 
             <div class=" card-body d-flex flex-column align-items-center justify-content-center">
               
