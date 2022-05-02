@@ -20,6 +20,8 @@
           <p>Prodotti visibili</p>
         </div>
       </div>
+
+      {{-- lista prodotti visibili --}}
       <div class="row">
         @forelse($products as $product)
           <a href="{{ route('admin.products.show', $product->id) }}" class="text-decoration-none">
@@ -50,17 +52,38 @@
                                 </button>
                               </div>
                             </a>
-                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="post"
-                              class="delete-form">
-                              @csrf
-                              @method('delete')
+                            
 
-                              <div class="ml-1">
-                                <button class="btn btn-sm btn-danger shadow-sm" type=" submit">
-                                  <i class="fas fa-trash"></i>
-                                </button>
+                            {{-- modale eliminazione --}}
+                            <div class="ml-1">
+                              <button class="btn btn-sm btn-danger shadow-sm" type=" submit"  data-toggle="modal" data-target="#ModalTrash{{$product->id}}">
+                                <i class="fas fa-trash"></i>
+                              </button>
+                            </div>
+                            <div class="modal fade" id="ModalTrash{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Conferma eliminazione prodotto</h5>
+                                    
+                                  </div>
+                                  <div class="modal-body d-flex justify-content-start">
+                                    Vuoi eliminare: {{$product->name}}
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+
+                                    {{-- form eliminazione modale --}}
+                                    <form action="{{ route('admin.products.destroy', $product->id) }}" method="post"
+                                      class="delete-form">
+                                      @csrf
+                                      @method('delete')
+                                      <button type="submit" class="btn btn-danger">Elimina</button>
+                                    </form>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </form>
                           </div>
                         </div>
                       </div>
@@ -114,17 +137,35 @@
                                 </button>
                               </div>
                             </a>
-                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="post"
-                              class="delete-form">
-                              @csrf
-                              @method('delete')
+                            <div class="ml-1">
+                              <button class="btn btn-sm btn-danger shadow-sm" type=" submit"  data-toggle="modal" data-target="#ModalTrash{{$product->id}}">
+                                <i class="fas fa-trash"></i>
+                              </button>
+                            </div>
+                            <div class="modal fade" id="ModalTrash{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Conferma eliminazione prodotto</h5>
+                                    
+                                  </div>
+                                  <div class="modal-body d-flex justify-content-start">
+                                    Vuoi eliminare: {{$product->name}}
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
 
-                              <div class="ml-1">
-                                <button class="btn btn-sm btn-danger shadow-sm" type=" submit">
-                                  <i class="fas fa-trash"></i>
-                                </button>
+                                    {{-- form eliminazione modale --}}
+                                    <form action="{{ route('admin.products.destroy', $product->id) }}" method="post"
+                                      class="delete-form">
+                                      @csrf
+                                      @method('delete')
+                                      <button type="submit" class="btn btn-danger">Elimina</button>
+                                    </form>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </form>
                           </div>
                         </div>
                       </div>
@@ -142,4 +183,5 @@
 
 @section('scripts')
   <script src="{{ asset('js/delete-form.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 @endsection
