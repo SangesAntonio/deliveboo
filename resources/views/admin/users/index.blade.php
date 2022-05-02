@@ -5,7 +5,7 @@
       <div class="row h-100">
         <div class="col-12 h-100">
           <div class="card box-shadow-profile h-100">
-            <img class="img-fluid card-img-top w-100" src="{{ Auth::user()->image }}"
+            <img class="img-fluid card-img-top w-100" src="{{ asset('/storage/' . Auth::user()->image) }}"
               alt="{{ Auth::user()->restaurant_name }}">
             <div class=" card-body d-flex flex-column align-items-center justify-content-center h-100">
               {{-- nome ristorante --}}

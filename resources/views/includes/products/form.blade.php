@@ -25,16 +25,16 @@
     @endif
     @csrf
     <div class="mb-3">
-      <label for="title" class="form-label">Nome Prodotto</label>
-      <input type="text" class="form-control" id="title" placeholder="Nome prodotto" name="name"
-        value=" {{ old('name', $product->name) }}" required trim minlength="2" maxlength="50">
+      <label for="name" class="form-label">Nome Prodotto</label>
+      <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $product->name) }}"
+        required trim minlength="2" maxlength="50">
     </div>
 
     <!--Input descrizione-->
 
     <div class="mb-3">
-      <label for="content" class="form-label">Descrizione Prodotto</label>
-      <textarea class="form-control" id="content" placeholder="Descrivi il prodotto" name="description" minlength="4"
+      <label for="description" class="form-label">Descrizione Prodotto</label>
+      <textarea class="form-control" id="description" name="description" minlength="4"
         maxlength="500">{{ old('description', $product->description) }}</textarea>
     </div>
 
@@ -42,8 +42,8 @@
     <div class="input-group">
       <label for="price" class="col-12 p-0">Inserisci il prezzo </label>
       <input type="number" class="form-control" name="price" value="{{ old('price', $product->price) }}" step=".01"
-        min="1" max="999">
-      <div class="input-group-append" id="price">
+        min="1" max="999" id="price">
+      <div class="input-group-append">
         <span class="input-group-text">€</span>
       </div>
     </div>
@@ -64,7 +64,7 @@
         Visibilità
       </label>
       <input type="checkbox" name="visibility" value="1"
-        {{ old('visibility', $product->visibility) ? 'checked="checked"' : '' }}id="visibility"
+        {{ old('visibility', $product->visibility) ? 'checked="checked"' : '' }} id="visibility"
         class='form-check-label'>
     </div>
 

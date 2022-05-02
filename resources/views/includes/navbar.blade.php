@@ -15,7 +15,7 @@
         <span class="image">
           @guest
           @else
-            <img src="{{ Auth::user()->image }}" alt="{{ Auth::user()->restaurant_name }}" class="rounded-lg">
+            <img src="{{ asset('/storage/' . Auth::user()->image) }}" alt="{{ Auth::user()->restaurant_name }}" class="rounded-lg">
           @endguest
         </span>
 
