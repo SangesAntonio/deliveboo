@@ -11137,7 +11137,6 @@ body {
   display: none;
 }
 
-<<<<<<< HEAD
 *,
 *::after,
 *::before {
@@ -11533,14 +11532,14 @@ body {
   .showcase-area {
     height: 50vmax;
   }
-=======
+}
+
 *::-webkit-scrollbar {
   width: 0 !important;
 }
 
 body {
   scrollbar-width: none;
->>>>>>> 69d04faedef8741eb25ec1f2c584332b214160c6
 }
 
 .full-height {
