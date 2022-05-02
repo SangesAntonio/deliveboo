@@ -38,33 +38,34 @@
                                             <div class="media d-flex">
                                                 <div class="align-self-center">
                                                     <img src="{{ $product->image }}" alt="{{ $product->name }}"
-                                                        class="rounded-lg">
+                                                        class="rounded-lg img-fluid">
                                                 </div>
                                                 <div class="media-body text-right">
                                                     <h3>{{ $product->name }}</h3>
                                                     <span>€ {{ $product->price }}</span>
+                                                    <div class="d-flex justify-content-end my-3">
+                                                        <a href="{{ route('admin.products.edit', $product->id) }}">
+                                                            <div class="mr-1">
+                                                                <button class="btn btn-sm btn-warning shadow-sm" type="submit">
+                                                                    <i class="fas fa-pencil"></i>
+                                                                </button>
+                                                            </div>
+                                                        </a>
+                                                        <form action="{{ route('admin.products.destroy', $product->id) }}"
+                                                            method="post" class="delete-form">
+                                                            @csrf
+                                                            @method('delete')
+        
+                                                            <div class="ml-1">
+                                                                <button class="btn btn-sm btn-danger shadow-sm" type=" submit">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-end">
-                                                <a href="{{ route('admin.products.edit', $product->id) }}">
-                                                    <div class="mr-1">
-                                                        <button class="btn btn-sm btn-warning shadow-sm" type="submit">
-                                                            <i class="fas fa-pencil"></i>
-                                                        </button>
-                                                    </div>
-                                                </a>
-                                                <form action="{{ route('admin.products.destroy', $product->id) }}"
-                                                    method="post" class="delete-form">
-                                                    @csrf
-                                                    @method('delete')
-
-                                                    <div class="ml-1">
-                                                        <button class="btn btn-sm btn-danger shadow-sm" type=" submit">
-                                                            <i class="fas fa-trash"></i>
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>

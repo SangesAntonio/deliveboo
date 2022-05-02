@@ -27,7 +27,7 @@
     <div class="mb-3">
       <label for="title" class="form-label">Nome Prodotto</label>
       <input type="text" class="form-control" id="title" placeholder="Nome prodotto" name="name"
-        value=" {{ old('name', $product->name) }}" required trim minlength="2" maxlength="50">
+        value="{{ old('name', $product->name) }}" required trim minlength="2" maxlength="50">
     </div>
 
     <!--Input descrizione-->
