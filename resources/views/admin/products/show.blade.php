@@ -5,25 +5,25 @@
     <div class="container">
       <div class="card p-5 box-shadow-card">
         <div class="col text-center">
-          <h2 style="text-transform: uppercase">{{ $product->name }}</h2>
+            <h2 id="show-title" style="text-transform: uppercase">{{ $product->name }}</h2>
+            <hr>
         </div>
-        <div class="row pt-3 d-flex justify-content-around">
-          <div class="col-3">
-            @if (isset($product->image))
-              <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="rounded-lg">
-            @else
-              <img class="rounded-lg"
-                src="https://us.123rf.com/450wm/mathier/mathier1905/mathier190500002/134557216-nessuna-immagine-in-miniatura-segnaposto-per-forum-blog-e-siti-web.jpg"
-                alt="nessuna immagine disponibile">
-            @endif
-          </div>
-          <div class="col-5">
-            <h5>Descrizione:</h5>
-            <p>{{ $product->description }}</p>
-            <h5>Prezzo:</h5>
-            <p> {{ $product->price }} €</p>
-          </div>
+        <div class="row pt-5 d-flex justify-content-around">
+            {{-- image --}}
+            <div class="col-7">
+                <img id="img-show" class="img-fluid" src="{{ $product->image }}" alt="{{ $product->name }}">
+            </div>
+            
+            {{-- description --}}
+            <div class="col-5 d-flex flex-column">
+                <h5 class="h1">Descrizione:</h5>
+                <p class="align-self-center">{{ $product->description }}</p>
+            </div>
+
         </div>
+        <hr class="my-5">
+        {{-- price --}}
+        <p class="py-5 h2 font-weight-bold">Prezzo: <span class="mx-5">{{ $product->price }} € <span></p>
 
         {{-- form edit + delete --}}
         <div class="row justify-content-end">

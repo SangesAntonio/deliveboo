@@ -25,6 +25,7 @@
     @endif
     @csrf
     <div class="mb-3">
+
       <label for="name" class="form-label">Nome Prodotto</label>
       <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $product->name) }}"
         required trim minlength="2" maxlength="50">
