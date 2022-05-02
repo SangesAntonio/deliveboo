@@ -16,6 +16,16 @@ html body:not(#guest) {
     background-repeat: repeat;
 }
 
+main {
+    padding-top: 100px;
+}
+
+@media only screen and (max-width:992px) {
+    html body:not(#guest) {
+        padding-left: 0px;
+    }
+}
+
 .grey-bg {
     background-color: #f5f7fa;
 }
@@ -44,12 +54,15 @@ html body:not(#guest) {
         object-fit: cover;
         object-position: top center;
     }
+
     .card-body {
         min-height: 300px;
+
         div {
             margin: 10px 0;
         }
     }
+
     #show-product {
         img {
             width: 300px;

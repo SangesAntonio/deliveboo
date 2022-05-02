@@ -7,7 +7,7 @@
 :root {
     /* ===== Colors ===== */
     --body-color: #e4e9f7;
-    --sidebar-color: #ffe4be;
+    --sidebar-color: #ffdeb0;
     --primary-color: #00CCBC;
     --primary-color-light: #f6f5ff;
     --toggle-color: #ddd;
@@ -34,13 +34,14 @@ body {
 .sidebar {
     text-transform: capitalize;
     position: fixed;
-    top: 0;
+    top: 0px;
     left: 0;
     height: 100%;
     width: 250px;
     padding: 10px 14px;
     background: var(--sidebar-color);
     z-index: 100;
+
     /* ===== Reusable code - Here ===== */
     li {
         height: 50px;
@@ -49,10 +50,12 @@ body {
         align-items: center;
         margin-top: 10px;
     }
+
     header .image {
         min-width: 60px;
         border-radius: 6px;
     }
+
     i {
         min-width: 60px;
         border-radius: 6px;
@@ -63,34 +66,42 @@ body {
         font-size: 20px;
         color: var(--text-color);
     }
+
     .text {
         color: var(--text-color);
     }
+
     header {
         position: relative;
+
         .image-text {
             display: flex;
             align-items: center;
+
             .name {
                 text-transform: uppercase;
                 margin-top: 2px;
                 font-size: 14px;
                 font-weight: 600;
             }
+
             .profession {
                 font-size: 16px;
                 margin-top: -2px;
                 display: block;
             }
         }
+
         .logo-text {
             display: flex;
             flex-direction: column;
         }
+
         .image {
             display: flex;
             align-items: center;
             justify-content: center;
+
             img {
                 margin: 0 20px;
                 object-fit: cover;
@@ -99,13 +110,16 @@ body {
             }
         }
     }
+
     .menu {
         margin-top: 40px;
     }
+
     li.search-box {
         border-radius: 6px;
         background-color: var(--primary-color-light);
         cursor: pointer;
+
         input {
             height: 100%;
             width: 100%;
@@ -118,6 +132,7 @@ body {
             font-weight: 500;
         }
     }
+
     li a {
         list-style: none;
         height: 100%;
@@ -128,20 +143,24 @@ body {
         width: 100%;
         border-radius: 6px;
         text-decoration: none;
+
         &:hover {
             background-color: var(--primary-color);
+
             i,
             .text {
                 color: var(--sidebar-color);
             }
         }
     }
+
     .menu-bar {
         height: calc(100% - 55px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         overflow-y: scroll;
+
         &::-webkit-scrollbar {
             display: none;
         }

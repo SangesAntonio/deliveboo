@@ -30,10 +30,9 @@
 <body>
     @include('includes.navbar')
 
-    <main class="py-4">
+    <main>
         @yield('content')
     </main>
-
 
     @yield('scripts')
 </body>
