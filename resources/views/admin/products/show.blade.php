@@ -14,10 +14,10 @@
                 <img id="img-show" class="img-fluid" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
             </div>
             
-            {{-- description --}}
+            {{-- ingredienti --}}
             <div class="col-5 d-flex flex-column">
-                <h5 class="h1">Descrizione:</h5>
-                <p class="align-self-center">{{ $product->description }}</p>
+                <h5 class="h1">Ingredienti:</h5>
+                <p class="align-self-center">{{ $product->ingredients }}</p>
             </div>
 
         </div>

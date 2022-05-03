@@ -51,7 +51,8 @@ class UserController extends Controller
                 'password' => ['required', 'confirmed', 'password:api'],
                 'address' => 'required|string',
                 'vat_number' => ['unique', 'required', 'string', 'size:11'],
-                'image' =>  ['required', 'image'] //mimes:jpg, png , pdf --> need this to specify the type of the file
+                'phone_number' => ['string', 'required', 'numeric'],
+                'image' =>  ['required', 'image']
             ],
             [
                 'required' => 'il campo :attribute è obbligatorio!',
@@ -65,7 +66,7 @@ class UserController extends Controller
                 'email.email' => 'sei sicuro di aver inserito l\'email corretta?',
                 'email.unique' => 'Esiste già un utente con questa mail!',
                 'password.password' => 'la password non rispetta i criteri , inserisci un\'altra password',
-
+                'phone_number.numeric' => 'Non hai inserito dei numeri corretti.'
             ]
         );
 
@@ -122,7 +123,8 @@ class UserController extends Controller
                 'email' => ['required', 'string', 'email', Rule::unique('users')->ignore($user->id), 'max:255', 'regex:/^.+@.+$/i', 'email:rfc,dns'],
                 'address' => ['string', 'required', Rule::unique('users')->ignore($user->id), 'max:50', 'regex:/^\s*\S+(?:\s+\S+){2}/'],
                 'vat_number' => ['string', 'required', Rule::unique('users')->ignore($user->id), 'size:11'],
-                'image' =>  ['image', 'nullable']
+                'phone_number' => ['string', 'required', Rule::unique('users')->ignore($user->id), 'numeric'],
+                'image' =>  ['image', 'nullable', Rule::unique('users')->ignore($user->id)]
             ],
             [
                 'required' => 'il campo :attribute è obbligatorio!',
@@ -135,6 +137,7 @@ class UserController extends Controller
                 'email.regex' => 'il campo :attribute contiente caratteri vietati',
                 'email.email' => 'sei sicuro di aver inserito l\'email corretta?',
                 'email.unique' => 'Esiste già un utente con questa mail!',
+                'phone_number.numeric' => 'Non hai inserito dei numeri corretti.'
 
             ]
         );

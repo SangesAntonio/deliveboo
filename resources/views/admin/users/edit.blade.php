@@ -6,7 +6,7 @@
         <div class="card">
           <div class="card-header">{{ __('Aggiorna il tuo ristorante') }}</div>
 
-            {{-- ERRORI FORM --}}
+          {{-- ERRORI FORM --}}
           @if ($errors->any())
             <div class="alert alert-danger">
               <ul>
@@ -71,6 +71,22 @@
               </div>
 
               <div class="form-group row">
+                <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Telefono') }}</label>
+
+                <div class="col-md-6">
+                  <input id="phone_number" type="text" class="form-control" name="phone_number"
+                    @error('phone_number') is-invalid @enderror value="{{ old('phone_number', $user->phone_number) }}"
+                    required min="6" max="15" autocomplete="phone-number">
+
+                  @error('phone_number')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
+                </div>
+              </div>
+
+              <div class="form-group row">
                 <label for="vat_number" class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
 
                 <div class="col-md-6">
@@ -124,12 +140,11 @@
               <button type="submit" class="btn btn-primary">
                 {{ __('Aggiorna') }}
               </button>
-              
+
               {{-- previous --}}
-            <a href="{{ url()->previous() }}" class="btn btn-md btn-info shadow-md text-white"
-              type="submit">
-              <i class="fas fa-arrow-left"></i> Indietro
-            </a>
+              <a href="{{ url()->previous() }}" class="btn btn-md btn-info shadow-md text-white" type="submit">
+                <i class="fas fa-arrow-left"></i> Indietro
+              </a>
             </div>
           </div>
           </form>

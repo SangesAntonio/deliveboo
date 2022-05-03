@@ -1,9 +1,9 @@
 <div id="product-form">
   <div class="container d-flex flex-column justify-content-center align-items-center">
     @if (!$product->exists)
-      <h1> Crea un nuovo prodotto</h1>
+      <h1> Crea un nuovo piatto</h1>
     @else
-      <h1>Modifica prodotto</h1>
+      <h1>Modifica piatto</h1>
     @endif
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -26,22 +26,22 @@
     @csrf
     <div class="mb-3">
 
-      <label for="name" class="form-label">Nome Prodotto</label>
+      <label for="name" class="form-label">Nome</label>
       <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $product->name) }}"
         required trim minlength="2" maxlength="50">
     </div>
 
-    <!--Input descrizione-->
+    <!--Input ingredienti-->
 
     <div class="mb-3">
-      <label for="description" class="form-label">Descrizione Prodotto</label>
-      <textarea class="form-control" id="description" name="description" minlength="4"
-        maxlength="500">{{ old('description', $product->description) }}</textarea>
+      <label for="ingredients" class="form-label">Ingredienti</label>
+      <textarea class="form-control" id="ingredients" name="ingredients" minlength="4"
+        maxlength="500">{{ old('ingredients', $product->ingredients) }}</textarea>
     </div>
 
     <!--Input prezzo-->
     <div class="input-group">
-      <label for="price" class="col-12 p-0">Inserisci il prezzo </label>
+      <label for="price" class="col-12 p-0">Prezzo </label>
       <input type="number" class="form-control" name="price" value="{{ old('price', $product->price) }}" step=".01" required
         min="1" max="100" id="price">
       <div class="input-group-append">
@@ -53,7 +53,7 @@
     <!--Input immagine-->
     <div class="mb-2 mt-3 d-flex justify-content-between">
       <div class="custom-file col-6">
-        <label for="image-input" class="custom-file-label w-50">Carica immagine</label>
+        <label for="image-input" class="custom-file-label w-50">Immagine</label>
         <input type="file" id="image-input" class=" w-50"  name="image" >
       </div>
 

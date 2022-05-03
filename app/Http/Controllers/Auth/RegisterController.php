@@ -57,7 +57,8 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:4', 'confirmed'],
             'address' => ['string', 'required', 'unique:users', 'max:50', 'regex:/^\s*\S+(?:\s+\S+){2}/'],
             'vat_number' => ['string', 'required', 'unique:users', 'size:11'],
-            'image' =>  ['image', 'required']
+            'image' =>  ['image', 'required'],
+            'phone_number' => ['string', 'required', 'numeric']
         ]);
     }
 
@@ -80,7 +81,8 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'password' => Hash::make($data['password']),
             'vat_number' => $data['vat_number'],
-            'image' => $data['image']
+            'image' => $data['image'],
+            'phone_number' => $data['phone_number']
         ]);
 
         if (array_key_exists('categories', $data)) {
