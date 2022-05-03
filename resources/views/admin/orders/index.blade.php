@@ -81,7 +81,7 @@
                                         </tr>
                                         <tr>
                                             <th colspan='3'>Totale Ordine</th>
-                                            <th>12&euro;</th>
+                                            <th>{{ $order->total_amount }}&euro;</th>
                                         </tr>
                                     </tbody>
                             </table>
