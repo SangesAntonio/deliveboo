@@ -7,7 +7,7 @@
         </div>
         <div class="col d-flex justify-content-end">
             <span class="badge badge-pill bg-primary">
-                <span class="h4">Ordine n° {{ $order->id }}</span>
+                <span class="h4">ordine n° {{ $order->id }}</span>
             </span>
         </div>
         <div class="col">
@@ -18,7 +18,9 @@
         <div class="col">
             <div class="container">
                 <div class="d-flex justify-content-end">
-                    <h3 class="total">Totale: <span class="mx-3">{{$order->total_amount}}&euro;</span></h3>
+                    <h3 class="total">Totale: <span
+                            class="mx-3">{{ $order->total_amount }}&euro;</span>
+                    </h3>
                 </div>
             </div>
         </div>
