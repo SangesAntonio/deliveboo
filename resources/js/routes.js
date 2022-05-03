@@ -15,7 +15,7 @@
      mode: 'history',
      linkExactActiveClass: 'active',
      routes: [
-         { path: '/', component: HomePage, name: 'home' },
+         { path: '/home', component: HomePage, name: 'home' },
          { path: '/products', component: ProductListPage, name: 'products' },
          { path: '/products/:product_name', component: SingleProductPage, name: 'product-detail' },
          { path: '/restaurants', component: RestaurantListPage, name: 'restaurants' },
