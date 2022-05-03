@@ -71,7 +71,7 @@
   </style>
 </head>
 
-<body>
+<body id="guest">
   <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
       <div class="top-right links">
@@ -87,7 +87,7 @@
       </div>
     @endif
 
-    <div class="content" id="guest">
+    <div class="content">
       @guest
         <div id="root">
         </div>

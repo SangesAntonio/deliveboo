@@ -16,6 +16,9 @@ body {
 
 html body:not(#guest) {
     padding-left: 250px;
+}
+
+html body#guest {
     background-image: url("../../public/img/background/Desktop-Background.jpg");
     background-position: center;
     background-size: cover;
@@ -26,7 +29,7 @@ main {
     padding-top: 100px;
 }
 
-@media only screen and (max-width:992px) {
+@media only screen and (max-width: 992px) {
     html body:not(#guest) {
         padding-left: 0px;
     }
