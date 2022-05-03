@@ -55,7 +55,7 @@ class UserController extends Controller
             ],
             [
                 'required' => 'il campo :attribute è obbligatorio!',
-                'vat_number.unique' => "Il campo :attribute: $request->restaurant_name risulta già registrato!",
+                'vat_number.unique' => "Il campo :attribute $request->vat_number risulta già registrato!",
                 'restaurant_name.min' => "$request->title deve essere più lungo di 2 caratteri!",
                 'restaurant_name.max' => "$request->title deve essere più corto di 50 caratteri!",
                 'size' => 'il campo :attribute deve essere esattamente 11',
@@ -124,7 +124,7 @@ class UserController extends Controller
             ],
             [
                 'required' => 'il campo :attribute è obbligatorio!',
-                'vat_number.unique' => "Il campo :attribute: $request->restaurant_name risulta già registrato!",
+                'vat_number.unique' => "Il campo :attribute $request->vat_number risulta già registrato!",
                 'restaurant_name.min' => "$request->title deve essere più lungo di 2 caratteri!",
                 'restaurant_name.max' => "$request->title deve essere più corto di 50 caratteri!",
                 'size' => 'il campo :attribute deve essere esattamente 11',
