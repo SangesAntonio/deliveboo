@@ -12,17 +12,11 @@
             <div class="row">
                 <div class="col-12 my-1">
                     <div class="d-flex justify-content-between">
-                        <h4 class="text-uppercase">Lista Prodotti</h4>
-                        <div class="d-flex">
-                            <div class="d-flex justify-content-end mr-2">
-                                <a href="{{ route('admin.products.trash.index') }}"
-                                    class="btn btn-small btn-secondary text-white">Vedi Cestino</a>
-                            </div>
-                            <a href="{{ route('admin.products.create') }}">
-                                <button class="btn btn-success"><i class="fa-solid fa-plus"></i> Nuovo
-                                    Prodotto</button>
-                            </a>
-                        </div>
+                        <h4 class="text-uppercase">Lista Prodotti nel cestino</h4>
+                        <a href="{{ route('admin.products.create') }}">
+                            <a href="{{ route('admin.products.index') }}" class="btn btn-success shadow-sm text-white"><i
+                                    class="fa-solid fa-chevron-left"></i> Torna ai prodotti</a>
+                        </a>
                     </div>
                     <p>Prodotti visibili</p>
                 </div>
@@ -32,7 +26,7 @@
             <div class="row">
                 @forelse($products as $product)
                     <a href="{{ route('admin.products.show', $product->id) }}" class="text-decoration-none">
-                        @if ($product->visibility && !$product->deleted_at)
+                        @if ($product->visibility)
                             <div class="col-xl-4 col-md-6 col-12 my-2">
                                 <div class="card box-shadow-card" role="button">
                                     <div class="card-content">
@@ -60,7 +54,14 @@
                                                                 </button>
                                                             </div>
                                                         </a>
-
+                                                        <form
+                                                            action="{{ route('admin.products.trash.restore', $product->id) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('patch')
+                                                            <button type="submit"
+                                                                class="btn btn-sm btn-success">Ripristina</button>
+                                                        </form>
 
                                                         {{-- modale eliminazione --}}
                                                         <div class="ml-1">
@@ -81,7 +82,7 @@
 
                                                                     </div>
                                                                     <div class="modal-body d-flex justify-content-start">
-                                                                        Vuoi cestinare: {{ $product->name }}
+                                                                        Vuoi eliminare: {{ $product->name }}
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
@@ -89,10 +90,10 @@
 
                                                                         {{-- form eliminazione modale --}}
                                                                         <form
-                                                                            action="{{ route('admin.products.destroy', $product->id) }}"
+                                                                            action="{{ route('admin.products.trash.destroy', $product->id) }}"
                                                                             method="post" class="delete-form">
                                                                             @csrf
-                                                                            @method('DELETE')
+                                                                            @method('delete')
                                                                             <button type="submit"
                                                                                 class="btn btn-danger">Elimina</button>
                                                                         </form>
@@ -103,6 +104,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +127,7 @@
             <div class="row">
                 @foreach ($products as $product)
                     <a href="{{ route('admin.products.show', $product->id) }}" class="text-decoration-none">
-                        @if (!$product->visibility && !$product->deleted_at)
+                        @if (!$product->visibility)
                             <div class="col-xl-4 col-md-6 col-12 my-2">
                                 <div class="card box-shadow-card" role="button">
                                     <div class="card-content">
@@ -153,7 +155,14 @@
                                                                 </button>
                                                             </div>
                                                         </a>
-                                                        {{-- modale eliminazione --}}
+                                                        <form
+                                                            action="{{ route('admin.products.trash.restore', $product->id) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('patch')
+                                                            <button type="submit"
+                                                                class="btn btn-sm btn-success">Ripristina</button>
+                                                        </form>
                                                         <div class="ml-1">
                                                             <button class="btn btn-sm btn-danger shadow-sm" type=" submit"
                                                                 data-toggle="modal"
@@ -172,7 +181,7 @@
 
                                                                     </div>
                                                                     <div class="modal-body d-flex justify-content-start">
-                                                                        Vuoi cestinare: {{ $product->name }}
+                                                                        Vuoi eliminare: {{ $product->name }}
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
@@ -180,10 +189,10 @@
 
                                                                         {{-- form eliminazione modale --}}
                                                                         <form
-                                                                            action="{{ route('admin.products.destroy', $product->id) }}"
+                                                                            action="{{ route('admin.products.trash.destroy', $product->id) }}"
                                                                             method="post" class="delete-form">
                                                                             @csrf
-                                                                            @method('DELETE')
+                                                                            @method('delete')
                                                                             <button type="submit"
                                                                                 class="btn btn-danger">Elimina</button>
                                                                         </form>
