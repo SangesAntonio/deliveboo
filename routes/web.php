@@ -15,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::prefix('admin/products')->name('admin.products.trash.')->namespace('Trash')->group(function () {
+    // Rotta per vedere la lista dei prodotti nel cestino
+    Route::get('/trash', 'ProductController@index')->name('index');
+
+    // Rotta per ripristinare una squadra
+    Route::patch('/{product}/trash', 'ProductController@restore')->name('restore');
+
+    // Metodo per eliminare definitivamente
+    Route::delete('/{product}/destroy', 'ProductController@destroy')->name('destroy');
+});
+
 // * Tutte le rotte sono protette con il middleware auth
 Route::middleware('auth')
     ->prefix('admin')
@@ -22,6 +33,8 @@ Route::middleware('auth')
     ->namespace('Admin')
     ->group(function () {
         Route::get('/', 'HomeController@index')->name('home');
+
+
         Route::get('/statistics', 'UserController@statistics')->name('statistics.index');
 
         Route::resource('users', 'UserController');
