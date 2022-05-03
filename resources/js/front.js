@@ -1,7 +1,7 @@
 window.Vue = require('vue');
 
 import Vue from 'vue';
-import router from './routes';
+import router from './routes.js';
 import App from './components/App.vue';
 
 const root = new Vue({
