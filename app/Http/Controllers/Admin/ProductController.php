@@ -94,8 +94,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
+        $product = Product::withTrashed()->findOrFail($id);
+
         return view('admin.products.show', compact('product'));
     }
 
@@ -105,9 +107,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
+        $product = Product::withTrashed()->findOrFail($id);
         if ($product->user_id !== auth()->user()->id) abort(404);
+
+
         return view('admin.products.edit', compact('product'));
     }
 
@@ -118,8 +123,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
+        $product = Product::withTrashed()->findOrFail($id);
+
         $request->validate([
             'name' => 'required|max:50| min:2',
             'price' => 'required| max:999| min: 1| numeric',
@@ -164,8 +171,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        if ($product->image) Storage::delete($product->image);
-
         $product->delete();
 
         return redirect()->route('admin.products.index');
