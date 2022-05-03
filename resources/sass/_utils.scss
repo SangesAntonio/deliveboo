@@ -16,6 +16,10 @@ body {
 
 html body:not(#guest) {
     padding-left: 250px;
+    background-image: url("../../public/img/background/Desktop-Background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
 }
 
 html body#guest {

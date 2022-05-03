@@ -11554,6 +11554,10 @@ body {
 
 html body:not(#guest) {
   padding-left: 250px;
+  background-image: url(/images/Desktop-Background.jpg?786d0b88409b6f44eba65c9bed21056a);
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 html body#guest {
