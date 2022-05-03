@@ -11560,6 +11560,13 @@ html body:not(#guest) {
   background-repeat: repeat;
 }
 
+html body#guest {
+  background-image: url(/images/Desktop-Background.jpg?786d0b88409b6f44eba65c9bed21056a);
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
 main {
   padding-top: 100px;
 }
@@ -11668,6 +11675,21 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.imag-preview {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.imag-preview img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 150px;
+  height: 150px;
 }
 
 #statistics .card {

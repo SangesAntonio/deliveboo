@@ -57,3 +57,19 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.imag-preview {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        object-position: center;
+        width: 150px;
+        height: 150px;
+
+    }
+
+
+}

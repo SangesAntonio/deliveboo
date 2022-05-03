@@ -42,7 +42,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Product $product, User $user)
+    public function store(Request $request, Product $product)
     {
         $request->validate([
             'name' => ['required', 'max:50', 'min:2'],
@@ -86,16 +86,6 @@ class ProductController extends Controller
         return redirect()->route('admin.products.show', $product->id);
     }
 
-    public function toggle(Product $product)
-    {
-        $product->visibility = !$product->visibility;
-        $product->save();
-
-        return redirect()->route('admin.products.show');
-    }
-
-
-
     // Rule::unique('product')->ignore($product->id)
 
     /**
@@ -121,6 +111,7 @@ class ProductController extends Controller
     {
         $product = Product::withTrashed()->findOrFail($id);
         if ($product->user_id !== auth()->user()->id) abort(404);
+
 
         return view('admin.products.edit', compact('product'));
     }

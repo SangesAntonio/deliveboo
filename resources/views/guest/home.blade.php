@@ -10,7 +10,11 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
+  <!-- Importo Vue nel componente che usa #root -->
+  <script src="{{ asset('js/front.js') }}" defer></script>
+
+  <!-- Importo lo stile perchè per ora c'è solo bootstrap -->
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
   <style>
     html,
     body {
@@ -67,7 +71,7 @@
   </style>
 </head>
 
-<body>
+<body id="guest">
   <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
       <div class="top-right links">
@@ -84,9 +88,11 @@
     @endif
 
     <div class="content">
-      <div class="title m-b-md">
-        Deliveboo
-      </div>
+      @guest
+        <div id="root">
+        </div>
+      @else
+      @endguest
     </div>
   </div>
 </body>
