@@ -86,16 +86,6 @@ class ProductController extends Controller
         return redirect()->route('admin.products.show', $product->id);
     }
 
-    public function toggle(Product $product)
-    {
-        $product->visibility = !$product->visibility;
-        $product->save();
-
-        return redirect()->route('admin.products.show');
-    }
-
-
-
     // Rule::unique('product')->ignore($product->id)
 
     /**
