@@ -97,6 +97,8 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+        if ($user->id !== auth()->user()->id) abort(404);
+
         $categories = Category::orderBy('name', 'ASC')->get();
 
         $user_categories_ids = $user->categories->pluck('id')->toArray();
