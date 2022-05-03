@@ -42,8 +42,8 @@
     <!--Input prezzo-->
     <div class="input-group">
       <label for="price" class="col-12 p-0">Inserisci il prezzo </label>
-      <input type="number" class="form-control" name="price" value="{{ old('price', $product->price) }}" step=".01"
-        min="1" max="999" id="price">
+      <input type="number" class="form-control" name="price" value="{{ old('price', $product->price) }}" step=".01" required
+        min="1" max="100" id="price">
       <div class="input-group-append">
         <span class="input-group-text">€</span>
       </div>
