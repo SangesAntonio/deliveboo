@@ -81,37 +81,45 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/delete-form.js":
-/*!*************************************!*\
-  !*** ./resources/js/delete-form.js ***!
-  \*************************************/
+/***/ "./resources/js/imag-preview.js":
+/*!**************************************!*\
+  !*** ./resources/js/imag-preview.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var deleteForms = document.querySelectorAll('.delete-form');
-deleteForms.forEach(function (form) {
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var accept = confirm("Sei sicuro di voler cancellare questo prodotto?");
-    if (accept) e.target.submit();
-  });
+//immagine placeholder
+var placeholder = 'https://us.123rf.com/450wm/mathier/mathier1905/mathier190500002/134557216-nessuna-immagine-in-miniatura-segnaposto-per-forum-blog-e-siti-web.jpg';
+var imagInput = document.getElementById('image-input');
+var imagPreview = document.getElementById('image-preview');
+imagInput.addEventListener('change', function () {
+  if (imagInput.files && imagInput.files[0]) {
+    var reader = new FileReader();
+    reader.readAsDataURL(imagInput.files[0]);
+
+    reader.onload = function (e) {
+      imagPreview.setAttribute('src', e.target.result);
+    };
+  } else {
+    return imagPreview.setAttribute('src', placeholder);
+  }
 });
 
 /***/ }),
 
-/***/ 1:
-/*!*******************************************!*\
-  !*** multi ./resources/js/delete-form.js ***!
-  \*******************************************/
+/***/ 2:
+/*!********************************************!*\
+  !*** multi ./resources/js/imag-preview.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\sange\Downloads\deliveboo-master\deliveboo\resources\js\delete-form.js */"./resources/js/delete-form.js");
+module.exports = __webpack_require__(/*! C:\Users\sange\Downloads\deliveboo-master\deliveboo\resources\js\imag-preview.js */"./resources/js/imag-preview.js");
 
 
 /***/ })

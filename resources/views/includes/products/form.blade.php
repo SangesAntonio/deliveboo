@@ -51,16 +51,25 @@
 
 
     <!--Input immagine-->
-    <div class="mb-2 mt-3">
-      <div class="custom-file">
-        <label for="image" class="custom-file-label">Carica immagine</label>
-        <input type="file" class="custom-file-input" id="image" name="image">
+    <div class="mb-2 mt-3 d-flex justify-content-between">
+      <div class="custom-file col-6">
+        <label for="image-input" class="custom-file-label w-50">Carica immagine</label>
+        <input type="file" id="image-input" class=" w-50"  name="image" >
+      </div>
+
+        {{-- preview image --}}
+      <div class="imag-preview   ">
+          @if($product->image)
+            <img src="{{asset("storage/$product->image")}}" id="image-preview" class=" border ml-auto rounded-lg" />
+            @else
+            <img src='{{url('/img/no-image.jpg')}}' class=" rounded-lg ml-auto border" id="image-preview"/>
+          @endif
       </div>
     </div>
 
 
     <!--visibility check box-->
-    <div class="col-12 d-flex align-items-center p-0 pb-4">
+    <div class="col-12 d-flex align-items-center mt-4 p-0 pb-4">
       <label class="form-check-label pr-4 d-flex justify-content-center h5" for="visibility">
         Visibilità
       </label>
@@ -71,19 +80,20 @@
 
     <div class="col-12 p-0 d-flex justify-content-between w-100">
       @if ($product->exists)
+      <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-md btn-info shadow-md text-white"
+        type="submit">
+        <i class="fas fa-arrow-left"></i> Indietro
+      </a>
         <button type="submit" class='btn btn-primary ml-3'>Modifica</button>
-        <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-md btn-info shadow-md text-white"
-          type="submit">
-          <i class="fas fa-arrow-left"></i> Indietro
-        </a>
       @else
+      <a href="{{ route('admin.products.index', $product->id) }}" class="btn btn-md btn-info shadow-md text-white"
+        type="submit">
+        <i class="fas fa-arrow-left"></i> Indietro
+      </a>
         <button type="submit" class='btn btn-primary'>Aggiungi</button>
-        <a href="{{ route('admin.products.index', $product->id) }}" class="btn btn-md btn-info shadow-md text-white"
-          type="submit">
-          <i class="fas fa-arrow-left"></i> Indietro
-        </a>
       @endif
     </div>
     </form>
   </div>
 </div>
+<script src="{{ asset('js/imag-preview.js') }}"></script>
