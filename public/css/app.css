@@ -11677,6 +11677,21 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.imag-preview {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.imag-preview img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 150px;
+  height: 150px;
+}
+
 #statistics .card {
   background-color: #fff;
   border-radius: 10px;
