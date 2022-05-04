@@ -13,8 +13,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function statistics(User $user)
+    public function index()
     {
+        $user = User::orderBy('restaurant_name', 'DESC')->with(['categories'])->get();
         return response()->json($user);
     }
 
@@ -37,7 +38,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::where('id', $id)->with(['products', 'categories'])->first();
+        if (!$user) return response('Restaurant Not Found', 404);
+        return response()->json($user);
     }
 
     /**

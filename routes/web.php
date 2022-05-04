@@ -39,7 +39,7 @@ Route::middleware('auth')
 
         Route::resource('users', 'UserController');
         Route::resource('products', 'ProductController');
-        Route::resource('categories', 'CategoryController');
+        // Route::resource('categories', 'CategoryController');
         Route::resource('orders', 'OrderController');
 
 
