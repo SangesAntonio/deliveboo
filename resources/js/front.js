@@ -1,11 +1,12 @@
-window.Vue = require('vue');
+window.Vue = require("vue");
 
-import Vue from 'vue';
-import router from './routes.js';
-import App from './components/App.vue';
+import Vue from "vue";
+import router from "./routes.js";
+import App from "./components/App.vue";
+import Axios from "axios";
 
 const root = new Vue({
-    el: '#root',
+    el: "#root",
     router,
-    render: h => h(App)
+    render: (h) => h(App),
 });
