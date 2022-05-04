@@ -12,7 +12,12 @@
         {{category.name}}
     </li> 
     </ul> -->
+    <div class="container">
+      <div class="row">
     <Card v-for="user in users" :key="user.id" :user="user" class="my-3"/>
+
+      </div>
+    </div>
 </div>
 </template>
 
