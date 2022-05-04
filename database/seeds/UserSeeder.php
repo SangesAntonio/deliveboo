@@ -1,10 +1,7 @@
 <?php
 
 use App\User;
-use App\Models\Category;
-use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
 
 class UserSeeder extends Seeder
 {
@@ -13,7 +10,7 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
         $users = [
             // !!! Ristoranti di pesce
@@ -379,7 +376,7 @@ class UserSeeder extends Seeder
             // !!! Ristoranti di dolci
             [
                 'restaurant_name' => 'Dollino Pasticceria',
-                'email' => 'nishikisushi@gmail.com',
+                'email' => 'dollinopasticceria@gmail.com',
                 'password' => bcrypt('password'),
                 'address' => 'Via Grande 72, 57123, Livorno',
                 'vat_number' => '67376140462',
@@ -392,7 +389,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'restaurant_name' => 'Pasticceria Cristiani',
-                'email' => 'nishikisushi@gmail.com',
+                'email' => 'pasticceriacristiani@gmail.com',
                 'password' => bcrypt('password'),
                 'address' => 'Via di Salviano 6-8-10, 57124, Livorno',
                 'vat_number' => '73495490945',
@@ -405,7 +402,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'restaurant_name' => 'A luna Caprese',
-                'email' => 'nishikisushi@gmail.com',
+                'email' => 'alunacaprese@gmail.com',
                 'password' => bcrypt('password'),
                 'address' => 'Scali delle Cantine 6, 57122, Livorno',
                 'vat_number' => '63920181219',

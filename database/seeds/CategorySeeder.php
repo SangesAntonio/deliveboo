@@ -2,7 +2,6 @@
 
 use App\Models\Category;
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 
 class CategorySeeder extends Seeder
 {
@@ -11,7 +10,7 @@ class CategorySeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
         $categories = [
             ['name' => 'Internazionale', 'image' => 'category_images/internazionale.jpg'],

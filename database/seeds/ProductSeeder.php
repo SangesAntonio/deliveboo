@@ -1,11 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Arr;
-use Faker\Generator as Faker;
 use App\Models\Product;
-use App\User;
-
 
 class ProductSeeder extends Seeder
 {
@@ -14,17 +10,934 @@ class ProductSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        $user_ids = User::pluck('id')->toArray();
-        for ($i = 0; $i < 100; $i++) {
-            $product = new Product();
-            $product->user_id = Arr::random($user_ids);
-            $product->name = $faker->word();
-            $product->price = $faker->randomFloat(2, 5, 50);
-            $product->ingredients = $faker->word(3, true);
-            $product->visibility = $faker->boolean();
-            $product->save();
+        $products = [
+            // * ---------- PESCE ----------
+            // !!! User 1 
+            [
+                'user_id' => '1',
+                'name' => 'Orata al forno',
+                'visibility' => 1,
+                'ingredients' => 'Orata, patate.',
+                'price' => 13.5,
+                'image' => 'product_images/pesce/pesce(1).jpg',
+            ],
+            [
+                'user_id' => '1',
+                'name' => 'Zuppa di vongole',
+                'visibility' => 1,
+                'ingredients' => 'Vongole veraci, pomodorini ciliegino, mazzancolle.',
+                'price' => 15,
+                'image' => 'product_images/pesce/pesce(2).jpg',
+            ],
+            [
+                'user_id' => '1',
+                'name' => 'Zuppa di cozze alla napoletana',
+                'visibility' => 1,
+                'ingredients' => 'Cozze, gamberi, seppie, polpo, pomodori pelati.',
+                'price' => 17.5,
+                'image' => 'product_images/pesce/pesce(3).jpg',
+            ],
+            // !!! User 2 
+            [
+                'user_id' => '2',
+                'name' => 'Insalata di mare',
+                'visibility' => 1,
+                'ingredients' => 'Cozze, polpo, calamari, vongole, gamberi, tartare di tonno e di salmone.',
+                'price' => 14.5,
+                'image' => 'product_images/pesce/pesce(4).jpg',
+            ],
+            [
+                'user_id' => '2',
+                'name' => 'Filetto di salmone al lime',
+                'visibility' => 1,
+                'ingredients' => 'Salmone, lime.',
+                'price' => 12,
+                'image' => 'product_images/pesce/pesce(5).jpg',
+            ],
+            [
+                'user_id' => '2',
+                'name' => 'Orata al cartoccio',
+                'visibility' => 1,
+                'ingredients' => 'Orata, salsa di limone.',
+                'price' => 16,
+                'image' => 'product_images/pesce/pesce(6).jpg',
+            ],
+            // !!! User 3 
+            [
+                'user_id' => '3',
+                'name' => 'Crudità di mare',
+                'visibility' => 1,
+                'ingredients' => 'Granchio reale, gamberi, salmone, pesce spada, seppie e ostriche.',
+                'price' => 25,
+                'image' => 'product_images/pesce/pesce(7).jpg',
+            ],
+            [
+                'user_id' => '3',
+                'name' => 'Spaghetti con le cozze',
+                'visibility' => 1,
+                'ingredients' => 'Spaghetti, cozze, passata di pomodoro.',
+                'price' => 15,
+                'image' => 'product_images/pesce/pesce(8).jpg',
+            ],
+            [
+                'user_id' => '3',
+                'name' => 'Fritto misto di pesce',
+                'visibility' => 1,
+                'ingredients' => 'Gamberetti, alici, merluzzetti, triglie, calamari, gamberetti.',
+                'price' => 11,
+                'image' => 'product_images/pesce/pesce(9).jpg',
+            ],
+            [
+                'user_id' => '3',
+                'name' => 'Astice in bellavista',
+                'visibility' => 1,
+                'ingredients' => 'Astice, limone, guazzetto di pomodoro.',
+                'price' => 20,
+                'image' => 'product_images/pesce/pesce(10).jpg',
+            ],
+            // * ---------- INTERNAZIONALE ----------
+            // !!! User 4 
+            [
+                'user_id' => '4',
+                'name' => 'Fritto misto di pesce',
+                'visibility' => 1,
+                'ingredients' => 'Gamberetti, alici, merluzzetti, triglie, calamari, gamberetti.',
+                'price' => 11,
+                'image' => 'product_images/pesce/pesce(9).jpg',
+            ],
+            [
+                'user_id' => '4',
+                'name' => 'Filetto di salmone al lime',
+                'visibility' => 1,
+                'ingredients' => 'Salmone, lime.',
+                'price' => 12,
+                'image' => 'product_images/pesce/pesce(5).jpg',
+            ],
+            [
+                'user_id' => '4',
+                'name' => 'Orata al forno',
+                'visibility' => 1,
+                'ingredients' => 'Orata, patate.',
+                'price' => 13.5,
+                'image' => 'product_images/pesce/pesce(1).jpg',
+            ],
+            // !!! User 5 
+            [
+                'user_id' => '5',
+                'name' => 'Fritto misto di pesce',
+                'visibility' => 1,
+                'ingredients' => 'Gamberetti, alici, merluzzetti, triglie, calamari, gamberetti.',
+                'price' => 11,
+                'image' => 'product_images/pesce/pesce(9).jpg',
+            ],
+            [
+                'user_id' => '5',
+                'name' => 'Spaghetti con le cozze',
+                'visibility' => 1,
+                'ingredients' => 'Spaghetti, cozze, passata di pomodoro.',
+                'price' => 15,
+                'image' => 'product_images/pesce/pesce(8).jpg',
+            ],
+            [
+                'user_id' => '5',
+                'name' => 'Orata al cartoccio',
+                'visibility' => 1,
+                'ingredients' => 'Orata, salsa di limone.',
+                'price' => 16,
+                'image' => 'product_images/pesce/pesce(6).jpg',
+            ],
+            // !!! User 6 
+            [
+                'user_id' => '6',
+                'name' => 'Fritto misto di pesce',
+                'visibility' => 1,
+                'ingredients' => 'Gamberetti, alici, merluzzetti, triglie, calamari, gamberetti.',
+                'price' => 11,
+                'image' => 'product_images/pesce/pesce(9).jpg',
+            ],
+            [
+                'user_id' => '6',
+                'name' => 'Spaghetti con le cozze',
+                'visibility' => 1,
+                'ingredients' => 'Spaghetti, cozze, passata di pomodoro.',
+                'price' => 15,
+                'image' => 'product_images/pesce/pesce(8).jpg',
+            ],
+            [
+                'user_id' => '6',
+                'name' => 'Orata al cartoccio',
+                'visibility' => 1,
+                'ingredients' => 'Orata, salsa di limone.',
+                'price' => 16,
+                'image' => 'product_images/pesce/pesce(6).jpg',
+            ],
+            // * ---------- MEDITERRANEA ----------
+            // !!! User 7 
+            [
+                'user_id' => '7',
+                'name' => 'Spaghetti aglio olio e peperoncino',
+                'visibility' => 1,
+                'ingredients' => 'Spaghetti, peperoncino, aglio.',
+                'price' => 7,
+                'image' => 'product_images/mediterranea/mediterranea(1).jpg',
+            ],
+            [
+                'user_id' => '7',
+                'name' => 'Spaghetti al pesto alla genovese',
+                'visibility' => 1,
+                'ingredients' => 'Basilico, parmigiano reggiano DOP, pecorino sardo, pinoli.',
+                'price' => 10,
+                'image' => 'product_images/mediterranea/mediterranea(2).jpg',
+            ],
+            [
+                'user_id' => '7',
+                'name' => 'Bruschette sfiziose',
+                'visibility' => 1,
+                'ingredients' => 'Crema di carciofi, pomodorini e basilico, peperoni saltati in padella.',
+                'price' => 5.5,
+                'image' => 'product_images/mediterranea/mediterranea(3).jpg',
+            ],
+            [
+                'user_id' => '7',
+                'name' => 'Calamari ripieni alla griglia',
+                'visibility' => 1,
+                'ingredients' => 'Calamari, scorza di limone, crema di limone, basilico, erbette.',
+                'price' => 13,
+                'image' => 'product_images/mediterranea/mediterranea(4).jpg',
+            ],
+            // !!! User 8 
+            [
+                'user_id' => '8',
+                'name' => 'Spaghetti alla carbonara',
+                'visibility' => 1,
+                'ingredients' => 'Guanciale, tuorli, pecorino romano.',
+                'price' => 10,
+                'image' => 'product_images/mediterranea/mediterranea(5).jpg',
+            ],
+            [
+                'user_id' => '8',
+                'name' => 'Frisella con tonno pomodoro e olive',
+                'visibility' => 1,
+                'ingredients' => 'Frisella, pomodoro sanmarzano, basilico, tonno.',
+                'price' => 8,
+                'image' => 'product_images/mediterranea/mediterranea(6).jpg',
+            ],
+            [
+                'user_id' => '8',
+                'name' => 'Gnocchetti sardi alla contadina',
+                'visibility' => 1,
+                'ingredients' => 'Gnocchetti sardi, cipolle, fagioli, passata di pomodoro.',
+                'price' => 10,
+                'image' => 'product_images/mediterranea/mediterranea(7).jpg',
+            ],
+            // !!! User 9 
+            [
+                'user_id' => '9',
+                'name' => 'Bruschette al pomodoro',
+                'visibility' => 1,
+                'ingredients' => 'Pane casareccio, basilico, pomodori ciliegini.',
+                'price' => 4.5,
+                'image' => 'product_images/mediterranea/mediterranea(8).jpg',
+            ],
+            [
+                'user_id' => '9',
+                'name' => 'Spaghetti alle vongole',
+                'visibility' => 1,
+                'ingredients' => 'Vongole, spaghetti, prezzemolo.',
+                'price' => 12,
+                'image' => 'product_images/mediterranea/mediterranea(9).jpg',
+            ],
+            [
+                'user_id' => '9',
+                'name' => 'Orecchiette salsiccia e friarielli',
+                'visibility' => 1,
+                'ingredients' => 'Salsiccia, friarielli, peperoncino fresco.',
+                'price' => 8,
+                'image' => 'product_images/mediterranea/mediterranea(10).jpg',
+            ],
+            // * ---------- CARNE ----------
+            // !!! User 10 
+            [
+                'user_id' => '10',
+                'name' => 'Filetto al burro',
+                'visibility' => 1,
+                'ingredients' => 'Filetto di manzo 300g, burro, aglio.',
+                'price' => 22,
+                'image' => 'product_images/carne/carne(1).jpg',
+            ],
+            [
+                'user_id' => '10',
+                'name' => 'Bistecca alla tartara',
+                'visibility' => 1,
+                'ingredients' => 'vitello magro 200g, cipollotto, cappero, limone, senape.',
+                'price' => 18.5,
+                'image' => 'product_images/carne/carne(1).png',
+            ],
+            [
+                'user_id' => '10',
+                'name' => 'Cotoletta alla milanese',
+                'visibility' => 1,
+                'ingredients' => 'Petto di pollo, pecorino, pangrattato, limone.',
+                'price' => 8,
+                'image' => 'product_images/carne/carne(2).jpg',
+            ],
+            [
+                'user_id' => '10',
+                'name' => 'Filetto di black angus',
+                'visibility' => 1,
+                'ingredients' => 'Filetto di black Angus 300g, rosmarino, olio, peperoni saltati in padella.',
+                'price' => 23,
+                'image' => 'product_images/carne/carne(3).jpg',
+            ],
+            // !!! User 11 
+            [
+                'user_id' => '11',
+                'name' => 'Bistecca di maiale',
+                'visibility' => 1,
+                'ingredients' => 'Bistecca di maiale, burro, prezzemolo, pepe.',
+                'price' => 7.5,
+                'image' => 'product_images/carne/carne(4).jpg',
+            ],
+            [
+                'user_id' => '11',
+                'name' => 'Pulled burger',
+                'visibility' => 1,
+                'ingredients' => 'Pulled pork, guacamole, rucola e cipolla.',
+                'price' => 12,
+                'image' => 'product_images/carne/carne(5).jpg',
+            ],
+            [
+                'user_id' => '11',
+                'name' => 'Polpette al sugo',
+                'visibility' => 1,
+                'ingredients' => 'Macinato di manzo, salsiccia, pane, uova, parmigiano reggiano DOP, passata di pomodoro.',
+                'price' => 7.5,
+                'image' => 'product_images/carne/carne(7).jpg',
+            ],
+            [
+                'user_id' => '11',
+                'name' => 'Straccetti di pollo fritto',
+                'visibility' => 1,
+                'ingredients' => 'Petto di pollo, curry, pangrattato, uovo.',
+                'price' => 6,
+                'image' => 'product_images/carne/carne(6).jpg',
+            ],
+            // !!! User 12 
+            [
+                'user_id' => '12',
+                'name' => 'Spiedini di salsiccia',
+                'visibility' => 1,
+                'ingredients' => 'Salsiccia, zucchine.',
+                'price' => 6,
+                'image' => 'product_images/carne/carne(8).jpg',
+            ],
+            [
+                'user_id' => '12',
+                'name' => 'Pollo croccante',
+                'visibility' => 1,
+                'ingredients' => 'Petto di pollo, senape, limone, erba cipollina.',
+                'price' => 6.5,
+                'image' => 'product_images/carne/carne(9).jpg',
+            ],
+            [
+                'user_id' => '12',
+                'name' => 'Carrè di agnello',
+                'visibility' => 1,
+                'ingredients' => 'Carrè di agnello, prezzemolo, lardo di colonnata.',
+                'price' => 12,
+                'image' => 'product_images/carne/carne(10).jpg',
+            ],
+            [
+                'user_id' => '12',
+                'name' => 'Wagyu kobe',
+                'visibility' => 1,
+                'ingredients' => 'Wagyu kobe 100g, olio, sale, pepe, rosmarino.',
+                'price' => 50,
+                'image' => 'product_images/carne/carne(11).jpg',
+            ],
+            // * ---------- PIZZA ----------
+            // !!! User 13 
+            [
+                'user_id' => '13',
+                'name' => 'La porcina',
+                'visibility' => 1,
+                'ingredients' => 'Salsiccia, porcini.',
+                'price' => 8,
+                'image' => 'product_images/pizza/pizza(1).jpg',
+            ],
+            [
+                'user_id' => '13',
+                'name' => 'La capperi e olive',
+                'visibility' => 1,
+                'ingredients' => 'Capperi, olive.',
+                'price' => 6.5,
+                'image' => 'product_images/pizza/pizza(3).jpg',
+            ],
+            [
+                'user_id' => '13',
+                'name' => 'La pistacchiosa',
+                'visibility' => 1,
+                'ingredients' => 'Pistacchio di bronte, mortadella DOP.',
+                'price' => 9.5,
+                'image' => 'product_images/pizza/pizza(3).webp',
+            ],
+            [
+                'user_id' => '13',
+                'name' => 'La capocollo e carciofi',
+                'visibility' => 1,
+                'ingredients' => 'Capocollo, carciofi, pecorino romano.',
+                'price' => 9,
+                'image' => 'product_images/pizza/pizza(5).jpg',
+            ],
+            [
+                'user_id' => '13',
+                'name' => 'La marcgherita',
+                'visibility' => 1,
+                'ingredients' => 'Mozzarella, pomodoro.',
+                'price' => 5.5,
+                'image' => 'product_images/pizza/pizza(6).jpg',
+            ],
+            [
+                'user_id' => '13',
+                'name' => 'La pancetta',
+                'visibility' => 1,
+                'ingredients' => 'Pancetta tesa, provola affumicata.',
+                'price' => 8.5,
+                'image' => 'product_images/pizza/pizza(10).jpg',
+            ],
+            // !!! User 14 
+            [
+                'user_id' => '14',
+                'name' => 'Pizza carciofi e salsiccia',
+                'visibility' => 1,
+                'ingredients' => 'Salsiccia, carciofi.',
+                'price' => 8,
+                'image' => 'product_images/pizza/pizza(1).webp',
+            ],
+            [
+                'user_id' => '14',
+                'name' => 'Pizza wurstel e patatine',
+                'visibility' => 1,
+                'ingredients' => 'Wurstel, patatine.',
+                'price' => 6.5,
+                'image' => 'product_images/pizza/pizza(2).jpg',
+            ],
+            [
+                'user_id' => '14',
+                'name' => 'Pizza asparagi e pinoli',
+                'visibility' => 1,
+                'ingredients' => 'Asparagi, datterino giallo, pinoli.',
+                'price' => 9.5,
+                'image' => 'product_images/pizza/pizza(4).jpg',
+            ],
+            [
+                'user_id' => '14',
+                'name' => 'Pizza speck e zucchine',
+                'visibility' => 1,
+                'ingredients' => 'Speck, zucchine.',
+                'price' => 9,
+                'image' => 'product_images/pizza/pizza(5).webp',
+            ],
+            [
+                'user_id' => '14',
+                'name' => 'Pizza contadina',
+                'visibility' => 1,
+                'ingredients' => 'Pancetta, provola, cipolla.',
+                'price' => 7.5,
+                'image' => 'product_images/pizza/pizza(9).jpg',
+            ],
+            [
+                'user_id' => '14',
+                'name' => 'Pizza salame',
+                'visibility' => 1,
+                'ingredients' => 'Salame piccante.',
+                'price' => 7,
+                'image' => 'product_images/pizza/pizza(10).jpg',
+            ],
+            // !!! User 15 
+            [
+                'user_id' => '15',
+                'name' => 'L\'estiva',
+                'visibility' => 1,
+                'ingredients' => 'Prosciutto crudo, rucola, grana, pomodorini.',
+                'price' => 8.5,
+                'image' => 'product_images/pizza/pizza(2).webp',
+            ],
+            [
+                'user_id' => '15',
+                'name' => 'La pepperoni',
+                'visibility' => 1,
+                'ingredients' => 'Peperoni saltati in padella, capperi, olive.',
+                'price' => 7,
+                'image' => 'product_images/pizza/pizza(4).webp',
+            ],
+            [
+                'user_id' => '15',
+                'name' => 'La napoli',
+                'visibility' => 1,
+                'ingredients' => 'Acciughe, pomodoro, datterini gialli.',
+                'price' => 6.5,
+                'image' => 'product_images/pizza/pizza(7).jpg',
+            ],
+            [
+                'user_id' => '15',
+                'name' => 'La melanzana',
+                'visibility' => 1,
+                'ingredients' => 'Melanzane arrostite, mozzarelline fresche.',
+                'price' => 7.5,
+                'image' => 'product_images/pizza/pizza(8).jpg',
+            ],
+            [
+                'user_id' => '15',
+                'name' => 'La friariella',
+                'visibility' => 1,
+                'ingredients' => 'Salsiccia, friarielli.',
+                'price' => 7,
+                'image' => 'product_images/pizza/pizza(13).jpg',
+            ],
+            // * ---------- MESSICANO ----------
+            // !!! User 16 
+            [
+                'user_id' => '16',
+                'name' => 'Chili con carne',
+                'visibility' => 1,
+                'ingredients' => 'Manzo macinato, peperoni, fagioli rossi, passata di pomodoro.',
+                'price' => 7,
+                'image' => 'product_images/messicano/messicano(4).jpg',
+            ],
+            [
+                'user_id' => '16',
+                'name' => 'Nachos sfiziosi',
+                'visibility' => 1,
+                'ingredients' => 'Nachos, uova, jalapenos, pomodorini.',
+                'price' => 7.5,
+                'image' => 'product_images/messicano/messicano(3).jpg',
+            ],
+            [
+                'user_id' => '16',
+                'name' => 'Guacamole',
+                'visibility' => 1,
+                'ingredients' => 'Avocado, succo di lime, pomodori ramati, cipolle, coriandolo.',
+                'price' => 3.5,
+                'image' => 'product_images/messicano/messicano(6).jpg',
+            ],
+            [
+                'user_id' => '16',
+                'name' => 'Tacos della casa',
+                'visibility' => 1,
+                'ingredients' => 'salsiccia, cipollotto, lime, pomodori datterini, salsa allo yogurt.',
+                'price' => 8.5,
+                'image' => 'product_images/messicano/messicano(10).jpg',
+            ],
+            // !!! User 17 
+            [
+                'user_id' => '17',
+                'name' => 'Zuppa misteriosa mex',
+                'visibility' => 1,
+                'ingredients' => 'Affidati a noi per la scoperta di nuovi sapori.',
+                'price' => 7.5,
+                'image' => 'product_images/messicano/messicano(1).jpg',
+            ],
+            [
+                'user_id' => '17',
+                'name' => 'Zuppa di manzo',
+                'visibility' => 1,
+                'ingredients' => 'Manzo, brodo di carne, spezie.',
+                'price' => 7,
+                'image' => 'product_images/messicano/messicano(2).jpg',
+            ],
+            [
+                'user_id' => '17',
+                'name' => 'Zuppa pollo al limone e jalapenos',
+                'visibility' => 1,
+                'ingredients' => 'Avocado, pollo, limone, jalapenos, ravanelli, cipolla.',
+                'price' => 8.5,
+                'image' => 'product_images/messicano/messicano(8).jpg',
+            ],
+            // !!! User 18 
+            [
+                'user_id' => '18',
+                'name' => 'Fajitas arrotolate al manzo',
+                'visibility' => 1,
+                'ingredients' => 'Manzo, avocado, succo di lime, coriandolo, panna acida.',
+                'price' => 9,
+                'image' => 'product_images/messicano/messicano(5).jpg',
+            ],
+            [
+                'user_id' => '18',
+                'name' => 'Fajitas',
+                'visibility' => 1,
+                'ingredients' => 'Pancetta, coriandolo, pollo, pomodori.',
+                'price' => 3.5,
+                'image' => 'product_images/messicano/messicano(7).jpg',
+            ],
+            [
+                'user_id' => '18',
+                'name' => 'Tacos sfiziosi',
+                'visibility' => 1,
+                'ingredients' => 'salsiccia, salsa guacamole, pomodori datterini, salsa allo yogurt.',
+                'price' => 7.5,
+                'image' => 'product_images/messicano/messicano(9).jpg',
+            ],
+            // * ---------- INDIANO ----------
+            // !!! User 19 
+            [
+                'user_id' => '19',
+                'name' => 'Naan all\'aglio',
+                'visibility' => 1,
+                'ingredients' => 'Yogurt bianco, aglio, farina.',
+                'price' => 3.5,
+                'image' => 'product_images/indiano/indiano(2).jpg',
+            ],
+            [
+                'user_id' => '19',
+                'name' => 'One-pot di pollo biryani',
+                'visibility' => 1,
+                'ingredients' => 'Pollo, fagiolini, cipolla, mandorle, riso basmati.',
+                'price' => 12,
+                'image' => 'product_images/indiano/indiano(5).jpg',
+            ],
+            [
+                'user_id' => '19',
+                'name' => 'Pakora',
+                'visibility' => 1,
+                'ingredients' => 'verdure fresche di stagione, coscia di pollo, riso, bacche di goji.',
+                'price' => 7.5,
+                'image' => 'product_images/indiano/indiano(7).jpg',
+            ],
+            // !!! User 20 
+            [
+                'user_id' => '20',
+                'name' => 'Riso con anacardi tostati',
+                'visibility' => 1,
+                'ingredients' => 'Riso basmati, curry, cumino, anacardi tostati.',
+                'price' => 7.5,
+                'image' => 'product_images/indiano/indiano(1).jpg',
+            ],
+            [
+                'user_id' => '20',
+                'name' => 'Zuppa di funghi e manzo',
+                'visibility' => 1,
+                'ingredients' => 'Manzo, funghi, peperoncino, peperoni, paprika.',
+                'price' => 3.5,
+                'image' => 'product_images/indiano/indiano(3).jpg',
+            ],
+            [
+                'user_id' => '20',
+                'name' => 'Riso verde',
+                'visibility' => 1,
+                'ingredients' => 'Riso basmati, anacardi, pesto di rucola.',
+                'price' => 7.5,
+                'image' => 'product_images/indiano/indiano(6).jpg',
+            ],
+            // !!! User 21 
+            [
+                'user_id' => '21',
+                'name' => 'Manzo in salsa yogurt',
+                'visibility' => 1,
+                'ingredients' => 'Manzo, coriandolo, salsa yogurt.',
+                'price' => 7,
+                'image' => 'product_images/indiano/indiano(4).jpg',
+            ],
+            [
+                'user_id' => '21',
+                'name' => 'Roll indiani',
+                'visibility' => 1,
+                'ingredients' => 'Salsa curry, pollo, peperone verde, coriandolo.',
+                'price' => 5,
+                'image' => 'product_images/indiano/indiano(8).jpg',
+            ],
+            [
+                'user_id' => '21',
+                'name' => 'Samosa',
+                'visibility' => 1,
+                'ingredients' => 'salsa al prezzemolo, patate, anacardi, pisellini, zenzero fresco, peperoncino.',
+                'price' => 5,
+                'image' => 'product_images/indiano/indiano(9).jpg',
+            ],
+            // * ---------- CINESE ----------
+            // !!! User 22 
+            [
+                'user_id' => '22',
+                'name' => 'Xiaomai di gamberetti',
+                'visibility' => 1,
+                'ingredients' => 'Ravioli ripieni di gamberetti al vapore.',
+                'price' => 4.5,
+                'image' => 'product_images/cinese/cinese(11).jpg',
+            ],
+            [
+                'user_id' => '22',
+                'name' => 'Ravioli di carne alla griglia',
+                'visibility' => 1,
+                'ingredients' => 'Carne di manzo, erba cipollina, spezie.',
+                'price' => 5,
+                'image' => 'product_images/cinese/cinese(5).jpg',
+            ],
+            [
+                'user_id' => '22',
+                'name' => 'Insalata mista piccante',
+                'visibility' => 1,
+                'ingredients' => 'Pollo, insalata, erba cipollina, peperoncino.',
+                'price' => 4.5,
+                'image' => 'product_images/cinese/cinese(2).jpg',
+            ],
+            // !!! User 23 
+            [
+                'user_id' => '23',
+                'name' => 'Riso saltato con gamberetti',
+                'visibility' => 1,
+                'ingredients' => 'Riso basmati, gamberetti, peperoni, pomodori.',
+                'price' => 5,
+                'image' => 'product_images/cinese/cinese(1).jpg',
+            ],
+            [
+                'user_id' => '23',
+                'name' => 'Pollo all\'aglio con peperoni',
+                'visibility' => 1,
+                'ingredients' => 'Salsa curry, pollo, peperone verde, coriandolo.',
+                'price' => 5,
+                'image' => 'product_images/cinese/cinese(3).jpg',
+            ],
+            [
+                'user_id' => '23',
+                'name' => 'Riso misto',
+                'visibility' => 1,
+                'ingredients' => 'Erba cipollina, riso basmati, pancetta, spinaci.',
+                'price' => 5.5,
+                'image' => 'product_images/cinese/cinese(4).jpg',
+            ],
+            // !!! User 24 
+            [
+                'user_id' => '24',
+                'name' => 'Spaghetti di soia veg',
+                'visibility' => 1,
+                'ingredients' => 'Peperoni, erba cipollina, bacche di goji, pomodorini.',
+                'price' => 4.5,
+                'image' => 'product_images/cinese/cinese(6).jpg',
+            ],
+            [
+                'user_id' => '24',
+                'name' => 'Spaghetti di soia',
+                'visibility' => 1,
+                'ingredients' => 'Pancetta, cipolla, funghi.',
+                'price' => 5,
+                'image' => 'product_images/cinese/cinese(7).jpg',
+            ],
+            [
+                'user_id' => '24',
+                'name' => 'Xiaomai',
+                'visibility' => 1,
+                'ingredients' => 'Ravioli ripieni di gamberetti al vapore.',
+                'price' => 5,
+                'image' => 'product_images/cinese/cinese(9).jpg',
+            ],
+            // * ---------- GIAPPONESE ----------
+            // !!! User 25 
+            [
+                'user_id' => '25',
+                'name' => 'Barca mista',
+                'visibility' => 1,
+                'ingredients' => 'misto nigiri, sashimi, roll.',
+                'price' => 10,
+                'image' => 'product_images/giapponese/giapponese(1).jpg',
+            ],
+            [
+                'user_id' => '25',
+                'name' => 'Roll impanati',
+                'visibility' => 1,
+                'ingredients' => 'Roll di gamberetti e avocado croccanti.',
+                'price' => 4,
+                'image' => 'product_images/giapponese/giapponese(2).jpg',
+            ],
+            [
+                'user_id' => '25',
+                'name' => 'Cirashi di manzo',
+                'visibility' => 1,
+                'ingredients' => 'Riso con manzo, uovo, erba cipollina.',
+                'price' => 5,
+                'image' => 'product_images/giapponese/giapponese(3).jpg',
+            ],
+            // !!! User 26 
+            [
+                'user_id' => '26',
+                'name' => 'Nigiri salmone',
+                'visibility' => 1,
+                'ingredients' => 'Salmone, uova di salmone.',
+                'price' => 4,
+                'image' => 'product_images/giapponese/giapponese(4).jpg',
+            ],
+            [
+                'user_id' => '26',
+                'name' => 'Nigiri di tonno',
+                'visibility' => 1,
+                'ingredients' => 'Tonno, riso.',
+                'price' => 4,
+                'image' => 'product_images/giapponese/giapponese(5).jpg',
+            ],
+            [
+                'user_id' => '26',
+                'name' => 'Udon di verdure saltati',
+                'visibility' => 1,
+                'ingredients' => 'Peperoni, erba cipollina, funghi.',
+                'price' => 5,
+                'image' => 'product_images/giapponese/giapponese(6).jpg',
+            ],
+            // !!! User 27 
+            [
+                'user_id' => '27',
+                'name' => 'Onigiri',
+                'visibility' => 1,
+                'ingredients' => 'Salmone, riso, alga wakame.',
+                'price' => 4,
+                'image' => 'product_images/giapponese/giapponese(7).jpg',
+            ],
+            [
+                'user_id' => '27',
+                'name' => 'Nigiri misti',
+                'visibility' => 1,
+                'ingredients' => 'Tonno, salmone, zenzero, mango, avocado, barbabietola.',
+                'price' => 6,
+                'image' => 'product_images/giapponese/giapponese(8).jpg',
+            ],
+            [
+                'user_id' => '27',
+                'name' => 'Cirashi di pesce',
+                'visibility' => 1,
+                'ingredients' => 'Pesce spada, salmone marinato, cetrioli, avocado.',
+                'price' => 8,
+                'image' => 'product_images/giapponese/giapponese(9).jpg',
+            ],
+            [
+                'user_id' => '27',
+                'name' => 'Gunkan di tonno',
+                'visibility' => 1,
+                'ingredients' => 'Algha wakame,tonno, uova di tonno, cetriolo.',
+                'price' => 4,
+                'image' => 'product_images/giapponese/giapponese(10).jpg',
+            ],
+            // * ---------- DOLCI ----------
+            // !!! User 28 
+            [
+                'user_id' => '28',
+                'name' => 'Torta mascarpone e cioccolato',
+                'visibility' => 1,
+                'ingredients' => 'Mascarpone, cioccolato.',
+                'price' => 5,
+                'image' => 'product_images/dolci/dolci(2).jpg',
+            ],
+            [
+                'user_id' => '28',
+                'name' => 'Torta al cocco',
+                'visibility' => 1,
+                'ingredients' => 'Farina di cocco, cocco.',
+                'price' => 5,
+                'image' => 'product_images/dolci/dolci(5).jpg',
+            ],
+            [
+                'user_id' => '28',
+                'name' => 'Torta della nonna',
+                'visibility' => 1,
+                'ingredients' => 'Crema all\'uovo, pinoli, base di biscotti.',
+                'price' => 5,
+                'image' => 'product_images/dolci/dolci(6).jpg',
+            ],
+            // !!! User 29 
+            [
+                'user_id' => '29',
+                'name' => 'Roll al cioccolato e ciliegie',
+                'visibility' => 1,
+                'ingredients' => 'Cioccolato, pan di spagna, ciliegie.',
+                'price' => 5,
+                'image' => 'product_images/dolci/dolci(12).jpg',
+            ],
+            [
+                'user_id' => '29',
+                'name' => 'Tortino cioccolato e pera',
+                'visibility' => 1,
+                'ingredients' => 'Tortino al cioccolato e pera, crema di ricotta.',
+                'price' => 5,
+                'image' => 'product_images/dolci/dolci(4).jpg',
+            ],
+            [
+                'user_id' => '29',
+                'name' => 'Baci ai due cioccolati',
+                'visibility' => 1,
+                'ingredients' => 'Glassa e ripieno di cioccolato bianco, pan di spagna al cioccolato, ribes.',
+                'price' => 5,
+                'image' => 'product_images/dolci/dolci(10).jpg',
+            ],
+            // !!! User 30 
+            [
+                'user_id' => '30',
+                'name' => 'Cheesecake al pistacchio',
+                'visibility' => 1,
+                'ingredients' => 'Pistacchio di bronte, base di biscotti.',
+                'price' => 5,
+                'image' => 'product_images/dolci/dolci(17).jpg',
+            ],
+            [
+                'user_id' => '30',
+                'name' => 'Tortino morbido al cioccolato e caffè',
+                'visibility' => 1,
+                'ingredients' => 'Cioccolato, granella di cioccolato, crema di caffè.',
+                'price' => 5,
+                'image' => 'product_images/dolci/dolci(18).jpg',
+            ],
+            [
+                'user_id' => '30',
+                'name' => 'Cheesecake ai lamponi',
+                'visibility' => 1,
+                'ingredients' => 'Crema, lamponi, base di biscotti.',
+                'price' => 5,
+                'image' => 'product_images/dolci/dolci(23).jpg',
+            ],
+
+            // !!! ADMIN SOLO PER TEST !!! 
+            [
+                'user_id' => '31',
+                'name' => 'Chili con carne',
+                'visibility' => 1,
+                'ingredients' => 'Manzo macinato, peperoni, fagioli rossi, passata di pomodoro.',
+                'price' => 7,
+                'image' => 'product_images/messicano/messicano(4).jpg',
+            ],
+            [
+                'user_id' => '31',
+                'name' => 'Nachos sfiziosi',
+                'visibility' => 1,
+                'ingredients' => 'Nachos, uova, jalapenos, pomodorini.',
+                'price' => 7.5,
+                'image' => 'product_images/messicano/messicano(3).jpg',
+            ],
+            [
+                'user_id' => '31',
+                'name' => 'Guacamole',
+                'visibility' => 1,
+                'ingredients' => 'Avocado, succo di lime, pomodori ramati, cipolle, coriandolo.',
+                'price' => 3.5,
+                'image' => 'product_images/messicano/messicano(6).jpg',
+            ],
+            [
+                'user_id' => '31',
+                'name' => 'Tacos della casa',
+                'visibility' => 1,
+                'ingredients' => 'salsiccia, cipollotto, lime, pomodori datterini, salsa allo yogurt.',
+                'price' => 8.5,
+                'image' => 'product_images/messicano/messicano(10).jpg',
+            ],
+        ];
+
+        foreach ($products as $product) {
+            $p = new Product();
+            $p->user_id = $product['user_id'];
+            $p->name =  $product['name'];
+            $p->visibility =  $product['visibility'];
+            $p->ingredients = $product['ingredients'];
+            $p->price =  $product['price'];
+            $p->image = $product['image'];
+            $p->save();
         }
     }
 }
