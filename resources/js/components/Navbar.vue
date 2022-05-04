@@ -6,7 +6,7 @@
       class="bg-deliveboo-green m-3 rounded"
       ><i class="fas fa-bars"></i
     ></b-button>
-    <b-sidebar id="sidebar-1" class="logo h2 m-0 font-weight-bold" shadow>
+    <b-sidebar id="sidebar-1" class="logo h2 m-0 font-weight-bold menu" shadow>
       <h1 class="ml-4 pl-3 t-deliveboo-green">DELIVEBOO</h1>
       <template #footer="{ hide }">
         <div
@@ -40,13 +40,13 @@
         >
           <div>
             <ul>
-              <li>
+              <li class="brd-deliveboo-green py-3 w-75">
                 <router-link to="/home">
                   <i class="fas fa-home t-deliveboo-green"></i>
                   <span class="text nav-text t-deliveboo-green ml-1">Home</span>
                 </router-link>
               </li>
-              <li class="my-3">
+              <li class="my-3 brd-deliveboo-green py-3 w-75">
                 <router-link to="/restaurants">
                   <i class="fas fa-utensils t-deliveboo-green"></i>
                   <span class="text nav-text t-deliveboo-green ml-2"
@@ -54,7 +54,7 @@
                   >
                 </router-link>
               </li>
-              <li>
+              <li class="brd-deliveboo-green py-3 w-75">
                 <router-link to="/order">
                   <i class="fas fa-shopping-bag t-deliveboo-green"></i>
                   <span class="text nav-text t-deliveboo-green ml-2"
@@ -76,8 +76,8 @@
               </li>
               <li class="my-3">
                 <a href="/register">
-                  <i class="fas fa-user-plus t-deliveboo-green"></i>
-                  <span class="text nav-text t-deliveboo-green"
+                  <i class="far fa-user t-deliveboo-green"></i>
+                  <span class="text nav-text t-deliveboo-green m-2"
                     >Register</span
                   ></a
                 >
