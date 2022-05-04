@@ -1,9 +1,11 @@
 *::-webkit-scrollbar {
     width: 0 !important;
 }
+
 body {
     scrollbar-width: none;
 }
+
 .full-height {
     height: 100vh;
 }
@@ -82,4 +84,15 @@ main {
             height: auto;
         }
     }
+}
+
+// Texts
+
+.t-deliveboo-green {
+    color: $deliveboo-green;
+}
+
+// Backgrounds
+.bg-deliveboo-green {
+    background-color: $deliveboo-green;
 }
