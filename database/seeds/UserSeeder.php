@@ -356,7 +356,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('password'),
                 'address' => 'Via San Marco 7, 57123, Livorno',
                 'vat_number' => '21871420168',
-                'image' => 'user_images/giapponese-2.jpg',
+                'image' => 'user_images/giapponese-2.png',
                 'phone_number' => '+39 0586 425512',
                 'categories' =>
                 [

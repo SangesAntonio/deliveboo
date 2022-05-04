@@ -20,14 +20,12 @@ html body:not(#guest) {
     padding-left: 250px;
     background-image: url("../../public/img/background/Desktop-Background.jpg");
     background-position: center;
-    background-size: cover;
     background-repeat: repeat;
 }
 
 html body#guest {
     background-image: url("../../public/img/background/Desktop-Background.jpg");
     background-position: center;
-    background-size: cover;
     background-repeat: repeat;
 }
 
@@ -69,15 +67,12 @@ main {
         object-fit: cover;
         object-position: top center;
     }
-
     .card-body {
         min-height: 300px;
-
         div {
             margin: 10px 0;
         }
     }
-
     #show-product {
         img {
             width: 300px;
@@ -87,7 +82,6 @@ main {
 }
 
 // Texts
-
 .t-deliveboo-green {
     color: $deliveboo-green;
 }
