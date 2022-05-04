@@ -13,7 +13,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(BootstrapVue)
 
-
 const root = new Vue({
     el: "#root",
     router,

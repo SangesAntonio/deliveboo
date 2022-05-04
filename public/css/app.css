@@ -11628,6 +11628,10 @@ main {
   background-color: #00ccbc;
 }
 
+.brd-deliveboo-green {
+  border-bottom: 0.5px solid #00ccbc;
+}
+
 .switch {
   position: relative;
   display: inline-block;
