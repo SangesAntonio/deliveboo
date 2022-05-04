@@ -17,9 +17,9 @@ export default {
     data(){
         return{
             slides: [
-                'https://i.imgur.com/GZ1RzHc.png',
-                'https://i.imgur.com/8N57Hqo.png',
-                'https://i.imgur.com/xJug2QH.png',
+                'https://drive.google.com/file/d/1R0E8esOhPV30fPv6tXensHMpvZj2ZVOC/view?usp=sharing',
+                'https://drive.google.com/file/d/1AUkcAJ1ofZD6Ztc85RYN2SPS8Pe9Z2nQ/view?usp=sharing',
+                'https://drive.google.com/file/d/1tBxlsyp1_0_XVyLFjMVxFCRRU6y8llep/view?usp=sharing',
             ],
             currentIndex: 0,
         }
