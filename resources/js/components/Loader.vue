@@ -1,4 +1,5 @@
-<div class="loader">
+<template>
+  <div class="loader">
     <div class="w-50 text-light" role="status">
       <img :src="'./storage/deliberoo-loader.gif'" alt="" />
     </div>

@@ -25,9 +25,10 @@
 <body id="guest">
     <div class="content">
         @guest
-            <div id="root">
-            </div>
+        <div id="root">
+        </div>
         @else
+        scemo sei loggato
         @endguest
     </div>
     </div>
