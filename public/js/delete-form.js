@@ -113,7 +113,6 @@ deleteForms.forEach(function (form) {
 
 module.exports = __webpack_require__(/*! C:\Users\sange\Downloads\deliveboo-master\deliveboo\resources\js\delete-form.js */"./resources/js/delete-form.js");
 
-
 /***/ })
 
 /******/ });
