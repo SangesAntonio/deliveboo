@@ -1,5 +1,4 @@
-<template>
-  <div class="loader">
+<div class="loader">
     <div class="w-50 text-light" role="status">
       <img :src="'./storage/deliberoo-loader.gif'" alt="" />
     </div>
@@ -18,3 +17,4 @@ export default {
   transform: translate(-50%, -50%) rotate(-18deg);
 }
 </style>
+
