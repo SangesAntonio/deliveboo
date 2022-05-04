@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;
 
-0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@charset "UTF-8";
+0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Space+Mono&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
@@ -11825,5 +11825,30 @@ input:checked + .slider:before {
 
 #orders-show .total {
   border-bottom: black solid 1px;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background: #1A202C;
+}
+
+body .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+  padding: 1.5rem 0.7rem;
+}
+
+body > * {
+  box-sizing: border-box;
+}
+
+.restaurant-card {
+  transition: all 0.3ms ease-in;
+}
+
+.restaurant-card:hover {
+  cursor: pointer;
 }
 
