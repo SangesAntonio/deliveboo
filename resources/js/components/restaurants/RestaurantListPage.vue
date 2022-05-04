@@ -12,18 +12,18 @@
         {{category.name}}
     </li> 
     </ul> -->
-    <!-- <RestaurantCard> -->
+    <Card v-for="user in users" :key="user.id" :user="user" class="my-3"/>
 </div>
 </template>
 
 <script>
 import axios from 'axios';
-// import RestaurantCard from 'RestaurantCard';
+import Card from '../restaurants/Card.vue';
 export default {
     name:'RestaurantList',
-    // components:{
-    //   RestaurantCard,
-    // },
+    components:{
+      Card,
+    },
     data() {
     return {
       isLoading: false,
@@ -43,7 +43,7 @@ export default {
           console.error(err);
         })
         .then(() => {
-          this.isLoading = false;
+          // this.isLoading = false;
         });
     },   
   },
