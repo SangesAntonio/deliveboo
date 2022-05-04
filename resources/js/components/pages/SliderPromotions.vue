@@ -3,10 +3,9 @@
         <div class="slidess">
             <div v-for="(slide,index) in slides" :key="slide.index" v-show="currentIndex === index">
                 <img :src="slide" alt="">
-
-                <button @click="prev"><i class="fa-solid fa-circle-chevron-left"></i></button>
-                <button @click="next"><i class="fa-solid fa-circle-chevron-right"></i></button>
             </div>
+            <button @click="prev"><i class="fa-solid fa-circle-chevron-left"></i></button>
+            <button @click="next"><i class="fa-solid fa-circle-chevron-right"></i></button>
         </div>
     </div>
 </template>
@@ -17,9 +16,9 @@ export default {
     data(){
         return{
             slides: [
-                'https://drive.google.com/file/d/1R0E8esOhPV30fPv6tXensHMpvZj2ZVOC/view?usp=sharing',
-                'https://drive.google.com/file/d/1AUkcAJ1ofZD6Ztc85RYN2SPS8Pe9Z2nQ/view?usp=sharing',
-                'https://drive.google.com/file/d/1tBxlsyp1_0_XVyLFjMVxFCRRU6y8llep/view?usp=sharing',
+                '/img/pubb/2.png',
+                '/img/pubb/1.png',
+                '/img/pubb/3.png',
             ],
             currentIndex: 0,
         }
@@ -53,6 +52,26 @@ export default {
     }
     i{
         font-size: 50px;
+        color: #76BAC5;
+    }
+    .slidess{
+        height: 400px;
+        width: 700px;
+        position: relative;
+        button{
+            border: none;
+            background-color: transparent;
+            .fa-circle-chevron-left{
+                position: absolute;
+                top: 50%;
+                left: -10%;
+            }
+            .fa-circle-chevron-right{
+                position: absolute;
+                top: 50%;
+                right: -10%;
+            }
+        }
     }
 }
 

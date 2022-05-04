@@ -53,7 +53,7 @@ export default {
     background-color: #02B7B0;
     .delivery{
         height: 400px;
-        background-image: url(https://drive.google.com/file/d/1CnamdHYdZm_jjlalbt-Xwp4SmmAf2SL3/view?usp=sharing);
+        background-image: url(/img/pubb/delivery.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
