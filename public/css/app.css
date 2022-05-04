@@ -11196,9 +11196,9 @@ body {
   box-shadow: 0px 5px 10px 0px #aaa;
   position: fixed;
   width: 100%;
-  background: #fff;
+  background: #00ccbc;
   color: #000;
-  opacity: 0.85;
+  opacity: 0.95;
   z-index: 12;
 }
 
@@ -11618,6 +11618,14 @@ main {
 #home #show-product img {
   width: 300px;
   height: auto;
+}
+
+.t-deliveboo-green {
+  color: #00ccbc;
+}
+
+.bg-deliveboo-green {
+  background-color: #00ccbc;
 }
 
 .switch {
