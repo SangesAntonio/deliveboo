@@ -1,20 +1,21 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Vue from "vue";
+import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 // import i componenti
-import HomePage from './components/pages/HomePage.vue';
-import NotFoundPage from './components/pages/NotFoundPage.vue';
-import ProductListPage from './components/products/ProductListPage.vue';
-import SingleProductPage from './components/products/SingleProductPage';
-import RestaurantListPage from './components/restaurants/RestaurantListPage.vue';
-import SingleRestaurantPage from './components/restaurants/SingleRestaurantPage.vue';
-import PaymentCheckout from './components/PaymentCheckout.vue';
+import HomePage from "./components/pages/HomePage.vue";
+import NotFoundPage from "./components/pages/NotFoundPage.vue";
+import ProductListPage from "./components/products/ProductListPage.vue";
+import SingleProductPage from "./components/products/SingleProductPage";
+import RestaurantListPage from "./components/restaurants/RestaurantListPage.vue";
+import SingleRestaurantPage from "./components/restaurants/SingleRestaurantPage.vue";
+import PaymentCheckout from "./components/PaymentCheckout.vue";
 
 const router = new VueRouter({
-    mode: 'history',
-    linkExactActiveClass: 'active',
+    mode: "history",
+    linkExactActiveClass: "active",
     routes: [
+
         { path: '/home', component: HomePage, name: 'home' },
         { path: '/products', component: ProductListPage, name: 'products' },
         { path: '/products/:product_name', component: SingleProductPage, name: 'product-detail' },
@@ -24,7 +25,5 @@ const router = new VueRouter({
         { path: '*', component: NotFoundPage, name: 'not-found' }
     ]
 
-
 });
-
 export default router;
