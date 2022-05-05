@@ -10,6 +10,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Importo Vue nel componente che usa #root -->
     <script src="{{ asset('js/front.js') }}" defer></script>
@@ -25,10 +26,10 @@
 <body id="guest">
     <div class="content">
         @guest
-        <div id="root">
-        </div>
+            <div id="root">
+            </div>
         @else
-        scemo sei loggato
+            scemo sei loggato
         @endguest
     </div>
     </div>

@@ -12629,19 +12629,10 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-<<<<<<< HEAD
 var version = "__VERSION__";
 
 var install = function install(Vue) {
   Vue.component("v-braintree", Payment);
-=======
-!(function webpackMissingModule() { var e = new Error("Cannot find module './Payment.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-
-var version = "__VERSION__";
-
-var install = function install(Vue) {
-  Vue.component("v-braintree", !(function webpackMissingModule() { var e = new Error("Cannot find module './Payment.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
->>>>>>> 52428a80e59924e0214bc25e4a1feb55042514f7
 };
 
 var plugin = {
@@ -12691,11 +12682,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(_index__WEBPACK_IMPORTED_MODULE_1
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Laravel\deliveboo\resources\js\js_payment\plugin.js */"./resources/js/js_payment/plugin.js");
-=======
-module.exports = __webpack_require__(/*! C:\laravel\deliveboo\deliveboo\resources\js\js_payment\plugin.js */"./resources/js/js_payment/plugin.js");
->>>>>>> 52428a80e59924e0214bc25e4a1feb55042514f7
 
 
 /***/ })
