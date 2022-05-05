@@ -130,10 +130,7 @@
 /*! no static exports found */
 /***/ (function (module, exports, __webpack_require__) {
 
-
-      module.exports = __webpack_require__(/*! C:\Laravel\deliveboo\resources\js\imag-preview.js */"./resources/js/imag-preview.js");
-
-
+module.exports = __webpack_require__(/*! C:\Users\user\Desktop\deliveboo\resources\js\imag-preview.js */"./resources/js/imag-preview.js");
 
       /***/
 })

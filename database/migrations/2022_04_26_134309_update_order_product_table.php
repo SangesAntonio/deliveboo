@@ -14,7 +14,7 @@ class UpdateOrderProductTable extends Migration
     public function up()
     {
         Schema::table('order_product', function (Blueprint $table) {
-            $table->string('product_quantity')->nullable();
+            $table->unsignedSmallInteger('product_quantity')->nullable();
         });
     }
 

@@ -131,13 +131,13 @@
   !*** multi ./resources/js/js_payment/index.js ***!
   \************************************************/
 /*! no static exports found */
-/***/ (function (module, exports, __webpack_require__) {
 
-      module.exports = __webpack_require__(/*! C:\Laravel\deliveboo\resources\js\js_payment\index.js */"./resources/js/js_payment/index.js");
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! C:\Users\user\Desktop\deliveboo\resources\js\js_payment\index.js */"./resources/js/js_payment/index.js");
 
 
-      /***/
-})
+/***/ })
 
   /******/
 });

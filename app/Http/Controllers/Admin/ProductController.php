@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\User;
 
 
 class ProductController extends Controller
