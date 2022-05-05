@@ -50,23 +50,22 @@ export default {
   },
   computed: {
     getQuantity() {
+      console.log(product.price , 'sono il console.log di product.price')
       let cart = {};
       for (let i in this.cart) {
         let key = this.cart[i].id;
         cart[key] = {
           id: key,
           count: cart[key] && cart[key].count ? cart[key].count + 1 : 1,
+          totalPrice: parseInt(cart[key] && cart[key].count ? cart[key].count + 1 : 1) * parseInt(product.price),
         };
+          // inserire qui logica totale prezzo
+
+
+
       }
       return Object.values(cart);
-    },
-    getTotalPrice() {
-      let total = 0;
-      this.cart.forEach((item) => {
-        total += parseInt(item.quantity * item.price);
-        console.log(item.quantity, item.price);
-      });
-      return total.toFixed(2);
+      
     },
   },
   mounted() {
