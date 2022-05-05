@@ -24,12 +24,8 @@
 </head>
 
 <body id="guest">
-  @guest
-    <div id="root">
-    </div>
-  @else
-    scemo sei loggato
-  @endguest
+  <div id="root">
+  </div>
   </div>
 </body>
 
