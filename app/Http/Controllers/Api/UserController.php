@@ -38,7 +38,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('id', $id)->with(['products', 'categories'])->first();
+        $user = User::with(['products', 'categories'])->find($id);
         if (!$user) return response('Restaurant Not Found', 404);
         return response()->json($user);
     }
