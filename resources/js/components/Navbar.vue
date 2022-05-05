@@ -62,6 +62,16 @@
                   >
                 </router-link>
               </li>
+
+              <!-- !!!!!!!!!!!!!!! da eliminare !!!!!!!!!!!!!!!!!!-->
+              <li class="brd-deliveboo-green py-3 w-75">
+                <router-link to="/payment">
+                  <i class="fas fa-shopping-bag t-deliveboo-green"></i>
+                  <span class="text nav-text t-deliveboo-green ml-2"
+                    >demo</span
+                  >
+                </router-link>
+              </li>
             </ul>
           </div>
           <div class="d-flex flex-column justify-content-end mb-5">

@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::orderBy('restaurant_name', 'DESC')->with(['categories'])->get();
+        $user = User::orderBy('restaurant_name', 'DESC')->with(['categories', 'products'])->get();
         return response()->json($user);
     }
 
