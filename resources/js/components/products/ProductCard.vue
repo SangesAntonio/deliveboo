@@ -20,11 +20,13 @@
 						class="fa-solid fa-circle-minus text-danger"
 					></i>
 
-					<!-- bottone carrello -->
-					<button class="btn mt-0">
-						<i v-if="!cart.length" class="fa-solid fa-cart-arrow-down"> </i>
-						<i v-else>{{ cart.length }}</i>
-					</button>
+
+          <!-- bottone carrello -->
+          <button class="btn mx-1">
+            <i v-if="!product.quantity" class="fa-solid fa-cart-arrow-down">
+            </i>
+            <i v-else>{{ product.quantity }}</i>
+          </button>
 
 					<!-- tasto più -->
 					<i
@@ -50,16 +52,16 @@ export default {
   },
   methods: {
     addProductToCart(product) {
-      this.product.quantity++
-      if(this.cart.includes(product)){}
+      this.product.quantity++;
+      if (this.cart.includes(product)) {
+      }
       this.cart.push(product);
       console.log(this.cart);
       return this.$emit("addProduct", product);
     },
     removeProductFromCart(product) {
-      if(this.product.quantity > 0){
-
-        this.product.quantity--
+      if (this.product.quantity > 0) {
+        this.product.quantity--;
       }
       const position = this.cart.indexOf(product);
       if (position > -1) {
