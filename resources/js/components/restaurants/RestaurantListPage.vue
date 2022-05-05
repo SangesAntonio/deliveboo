@@ -13,6 +13,7 @@
     </li> 
     </ul> -->
     <div class="container">
+      <h1>Lista dei ristoranti</h1>
       <div class="row">
         <Card v-for="user in users" :key="user.id" :user="user" class="my-3" />
       </div>
@@ -58,4 +59,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1{
+  font-family: 'Koulen', corsive;
+  background-color: #ffc562;
+  box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5);
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+}
+.container{
+  background-color: #d78129;
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px 10px rgb(0, 0, 0, 0.5);
+  padding: 30px;
+}
 </style>

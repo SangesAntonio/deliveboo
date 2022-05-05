@@ -120,7 +120,9 @@ if (typeof window !== "undefined" && window.Vue) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+
 module.exports = __webpack_require__(/*! C:\Users\user\Desktop\deliveboo\resources\js\js_payment\index.js */"./resources/js/js_payment/index.js");
+
 
 
 /***/ })
