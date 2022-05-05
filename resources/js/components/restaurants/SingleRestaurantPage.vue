@@ -1,17 +1,44 @@
 <template>
   <div>
-    <Card :user="user" />
+    <div class="mt-4">
+      <h4>{{ user.restaurant_name }}</h4>
+      <b-card
+        :img-src="`/storage/${user.image}`"
+        img-alt="Card image"
+        img-left
+        class="mb-3"
+      >
+        <b-card-text>
+          <ul>
+            <li class="text-black">{{ user.address }}</li>
+            <li class="text-black">{{ user.restaurant_name }}</li>
+            <ul v-for="category in user.categories" :key="category.id">
+              <li>
+                {{ category.name }}
+              </li>
+            </ul>
+          </ul>
+        </b-card-text>
+      </b-card>
+    </div>
+    <div class="row">
+      <ProductCard
+        v-for="(product, index) in user.product"
+        :key="index"
+        :product="product"
+      />
+    </div>
   </div>
 </template>
 
 
 <script>
 import axios from "axios";
-import Card from "../restaurants/Card.vue";
+import ProductCard from "../products/ProductCard.vue";
 export default {
   name: "RestaurantList",
   components: {
-    Card,
+    ProductCard,
   },
   data() {
     return {
@@ -44,4 +71,7 @@ export default {
 
 
 <style lang="scss" scoped>
+img {
+  width: 30%;
+}
 </style>

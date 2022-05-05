@@ -11837,3 +11837,17 @@ input:checked + .slider:before {
   border-bottom: black solid 1px;
 }
 
+.btn-cs {
+  width: 40px;
+  height: 40px;
+  margin-top: 15px;
+  background-color: #00ccbc;
+  border-radius: 38%;
+  transition: 0.2s;
+}
+
+.btn-cs:hover {
+  border-radius: 30%;
+  padding: 10px;
+}
+

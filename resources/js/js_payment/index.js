@@ -1,4 +1,4 @@
-import Payment from "./Payment.vue";
+
 
 const version = "__VERSION__";
 
