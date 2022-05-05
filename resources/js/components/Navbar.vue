@@ -1,11 +1,12 @@
 <template>
   <div>
     <b-button
+      id="nav-button"
       v-b-toggle.sidebar-1
       style="background-color: #00ccbc; border: 2px solid #00998c"
-      class="bg-deliveboo-green m-3 rounded"
-      ><i class="fas fa-bars"></i
-    ></b-button>
+      class="bg-light m-3 py-3 px-3 rounded-circle"
+      ><img id="nav-logo" src="/img/pubb/hamb-menu.png" alt="Logo"
+    /></b-button>
     <b-sidebar id="sidebar-1" class="logo h2 m-0 font-weight-bold menu" shadow>
       <h1 class="ml-4 pl-3 t-deliveboo-green">DELIVEBOO</h1>
       <template #footer="{ hide }">
@@ -67,9 +68,7 @@
               <li class="brd-deliveboo-green py-3 w-75">
                 <router-link to="/payment">
                   <i class="fas fa-shopping-bag t-deliveboo-green"></i>
-                  <span class="text nav-text t-deliveboo-green ml-2"
-                    >demo</span
-                  >
+                  <span class="text nav-text t-deliveboo-green ml-2">demo</span>
                 </router-link>
               </li>
             </ul>
@@ -102,12 +101,18 @@
 
 <script>
 export default {
-  name: "NavBar",
+  name: "Navbar",
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../../sass/navbar2.scss";
+#nav-logo {
+  max-width: 30px;
+}
+
+#nav-button {
+  width: 66px;
+}
 
 .b-sidebar #sidebar-1 .bg-light {
   background-color: #00ccbc !important;
