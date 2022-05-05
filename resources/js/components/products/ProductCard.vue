@@ -15,7 +15,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <!-- tasto minore -->
           <i
-            @click="removeProductFromCart(product.id)"
+            @click="removeProductFromCart(product)"
             role="button"
             class="fa-solid fa-circle-minus fa-lg text-danger"
           ></i>
@@ -28,7 +28,7 @@
 
           <!-- tasto più -->
           <i
-            @click="addProductToCart(product.id)"
+            @click="addProductToCart(product)"
             role="button"
             class="fa-solid fa-circle-plus fa-lg text-success"
           ></i>
@@ -48,18 +48,18 @@ export default {
     };
   },
   methods: {
-    addProductToCart(id) {
-      this.cart.push(id);
+    addProductToCart(product) {
+      this.cart.push(product);
       console.log(this.cart);
-      return this.$emit("addProduct", id);
+      return this.$emit("addProduct", product);
     },
-    removeProductFromCart(id) {
-      const position = this.cart.indexOf(id);
+    removeProductFromCart(product) {
+      const position = this.cart.indexOf(product);
       if (position > -1) {
         this.cart.splice(position, 1);
       }
       console.log(this.cart);
-      return this.$emit("removeProduct", id);
+      return this.$emit("removeProduct", product);
     },
   },
 };

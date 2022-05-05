@@ -2,10 +2,13 @@
   <div class="container-fluid px-0">
     <header class="header d-flex justify-content-between px-4">
       <Navbar />
-      <ModalCart />
+      <ModalCart :cart="cart" />
     </header>
     <div class="pt-5">
-      <router-view></router-view>
+      <router-view
+        @addProduct="addProduct"
+        @removeProduct="removeProduct"
+      ></router-view>
     </div>
   </div>
 </template>
@@ -18,6 +21,23 @@ export default {
   components: {
     Navbar,
     ModalCart,
+  },
+  data() {
+    return {
+      currentCart: 0,
+      cart: [],
+    };
+  },
+  methods: {
+    addProduct(product) {
+      this.cart.push(product);
+    },
+    removeProduct(product) {
+      const position = this.cart.indexOf(product);
+      if (position > -1) {
+        this.cart.splice(position, 1);
+      }
+    },
   },
 };
 </script>
