@@ -21,6 +21,7 @@ import Navbar from "./Navbar.vue";
 import DesktopNavbar from "./DesktopNavbar.vue";
 import ModalCart from "./ModalCart.vue";
 export default {
+
 	name: "App",
 	components: {
 		Navbar,
