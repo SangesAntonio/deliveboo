@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-lg-5 pt-lg-5 pt-5">
     <!-- <ul v-for="user in users" :key="user.id"
         class="col-sm-6 col-md-4 col-xl-3">
 
@@ -59,15 +59,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1{
-  font-family: 'Koulen', corsive;
+h1 {
+  font-family: "Koulen", corsive;
   background-color: #ffc562;
   box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5);
   border-radius: 20px;
   text-align: center;
   padding: 10px;
 }
-.container{
+.container {
   background-color: #d78129;
   border-radius: 30px;
   box-shadow: 10px 10px 10px 10px rgb(0, 0, 0, 0.5);

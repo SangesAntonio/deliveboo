@@ -3,5 +3,8 @@
     "/css/app.css": "/css/app.css",
     "/js/delete-form.js": "/js/delete-form.js",
     "/js/front.js": "/js/front.js",
-    "/js/imag-preview.js": "/js/imag-preview.js"
+    "/js/imag-preview.js": "/js/imag-preview.js",
+    "/js/index.js": "/js/index.js",
+    "/js/main.js": "/js/main.js",
+    "/js/plugin.js": "/js/plugin.js"
 }

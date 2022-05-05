@@ -3,7 +3,7 @@
     <b-button
       id="nav-button"
       v-b-toggle.sidebar-1
-      style="background-color: #00ccbc; border: 2px solid #00998c"
+      style="background-color: #00ccbc; border: 2px solid #d78129"
       class="bg-light m-3 py-3 px-3 rounded-circle"
       ><img id="nav-logo" src="/img/pubb/hamb-menu.png" alt="Logo"
     /></b-button>
