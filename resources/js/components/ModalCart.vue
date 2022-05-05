@@ -1,43 +1,48 @@
 <template>
   <div>
-    <!-- Bottone modal -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
+    <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')"
+      >Carrello</b-button
     >
-      <i class="fas fa-cart-circle-plus"></i>
-    </button>
 
-    <!-- Modale -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Carrello</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">
-              vai al checkout
-            </button>
-          </div>
-        </div>
+    <b-modal id="bv-modal-example" hide-footer>
+      <template #modal-title> </template>
+      <div class="d-block text-center">
+        <table class="table table-hover table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">Prodotto</th>
+              <th scope="col">Quantità</th>
+              <th scope="col">Prezzo</th>
+              <th scope="col">Totale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="col">Margherita</td>
+              <td>2</td>
+              <td>4&euro;</td>
+              <td>8&euro;</td>
+            </tr>
+            <tr>
+              <td scope="col">Hot Dog</td>
+              <td>1</td>
+              <td>3&euro;</td>
+              <td>3&euro;</td>
+            </tr>
+            <tr>
+              <th colspan="3">Totale Ordine</th>
+              <th>12&euro;</th>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
+      <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')"
+        >Chiudi</b-button
+      >
+      <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')"
+        >Check out</b-button
+      >
+    </b-modal>
   </div>
 </template>
 
@@ -47,5 +52,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "../../sass/cartmodal.scss";
 </style>

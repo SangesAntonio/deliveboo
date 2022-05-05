@@ -19,7 +19,7 @@ const router = new VueRouter({
         { path: '/products', component: ProductListPage, name: 'products' },
         { path: '/products/:product_name', component: SingleProductPage, name: 'product-detail' },
         { path: '/restaurants', component: RestaurantListPage, name: 'restaurants' },
-        { path: '/restaurants/:restaurant_name', component: SingleRestaurantPage, name: 'restaurant-detail' },
+        { path: '/restaurants/:id', component: SingleRestaurantPage, name: 'restaurant-detail' },
         { path: '/payment', component: PaymentCheckout, name: 'payment' },
         { path: '*', component: NotFoundPage, name: 'not-found' }
     ]

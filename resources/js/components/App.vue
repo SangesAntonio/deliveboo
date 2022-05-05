@@ -1,6 +1,9 @@
 <template>
   <div class="container-fluid px-0">
-    <Navbar />
+    <header class="header d-flex justify-content-between px-4">
+      <Navbar />
+      <ModalCart />
+    </header>
     <div class="pt-5">
       <router-view></router-view>
     </div>
@@ -9,10 +12,12 @@
 
 <script>
 import Navbar from "./Navbar.vue";
+import ModalCart from "./ModalCart.vue";
 export default {
   name: "App",
   components: {
     Navbar,
+    ModalCart,
   },
 };
 </script>
