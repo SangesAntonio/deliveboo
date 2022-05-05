@@ -5,7 +5,7 @@
       <div class="d-flex justify-content-end fixed-bottom d-block d-lg-none">
         <Navbar />
       </div>
-      <ModalCart :cart="cart" />
+      <ModalCart class="fixed-bottom m-3" :cart="cart" />
     </header>
     <div>
       <router-view
