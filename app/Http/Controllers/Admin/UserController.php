@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
@@ -176,8 +177,41 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function statistics(User $user)
+    public function statistics()
     {
-        return view('admin.users.statistics', compact('user'));
+        //Prendo l'id dell'utente loggato
+        $idLog = Auth::id();
+
+        // Recupero tutti i dati dell'utente loggato
+        $user = DB::table('users')->where('id', '=', $idLog)->first();
+
+        $quantity = DB::table('users')
+            ->join('products', 'users.id', '=', 'products.user_id')
+            ->join('order_product', 'order_product.product_id', '=', 'product.id')
+            ->join('orders', 'order_product.order_id', '=', 'orders.id')
+            ->select(DB::raw('sum(order_product.product_quantity) as quantity , products.name'))
+            ->groupBy('products.name')
+            ->where('users.id', '=', $idLog)
+            ->get();
+
+        $price = DB::table('users')
+            ->join('products', 'users.id', '=', 'products.user_id')
+            ->join('order_product', 'order_product.product_id', '=', 'products.id')
+            ->join('orders', 'order_product.order_id', '=', 'orders.id')
+            ->select('orders.created_at', 'orders.total_amount')
+            ->where('users.id', '=', $idLog)
+            ->get();
+
+        $productName = $quantity->pluck('name');
+        $totalQuantity = $quantity->pluck('product_quantity');
+
+        foreach ($price as $item) {
+            $item->created_at = date("d-m-Y", strtotime($item->created_at));
+        }
+
+        $orderDate = $price->pluck('created_at');
+        $totalAmount = $price->pluck('total_amount');
+
+        return view('admin.users.statistics', compact('totalQuantity', 'productName', 'quantity', 'user', 'price', 'orderDate', 'totalAmount'));
     }
 }

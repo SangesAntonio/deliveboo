@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::orderBy('restaurant_name', 'DESC')->with(['categories'])->get();
-        return response()->json($user);
+        $products = Product::orderBy('name', 'ASC')->with(['users'])->get();
+        return response()->json($products);
     }
 
     /**
@@ -27,8 +27,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('id', $id)->with(['products', 'categories'])->first();
-        if (!$user) return response('Restaurant Not Found', 404);
-        return response()->json($user);
+        $product = Product::where("user_id", $id)->get();
+        return response()->json($product);
     }
 }
