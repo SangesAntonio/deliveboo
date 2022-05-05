@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div>
     <!-- <ul v-for="user in users" :key="user.id"
         class="col-sm-6 col-md-4 col-xl-3">
 
@@ -14,35 +14,34 @@
     </ul> -->
     <div class="container">
       <div class="row">
-    <Card v-for="user in users" :key="user.id" :user="user" class="my-3"/>
-
+        <Card v-for="user in users" :key="user.id" :user="user" class="my-3" />
       </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
-import axios from 'axios';
-import Card from '../restaurants/Card.vue';
+import axios from "axios";
+import Card from "../restaurants/Card.vue";
 export default {
-    name:'RestaurantList',
-    components:{
-      Card,
-    },
-    data() {
+  name: "RestaurantList",
+  components: {
+    Card,
+  },
+  data() {
     return {
       isLoading: false,
       users: [],
     };
-    },
-    methods: {
+  },
+  methods: {
     getRestaurants() {
-    //   this.isLoading = true;
+      //   this.isLoading = true;
       axios
         .get("http://localhost:8000/api/users")
         .then((res) => {
           this.users = res.data;
-          console.log(res.data)
+          console.log(res.data);
         })
         .catch((err) => {
           console.error(err);
@@ -50,15 +49,13 @@ export default {
         .then(() => {
           // this.isLoading = false;
         });
-    },   
+    },
   },
-  mounted(){
-      this.getRestaurants()
-  }
-}
-
+  mounted() {
+    this.getRestaurants();
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

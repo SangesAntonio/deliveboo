@@ -7,7 +7,6 @@
       <ul>
         <li class="text-black">{{user.address}}</li>
         <li class="text-black">{{user.restaurant_name}}</li>
-        <li class="text-black">{{user.address}}</li>
         <ul v-for="category in user.categories" :key="category.id">
           <li>
             {{category.name}}
@@ -16,20 +15,22 @@
       </ul>
     </p>
   </div>
+  <router-link :to="{ name: 'restaurant-detail', params: { id: user.id } }">
+                  
+                  <span class="text nav-text t-deliveboo-green ml-1">link ristorante</span>
+                </router-link>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    name:'Card',
-    props: ["user"],
-    data(){
-      return{
-
-      };
-    },
-}
+  name: "Card",
+  props: ["user"],
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
