@@ -12629,19 +12629,10 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-<<<<<<< HEAD
 var version = "__VERSION__";
 
 var install = function install(Vue) {
   Vue.component("v-braintree", Payment);
-=======
-!(function webpackMissingModule() { var e = new Error("Cannot find module './Payment.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-
-var version = "__VERSION__";
-
-var install = function install(Vue) {
-  Vue.component("v-braintree", !(function webpackMissingModule() { var e = new Error("Cannot find module './Payment.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
->>>>>>> 52428a80e59924e0214bc25e4a1feb55042514f7
 };
 
 var plugin = {
@@ -12667,18 +12658,8 @@ if (typeof window !== "undefined" && window.Vue) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-<<<<<<< HEAD
 /* harmony import */ var _plugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugin */ "./resources/js/js_payment/plugin.js");
 
-=======
-!(function webpackMissingModule() { var e = new Error("Cannot find module './Payment.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var _plugin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plugin */ "./resources/js/js_payment/plugin.js");
-
-
-
-
-var braintree = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'braintree'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
->>>>>>> 52428a80e59924e0214bc25e4a1feb55042514f7
 
 var gateway = braintree.connect({
   environment: braintree.Environment.Sandbox,
@@ -12693,11 +12674,7 @@ gateway.clientToken.generate({}, function (err, response) {
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.config.productionTip = false;
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   render: function render(h) {
-<<<<<<< HEAD
     return h(Payment);
-=======
-    return h(!(function webpackMissingModule() { var e = new Error("Cannot find module './Payment.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
->>>>>>> 52428a80e59924e0214bc25e4a1feb55042514f7
   }
 }).$mount("#app");
 
@@ -12738,11 +12715,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(_index__WEBPACK_IMPORTED_MODULE_1
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Laravel\deliveboo\resources\js\js_payment\main.js */"./resources/js/js_payment/main.js");
-=======
-module.exports = __webpack_require__(/*! C:\laravel\deliveboo\deliveboo\resources\js\js_payment\main.js */"./resources/js/js_payment/main.js");
->>>>>>> 52428a80e59924e0214bc25e4a1feb55042514f7
+module.exports = __webpack_require__(/*! C:\Users\user\Desktop\deliveboo\resources\js\js_payment\main.js */"./resources/js/js_payment/main.js");
 
 
 /***/ })
