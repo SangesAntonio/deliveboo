@@ -5,10 +5,13 @@
       <div class="d-flex justify-content-end fixed-bottom d-block d-lg-none">
         <Navbar />
       </div>
-      <!-- <ModalCart class="fixed-bottom m-3" /> -->
+      <ModalCart :cart="cart" />
     </header>
     <div>
-      <router-view></router-view>
+      <router-view
+        @addProduct="addProduct"
+        @removeProduct="removeProduct"
+      ></router-view>
     </div>
   </div>
 </template>
@@ -23,6 +26,23 @@ export default {
     Navbar,
     ModalCart,
     DesktopNavbar,
+  },
+  data() {
+    return {
+      currentCart: 0,
+      cart: [],
+    };
+  },
+  methods: {
+    addProduct(product) {
+      this.cart.push(product);
+    },
+    removeProduct(product) {
+      const position = this.cart.indexOf(product);
+      if (position > -1) {
+        this.cart.splice(position, 1);
+      }
+    },
   },
 };
 </script>

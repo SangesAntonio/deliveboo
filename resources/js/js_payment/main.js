@@ -1,8 +1,7 @@
 import Vue from "vue";
-import Payment from "./Payment.vue";
+
 import "./plugin";
 
-var braintree = require("braintree");
 
 var gateway = braintree.connect({
     environment: braintree.Environment.Sandbox,
@@ -11,7 +10,7 @@ var gateway = braintree.connect({
     privateKey: "e29e96117b51275a1931a732c72f8cdb",
 });
 
-gateway.clientToken.generate({}, function(err, response) {
+gateway.clientToken.generate({}, function (err, response) {
     var clientToken = response.clientToken;
     console.log(clientToken);
 });
