@@ -119,7 +119,15 @@ imagInput.addEventListener('change', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< Updated upstream
 module.exports = __webpack_require__(/*! C:\Laravel\deliveboo\resources\js\imag-preview.js */"./resources/js/imag-preview.js");
+=======
+<<<<<<< Updated upstream
+module.exports = __webpack_require__(/*! C:\laravel\deliveboo\deliveboo\resources\js\imag-preview.js */"./resources/js/imag-preview.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\user\Desktop\deliveboo\resources\js\imag-preview.js */"./resources/js/imag-preview.js");
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 
 /***/ })
