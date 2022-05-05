@@ -81,37 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/delete-form.js":
-/*!*************************************!*\
-  !*** ./resources/js/delete-form.js ***!
-  \*************************************/
-/*! no static exports found */
+/***/ "./resources/js/js_payment/main.js":
+/*!*****************************************!*\
+  !*** ./resources/js/js_payment/main.js ***!
+  \*****************************************/
+/*! no exports provided */
 /***/ (function(module, exports) {
 
-var deleteForms = document.querySelectorAll('.delete-form');
-deleteForms.forEach(function (form) {
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var accept = confirm("Sei sicuro di voler cancellare questo prodotto?");
-    if (accept) e.target.submit();
-  });
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\user\\Desktop\\deliveboo\\resources\\js\\js_payment\\main.js'");
 
 /***/ }),
 
-/***/ 1:
-/*!*******************************************!*\
-  !*** multi ./resources/js/delete-form.js ***!
-  \*******************************************/
+/***/ 5:
+/*!***********************************************!*\
+  !*** multi ./resources/js/js_payment/main.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\user\Desktop\deliveboo\resources\js\delete-form.js */"./resources/js/delete-form.js");
+module.exports = __webpack_require__(/*! C:\Users\user\Desktop\deliveboo\resources\js\js_payment\main.js */"./resources/js/js_payment/main.js");
 
 
 /***/ })

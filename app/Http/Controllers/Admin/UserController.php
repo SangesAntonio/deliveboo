@@ -187,7 +187,7 @@ class UserController extends Controller
 
         $quantity = DB::table('users')
             ->join('products', 'users.id', '=', 'products.user_id')
-            ->join('order_product', 'order_product.product_id', '=', 'product.id')
+            ->join('order_product', 'order_product.product_id', '=', 'product_id')
             ->join('orders', 'order_product.order_id', '=', 'orders.id')
             ->select(DB::raw('sum(order_product.product_quantity) as quantity , products.name'))
             ->groupBy('products.name')
