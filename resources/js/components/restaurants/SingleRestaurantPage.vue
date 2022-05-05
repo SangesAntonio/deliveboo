@@ -38,14 +38,13 @@
 import axios from "axios";
 import ProductCard from "../products/ProductCard.vue";
 export default {
-  name: "RestaurantList",
-  components: {
-    ProductCard,
-  },
-  data() {
-    return {
-      isLoading: false,
-
+	name: "RestaurantList",
+	components: {
+		ProductCard,
+	},
+	data() {
+		return {
+			isLoading: false,
       user: [],
     };
   },
@@ -82,6 +81,6 @@ export default {
 
 <style lang="scss" scoped>
 img {
-  width: 30%;
+	width: 30%;
 }
 </style>
