@@ -7,7 +7,12 @@
     <b-modal id="bv-modal-example" hide-footer>
       <template #modal-title> </template>
       <div class="d-block text-center">
-        <CardDetail  v-for="(product , index) in correctCart" :key="index" :product="product"/>
+        <CardDetail
+          v-for="(product, index) in correctCart"
+          :key="index"
+          :product="product"
+          :correctCart="correctCart"
+        />
       </div>
       <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')"
         >Chiudi</b-button
@@ -24,25 +29,23 @@ import ProductCard from "./products/ProductCard.vue";
 import CardDetail from "./restaurants/CardDetail.vue";
 
 export default {
-  components: { ProductCard , CardDetail},
+  components: { ProductCard, CardDetail },
   name: "ModelCart",
-  props: ["cart" , "quantity" ],
+  props: ["cart"],
   data() {
     return {
-      correctCart:[]
+      correctCart: [],
     };
   },
-  methods: {
-  },
+  methods: {},
   computed: {
-    
     getQuantity() {
-      let result =  this.cart;
+      this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
+      console.log(this.correctCart);
+      return this.correctCart;
     },
-
-    
   },
-  }
+};
 </script>
 
 <style lang="scss">
