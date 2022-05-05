@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name', 50);
             $table->decimal('price', 4, 2);
+            $table->smallInteger('quantity')->nullable();
             $table->text('ingredients');
             $table->boolean('visibility')->default(0);
             $table->text('image')->nullable();

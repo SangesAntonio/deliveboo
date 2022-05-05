@@ -22,6 +22,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Orata, patate.',
                 'price' => 13.5,
                 'image' => 'product_images/pesce/pesce(1).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '1',
@@ -30,6 +31,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Vongole veraci, pomodorini ciliegino, mazzancolle.',
                 'price' => 15,
                 'image' => 'product_images/pesce/pesce(2).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '1',
@@ -38,6 +40,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Cozze, gamberi, seppie, polpo, pomodori pelati.',
                 'price' => 17.5,
                 'image' => 'product_images/pesce/pesce(3).jpg',
+                'quantity' => 0,
             ],
             // !!! User 2 
             [
@@ -47,6 +50,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Cozze, polpo, calamari, vongole, gamberi, tartare di tonno e di salmone.',
                 'price' => 14.5,
                 'image' => 'product_images/pesce/pesce(4).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '2',
@@ -55,6 +59,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salmone, lime.',
                 'price' => 12,
                 'image' => 'product_images/pesce/pesce(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '2',
@@ -63,6 +68,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Orata, salsa di limone.',
                 'price' => 16,
                 'image' => 'product_images/pesce/pesce(6).jpg',
+                'quantity' => 0,
             ],
             // !!! User 3 
             [
@@ -72,6 +78,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Granchio reale, gamberi, salmone, pesce spada, seppie e ostriche.',
                 'price' => 25,
                 'image' => 'product_images/pesce/pesce(7).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '3',
@@ -80,6 +87,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Spaghetti, cozze, passata di pomodoro.',
                 'price' => 15,
                 'image' => 'product_images/pesce/pesce(8).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '3',
@@ -88,6 +96,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Gamberetti, alici, merluzzetti, triglie, calamari, gamberetti.',
                 'price' => 11,
                 'image' => 'product_images/pesce/pesce(9).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '3',
@@ -96,6 +105,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Astice, limone, guazzetto di pomodoro.',
                 'price' => 20,
                 'image' => 'product_images/pesce/pesce(10).jpg',
+                'quantity' => 0,
             ],
             // * ---------- INTERNAZIONALE ----------
             // !!! User 4 
@@ -106,6 +116,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Gamberetti, alici, merluzzetti, triglie, calamari, gamberetti.',
                 'price' => 11,
                 'image' => 'product_images/pesce/pesce(9).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '4',
@@ -114,6 +125,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salmone, lime.',
                 'price' => 12,
                 'image' => 'product_images/pesce/pesce(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '4',
@@ -122,6 +134,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Orata, patate.',
                 'price' => 13.5,
                 'image' => 'product_images/pesce/pesce(1).jpg',
+                'quantity' => 0,
             ],
             // !!! User 5 
             [
@@ -131,6 +144,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Gamberetti, alici, merluzzetti, triglie, calamari, gamberetti.',
                 'price' => 11,
                 'image' => 'product_images/pesce/pesce(9).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '5',
@@ -139,6 +153,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Spaghetti, cozze, passata di pomodoro.',
                 'price' => 15,
                 'image' => 'product_images/pesce/pesce(8).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '5',
@@ -147,6 +162,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Orata, salsa di limone.',
                 'price' => 16,
                 'image' => 'product_images/pesce/pesce(6).jpg',
+                'quantity' => 0,
             ],
             // !!! User 6 
             [
@@ -156,6 +172,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Gamberetti, alici, merluzzetti, triglie, calamari, gamberetti.',
                 'price' => 11,
                 'image' => 'product_images/pesce/pesce(9).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '6',
@@ -164,6 +181,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Spaghetti, cozze, passata di pomodoro.',
                 'price' => 15,
                 'image' => 'product_images/pesce/pesce(8).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '6',
@@ -172,6 +190,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Orata, salsa di limone.',
                 'price' => 16,
                 'image' => 'product_images/pesce/pesce(6).jpg',
+                'quantity' => 0,
             ],
             // * ---------- MEDITERRANEA ----------
             // !!! User 7 
@@ -182,6 +201,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Spaghetti, peperoncino, aglio.',
                 'price' => 7,
                 'image' => 'product_images/mediterranea/mediterranea(1).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '7',
@@ -190,6 +210,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Basilico, parmigiano reggiano DOP, pecorino sardo, pinoli.',
                 'price' => 10,
                 'image' => 'product_images/mediterranea/mediterranea(2).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '7',
@@ -198,6 +219,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Crema di carciofi, pomodorini e basilico, peperoni saltati in padella.',
                 'price' => 5.5,
                 'image' => 'product_images/mediterranea/mediterranea(3).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '7',
@@ -206,6 +228,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Calamari, scorza di limone, crema di limone, basilico, erbette.',
                 'price' => 13,
                 'image' => 'product_images/mediterranea/mediterranea(4).jpg',
+                'quantity' => 0,
             ],
             // !!! User 8 
             [
@@ -215,6 +238,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Guanciale, tuorli, pecorino romano.',
                 'price' => 10,
                 'image' => 'product_images/mediterranea/mediterranea(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '8',
@@ -223,6 +247,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Frisella, pomodoro sanmarzano, basilico, tonno.',
                 'price' => 8,
                 'image' => 'product_images/mediterranea/mediterranea(6).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '8',
@@ -231,6 +256,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Gnocchetti sardi, cipolle, fagioli, passata di pomodoro.',
                 'price' => 10,
                 'image' => 'product_images/mediterranea/mediterranea(7).jpg',
+                'quantity' => 0,
             ],
             // !!! User 9 
             [
@@ -240,6 +266,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pane casareccio, basilico, pomodori ciliegini.',
                 'price' => 4.5,
                 'image' => 'product_images/mediterranea/mediterranea(8).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '9',
@@ -248,6 +275,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Vongole, spaghetti, prezzemolo.',
                 'price' => 12,
                 'image' => 'product_images/mediterranea/mediterranea(9).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '9',
@@ -256,6 +284,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salsiccia, friarielli, peperoncino fresco.',
                 'price' => 8,
                 'image' => 'product_images/mediterranea/mediterranea(10).jpg',
+                'quantity' => 0,
             ],
             // * ---------- CARNE ----------
             // !!! User 10 
@@ -266,6 +295,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Filetto di manzo 300g, burro, aglio.',
                 'price' => 22,
                 'image' => 'product_images/carne/carne(1).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '10',
@@ -274,6 +304,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'vitello magro 200g, cipollotto, cappero, limone, senape.',
                 'price' => 18.5,
                 'image' => 'product_images/carne/carne(1).png',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '10',
@@ -282,6 +313,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Petto di pollo, pecorino, pangrattato, limone.',
                 'price' => 8,
                 'image' => 'product_images/carne/carne(2).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '10',
@@ -290,6 +322,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Filetto di black Angus 300g, rosmarino, olio, peperoni saltati in padella.',
                 'price' => 23,
                 'image' => 'product_images/carne/carne(3).jpg',
+                'quantity' => 0,
             ],
             // !!! User 11 
             [
@@ -299,6 +332,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Bistecca di maiale, burro, prezzemolo, pepe.',
                 'price' => 7.5,
                 'image' => 'product_images/carne/carne(4).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '11',
@@ -307,6 +341,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pulled pork, guacamole, rucola e cipolla.',
                 'price' => 12,
                 'image' => 'product_images/carne/carne(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '11',
@@ -315,6 +350,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Macinato di manzo, salsiccia, pane, uova, parmigiano reggiano DOP, passata di pomodoro.',
                 'price' => 7.5,
                 'image' => 'product_images/carne/carne(7).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '11',
@@ -323,6 +359,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Petto di pollo, curry, pangrattato, uovo.',
                 'price' => 6,
                 'image' => 'product_images/carne/carne(6).jpg',
+                'quantity' => 0,
             ],
             // !!! User 12 
             [
@@ -332,6 +369,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salsiccia, zucchine.',
                 'price' => 6,
                 'image' => 'product_images/carne/carne(8).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '12',
@@ -340,6 +378,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Petto di pollo, senape, limone, erba cipollina.',
                 'price' => 6.5,
                 'image' => 'product_images/carne/carne(9).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '12',
@@ -348,6 +387,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Carrè di agnello, prezzemolo, lardo di colonnata.',
                 'price' => 12,
                 'image' => 'product_images/carne/carne(10).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '12',
@@ -356,6 +396,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Wagyu kobe 100g, olio, sale, pepe, rosmarino.',
                 'price' => 50,
                 'image' => 'product_images/carne/carne(11).jpg',
+                'quantity' => 0,
             ],
             // * ---------- PIZZA ----------
             // !!! User 13 
@@ -366,6 +407,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salsiccia, porcini.',
                 'price' => 8,
                 'image' => 'product_images/pizza/pizza(1).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '13',
@@ -374,6 +416,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Capperi, olive.',
                 'price' => 6.5,
                 'image' => 'product_images/pizza/pizza(3).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '13',
@@ -382,6 +425,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pistacchio di bronte, mortadella DOP.',
                 'price' => 9.5,
                 'image' => 'product_images/pizza/pizza(3).webp',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '13',
@@ -390,6 +434,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Capocollo, carciofi, pecorino romano.',
                 'price' => 9,
                 'image' => 'product_images/pizza/pizza(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '13',
@@ -398,6 +443,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Mozzarella, pomodoro.',
                 'price' => 5.5,
                 'image' => 'product_images/pizza/pizza(6).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '13',
@@ -406,6 +452,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pancetta tesa, provola affumicata.',
                 'price' => 8.5,
                 'image' => 'product_images/pizza/pizza(10).jpg',
+                'quantity' => 0,
             ],
             // !!! User 14 
             [
@@ -415,6 +462,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salsiccia, carciofi.',
                 'price' => 8,
                 'image' => 'product_images/pizza/pizza(1).webp',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '14',
@@ -423,6 +471,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Wurstel, patatine.',
                 'price' => 6.5,
                 'image' => 'product_images/pizza/pizza(2).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '14',
@@ -431,6 +480,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Asparagi, datterino giallo, pinoli.',
                 'price' => 9.5,
                 'image' => 'product_images/pizza/pizza(4).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '14',
@@ -439,6 +489,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Speck, zucchine.',
                 'price' => 9,
                 'image' => 'product_images/pizza/pizza(5).webp',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '14',
@@ -447,6 +498,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pancetta, provola, cipolla.',
                 'price' => 7.5,
                 'image' => 'product_images/pizza/pizza(9).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '14',
@@ -455,6 +507,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salame piccante.',
                 'price' => 7,
                 'image' => 'product_images/pizza/pizza(10).jpg',
+                'quantity' => 0,
             ],
             // !!! User 15 
             [
@@ -464,6 +517,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Prosciutto crudo, rucola, grana, pomodorini.',
                 'price' => 8.5,
                 'image' => 'product_images/pizza/pizza(2).webp',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '15',
@@ -472,6 +526,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Peperoni saltati in padella, capperi, olive.',
                 'price' => 7,
                 'image' => 'product_images/pizza/pizza(4).webp',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '15',
@@ -480,6 +535,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Acciughe, pomodoro, datterini gialli.',
                 'price' => 6.5,
                 'image' => 'product_images/pizza/pizza(7).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '15',
@@ -488,6 +544,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Melanzane arrostite, mozzarelline fresche.',
                 'price' => 7.5,
                 'image' => 'product_images/pizza/pizza(8).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '15',
@@ -496,6 +553,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salsiccia, friarielli.',
                 'price' => 7,
                 'image' => 'product_images/pizza/pizza(13).jpg',
+                'quantity' => 0,
             ],
             // * ---------- MESSICANO ----------
             // !!! User 16 
@@ -506,6 +564,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Manzo macinato, peperoni, fagioli rossi, passata di pomodoro.',
                 'price' => 7,
                 'image' => 'product_images/messicano/messicano(4).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '16',
@@ -514,6 +573,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Nachos, uova, jalapenos, pomodorini.',
                 'price' => 7.5,
                 'image' => 'product_images/messicano/messicano(3).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '16',
@@ -522,6 +582,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Avocado, succo di lime, pomodori ramati, cipolle, coriandolo.',
                 'price' => 3.5,
                 'image' => 'product_images/messicano/messicano(6).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '16',
@@ -530,6 +591,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'salsiccia, cipollotto, lime, pomodori datterini, salsa allo yogurt.',
                 'price' => 8.5,
                 'image' => 'product_images/messicano/messicano(10).jpg',
+                'quantity' => 0,
             ],
             // !!! User 17 
             [
@@ -539,6 +601,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Affidati a noi per la scoperta di nuovi sapori.',
                 'price' => 7.5,
                 'image' => 'product_images/messicano/messicano(1).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '17',
@@ -547,6 +610,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Manzo, brodo di carne, spezie.',
                 'price' => 7,
                 'image' => 'product_images/messicano/messicano(2).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '17',
@@ -555,6 +619,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Avocado, pollo, limone, jalapenos, ravanelli, cipolla.',
                 'price' => 8.5,
                 'image' => 'product_images/messicano/messicano(8).jpg',
+                'quantity' => 0,
             ],
             // !!! User 18 
             [
@@ -564,6 +629,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Manzo, avocado, succo di lime, coriandolo, panna acida.',
                 'price' => 9,
                 'image' => 'product_images/messicano/messicano(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '18',
@@ -572,6 +638,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pancetta, coriandolo, pollo, pomodori.',
                 'price' => 3.5,
                 'image' => 'product_images/messicano/messicano(7).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '18',
@@ -580,6 +647,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'salsiccia, salsa guacamole, pomodori datterini, salsa allo yogurt.',
                 'price' => 7.5,
                 'image' => 'product_images/messicano/messicano(9).jpg',
+                'quantity' => 0,
             ],
             // * ---------- INDIANO ----------
             // !!! User 19 
@@ -590,6 +658,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Yogurt bianco, aglio, farina.',
                 'price' => 3.5,
                 'image' => 'product_images/indiano/indiano(2).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '19',
@@ -598,6 +667,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pollo, fagiolini, cipolla, mandorle, riso basmati.',
                 'price' => 12,
                 'image' => 'product_images/indiano/indiano(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '19',
@@ -606,6 +676,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'verdure fresche di stagione, coscia di pollo, riso, bacche di goji.',
                 'price' => 7.5,
                 'image' => 'product_images/indiano/indiano(7).jpg',
+                'quantity' => 0,
             ],
             // !!! User 20 
             [
@@ -615,6 +686,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Riso basmati, curry, cumino, anacardi tostati.',
                 'price' => 7.5,
                 'image' => 'product_images/indiano/indiano(1).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '20',
@@ -623,6 +695,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Manzo, funghi, peperoncino, peperoni, paprika.',
                 'price' => 3.5,
                 'image' => 'product_images/indiano/indiano(3).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '20',
@@ -631,6 +704,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Riso basmati, anacardi, pesto di rucola.',
                 'price' => 7.5,
                 'image' => 'product_images/indiano/indiano(6).jpg',
+                'quantity' => 0,
             ],
             // !!! User 21 
             [
@@ -640,6 +714,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Manzo, coriandolo, salsa yogurt.',
                 'price' => 7,
                 'image' => 'product_images/indiano/indiano(4).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '21',
@@ -648,6 +723,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salsa curry, pollo, peperone verde, coriandolo.',
                 'price' => 5,
                 'image' => 'product_images/indiano/indiano(8).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '21',
@@ -656,6 +732,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'salsa al prezzemolo, patate, anacardi, pisellini, zenzero fresco, peperoncino.',
                 'price' => 5,
                 'image' => 'product_images/indiano/indiano(9).jpg',
+                'quantity' => 0,
             ],
             // * ---------- CINESE ----------
             // !!! User 22 
@@ -666,6 +743,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Ravioli ripieni di gamberetti al vapore.',
                 'price' => 4.5,
                 'image' => 'product_images/cinese/cinese(11).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '22',
@@ -674,6 +752,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Carne di manzo, erba cipollina, spezie.',
                 'price' => 5,
                 'image' => 'product_images/cinese/cinese(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '22',
@@ -682,6 +761,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pollo, insalata, erba cipollina, peperoncino.',
                 'price' => 4.5,
                 'image' => 'product_images/cinese/cinese(2).jpg',
+                'quantity' => 0,
             ],
             // !!! User 23 
             [
@@ -691,6 +771,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Riso basmati, gamberetti, peperoni, pomodori.',
                 'price' => 5,
                 'image' => 'product_images/cinese/cinese(1).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '23',
@@ -699,6 +780,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salsa curry, pollo, peperone verde, coriandolo.',
                 'price' => 5,
                 'image' => 'product_images/cinese/cinese(3).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '23',
@@ -707,6 +789,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Erba cipollina, riso basmati, pancetta, spinaci.',
                 'price' => 5.5,
                 'image' => 'product_images/cinese/cinese(4).jpg',
+                'quantity' => 0,
             ],
             // !!! User 24 
             [
@@ -716,6 +799,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Peperoni, erba cipollina, bacche di goji, pomodorini.',
                 'price' => 4.5,
                 'image' => 'product_images/cinese/cinese(6).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '24',
@@ -724,6 +808,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pancetta, cipolla, funghi.',
                 'price' => 5,
                 'image' => 'product_images/cinese/cinese(7).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '24',
@@ -732,6 +817,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Ravioli ripieni di gamberetti al vapore.',
                 'price' => 5,
                 'image' => 'product_images/cinese/cinese(9).jpg',
+                'quantity' => 0,
             ],
             // * ---------- GIAPPONESE ----------
             // !!! User 25 
@@ -742,6 +828,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'misto nigiri, sashimi, roll.',
                 'price' => 10,
                 'image' => 'product_images/giapponese/giapponese(1).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '25',
@@ -750,6 +837,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Roll di gamberetti e avocado croccanti.',
                 'price' => 4,
                 'image' => 'product_images/giapponese/giapponese(2).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '25',
@@ -758,6 +846,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Riso con manzo, uovo, erba cipollina.',
                 'price' => 5,
                 'image' => 'product_images/giapponese/giapponese(3).jpg',
+                'quantity' => 0,
             ],
             // !!! User 26 
             [
@@ -767,6 +856,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salmone, uova di salmone.',
                 'price' => 4,
                 'image' => 'product_images/giapponese/giapponese(4).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '26',
@@ -775,6 +865,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Tonno, riso.',
                 'price' => 4,
                 'image' => 'product_images/giapponese/giapponese(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '26',
@@ -783,6 +874,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Peperoni, erba cipollina, funghi.',
                 'price' => 5,
                 'image' => 'product_images/giapponese/giapponese(6).jpg',
+                'quantity' => 0,
             ],
             // !!! User 27 
             [
@@ -792,6 +884,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Salmone, riso, alga wakame.',
                 'price' => 4,
                 'image' => 'product_images/giapponese/giapponese(7).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '27',
@@ -800,6 +893,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Tonno, salmone, zenzero, mango, avocado, barbabietola.',
                 'price' => 6,
                 'image' => 'product_images/giapponese/giapponese(8).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '27',
@@ -808,6 +902,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pesce spada, salmone marinato, cetrioli, avocado.',
                 'price' => 8,
                 'image' => 'product_images/giapponese/giapponese(9).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '27',
@@ -816,6 +911,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Algha wakame,tonno, uova di tonno, cetriolo.',
                 'price' => 4,
                 'image' => 'product_images/giapponese/giapponese(10).jpg',
+                'quantity' => 0,
             ],
             // * ---------- DOLCI ----------
             // !!! User 28 
@@ -826,6 +922,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Mascarpone, cioccolato.',
                 'price' => 5,
                 'image' => 'product_images/dolci/dolci(2).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '28',
@@ -834,6 +931,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Farina di cocco, cocco.',
                 'price' => 5,
                 'image' => 'product_images/dolci/dolci(5).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '28',
@@ -842,6 +940,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Crema all\'uovo, pinoli, base di biscotti.',
                 'price' => 5,
                 'image' => 'product_images/dolci/dolci(6).jpg',
+                'quantity' => 0,
             ],
             // !!! User 29 
             [
@@ -851,6 +950,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Cioccolato, pan di spagna, ciliegie.',
                 'price' => 5,
                 'image' => 'product_images/dolci/dolci(12).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '29',
@@ -859,6 +959,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Tortino al cioccolato e pera, crema di ricotta.',
                 'price' => 5,
                 'image' => 'product_images/dolci/dolci(4).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '29',
@@ -867,6 +968,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Glassa e ripieno di cioccolato bianco, pan di spagna al cioccolato, ribes.',
                 'price' => 5,
                 'image' => 'product_images/dolci/dolci(10).jpg',
+                'quantity' => 0,
             ],
             // !!! User 30 
             [
@@ -876,6 +978,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Pistacchio di bronte, base di biscotti.',
                 'price' => 5,
                 'image' => 'product_images/dolci/dolci(17).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '30',
@@ -884,6 +987,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Cioccolato, granella di cioccolato, crema di caffè.',
                 'price' => 5,
                 'image' => 'product_images/dolci/dolci(18).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '30',
@@ -892,6 +996,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Crema, lamponi, base di biscotti.',
                 'price' => 5,
                 'image' => 'product_images/dolci/dolci(23).jpg',
+                'quantity' => 0,
             ],
 
             // !!! ADMIN SOLO PER TEST !!! 
@@ -902,6 +1007,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Manzo macinato, peperoni, fagioli rossi, passata di pomodoro.',
                 'price' => 7,
                 'image' => 'product_images/messicano/messicano(4).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '31',
@@ -910,6 +1016,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Nachos, uova, jalapenos, pomodorini.',
                 'price' => 7.5,
                 'image' => 'product_images/messicano/messicano(3).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '31',
@@ -918,6 +1025,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'Avocado, succo di lime, pomodori ramati, cipolle, coriandolo.',
                 'price' => 3.5,
                 'image' => 'product_images/messicano/messicano(6).jpg',
+                'quantity' => 0,
             ],
             [
                 'user_id' => '31',
@@ -926,6 +1034,7 @@ class ProductSeeder extends Seeder
                 'ingredients' => 'salsiccia, cipollotto, lime, pomodori datterini, salsa allo yogurt.',
                 'price' => 8.5,
                 'image' => 'product_images/messicano/messicano(10).jpg',
+                'quantity' => 0,
             ],
         ];
 
@@ -934,6 +1043,7 @@ class ProductSeeder extends Seeder
             $p->user_id = $product['user_id'];
             $p->name =  $product['name'];
             $p->visibility =  $product['visibility'];
+            $p->quantity = $product['quantity'];
             $p->ingredients = $product['ingredients'];
             $p->price =  $product['price'];
             $p->image = $product['image'];

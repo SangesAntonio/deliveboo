@@ -7,29 +7,7 @@
     <b-modal id="bv-modal-example" hide-footer>
       <template #modal-title> </template>
       <div class="d-block text-center">
-        <table class="table table-hover table-borderless">
-          <thead>
-            <tr>
-              <th scope="col">Prodotto</th>
-              <th scope="col">Quantità</th>
-              <th scope="col">Prezzo</th>
-              <th scope="col">Totale</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td scope="col">Margherita</td>
-              <td>2</td>
-              <td>4&euro;</td>
-              <td>8&euro;</td>
-            </tr>
-
-            <tr>
-              <th colspan="3">Totale Ordine</th>
-              <th>12&euro;</th>
-            </tr>
-          </tbody>
-        </table>
+        <CardDetail  v-for="(product , index) in correctCart" :key="index" :product="product"/>
       </div>
       <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')"
         >Chiudi</b-button
@@ -42,37 +20,29 @@
 </template>
 
 <script>
+import ProductCard from "./products/ProductCard.vue";
+import CardDetail from "./restaurants/CardDetail.vue";
+
 export default {
+  components: { ProductCard , CardDetail},
   name: "ModelCart",
-  props: ["cart"],
+  props: ["cart" , "quantity" ],
   data() {
-    return {};
+    return {
+      correctCart:[]
+    };
+  },
+  methods: {
   },
   computed: {
+    
     getQuantity() {
-      console.log(product.price , 'sono il console.log di product.price')
-      let cart = {};
-      for (let i in this.cart) {
-        let key = this.cart[i].id;
-        cart[key] = {
-          id: key,
-          count: cart[key] && cart[key].count ? cart[key].count + 1 : 1,
-          totalPrice: parseInt(cart[key] && cart[key].count ? cart[key].count + 1 : 1) * parseInt(product.price),
-        };
-          // inserire qui logica totale prezzo
-
-
-
-      }
-      return Object.values(cart);
-      
+      let result =  this.cart;
     },
+
+    
   },
-  mounted() {
-    console.log(this.getQuantity);
-    console.log(this.getTotalPrice);
-  },
-};
+  }
 </script>
 
 <style lang="scss">
