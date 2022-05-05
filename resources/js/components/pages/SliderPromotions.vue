@@ -12,12 +12,6 @@
       >
         <img :src="slide" alt="Slider Ad" />
       </div>
-      <!-- <button @click="prev">
-        <i class="fa-solid fa-circle-chevron-left"></i>
-      </button>
-      <button @click="next">
-        <i class="fa-solid fa-circle-chevron-right"></i>
-      </button> -->
     </div>
   </div>
 </template>
@@ -62,7 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 .promotionslider {
-  height: 400px;
+  height: auto;
   img {
     width: 100%;
   }
@@ -71,7 +65,7 @@ export default {
     color: #76bac5;
   }
   .slidess {
-    height: 400px;
+    height: auto;
     width: 100%;
   }
 }

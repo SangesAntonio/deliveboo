@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')"
-      >Carrello</b-button
-    >
-
+	<div>
+		<b-button id="show-btn" @click="$bvModal.show('bv-modal-example')"
+			><i class="fa-solid fa-cart-shopping"></i
+		></b-button>
     <b-modal id="bv-modal-example" hide-footer>
       <template #modal-title> </template>
       <div class="d-block text-center">
