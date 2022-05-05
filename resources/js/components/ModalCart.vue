@@ -23,12 +23,7 @@
               <td>4&euro;</td>
               <td>8&euro;</td>
             </tr>
-            <tr>
-              <td scope="col">Hot Dog</td>
-              <td>1</td>
-              <td>3&euro;</td>
-              <td>3&euro;</td>
-            </tr>
+
             <tr>
               <th colspan="3">Totale Ordine</th>
               <th>12&euro;</th>
@@ -49,6 +44,35 @@
 <script>
 export default {
   name: "ModelCart",
+  props: ["cart"],
+  data() {
+    return {};
+  },
+  computed: {
+    getQuantity() {
+      let cart = {};
+      for (let i in this.cart) {
+        let key = this.cart[i].id;
+        cart[key] = {
+          id: key,
+          count: cart[key] && cart[key].count ? cart[key].count + 1 : 1,
+        };
+      }
+      return Object.values(cart);
+    },
+    getTotalPrice() {
+      let total = 0;
+      this.cart.forEach((item) => {
+        total += parseInt(item.quantity * item.price);
+        console.log(item.quantity, item.price);
+      });
+      return total.toFixed(2);
+    },
+  },
+  mounted() {
+    console.log(this.getQuantity);
+    console.log(this.getTotalPrice);
+  },
 };
 </script>
 

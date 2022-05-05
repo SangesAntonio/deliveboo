@@ -23,7 +23,9 @@
     </div>
     <div class="row">
       <ProductCard
-        v-for="(product, index) in user.product"
+        @addProduct="addProduct"
+        @removeProduct="removeProduct"
+        v-for="(product, index) in user.products"
         :key="index"
         :product="product"
       />
@@ -43,6 +45,7 @@ export default {
   data() {
     return {
       isLoading: false,
+
       user: [],
     };
   },
@@ -61,6 +64,12 @@ export default {
         .then(() => {
           // this.isLoading = false;
         });
+    },
+    addProduct(product) {
+      return this.$emit("addProduct", product);
+    },
+    removeProduct(product) {
+      return this.$emit("removeProduct", product);
     },
   },
   mounted() {
