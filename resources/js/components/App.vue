@@ -8,6 +8,7 @@
       <router-view
         @addProduct="addProduct"
         @removeProduct="removeProduct"
+        @addQuantity="addQuantity"
       ></router-view>
     </div>
   </div>
@@ -26,11 +27,15 @@ export default {
     return {
       currentCart: 0,
       cart: [],
+      quantity:0,
     };
   },
   methods: {
     addProduct(product) {
       this.cart.push(product);
+    },
+    addQuantity(quantity) {
+      this.quantity = quantity;
     },
     removeProduct(product) {
       const position = this.cart.indexOf(product);

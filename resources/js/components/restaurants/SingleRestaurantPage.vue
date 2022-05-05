@@ -23,6 +23,7 @@
     </div>
     <div class="row">
       <ProductCard
+        @addQuantity="addQuantity"
         @addProduct="addProduct"
         @removeProduct="removeProduct"
         v-for="(product, index) in user.products"
@@ -67,6 +68,9 @@ export default {
     },
     addProduct(product) {
       return this.$emit("addProduct", product);
+    },
+    addQuantity(quantity) {
+      return this.$emit("addQuantity", quantity);
     },
     removeProduct(product) {
       return this.$emit("removeProduct", product);

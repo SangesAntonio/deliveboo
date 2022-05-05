@@ -49,11 +49,17 @@ export default {
   },
   methods: {
     addProductToCart(product) {
+      this.product.quantity++
+      if(this.cart.includes(product)){}
       this.cart.push(product);
       console.log(this.cart);
       return this.$emit("addProduct", product);
     },
     removeProductFromCart(product) {
+      if(this.product.quantity > 0){
+
+        this.product.quantity--
+      }
       const position = this.cart.indexOf(product);
       if (position > -1) {
         this.cart.splice(position, 1);
