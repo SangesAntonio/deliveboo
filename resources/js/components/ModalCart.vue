@@ -5,7 +5,7 @@
       ><span
         v-if="cart.length"
         class="badge badge-danger position-absolute"
-        style="top: 4px; right: 40px"
+        style="top: 10%; right: 60%"
       >
         {{ cart.length }}
       </span></b-button
