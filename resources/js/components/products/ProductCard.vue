@@ -1,25 +1,28 @@
 <template>
-	<div class="col-12 col-md-6 col-xl-4 py-3">
-		<div class="card">
-			<img :src="product.image" class="card-img-top" :alt="product.name" />
-			<div class="card-body">
-				<h5 class="card-title">{{ product.name }}</h5>
-				<p class="card-text">
-					{{ product.description }}
-				</p>
-				<p class="card-text text-muted">{{ product.price }}€</p>
-			</div>
-			<div
-				class="card-footer d-flex justify-content-between align-items-center"
-			>
-				<div class="d-flex justify-content-between align-items-center">
-					<!-- tasto minore -->
-					<i
-						@click="removeProductFromCart(product)"
-						role="button"
-						class="fa-solid fa-circle-minus text-danger"
-					></i>
-
+  <div class="col-12 col-md-6 col-xl-4 py-3">
+    <div class="card">
+      <img
+        :src="`/storage/${product.image}`"
+        class="card-img-top img-fluid w-50"
+        :alt="product.name"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">
+          {{ product.description }}
+        </p>
+        <p class="card-text text-muted">{{ product.price }}€</p>
+      </div>
+      <div
+        class="card-footer d-flex justify-content-between align-items-center"
+      >
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- tasto minore -->
+          <i
+            @click="removeProductFromCart(product)"
+            role="button"
+            class="fa-solid fa-circle-minus text-danger"
+          ></i>
 
           <!-- bottone carrello -->
           <button class="btn mx-1">
@@ -28,21 +31,20 @@
             <i v-else>{{ product.quantity }}</i>
           </button>
 
-					<!-- tasto più -->
-					<i
-						@click="addProductToCart(product)"
-						role="button"
-						class="fa-solid fa-circle-plus text-success"
-					></i>
-				</div>
-			</div>
-		</div>
-	</div>
+          <!-- tasto più -->
+          <i
+            @click="addProductToCart(product)"
+            role="button"
+            class="fa-solid fa-circle-plus text-success"
+          ></i>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-
   name: "ProductCard",
   props: ["product"],
   data() {
@@ -71,9 +73,14 @@ export default {
       return this.$emit("removeProduct", product);
     },
   },
-
 };
 </script>
 
 <style scoped lang="scss">
+img {
+  object-fit: cover;
+  object-position: center;
+  width: 150px;
+  height: 150px;
+}
 </style>

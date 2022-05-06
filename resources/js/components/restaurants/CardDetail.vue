@@ -6,7 +6,7 @@
         <div class="col-8">
           <h5 class="card-title">{{ product.name }}</h5>
           <p class="card-text">
-            {{ product.description }}
+            {{ product.ingredients }}
           </p>
           <p class="card-text text-muted">{{ product.price }}€</p>
         </div>
@@ -47,7 +47,10 @@ export default {
   name: "CardDetail",
   props: ["product", "correctCart"],
   data() {
-    return {};
+    return {
+      total: 0,
+      count: 0,
+    };
   },
   methods: {
     addProductToCart(product) {
