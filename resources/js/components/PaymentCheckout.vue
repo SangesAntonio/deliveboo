@@ -31,8 +31,8 @@
       @success="onSuccess"
       @error="onError"
     >
-      <template v-slot:button="slotProps">
-        <input type="submit" @click="slotProps.submit" class="btn btn-warning" value="Pay now!!" />
+      <template id="payment"  v-slot:button="slotProps">
+        <input type="submit"  @click="slotProps.submit" class="btn btn-warning" value="Pay now!!" />
       </template>
     </v-braintree>
 
@@ -52,6 +52,8 @@
 </template>
 
 <script>
+import { add } from "@braintree/class-list"
+
 export default {
     name :'payment',
     data () {
@@ -69,9 +71,16 @@ export default {
     },
     onSuccess (payload) {
       console.log("Success!", payload.nonce);
+      this.modalSuccess();
+      setTimeout(() => {
+        this.$router.push('Home')
+      
+      }, 3100);
     },
     onError (error) {
       console.error("Error:", error);
+      this.modalWrong()
+      
     },
     clearPaymentSelection () {
       if (this.instance != null) {
@@ -83,9 +92,41 @@ export default {
       setInterval(() => {
         this.showDropIn = true;
       }, 1000);
+    },
+    
+    modalSuccess() {
+          // Use sweetalert2
+          this.$swal({title: 'Deliveboo',
+      text: 'Pagamento effettuato con successo',
+      imageUrl: '/img/pubb/clipp-delivery-kradac.gif',
+      imageWidth: 500,
+      imageHeight: 320,
+      imageAlt: 'Pagamento effettuato con successo',
+      background:'#00CCBC',
+      timer: 3000,
+      
+      });
+    },
+    modalWrong() {
+      // Use sweetalert2
+      this.$swal({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href="">Why do I have this issue?</a>',
+        background:'#00CCBC',
+        timer: 3000,
+  });
+    },
+    ritardo(){
+      
     }
-  }
 }
+}
+   
+  
+  
+
 
 </script>
 
