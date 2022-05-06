@@ -10,6 +10,7 @@ import SingleProductPage from "./components/products/SingleProductPage";
 import RestaurantListPage from "./components/restaurants/RestaurantListPage.vue";
 import SingleRestaurantPage from "./components/restaurants/SingleRestaurantPage.vue";
 import PaymentCheckout from "./components/PaymentCheckout.vue";
+import FilteredRestaurants from './components/restaurants/FilteredRestaurants.vue'
 import OrderForm from "./components/OrderForm.vue";
 import OrderSummary from "./components/OrderSummary.vue";
 
@@ -23,6 +24,7 @@ const router = new VueRouter({
         { path: '/products/:product_name', component: SingleProductPage, name: 'product-detail' },
         { path: '/restaurants', component: RestaurantListPage, name: 'restaurants' },
         { path: '/restaurants/:id', component: SingleRestaurantPage, name: 'restaurant-detail' },
+        { path: '/categories/:id', component: FilteredRestaurants, name: 'filtered-restaurants' },
         { path: '/payment', component: PaymentCheckout, name: 'payment' },
         { path: '/summary', component: OrderSummary, name: 'summary'},
         { path: '/order', component: OrderForm, name: 'order'},

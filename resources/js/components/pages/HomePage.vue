@@ -21,7 +21,14 @@
             class="card px-sm-0 col-12 col-sm-5 col-md-3 col-xl-2 grow"
             role="button"
           >
-            <div class="restaurant-title">{{ category.name }}</div>
+          <router-link
+							:to="{
+								name: 'filtered-restaurants',
+								params: { id: category.id },
+							}"
+							class="text-decoration-none text-dark"
+						>
+							<div class="restaurant-title">{{ category.name }}</div>
             <hr class="m-0" />
             <div>
               <img
@@ -29,6 +36,7 @@
                 :src="`storage/${category.image}`"
                 alt="Immagine Ristorante"
               />
+						</router-link>
             </div>
           </div>
         </div>
@@ -43,33 +51,33 @@ import SliderPromotions from "./SliderPromotions.vue";
 import Jumbotron from "../Jumbotron.vue";
 import axios from "axios";
 export default {
-  name: "HomePage",
-  components: {
-    SliderPromotions,
-    Jumbotron,
-  },
-  data() {
-    return {
-      isLoading: false,
-      categories: [],
-    };
-  },
-  methods: {
-    getCategories() {
-      axios
-        .get("http://localhost:8000/api/categories")
-        .then((res) => {
-          this.categories = res.data;
-          console.log(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-  },
-  mounted() {
-    this.getCategories();
-  },
+	name: "HomePage",
+	components: {
+		SliderPromotions,
+		Jumbotron,
+	},
+	data() {
+		return {
+			isLoading: false,
+			categories: [],
+		};
+	},
+	methods: {
+		getCategories() {
+			axios
+				.get("http://localhost:8000/api/categories")
+				.then((res) => {
+					this.categories = res.data;
+					console.log(res.data);
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+		},
+	},
+	mounted() {
+		this.getCategories();
+	},
 };
 </script>
 <style lang="scss" scoped>
