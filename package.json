@@ -26,7 +26,9 @@
     "dependencies": {
         "bootstrap-vue": "^2.22.0",
         "chart.js": "^3.7.1",
+        "sweetalert2": "^11.4.10",
         "vue-braintree": "^2.1.0",
-        "vue-router": "^3.5.3"
+        "vue-router": "^3.5.3",
+        "vue-sweetalert2": "^5.0.2"
     }
 }

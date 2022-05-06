@@ -7,7 +7,9 @@ import App from "./components/App.vue";
 import { BootstrapVue } from "bootstrap-vue";
 import Axios from "axios";
 import vueBraintree from "vue-braintree";
+import VueSweetalert2 from "vue-sweetalert2";
 
+Vue.use(VueSweetalert2);
 Vue.use(vueBraintree);
 
 import "bootstrap/dist/css/bootstrap.css";
