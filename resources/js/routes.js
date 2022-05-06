@@ -10,6 +10,8 @@ import SingleProductPage from "./components/products/SingleProductPage";
 import RestaurantListPage from "./components/restaurants/RestaurantListPage.vue";
 import SingleRestaurantPage from "./components/restaurants/SingleRestaurantPage.vue";
 import PaymentCheckout from "./components/PaymentCheckout.vue";
+import OrderForm from "./components/OrderForm.vue";
+import OrderSummary from "./components/OrderSummary.vue";
 
 const router = new VueRouter({
     mode: "history",
@@ -22,6 +24,8 @@ const router = new VueRouter({
         { path: '/restaurants', component: RestaurantListPage, name: 'restaurants' },
         { path: '/restaurants/:id', component: SingleRestaurantPage, name: 'restaurant-detail' },
         { path: '/payment', component: PaymentCheckout, name: 'payment' },
+        { path: '/summary', component: OrderSummary, name: 'summary'},
+        { path: '/order', component: OrderForm, name: 'order'},
         { path: '*', component: NotFoundPage, name: 'not-found' }
     ]
 
