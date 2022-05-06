@@ -15,16 +15,9 @@
 					"
 					id="categorie-ristoranti"
 				>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Internazionale</div>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Cinese</div>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Giapponese</div>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Messicano</div>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Indiano</div>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Pesce</div>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Carne</div>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Pizza</div>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Mediterranea</div>
-					<div class="col-12 col-sm-5 col-md-3 col-xl-2">Dolci</div>
+
+				    <div v-for="(category, index) in categories" :key="index" class="col-12 col-sm-5 col-md-3 col-xl-2">{{category.name}}</div>
+				
 				</div>
 			</div>
 		</div>
@@ -35,12 +28,34 @@
 <script>
 import SliderPromotions from "./SliderPromotions.vue";
 import Jumbotron from "../Jumbotron.vue";
-
+import axios from "axios";
 export default {
 	name: "HomePage",
 	components: {
 		SliderPromotions,
 		Jumbotron,
+	},
+	data(){
+		return {
+			isLoading: false,
+			categories: [],
+		}
+	},
+	methods: {
+		getCategories(){
+			axios
+			.get('http://localhost:8000/api/categories')
+			.then((res) => {
+				this.categories = res.data;
+				console.log(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			})
+		}
+	},
+	mounted(){
+		this.getCategories();
 	},
 };
 </script>
