@@ -1,8 +1,15 @@
 <template>
-	<div>
-		<b-button id="show-btn" @click="$bvModal.show('bv-modal-example')"
-			><i class="fa-solid fa-cart-shopping"></i
-		></b-button>
+  <div>
+    <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')"
+      ><i class="fa-solid fa-cart-shopping position-relative"></i
+      ><span
+        v-if="cart.length"
+        class="badge badge-danger position-absolute"
+        style="top: 4px; right: 40px"
+      >
+        {{ cart.length }}
+      </span></b-button
+    >
     <b-modal id="bv-modal-example" hide-footer>
       <template #modal-title> </template>
       <div class="d-block text-center">
