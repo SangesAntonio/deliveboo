@@ -4,7 +4,6 @@ use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Models\Order;
 use App\User;
-use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use Illuminate\Support\Arr;
 
@@ -29,12 +28,10 @@ class OrderSeeder extends Seeder
             $order->total_amount =  $faker->randomNumber(2, false);
             $order->save();
         }
-
-        $order->each(function (App\Models\Order $order) {
-            $product_ids = [106, 106, 106, 108, 108, 107, 109, 109];
+        $product_ids = Product::all('id');
+        $order->each(function (App\Models\Order $order) use ($product_ids) {
             $order->products()->attach(
-                $product_ids,
-                ['product_quantity' => 2]
+                $product_ids->random(rand(0, 4))->pluck('id')->toArray(),
             );
         });
     }
