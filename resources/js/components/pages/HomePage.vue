@@ -15,9 +15,21 @@
 					"
 					id="categorie-ristoranti"
 				>
-
-				    <div v-for="(category, index) in categories" :key="index" class="col-12 col-sm-5 col-md-3 col-xl-2">{{category.name}}</div>
-				
+					<div
+						v-for="(category, index) in categories"
+						:key="index"
+						class="col-12 col-sm-5 col-md-3 col-xl-2"
+					>
+						<router-link
+							:to="{
+								name: 'filtered-restaurants',
+								params: { id: category.id },
+							}"
+							class="text-decoration-none text-dark"
+						>
+							{{ category.name }}
+						</router-link>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -35,26 +47,26 @@ export default {
 		SliderPromotions,
 		Jumbotron,
 	},
-	data(){
+	data() {
 		return {
 			isLoading: false,
 			categories: [],
-		}
+		};
 	},
 	methods: {
-		getCategories(){
+		getCategories() {
 			axios
-			.get('http://localhost:8000/api/categories')
-			.then((res) => {
-				this.categories = res.data;
-				console.log(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			})
-		}
+				.get("http://localhost:8000/api/categories")
+				.then((res) => {
+					this.categories = res.data;
+					console.log(res.data);
+				})
+				.catch((err) => {
+					console.log(err);
+				});
+		},
 	},
-	mounted(){
+	mounted() {
 		this.getCategories();
 	},
 };

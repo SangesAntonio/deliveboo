@@ -22,4 +22,5 @@ Route::namespace('Api')
         Route::get('/users', 'UserController@index');
         Route::get('/users/{id}', 'UserController@show');
         Route::get('/categories', 'CategoryController@index');
+        Route::get('/categories/{id}', 'CategoryController@show');
     });
