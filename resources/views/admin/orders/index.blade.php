@@ -21,7 +21,7 @@
           <tbody>
             <tr>
               <th scope="row">{{ $loop->index + 1 }}</th>
-              <th>{{ $order->name }}</th>
+              <th>{{ $order->name }} {{ $order->lastname }}</th>
               <td>{{ $order->address }}</td>
               <td>{{ $order->email }}</td>
               <td>{{ $order->total_amount }}&euro;</td>
