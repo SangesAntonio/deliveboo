@@ -1,40 +1,55 @@
 <template>
-  <div v-if="product.quantity" class="container-fluid">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-12">
-        <!-- <img :src="product.image" class="card-img-top" :alt="product.name" /> -->
-        <div class="col-8">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">
-            {{ product.ingredients }}
-          </p>
-          <p class="card-text text-muted">{{ product.price }}€</p>
-        </div>
-        <div class="col-4">
-          <div class="d-flex justify-content-between align-items-center">
-            <!-- tasto minore -->
-            <i
-              @click="removeProductFromCart(product)"
-              role="button"
-              class="fa-solid fa-circle-minus fa-lg text-danger"
-            ></i>
+      <div class="col">
+        <div class="container">
+          <div class="d-flex justify-content-end">
+            <table class="table table-hover table-borderless">
+              <thead>
+                <tr>
+                  <th scope="col">Prodotto</th>
+                  <th scope="col">Quantità</th>
+                  <th scope="col">Prezzo</th>
+                  <th scope="col">Totale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(product, index) in correctCart" :key="index">
+                  <td v-if="product.quantity > 0" scope="col">
+                    {{ product.name }}
+                  </td>
+                  <td v-if="product.quantity > 0">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <!-- tasto minore -->
+                      <i
+                        @click="removeProductFromCart(product)"
+                        role="button"
+                        class="fa-solid fa-circle-minus fa-lg text-danger"
+                      ></i>
 
-            <!-- bottone carrello -->
-            <button class="btn mx-1">
-              <i
-                v-if="product.quantity <= 0"
-                class="fa-solid fa-cart-arrow-down"
-              >
-              </i>
-              <i v-else>{{ product.quantity }}</i>
-            </button>
+                      {{ product.quantity }}
+                      <!-- tasto più -->
+                      <i
+                        @click="addProductToCart(product)"
+                        role="button"
+                        class="fa-solid fa-circle-plus fa-lg text-success"
+                      ></i>
+                    </div>
+                  </td>
+                  <td v-if="product.quantity > 0">{{ product.price }}&euro;</td>
+                  <td v-if="product.quantity > 0">
+                    {{ product.price * product.quantity }}&euro;
+                  </td>
+                </tr>
 
-            <!-- tasto più -->
-            <i
-              @click="addProductToCart(product)"
-              role="button"
-              class="fa-solid fa-circle-plus fa-lg text-success"
-            ></i>
+                <tr>
+                  <th colspan="3">Totale Ordine</th>
+                  <th>&euro;</th>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -45,25 +60,35 @@
 <script>
 export default {
   name: "CardDetail",
-  props: ["product", "correctCart"],
+  props: ["cart"],
   data() {
     return {
-      total: 0,
-      count: 0,
+      correctCart: [],
     };
   },
   methods: {
     addProductToCart(product) {
       product.quantity++;
+      this.cart.push(product);
     },
     removeProductFromCart(product) {
       if (product.quantity > 0) {
         product.quantity--;
-        if (product.quantity == 0) {
-          this.correctCart = [];
-        }
+        console.log(this.cart.indexOf(product), "eliminaziojne");
+        return this.cart.splice(this.cart.indexOf(product), 1);
+      } else {
       }
     },
+  },
+  computed: {
+    getSingleProduct() {
+      this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
+      console.log(this.correctCart);
+      return this.correctCart;
+    },
+  },
+  setQuantityCart() {
+    return this.cart.length;
   },
 };
 </script>

@@ -21,7 +21,7 @@ class CategorySeeder extends Seeder
             ['name' => 'Pesce', 'image' => 'category_images/pesce.jpg'],
             ['name' => 'Carne', 'image' => 'category_images/carne.jpg'],
             ['name' => 'Pizza', 'image' => 'category_images/pizza.jpg'],
-            ['name' => 'Cucina Mediterranea', 'image' => 'category_images/mediterranea.jpg'],
+            ['name' => 'Mediterranea', 'image' => 'category_images/mediterranea.jpg'],
             ['name' => 'Dolci', 'image' => 'category_images/dolci.jpg'],
         ];
 

@@ -1,40 +1,49 @@
 <template>
-	<div id="homepage">
-		<SliderPromotions class="pb-4" />
-		<!-- <p class="not-to-lose d-none d-lg-block">Da non perdere</p> -->
-		<div class="container">
-			<div class="row">
-				<div
-					class="
-						col-12
-						d-flex
-						flex-wrap
-						justify-content-center
-						align-items-center
-						mb-lg-5
-					"
-					id="categorie-ristoranti"
-				>
-					<div
-						v-for="(category, index) in categories"
-						:key="index"
-						class="col-12 col-sm-5 col-md-3 col-xl-2"
-					>
-						<router-link
+  <div id="homepage">
+    <SliderPromotions class="pb-4" />
+    <!-- <p class="not-to-lose d-none d-lg-block">Da non perdere</p> -->
+    <div class="container">
+      <div class="row">
+        <div
+          class="
+            col-12
+            d-flex
+            flex-wrap
+            justify-content-center
+            align-items-center
+            mb-lg-5
+          "
+          id="categorie-ristoranti"
+        >
+          <div
+            v-for="(category, index) in categories"
+            :key="index"
+            class="card px-sm-0 col-12 col-sm-5 col-md-3 col-xl-2 grow"
+            role="button"
+          >
+          <router-link
 							:to="{
 								name: 'filtered-restaurants',
 								params: { id: category.id },
 							}"
 							class="text-decoration-none text-dark"
 						>
-							{{ category.name }}
+							<div class="restaurant-title">{{ category.name }}</div>
+            <hr class="m-0" />
+            <div>
+              <img
+                class="img-fluid p-3 p-sm-2 restaurant-image"
+                :src="`storage/${category.image}`"
+                alt="Immagine Ristorante"
+              />
 						</router-link>
-					</div>
-				</div>
-			</div>
-		</div>
-		<Jumbotron class="d-none d-lg-block" />
-	</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Jumbotron class="d-none d-lg-block" />
+  </div>
 </template>
 
 <script>
@@ -72,38 +81,63 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.slider-promozioni {
-	background-color: lightblue;
-	background-image: url(/img/pubb/promotions-bg.jpg);
-	background-size: cover;
-	position: relative;
+@media (min-width: 0px) {
+  .restaurant-image {
+    width: 475px;
+    height: 400px;
+    border-radius: 15px;
+    margin-top: 6px;
+  }
+  .restaurant-title {
+    font-size: 30px;
+  }
+}
 
-	.not-to-lose {
-		background-color: #ffc562;
-		font-family: "Koulen", cursive;
-		font-size: 30px;
-		padding: 5px 15px;
-		border-radius: 30px;
-		transform: rotate(-25deg);
-		border: solid 2px #ffa500;
-		text-shadow: 2px 2px 4px #888888;
-		box-shadow: 2px 2px 4px #1f1f1f;
-		position: absolute;
-		top: 10%;
-		left: 15%;
-	}
+@media (min-width: 576px) {
+  .card {
+    width: 200px;
+  }
+  .restaurant-image {
+    width: 170px;
+    height: 170px;
+  }
+  .restaurant-title {
+    font-size: 22px;
+  }
+}
+
+.slider-promozioni {
+  background-color: lightblue;
+  background-image: url(/img/pubb/promotions-bg.jpg);
+  background-size: cover;
+  position: relative;
+
+  .not-to-lose {
+    background-color: #ffc562;
+    font-family: "Koulen", cursive;
+    font-size: 30px;
+    padding: 5px 15px;
+    border-radius: 30px;
+    transform: rotate(-25deg);
+    border: solid 2px #ffa500;
+    text-shadow: 2px 2px 4px #888888;
+    box-shadow: 2px 2px 4px #1f1f1f;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+  }
 }
 #categorie-ristoranti {
-	font-size: 20px;
-	& > * {
-		margin: 20px;
-		padding: 10px;
-		background-color: orange;
-		text-align: center;
-		border-radius: 10px;
-		font-family: "Koulen", cursive;
-		font-weight: 600;
-		box-shadow: 2px 2px 4px #1f1f1f;
-	}
+  font-size: 20px;
+  .card {
+    margin: 20px;
+    padding: 10px;
+    background-color: orange;
+    text-align: center;
+    border-radius: 10px;
+    font-family: "Koulen", cursive;
+    font-weight: 600;
+    box-shadow: 6px 5px 1px #ff7f00;
+  }
 }
 </style>
