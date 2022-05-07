@@ -1,19 +1,17 @@
 <template>
-    <div class="container">
-
-    <br>
+  <div class="container">
+    <br />
 
     <h1>Braintree Demo</h1>
 
-    <v-braintree 
+    <v-braintree
       v-if="showDropIn"
       authorization="sandbox_4x2fxjmf_q5k7r9z79n9kztxr"
-        
-      :paypal="{flow: 'vault'}"
+      :paypal="{ flow: 'vault' }"
       :three-d-secure="false"
       :three-d-secure-parameters="{
-        amount: 100, 
-        email: 'francois@witify.io', 
+        amount: 100,
+        email: 'francois@witify.io',
         billingAddress: {
           givenName: 'John',
           surname: 'Doe',
@@ -23,27 +21,30 @@
           locality: 'Laval',
           region: 'QC',
           postalCode: 'h7m5z5',
-          countryCodeAlpha2: 'CA'
-        }
+          countryCodeAlpha2: 'CA',
+        },
       }"
       @load="onLoad"
       @loadFail="onLoadFail"
       @success="onSuccess"
       @error="onError"
     >
-      <template id="payment"  v-slot:button="slotProps">
-        <input type="submit"  @click="slotProps.submit" class="btn btn-warning" value="Pay now!!" />
+      <template id="payment" v-slot:button="slotProps">
+        <input
+          type="submit"
+          @click="slotProps.submit"
+          class="btn btn-warning"
+          value="Pay now!!"
+        />
       </template>
     </v-braintree>
 
-    <br>
+    <br />
 
-    <button class="btn">
-      Clear Payment Selection
-    </button>
+    <button class="btn">Clear Payment Selection</button>
 
-    <br>
-    <br>
+    <br />
+    <br />
 
     <button @click="deleteInstance" class="btn btn-danger">
       Delete instance
@@ -52,37 +53,35 @@
 </template>
 
 <script>
-import { add } from "@braintree/class-list"
+import { add } from "@braintree/class-list";
 
 export default {
-    name :'payment',
-    data () {
+  name: "payment",
+  data() {
     return {
       instance: null,
       showDropIn: true,
-    }
+    };
   },
   methods: {
-    onLoad (instance) {
+    onLoad(instance) {
       this.instance = instance;
     },
-    onLoadFail (instance) {
-      console.error('Load fail', instance);
+    onLoadFail(instance) {
+      console.error("Load fail", instance);
     },
-    onSuccess (payload) {
+    onSuccess(payload) {
       console.log("Success!", payload.nonce);
       this.modalSuccess();
       setTimeout(() => {
-        this.$router.push('Home')
-      
+        this.$router.push("Home");
       }, 3100);
     },
-    onError (error) {
+    onError(error) {
       console.error("Error:", error);
-      this.modalWrong()
-      
+      this.modalWrong();
     },
-    clearPaymentSelection () {
+    clearPaymentSelection() {
       if (this.instance != null) {
         this.instance.clearSelectedPaymentMethod();
       }
@@ -93,43 +92,35 @@ export default {
         this.showDropIn = true;
       }, 1000);
     },
-    
+
     modalSuccess() {
-          // Use sweetalert2
-          this.$swal({title: 'Deliveboo',
-      text: 'Pagamento effettuato con successo',
-      imageUrl: '/img/pubb/clipp-delivery-kradac.gif',
-      imageWidth: 500,
-      imageHeight: 320,
-      imageAlt: 'Pagamento effettuato con successo',
-      background:'#00CCBC',
-      timer: 3000,
-      
+      // Use sweetalert2
+      this.$swal({
+        title: "Deliveboo",
+        text: "Pagamento effettuato con successo",
+        imageUrl: "/img/pubb/clipp-delivery-kradac.gif",
+        imageWidth: 500,
+        imageHeight: 320,
+        imageAlt: "Pagamento effettuato con successo",
+        background: "#00CCBC",
+        timer: 3000,
       });
     },
     modalWrong() {
       // Use sweetalert2
       this.$swal({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong!',
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
         footer: '<a href="">Why do I have this issue?</a>',
-        background:'#00CCBC',
+        background: "#00CCBC",
         timer: 3000,
-  });
+      });
     },
-    ritardo(){
-      
-    }
-}
-}
-   
-  
-  
-
-
+    ritardo() {},
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
