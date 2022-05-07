@@ -9,17 +9,20 @@
     <div>
       <router-view></router-view>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Navbar from "./Navbar.vue";
 import DesktopNavbar from "./DesktopNavbar.vue";
+import Footer from "./Footer.vue";
 export default {
   name: "App",
   components: {
     Navbar,
     DesktopNavbar,
+    Footer,
   },
   data() {
     return {};
