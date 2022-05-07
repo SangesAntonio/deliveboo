@@ -1,8 +1,8 @@
 <template>
     <div class="footer">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-3">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
                     <div class="informations">
                         <h4>Informazioni</h4>
                         <div class="links">
@@ -14,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
                     <div class="informations">
                         <h4>Note legali</h4>
                         <div class="links">
@@ -26,50 +26,44 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
                     <div class="informations">
                         <h4>Help</h4>
                         <div class="links">
                             <ul>
-                                <li>
-                                    Contatti:
-                                    <div class="contacts">
-                                        <ul>
-                                            <li class="mt-0">Telefono: 3512497684</li>
-                                            <li class="mt-0">E-mail: deliveboo.help@gmail.com</li>
-                                        </ul>
-                                    </div>
-                                </li>
+                                <li><a href="#">Contatti</a></li>
                                 <li><a href="#">FAQ</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bottom-footer d-flex justify-content-between">
-                <div class="language d-flex align-items-center">
-                    <h6 class="mb-0">Lingua</h6>
-                    <select name="language" class="ml-4 mr-2">
-                        <option value="Italiano">Italiano</option>
-                        <option value="Francese">Français</option>
-                        <option value="Inglese">English</option>
-                        <option value="Tesesco">Deutsch</option>
-                        <option value="Spagnolo">Español</option>
-                    </select>
-                    <i class="fa-solid fa-earth-europe"></i>
-                </div>
-                <div class="socials d-flex align-items-center ml-5">
-                    <div class="single-social">
-                        <a href=""><i class="fa-brands fa-facebook-square"></i></a>
-                    </div>
-                    <div class="single-social">
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                    <div class="single-social">
-                        <a href=""><i class="fa-brands fa-facebook-square"></i></a>
-                    </div>
-                    <div class="single-social">
-                        <a href=""><i class="fa-brands fa-google-play"></i></a>
+                <div class="bottom-footer col-12 col-md-6 col-lg-3">
+                    <div class="informations d-flex flex-column justify-content-around">
+                        <div class="language d-flex align-items-center">
+                            <h6 class="mb-0">Lingua</h6>
+                            <select name="language" class="ml-4 mr-2">
+                                <option value="Italiano">Italiano</option>
+                                <option value="Francese">Français</option>
+                                <option value="Inglese">English</option>
+                                <option value="Tesesco">Deutsch</option>
+                                <option value="Spagnolo">Español</option>
+                            </select>
+                            <i class="fa-solid fa-earth-europe"></i>
+                        </div>
+                        <div class="socials d-flex align-items-center justify-content-around">
+                            <div class="single-social">
+                                <a href=""><i class="fa-brands fa-facebook-square"></i></a>
+                            </div>
+                            <div class="single-social">
+                                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                            <div class="single-social">
+                                <a href=""><i class="fa-brands fa-facebook-square"></i></a>
+                            </div>
+                            <div class="single-social">
+                                <a href=""><i class="fa-brands fa-google-play"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,17 +79,11 @@ export default {
 
 <style lang="scss" scoped>
 .footer{
-    background-color: #2E3333;
+    background-color: #F8F9FA;
     padding: 50px;
     color: white;
     ul{
         list-style-type: none;
-    }
-    .col-3{
-        background-color: #434848;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 10px 10px 5px 5px rgb(0, 0, 0, 0.5);
     }
     .contacts{
         font-size: 12px;
@@ -105,7 +93,7 @@ export default {
         font-size: 25px;
     }
     li{
-        margin-top: 10px;
+        margin-top: 5px;
         margin-left: 20px;
         a{
             color: white;
@@ -114,23 +102,22 @@ export default {
     }
     .informations{
         margin-left: 20px;
+        background-color: #02B7B0;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 5px 5px rgb(2, 183, 176, 0.5);
+        height: 150px;
     }
     .language{
-        margin-top: 40px;
-        background-color: #434848;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 10px 10px 5px 5px rgb(0, 0, 0, 0.5);
-        width: 20%;
         i{
-            font-size: 25px;
+            font-size: 20px;
         }
         h6{
-            font-size: 23px;
+            font-size: 17px;
             font-family: 'Koulen', cursive;
         }
         select{
-            background-color: #7d7e7e;
+            background-color: #026b68;
             border-radius: 10px;
             color: white;
             border: none;
@@ -141,19 +128,18 @@ export default {
     }
     .socials{
         .single-social{
-            margin-top: 40px;
-            background-color: #434848;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 10px 10px 5px 5px rgb(0, 0, 0, 0.5);
-            margin-left: 10px;
             i{
-                font-size: 30px;
+                font-size: 25px;
             }
             a{
                 color: white;
                 text-decoration: none;
             }
+        }
+    }
+    @media screen and (max-width: 576px) {
+        .bottom-footer{
+            width: 50%;
         }
     }
 }
