@@ -2,7 +2,7 @@
   <div>
     <div id="homepage">
       <Loader v-if="isLoading && !categories.length" />
-      <SliderPromotions v-if="!isLoading" class="pb-4" />
+      <!-- <SliderPromotions v-if="!isLoading" class="pb-4" /> -->
       <div class="container">
         <div class="row">
           <div
@@ -21,7 +21,7 @@
               class="col-12 d-flex justify-content-center py-1 mb-2"
             >
               <h2 id="category-title" class="text-center fw-bold m-0">
-                LE NOSTRE CATEGORIE
+                SCOPRI LE NOSTRE CATEGORIE
               </h2>
             </div>
             <div
@@ -52,19 +52,19 @@
         </div>
       </div>
     </div>
-    <Jumbotron v-if="!isLoading" class="d-none d-lg-block" />
+    <Jumbotron class="p-0" v-if="!isLoading" />
   </div>
 </template>
 
 <script>
-import SliderPromotions from "./SliderPromotions.vue";
+// import SliderPromotions from "../SliderPromotions.vue";
 import Jumbotron from "../Jumbotron.vue";
 import Loader from "../Loader.vue";
 import axios from "axios";
 export default {
   name: "HomePage",
   components: {
-    SliderPromotions,
+    // SliderPromotions,
     Jumbotron,
     Loader,
   },
@@ -133,12 +133,12 @@ export default {
   }
 }
 
-.slider-promozioni {
-  background-color: lightblue;
-  background-image: url(/img/pubb/promotions-bg.jpg);
-  background-size: cover;
-  position: relative;
-}
+// .slider-promozioni {
+//   background-color: lightblue;
+//   background-image: url(/img/pubb/promotions-bg.jpg);
+//   background-size: cover;
+//   position: relative;
+// }
 #categorie-ristoranti {
   font-size: 20px;
   .card {

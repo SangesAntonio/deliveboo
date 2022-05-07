@@ -1,7 +1,11 @@
 <template>
   <div class="container-fluid px-0">
-    <header class="header px-4">
-      <DesktopNavbar class="d-none d-lg-block fixed-top" />
+    <header class="header mb-5">
+      <div>
+        <!-- Rimpicciolire immagini in desktop -->
+        <SliderPromotions class="slider-border" />
+        <DesktopNavbar class="d-none d-lg-block slider-border" />
+      </div>
       <div class="d-flex justify-content-end fixed-bottom d-block d-lg-none">
         <Navbar />
       </div>
@@ -9,12 +13,13 @@
     <div>
       <router-view></router-view>
     </div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navbar from "./Navbar.vue";
+import SliderPromotions from "./SliderPromotions.vue";
 import DesktopNavbar from "./DesktopNavbar.vue";
 import Footer from "./Footer.vue";
 export default {
@@ -23,6 +28,7 @@ export default {
     Navbar,
     DesktopNavbar,
     Footer,
+    SliderPromotions,
   },
   data() {
     return {};
@@ -32,6 +38,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+body {
+  font-family: "Koulen", cursive;
+}
+
+.slider-border {
+  box-shadow: 0px 10px 0px #fff;
+}
+
 .container-fluid {
   overflow-y: hidden;
 }
