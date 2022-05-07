@@ -46,7 +46,7 @@
 
                 <tr>
                   <th colspan="3">Totale Ordine</th>
-                  <th>&euro;</th>
+                  <th>{{ calcTotalPrice }}&euro;</th>
                 </tr>
               </tbody>
             </table>
@@ -64,31 +64,46 @@ export default {
   data() {
     return {
       correctCart: [],
+      total: 0,
     };
   },
   methods: {
     addProductToCart(product) {
       product.quantity++;
+
       this.cart.push(product);
     },
     removeProductFromCart(product) {
       if (product.quantity > 0) {
         product.quantity--;
         console.log(this.cart.indexOf(product), "eliminaziojne");
+
         return this.cart.splice(this.cart.indexOf(product), 1);
       } else {
       }
     },
   },
   computed: {
+    calcTotalPrice() {
+      // this.cart.forEach((item, i) => {
+      //   this.total += item.price;
+
+      // });
+      // return this.total;
+      this.total = this.cart.reduce(
+        (total, lineItem) => total + Number(lineItem.price),
+        0
+      );
+      return this.total;
+    },
     getSingleProduct() {
       this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
       console.log(this.correctCart);
       return this.correctCart;
     },
-  },
-  setQuantityCart() {
-    return this.cart.length;
+    setQuantityCart() {
+      return this.cart.length;
+    },
   },
 };
 </script>
