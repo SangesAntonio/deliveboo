@@ -45,4 +45,8 @@ body {
 .slider-border {
   box-shadow: 0px 10px 0px #fff;
 }
+
+.container-fluid {
+  overflow: hidden;
+}
 </style>
