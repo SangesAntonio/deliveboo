@@ -1,81 +1,81 @@
 <template>
-	<section id="desktop-nav">
-		<nav class="navbar-light bg-light shadow">
-			<div
-				class="
-					container-fluid
-					d-flex
-					justify-content-around
-					align-items-center
-					py-2
-				"
-			>
-				<router-link to="/home" class="text-decoration-none">
-					<div class="d-flex align-items-center">
-						<img
-							id="logo"
-							src="/img/pubb/logo_deliveboo.png"
-							class="img-fluid"
-							alt="Logo Deliveboo"
-						/>
-						<div class="h1 m-0 pl-3 t-deliveboo-green">DELIVEBOO</div>
-					</div>
-				</router-link>
-				<div class="d-flex justify-content-between">
-					<div>
-						<router-link to="/home" class="text-decoration-none">
-							<i class="fas fa-home t-deliveboo-green"></i>
-							<span class="text nav-text t-deliveboo-green ml-1">Home</span>
-						</router-link>
+  <section id="desktop-nav">
+    <nav class="navbar-light bg-light shadow">
+      <div
+        class="
+          container-fluid
+          d-flex
+          justify-content-around
+          align-items-center
+          py-2
+        "
+      >
+        <router-link to="/home" class="text-decoration-none">
+          <div class="d-flex align-items-center">
+            <img
+              id="logo"
+              :src="'./img/pubb/deliveboo_loader.gif'"
+              class="img-fluid"
+              alt="Logo Deliveboo"
+            />
+            <div class="h1 m-0 pl-3 t-deliveboo-green">DELIVEBOO</div>
+          </div>
+        </router-link>
+        <div class="d-flex justify-content-between">
+          <div>
+            <router-link to="/home" class="text-decoration-none">
+              <i class="fas fa-home t-deliveboo-green"></i>
+              <span class="text nav-text t-deliveboo-green ml-1">Home</span>
+            </router-link>
 
-						<router-link to="/restaurants" class="text-decoration-none">
-							<i class="fas fa-utensils t-deliveboo-green"></i>
-							<span class="text nav-text t-deliveboo-green ml-2"
-								>Ristoranti</span
-							>
-						</router-link>
+            <router-link to="/restaurants" class="text-decoration-none">
+              <i class="fas fa-utensils t-deliveboo-green"></i>
+              <span class="text nav-text t-deliveboo-green ml-2"
+                >Ristoranti</span
+              >
+            </router-link>
 
-						<router-link to="/order" class="text-decoration-none">
-							<i class="fas fa-shopping-bag t-deliveboo-green"></i>
-							<span class="text nav-text t-deliveboo-green ml-2">Ordine</span>
-						</router-link>
-					</div>
+            <router-link to="/order" class="text-decoration-none">
+              <i class="fas fa-shopping-bag t-deliveboo-green"></i>
+              <span class="text nav-text t-deliveboo-green ml-2">Ordine</span>
+            </router-link>
+          </div>
 
-					<div>
-						<a href="/admin" class="text-decoration-none">
-							<i class="fas fa-user t-deliveboo-green"></i>
-							<span class="text nav-text t-deliveboo-green ml-2">Login</span></a
-						>
-						<a href="/register" class="text-decoration-none">
-							<i class="far fa-user t-deliveboo-green"></i>
-							<span class="text nav-text t-deliveboo-green ml-2"
-								>Register</span
-							></a
-						>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</section>
+          <div>
+            <a href="/admin" class="text-decoration-none">
+              <i class="fas fa-user t-deliveboo-green"></i>
+              <span class="text nav-text t-deliveboo-green ml-2">Login</span></a
+            >
+            <a href="/register" class="text-decoration-none">
+              <i class="far fa-user t-deliveboo-green"></i>
+              <span class="text nav-text t-deliveboo-green ml-2"
+                >Register</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
 </template>
 
 <script>
 export default {
-	name: "DesktopNavbar",
+  name: "DesktopNavbar",
 };
 </script>
 
 <style lang="scss" scoped>
 #logo {
-	max-width: 60px;
+  max-width: 60px;
 }
 
 i {
-	margin-left: 40px;
-	font-size: 18px;
+  margin-left: 40px;
+  font-size: 18px;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 </style>
