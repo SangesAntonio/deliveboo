@@ -25,9 +25,7 @@ const router = new VueRouter({
         { path: '/restaurants', component: RestaurantListPage, name: 'restaurants' },
         { path: '/restaurants/:id', component: SingleRestaurantPage, name: 'restaurant-detail' },
         { path: '/categories/:id', component: FilteredRestaurants, name: 'filtered-restaurants' },
-        { path: '/payment', component: PaymentCheckout, name: 'payment' },
-        { path: '/summary', component: OrderSummary, name: 'summary'},
-        { path: '/order', component: OrderForm, name: 'order'},
+        { path: '/order', component: OrderSummary, name: 'order' },
         { path: '*', component: NotFoundPage, name: 'not-found' }
     ]
 
