@@ -39,7 +39,7 @@
       <template #modal-title> </template>
 
       <div class="d-block text-center">
-        <OrderForm :total="total" />
+        <OrderForm @gotToCart="showCart" :total="total" />
       </div>
     </b-modal>
   </div>
