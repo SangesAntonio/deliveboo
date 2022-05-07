@@ -15,13 +15,9 @@
         billingAddress: {
           givenName: 'John',
           surname: 'Doe',
-          phoneNumber: '515 515 1234',
-          streetAddress: '485 boul. dagenais E',
-          extendedAddress: '1',
+
           locality: 'Laval',
-          region: 'QC',
-          postalCode: 'h7m5z5',
-          countryCodeAlpha2: 'CA',
+          streetAddress: '485 boul. dagenais E',
         },
       }"
       @load="onLoad"
@@ -34,20 +30,36 @@
           type="submit"
           @click="slotProps.submit"
           class="btn btn-warning"
-          value="Pay now!!"
+          value="Paga Ora!!"
         />
       </template>
     </v-braintree>
 
     <br />
 
-    <button class="btn">Clear Payment Selection</button>
-
     <br />
+    <div class="container">
+      <h3 class="mb-3 mt-5">Riepilogo dati</h3>
+      <div class="row">
+        <div class="col-6">
+          <div class="client name mb-3">
+            <strong>Nome:</strong> {{ formOrder.name }} {{ formOrder.lastname }}
+          </div>
+        </div>
+        <div class="col-6"></div>
+        <div class="client address mb-3">
+          <strong>Indirizzo:</strong> {{ formOrder.address }}
+          <strong>Email:</strong> {{ formOrder.email }}
+        </div>
+        <div class="col">
+          <h1><strong>Totale ordine:</strong>{{ total }}</h1>
+        </div>
+      </div>
+    </div>
     <br />
 
     <button @click="deleteInstance" class="btn btn-danger">
-      Delete instance
+      Svuota i campi
     </button>
   </div>
 </template>
@@ -57,6 +69,7 @@ import { add } from "@braintree/class-list";
 
 export default {
   name: "payment",
+  props: ["formOrder", "total"],
   data() {
     return {
       instance: null,

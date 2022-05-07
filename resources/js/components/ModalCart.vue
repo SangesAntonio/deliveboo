@@ -12,7 +12,7 @@
     <b-modal v-if="!checkout" id="bv-modal-example" hide-footer>
       <template #modal-title> </template>
       <div class="d-block text-center">
-        <CardDetail :cart="cart" />
+        <CardDetail :cart="cart" @totalPrice="totalPrice" />
       </div>
       <b-button
         class="mt-3"
@@ -39,7 +39,7 @@
       <template #modal-title> </template>
 
       <div class="d-block text-center">
-        <OrderForm @gotToCart="showCart" />
+        <OrderForm :total="total" />
       </div>
     </b-modal>
   </div>
@@ -57,9 +57,13 @@ export default {
   data() {
     return {
       checkout: false,
+      total: 0,
     };
   },
   methods: {
+    totalPrice(price) {
+      this.total = price;
+    },
     gotToFormOrder() {
       this.checkout = true;
     },
@@ -67,7 +71,15 @@ export default {
       this.checkout = false;
     },
   },
-  computed: {},
+  computed: {
+    calcTotalPrice() {
+      this.total = this.cart.reduce(
+        (total, lineItem) => total + Number(lineItem.price),
+        0
+      );
+      return this.total;
+    },
+  },
 };
 </script>
 

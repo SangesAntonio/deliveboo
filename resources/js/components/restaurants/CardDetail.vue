@@ -46,7 +46,7 @@
 
                 <tr>
                   <th colspan="3">Totale Ordine</th>
-                  <th>{{ calcTotalPrice }}&euro;</th>
+                  <th @change="totalPrice">{{ calcTotalPrice }}&euro;</th>
                 </tr>
               </tbody>
             </table>
@@ -68,6 +68,9 @@ export default {
     };
   },
   methods: {
+    totalPrice() {
+      return this.$emit("totalPrice", this.total);
+    },
     addProductToCart(product) {
       product.quantity++;
 
@@ -85,11 +88,6 @@ export default {
   },
   computed: {
     calcTotalPrice() {
-      // this.cart.forEach((item, i) => {
-      //   this.total += item.price;
-
-      // });
-      // return this.total;
       this.total = this.cart.reduce(
         (total, lineItem) => total + Number(lineItem.price),
         0
