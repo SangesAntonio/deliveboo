@@ -52,7 +52,7 @@
         </div>
       </div>
     </div>
-    <Jumbotron class="p-0" v-if="!isLoading" />
+    <Jumbotron class="p-0 m-0" v-if="!isLoading" />
   </div>
 </template>
 
