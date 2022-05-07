@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-lg-5 pt-lg-5 pt-5">
+  <div>
     <Loader v-if="isLoading && !users.length" />
     <div class="container">
       <div class="row">

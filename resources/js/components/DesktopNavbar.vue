@@ -1,6 +1,6 @@
 <template>
   <section id="desktop-nav">
-    <nav class="navbar-light bg-light shadow">
+    <nav class="navbar-light bg-light shadow py-2">
       <div
         class="
           container-fluid
@@ -18,7 +18,7 @@
               class="img-fluid"
               alt="Logo Deliveboo"
             />
-            <div class="h1 m-0 pl-3 t-deliveboo-green">DELIVEBOO</div>
+            <div class="h1 m-0 pl-3 t-deliveboo-green fw-bold">DELIVEBOO</div>
           </div>
         </router-link>
         <div class="d-flex justify-content-between">
@@ -77,5 +77,14 @@ i {
 
 a {
   text-decoration: none;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+span,
+div {
+  font-family: "Koulen", cursive;
 }
 </style>

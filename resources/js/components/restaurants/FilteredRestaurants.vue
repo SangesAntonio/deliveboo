@@ -1,6 +1,6 @@
 <template>
   <div class="mt-lg-5 pt-lg-5 pt-5">
-    <Loader v-if="isLoading && !category.length" />
+    <Loader v-if="isLoading && !categories" />
     <div class="container">
       <div class="row">
         <div class="col-12">
