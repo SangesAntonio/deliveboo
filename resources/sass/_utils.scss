@@ -67,12 +67,15 @@ main {
         object-fit: cover;
         object-position: top center;
     }
+
     .card-body {
         min-height: 300px;
+
         div {
             margin: 10px 0;
         }
     }
+
     #show-product {
         img {
             width: 300px;

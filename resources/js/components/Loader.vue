@@ -1,21 +1,35 @@
 <template>
-  <div class="loader">
-    <div class="w-50 text-light" role="status">
-      <img :src="'./storage/deliberoo-loader.gif'" alt="" />
+  <div id="loader" class="d-flex flex-column">
+    <div>
+      <img id="img-loader" :src="'./img/pubb/deliveboo_loader.gif'" alt="" />
+      <!-- <div class="spinner-grow text-primary" role="status">
+      </div> -->
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "Loader",
 };
 </script>
-<style scoped lang='scss'>
-.loader {
+
+<style>
+#loader {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(-18deg);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+#img-loader {
+  width: 300px;
+  height: 300px;
 }
 </style>
-
