@@ -11,7 +11,6 @@
       </div>
     </header>
     <div>
-      <Homepage />
       <router-view></router-view>
     </div>
     <Footer />
