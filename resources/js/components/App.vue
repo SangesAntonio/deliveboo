@@ -11,7 +11,6 @@
 			</div>
 		</header>
 		<div>
-			<Homepage />
 			<router-view></router-view>
 		</div>
 		<Footer />
@@ -19,7 +18,6 @@
 </template>
 
 <script>
-import HomePage from "./pages/HomePage.vue";
 import Navbar from "./Navbar.vue";
 import SliderPromotions from "./SliderPromotions.vue";
 import DesktopNavbar from "./DesktopNavbar.vue";
@@ -31,8 +29,7 @@ export default {
 		DesktopNavbar,
 		Footer,
 		SliderPromotions,
-		HomePage,
-	},
+		},
 	data() {
 		return {};
 	},

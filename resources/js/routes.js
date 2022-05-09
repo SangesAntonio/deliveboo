@@ -9,9 +9,7 @@ import ProductListPage from "./components/products/ProductListPage.vue";
 import SingleProductPage from "./components/products/SingleProductPage";
 import RestaurantListPage from "./components/restaurants/RestaurantListPage.vue";
 import SingleRestaurantPage from "./components/restaurants/SingleRestaurantPage.vue";
-import PaymentCheckout from "./components/PaymentCheckout.vue";
 import FilteredRestaurants from './components/restaurants/FilteredRestaurants.vue'
-import OrderForm from "./components/OrderForm.vue";
 import OrderSummary from "./components/OrderSummary.vue";
 
 const router = new VueRouter({
