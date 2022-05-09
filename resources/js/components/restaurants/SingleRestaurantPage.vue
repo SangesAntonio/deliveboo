@@ -47,7 +47,7 @@
         class="fixed-top pt-md-5 mt-5 mr-3 cart ml-auto"
       />
     </div>
-  </keep-alive>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-<div class="col-12 col-md-6 col-xl-4">
+<div  class="col-12 col-md-6 col-xl-4">
   <div class="card restaurant-details">
     <div class="cropper">
       <img class="card-img-top" :src="`/storage/${user.image}`" alt="Card image cap">  <!--//inserire src qui! -->
@@ -38,12 +38,12 @@
 <script>
 export default {
 	name: "Card",
-	props: ["user", "category"],
+	props: ["user", "category" , "selectedCategory"],
 	data() {
 		return {};
 	},
 	methods: {
-
+		
 
 	},
 };
