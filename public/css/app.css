@@ -11867,3 +11867,103 @@ input:checked + .slider:before {
   transform: scale(1.1);
 }
 
+.Pesce::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F578";
+  font-weight: 900;
+  background-color: yellow;
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
+.Pizza::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F818";
+  font-weight: 900;
+  background-color: brown;
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
+.Messicano::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F816";
+  font-weight: 900;
+  background-color: green;
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
+.Mediterranea::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F773";
+  font-weight: 900;
+  background-color: red;
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
+.Indiano::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F5A7";
+  font-weight: 900;
+  background-color: blue;
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
+.Giapponese::before {
+  font-family: "Font Awesome 6 free";
+  content: "\E4C6";
+  font-weight: 900;
+  background-color: blue;
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
+.Dolci::before {
+  font-family: "Font Awesome 5 free";
+  content: "\F786";
+  font-weight: 900;
+  background-color: pink;
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
+.Cinese::before {
+  font-family: "Font Awesome 5 free";
+  content: "\F7FB";
+  font-weight: 900;
+  background-color: rgb(241, 26, 223);
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
+.Carne::before {
+  font-family: "Font Awesome 5 free";
+  content: "\F6D7";
+  font-weight: 900;
+  background-color: rgb(238, 145, 15);
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
+.Internazionale::before {
+  font-family: "Font Awesome 5 free";
+  content: "\F57C";
+  font-weight: 900;
+  background-color: rgb(15, 141, 238);
+  padding: 5px 15px;
+  border: black 1px solid;
+  border-radius: 15px;
+}
+
