@@ -41,7 +41,7 @@
       <template #modal-title> </template>
 
       <div class="d-block text-center">
-        <OrderForm @gotToCart="showCart" :total="total" :cart="cart" />
+        <OrderForm @gotToCart="showCart" :total="total" :cart="correctCart" />
       </div>
     </b-modal>
   </div>

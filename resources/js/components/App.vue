@@ -7,7 +7,10 @@
         <DesktopNavbar class="d-none d-lg-block slider-border" />
       </div>
       <div class="d-flex justify-content-end fixed-bottom d-block d-lg-none">
-        <Navbar />
+
+
+
+        <MobileNavbar />
       </div>
     </header>
     <div>
@@ -18,22 +21,25 @@
 </template>
 
 <script>
-import Navbar from "./Navbar.vue";
+
+import MobileNavbar from "./MobileNavbar.vue";
 import SliderPromotions from "./SliderPromotions.vue";
 import DesktopNavbar from "./DesktopNavbar.vue";
 import Footer from "./Footer.vue";
 export default {
-  name: "App",
-  components: {
-    Navbar,
-    DesktopNavbar,
-    Footer,
-    SliderPromotions,
-  },
-  data() {
-    return {};
-  },
-  methods: {},
+	name: "App",
+	components: {
+		MobileNavbar,
+		DesktopNavbar,
+		Footer,
+		SliderPromotions,
+		},
+	data() {
+		return {};
+	},
+	methods: {},
+
+
 };
 </script>
 

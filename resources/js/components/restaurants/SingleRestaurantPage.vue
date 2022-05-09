@@ -1,5 +1,4 @@
 <template>
-
   <div class="container pb-5">
     <div class="row pt-5">
       <div class="col-12 pt-md-5">
@@ -55,102 +54,102 @@ import axios from "axios";
 import ProductCard from "../products/ProductCard.vue";
 import ModalCart from "../ModalCart.vue";
 export default {
-  name: "RestaurantList",
-  components: {
-    ProductCard,
-    ModalCart,
-  },
-  data() {
-    return {
-      isLoading: false,
-      //correctCart: [],
-      user: [],
-      cart: [],
-    };
-  },
-  computed: {
-    // setLupo() {
-    //   setInterval(() => {
-    //     this.getSingleProduct;
-    //   }, 1000);
-    // },
-    // getSingleProduct() {
-    //   this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
-    //   console.log(this.correctCart);
-    //   return this.correctCart;
-    // },
-    calcTotalPrice() {
-      this.total = this.cart.reduce(
-        (total, lineItem) => total + Number(lineItem.price),
-        0
-      );
-      return this.total;
-    },
-  },
-  methods: {
-    getRestaurant() {
-      //   this.isLoading = true;
-      axios
-        .get("http://localhost:8000/api/users/" + this.$route.params.id)
-        .then((res) => {
-          this.user = res.data;
-          console.log(res.data);
-        })
-        .catch((err) => {
-          console.error(err);
-        })
-        .then(() => {
-          // this.isLoading = false;
-        });
-    },
-    addProduct(product) {
-      this.cart.push(product);
-    },
-    removeProduct(product) {
-      const position = this.cart.indexOf(product);
-      if (position > -1) {
-        this.cart.splice(position, 1);
-      }
-    },
-  },
-  mounted() {
-    this.getRestaurant();
-  },
+	name: "RestaurantList",
+	components: {
+		ProductCard,
+		ModalCart,
+	},
+	data() {
+		return {
+			isLoading: false,
+			//correctCart: [],
+			user: [],
+			cart: [],
+		};
+	},
+	computed: {
+		// setLupo() {
+		//   setInterval(() => {
+		//     this.getSingleProduct;
+		//   }, 1000);
+		// },
+		// getSingleProduct() {
+		//   this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
+		//   console.log(this.correctCart);
+		//   return this.correctCart;
+		// },
+		calcTotalPrice() {
+			this.total = this.cart.reduce(
+				(total, lineItem) => total + Number(lineItem.price),
+				0
+			);
+			return this.total;
+		},
+	},
+	methods: {
+		getRestaurant() {
+			//   this.isLoading = true;
+			axios
+				.get("http://localhost:8000/api/users/" + this.$route.params.id)
+				.then((res) => {
+					this.user = res.data;
+					console.log(res.data);
+				})
+				.catch((err) => {
+					console.error(err);
+				})
+				.then(() => {
+					// this.isLoading = false;
+				});
+		},
+		addProduct(product) {
+			this.cart.push(product);
+		},
+		removeProduct(product) {
+			const position = this.cart.indexOf(product);
+			if (position > -1) {
+				this.cart.splice(position, 1);
+			}
+		},
+	},
+	mounted() {
+		this.getRestaurant();
+	},
 };
 </script>
 
 <style lang="scss" scoped>
 .title {
-  font-family: "Koulen", corsive;
-  background-color: #ffa500;
-    box-shadow: 6px 5px 1px #ff7f00;
-  border-radius: 20px;
-  text-align: center;
-  padding: 10px;
+	font-family: "Koulen", corsive;
+	background-color: #ffa500;
+	box-shadow: 6px 5px 1px #ff7f00;
+	border-radius: 20px;
+	text-align: center;
+	padding: 10px;
 }
-.card-res{
-  padding: 10px;
-   background-color: #ffa500;
-   box-shadow: 6px 5px 1px #ff7f00;
+.card-res {
+	padding: 10px;
+	background-color: #ffa500;
+	box-shadow: 6px 5px 1px #ff7f00;
 }
 img {
-  max-width: 30%;
+	max-width: 30%;
 }
 .cart {
-  width: 60px;
+	width: 60px;
 }
-.category-list{
-  display: inline-block;
-  margin-right: 10px;
+.category-list {
+	display: inline-block;
+	margin-right: 10px;
 }
-ul{
-  li{
-    list-style-type: none;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
+ul {
+	li {
+		list-style-type: none;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+	}
 }
-img{
-  border-radius: 25px;
+img {
+	border-radius: 25px;
 }
 </style>

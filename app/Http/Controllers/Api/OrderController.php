@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
+use App\User;
 use Illuminate\Http\Request;
+use Symfony\Component\VarDumper\VarDumper;
 
 class OrderController extends Controller
 {
@@ -41,30 +43,23 @@ class OrderController extends Controller
     public function storeorder(Request $request)
     {
         $data = $request->all();
-        $products = $data['products'];
-        $product = Product::find($products[0]['id']);
-        $user = $product->user;
+        // $products = json_decode($data['products']);
+        // $products = $data['products'];
 
-        $total = 0;
+        // $newOrder = new Order();
+        // $newOrder->name = $data['client']['name'];
+        // $newOrder->lastname  = $data['client']['lastname'];
+        // $newOrder->address = $data['client']['address'];
+        // $newOrder->email = $data['client']['email'];
+        // $newOrder->city = $data['client']['city'];
+        // $newOrder->total_amount = $data['total'];
+        // $newOrder->user_id = $data['products']['user_id'];
+        // $newOrder->save();
 
-        foreach ($products as $product) {
-            $total += Product::find($product['id'])->price * $product['quantity'];
-        }
+        // foreach ($products as $product) {
+        //     $newOrder->products()->attach($product["id"], ['product_quantity' => $product["quantity"]]);
+        // }
 
-        $newOrder = new Order();
-
-        $newOrder->name = $data['client']['name'];
-        $newOrder->lastname  = $data['client']['lastname'];
-        $newOrder->address = $data['client']['address'];
-        $newOrder->city = $data['client']['city'];
-        $newOrder->total_amount = $data['client']['total'];
-        $newOrder->quantity = $data['client']['quantity'];
-        $newOrder->save();
-
-        foreach ($products as $product) {
-            $newOrder->products()->attach($product["id"], ['product_quantity' => $product["quantity"]]);
-        }
-
-        return response()->json($data, 200);
+        return response()->json($data, 201);
     }
 }

@@ -10,20 +10,18 @@
           py-2
         "
       >
-        <router-link to="/home" class="text-decoration-none">
-          <div class="d-flex align-items-center">
-            <img
-              id="logo"
-              :src="'./img/pubb/deliveboo_loader.gif'"
-              class="img-fluid"
-              alt="Logo Deliveboo"
-            />
-            <div class="h1 m-0 pl-3 t-deliveboo-green fw-bold">DELIVEBOO</div>
-          </div>
-        </router-link>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+          <img
+            id="logo"
+            :src="'./img/pubb/deliveboo_loader.gif'"
+            class="img-fluid"
+            alt="Logo Deliveboo"
+          />
+          <div class="h1 m-0 pl-3 t-deliveboo-green fw-bold">DELIVEBOO</div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
           <div>
-            <router-link to="/home" class="text-decoration-none">
+            <router-link to="/home" class="text-decoration-none router-link">
               <i class="fas fa-home t-deliveboo-green"></i>
               <span class="text nav-text t-deliveboo-green ml-1">Home</span>
             </router-link>
@@ -66,6 +64,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a.active span {
+  filter: drop-shadow(0px 1px 0px #007377);
+  font-size: 20px;
+}
+a.active i {
+  filter: drop-shadow(0px 1px 0px #007377);
+}
+
 #logo {
   max-width: 60px;
 }
