@@ -7,6 +7,9 @@
         <DesktopNavbar class="d-none d-lg-block slider-border" />
       </div>
       <div class="d-flex justify-content-end fixed-bottom d-block d-lg-none">
+
+
+
         <MobileNavbar />
       </div>
     </header>
@@ -18,6 +21,7 @@
 </template>
 
 <script>
+
 import MobileNavbar from "./MobileNavbar.vue";
 import SliderPromotions from "./SliderPromotions.vue";
 import DesktopNavbar from "./DesktopNavbar.vue";
@@ -34,6 +38,7 @@ export default {
 		return {};
 	},
 	methods: {},
+
 
 };
 </script>
