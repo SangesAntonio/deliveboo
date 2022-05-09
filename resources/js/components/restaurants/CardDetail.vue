@@ -46,7 +46,7 @@
 
                 <tr>
                   <th colspan="3">Totale Ordine</th>
-                  <th @change="totalPrice">{{ calcTotalPrice }}&euro;</th>
+                  <th>{{ total }}&euro;</th>
                 </tr>
               </tbody>
             </table>
@@ -60,17 +60,13 @@
 <script>
 export default {
   name: "CardDetail",
-  props: ["cart"],
+  props: ["cart", "correctCart", "total"],
   data() {
     return {
-      correctCart: [],
-      total: 0,
+      //correctCart: [],
     };
   },
   methods: {
-    totalPrice() {
-      return this.$emit("totalPrice", this.total);
-    },
     addProductToCart(product) {
       product.quantity++;
 
@@ -87,18 +83,18 @@ export default {
     },
   },
   computed: {
-    calcTotalPrice() {
-      this.total = this.cart.reduce(
-        (total, lineItem) => total + Number(lineItem.price),
-        0
-      );
-      return this.total;
-    },
-    getSingleProduct() {
-      this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
-      console.log(this.correctCart);
-      return this.correctCart;
-    },
+    // calcTotalPrice() {
+    //   this.total = this.cart.reduce(
+    //     (total, lineItem) => total + Number(lineItem.price),
+    //     0
+    //   );
+    //   return this.total;
+    // },
+    // getSingleProduct() {
+    //   this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
+    //   console.log(this.correctCart);
+    //   return this.correctCart;
+    // },
     setQuantityCart() {
       return this.cart.length;
     },

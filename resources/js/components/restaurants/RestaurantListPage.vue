@@ -67,10 +67,4 @@ h1 {
   text-align: center;
   padding: 10px;
 }
-.container {
-  background-color: #d78129;
-  border-radius: 30px;
-  box-shadow: 10px 10px 10px 10px rgb(0, 0, 0, 0.5);
-  padding: 30px;
-}
 </style>

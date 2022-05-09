@@ -58,16 +58,15 @@ export default {
 <style lang="scss" scoped>
 h1 {
   font-family: "Koulen", corsive;
-  background-color: #ffc562;
-  box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5);
+  background-color: #ffa500;
+    box-shadow: 6px 5px 1px #ff7f00;
   border-radius: 20px;
   text-align: center;
   padding: 10px;
 }
 .container {
-  background-color: #d78129;
-  border-radius: 30px;
-  box-shadow: 10px 10px 10px 10px rgb(0, 0, 0, 0.5);
-  padding: 30px;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 </style>
