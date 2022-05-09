@@ -1,6 +1,6 @@
 <template>
 
-  <div class="container">
+  <div class="container pb-5">
     <div class="row pt-5">
       <div class="col-12 pt-md-5">
         <h3 class="pb-3 mx-3 title my-3 h1">{{ user.restaurant_name }}</h3>
@@ -47,7 +47,7 @@
         class="fixed-top pt-md-5 mt-5 mr-3 cart ml-auto"
       />
     </div>
-  </keep-alive>
+  </div>
 </template>
 
 <script>
