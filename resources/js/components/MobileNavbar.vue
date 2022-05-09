@@ -111,12 +111,15 @@ span {
   text-transform: uppercase;
   font-family: "Koulen", cursive;
   font-weight: 500;
+  font-size: 18px;
 }
 
 a.active span {
   color: #007377;
+  font-size: 20px;
 }
 a.active i {
+  font-size: 2.5em;
   color: #007377;
 }
 </style>
