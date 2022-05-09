@@ -31,7 +31,7 @@ export default {
     Loader,
   },
   data() {
-    return { categories: [], isLoading: false };
+    return { category: [], isLoading: false };
   },
   methods: {
     filterCategory() {
