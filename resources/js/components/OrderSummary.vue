@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-}
+
 .order-form {
   background-color: rgb(223, 219, 219);
   border-radius: 15px;
@@ -51,5 +51,6 @@ export default {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 10px 10px 4px 4px rgb(0, 0, 0, 0.5);
+}
 }
 </style>
