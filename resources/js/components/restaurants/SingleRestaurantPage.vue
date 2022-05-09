@@ -1,28 +1,27 @@
 <template>
-  <keep-alive>
-    <div class="container">
-      <div class="row pt-5">
-        <div class="col-12 pt-md-5">
-          <h3 class="pb-3 mx-3">{{ user.restaurant_name }}</h3>
-          <b-card
-            :img-src="`/storage/${user.image}`"
-            img-alt="Card image"
-            img-left
-            class="mb-3 mx-3"
-          >
-            <b-card-text>
-              <ul>
-                <li class="text-black">{{ user.address }}</li>
-                <li class="text-black">{{ user.restaurant_name }}</li>
-                <ul v-for="category in user.categories" :key="category.id">
-                  <li>
+
+  <div class="container">
+    <div class="row pt-5">
+      <div class="col-12 pt-md-5">
+        <h3 class="pb-3 mx-3 title my-3 h1">{{ user.restaurant_name }}</h3>
+        <b-card
+          :img-src="`/storage/${user.image}`"
+          img-alt="Card image"
+          img-left
+          class="mb-3 mx-3 card-res"
+        >
+          <b-card-text >
+                <ul>
+                <li class="text-black h3">{{ user.address }}</li>
+                <ul class="category-list" v-for="category in user.categories" :key="category.id">
+                  <li :class=" category.name ">
                     {{ category.name }}
                   </li>
                 </ul>
-              </ul>
-            </b-card-text>
-          </b-card>
-        </div>
+                </ul>
+          </b-card-text>
+        </b-card>
+
       </div>
       <div class="row">
         <div
@@ -121,10 +120,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title {
+  font-family: "Koulen", corsive;
+  background-color: #ffa500;
+    box-shadow: 6px 5px 1px #ff7f00;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+}
+.card-res{
+  padding: 10px;
+   background-color: #ffa500;
+   box-shadow: 6px 5px 1px #ff7f00;
+}
 img {
-  width: 30%;
+  max-width: 30%;
 }
 .cart {
   width: 60px;
+}
+.category-list{
+  display: inline-block;
+  margin-right: 10px;
+}
+ul{
+  li{
+    list-style-type: none;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+}
+img{
+  border-radius: 25px;
 }
 </style>

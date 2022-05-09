@@ -6,20 +6,20 @@
     </div>
   <div class="card-body">
     <p class="card-text">
-      <ul class="restaurant-informations">
-        <li class="text-black"><span class="information-name">Nome:</span> <span class="h5"> {{user.restaurant_name}}</span></li>
+      <ul class="restaurant-informations mt-3">
+        <li class="text-black text-center"><div class="h4 text-uppercase w-100"> {{user.restaurant_name}}</div></li>
         <li class="text-black"><span class="information-name">Indirizzo:</span> {{user.address}}</li>
         <li><span class="information-name">Categorie:</span></li>
         <div v-if="user.categories">
           <ul class="food-categories" v-for="category in user.categories" :key="category.id">
-          <li>
+          <li :class="category.name" id="icon">
             {{category.name}}
           </li>
           </ul>
         </div>
         <div v-else>
-          <ul class="food-categories">
-          <li>
+          <ul class="food-categories mt-3">
+          <li :class="category.name">
             {{category.name}}
           </li>
           </ul>
@@ -42,33 +42,36 @@ export default {
 	data() {
 		return {};
 	},
-	computed: {},
+	methods: {
+
+
+	},
 };
 </script>
 
 <style lang="scss" scoped>
+
+ul {
+	margin: 0;
+	li{
+		list-style-type: none;
+	}
+}
 .restaurant-details {
-	background-color: #ffe4bd;
-	border-radius: 10px;
 	padding: 15px;
 	font-family: "Josefin Sans", sans-serif;
 	height: 650px;
-	box-shadow: 4px 4px 3px 3px rgb(0, 0, 0, 0.5);
+	background-color: #ffa500;
+    box-shadow: 6px 5px 1px #d16b06;
+	border-radius: 0px 40px 12px 40px;
 	.cropper {
 		width: 100%;
 		height: 200px;
 		overflow: hidden;
-		border: 5px solid #b88e47;
+		border: 2px;
+	border-radius: 0px 40px 12px 40px;
 		img {
 			height: 200px;
-			overflow: hidden;
-		}
-	}
-	ul {
-		list-style-type: none;
-		.food-categories {
-			list-style-type: circle;
-			margin-left: 30px;
 		}
 	}
 	.information-name {
@@ -86,7 +89,8 @@ export default {
 	font-size: 15px;
 	padding: 7px 10px;
 	border-radius: 10px;
-	box-shadow: 2px 2px 2px 2px rgba(1, 107, 98, 0.5);
+	box-shadow: 6px 5px 1px rgba(1, 107, 98, 0.5);
+
 	:hover {
 		text-decoration: none;
 		color: black;
