@@ -1,7 +1,7 @@
 <template>
   <div>
     <Loader v-if="isLoading && !users.length" />
-    <div class="container">
+    <div class="container mb-5">
       <div class="row">
         <div class="col-12">
           <h1>Lista dei ristoranti</h1>
@@ -11,6 +11,12 @@
               :key="user.id"
               :user="user"
               class="my-3"
+            />
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <Pagination
+              :pagination="pagination"
+              @on-page-change="getRestaurantPages"
             />
           </div>
         </div>
@@ -23,11 +29,13 @@
 import axios from "axios";
 import Card from "../restaurants/Card.vue";
 import Loader from "../Loader.vue";
+import Pagination from "../Pagination.vue";
 export default {
   name: "RestaurantList",
   components: {
     Card,
     Loader,
+    Pagination,
   },
   data() {
     return {
@@ -51,9 +59,32 @@ export default {
           this.isLoading = false;
         });
     },
+    getRestaurantPages(page = 1) {
+      this.isLoading = true;
+      axios
+        .get("http://localhost:8000/api/users?page=" + page)
+        .then((res) => {
+          const { data, current_page, last_page } = res.data;
+
+          this.users = data;
+          this.pagination = {
+            lastPage: last_page,
+            currentPage: current_page,
+          };
+        })
+        .catch((err) => {
+          console.error(err);
+          this.isError = true;
+        })
+        .then(() => {
+          console.log("Chiamata terminata");
+          this.isLoading = false;
+        });
+    },
   },
   mounted() {
     this.getRestaurants();
+    this.getRestaurantPages();
   },
 };
 </script>
