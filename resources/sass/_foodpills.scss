@@ -1,0 +1,107 @@
+.Pesce {
+    &::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f578";
+        font-weight: 900;
+        background-color: yellow;
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}
+
+.Pizza {
+    &::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f818";
+        font-weight: 900;
+        background-color: brown;
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}
+
+.Messicano {
+    &::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\F816";
+        font-weight: 900;
+        background-color: green;
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}
+
+.Mediterranea {
+    &::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f773";
+        font-weight: 900;
+        background-color: red;
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}
+
+.Indiano {
+    &::before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f5a7";
+        font-weight: 900;
+        background-color: blue;
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}
+
+.Giapponese {
+    &::before {
+        font-family: "Font Awesome 6 free";
+        content: "\e4c6";
+        font-weight: 900;
+        background-color: blue;
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}
+
+.Dolci {
+    &::before {
+        font-family: "Font Awesome 5 free";
+        content: "\f786";
+        font-weight: 900;
+        background-color: pink;
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}
+
+.Cinese {
+    &::before {
+        font-family: "Font Awesome 5 free";
+        content: "\f7fb";
+        font-weight: 900;
+        background-color: rgb(241, 26, 223);
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}
+
+.Carne {
+    &::before {
+        font-family: "Font Awesome 5 free";
+        content: "\f6d7";
+        font-weight: 900;
+        background-color: rgb(238, 145, 15);
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}

@@ -86,7 +86,7 @@
       </form>
     </div>
   </div>
-  <PaymentCheckout v-else :formOrder="formOrder" :total="total" />
+  <PaymentCheckout v-else :formOrder="formOrder" :total="total" :cart="cart" />
 </template>
 
 <script>
@@ -94,7 +94,7 @@ import PaymentCheckout from "./PaymentCheckout.vue";
 import { isEmpty } from "lodash";
 export default {
   name: "OrderForm",
-  props: ["total"],
+  props: ["cart"],
   components: {
     PaymentCheckout,
   },
@@ -103,6 +103,7 @@ export default {
       checkout: true,
       payment: false,
       errors: {},
+      total: 0,
       formOrder: {
         name: "",
         lastname: "",
@@ -139,9 +140,16 @@ export default {
     //bottone per procedere al pagamento
     gotTopayment() {
       this.validateForm();
+      this.calcTotalPrice();
       if (!this.hasErrors) {
         this.payment = true;
       }
+    },
+    calcTotalPrice() {
+      this.total = this.cart.reduce(
+        (total, lineItem) => total + Number(lineItem.price),
+        0
+      );
     },
   },
   computed: {
