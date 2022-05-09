@@ -31,7 +31,7 @@ export default {
     Loader,
   },
   data() {
-    return { category: [], isLoading: false };
+    return { categories: [], isLoading: false };
   },
   methods: {
     filterCategory() {
@@ -59,13 +59,12 @@ export default {
 h1 {
   font-family: "Koulen", corsive;
   background-color: #ffa500;
-    box-shadow: 6px 5px 1px #ff7f00;
+  box-shadow: 6px 5px 1px #ff7f00;
   border-radius: 20px;
   text-align: center;
   padding: 10px;
 }
 .container {
-
   padding-top: 30px;
   padding-bottom: 30px;
 }

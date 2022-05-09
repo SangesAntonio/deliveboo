@@ -30,7 +30,8 @@
 					type="submit"
 					@click="slotProps.submit"
 					class="btn btn-warning"
-					value="Paga Ora!!"
+					value="Paga ora"
+					:formOrder="formOrder"
 				/>
 			</template>
 		</v-braintree>
@@ -40,19 +41,27 @@
 		<br />
 		<div class="container">
 			<h3 class="mb-3 mt-5">Riepilogo dati</h3>
-			<div class="row">
-				<div class="col-6">
+			<div
+				class="row d-flex flex-column justify-content-center align-items-center"
+			>
+				<div class="col-12">
 					<div class="client name mb-3">
-						<strong>Nome:</strong> {{ formOrder.name }} {{ formOrder.lastname }}
+						<strong>Nome:</strong> {{ formOrder.client.name }}
+						{{ formOrder.client.lastname }}
 					</div>
 				</div>
-				<div class="col-6"></div>
-				<div class="client address mb-3">
-					<strong>Indirizzo:</strong> {{ formOrder.address }}
-					<strong>Email:</strong> {{ formOrder.email }}
+				<div class="col-12">
+					<div class="client address mb-3">
+						<strong>Indirizzo:</strong> {{ formOrder.client.address }}
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="client address mb-3">
+						<strong>Email:</strong> {{ formOrder.client.email }}
+					</div>
 				</div>
 				<div class="col">
-					<h1><strong>Totale ordine:</strong>{{ total }}&euro;</h1>
+					<h3><strong>Totale ordine: </strong>{{ total }}&euro;</h3>
 				</div>
 			</div>
 		</div>
@@ -65,6 +74,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import { add } from "@braintree/class-list";
 
 export default {
@@ -88,9 +98,10 @@ export default {
 			console.log("Success!", payload.nonce);
 			this.modalSuccess();
 			axios
-				.post("/api/orders/storeorder", this.formOrder, this.total)
+				.post("http://localhost:8000/api/orders/storeorder", this.formOrder)
 				.then((response) => {
-					console.log("Sono in POST" + response);
+					console.log("Sono in POST" + response.data);
+					console.log(this.formOrder);
 				})
 				.catch(function (error) {
 					console.log("Sono in error");
@@ -98,6 +109,16 @@ export default {
 			setTimeout(() => {
 				this.$router.push("Home");
 			}, 3100);
+		},
+		getProdIds() {
+			const prod = this.cart.map((p) => {
+				const products = {};
+				products["product_id"] = p.product_id;
+				products["user_id"] = p.user_id;
+				products["quantity"] = p.quantity;
+				return products;
+			});
+			this.formOrder.products = prod;
 		},
 		onError(error) {
 			console.error("Error:", error);
@@ -139,8 +160,8 @@ export default {
 				timer: 3000,
 			});
 		},
-		ritardo() {},
 	},
+	mounted() {},
 };
 </script>
 

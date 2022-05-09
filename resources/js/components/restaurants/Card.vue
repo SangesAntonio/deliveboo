@@ -37,64 +37,60 @@
 
 <script>
 export default {
-	name: "Card",
-	props: ["user", "category" , "selectedCategory"],
-	data() {
-		return {};
-	},
-	methods: {
-		
-
-	},
+  name: "Card",
+  props: ["user", "selectedCategory"],
+  data() {
+    return {};
+  },
+  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
-
 ul {
-	margin: 0;
-	li{
-		list-style-type: none;
-	}
+  margin: 0;
+  li {
+    list-style-type: none;
+  }
 }
 .restaurant-details {
-	padding: 15px;
-	font-family: "Josefin Sans", sans-serif;
-	height: 650px;
-	background-color: #ffa500;
-    box-shadow: 6px 5px 1px #d16b06;
-	border-radius: 0px 40px 12px 40px;
-	.cropper {
-		width: 100%;
-		height: 200px;
-		overflow: hidden;
-		border: 2px;
-	border-radius: 0px 40px 12px 40px;
-		img {
-			height: 200px;
-		}
-	}
-	.information-name {
-		font-weight: 700;
-	}
-	.restaurant-informations {
-		li {
-			padding: 5px 10px;
-		}
-	}
+  padding: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  height: 650px;
+  background-color: #ffa500;
+  box-shadow: 6px 5px 1px #d16b06;
+  border-radius: 0px 40px 12px 40px;
+  .cropper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border: 2px;
+    border-radius: 0px 40px 12px 40px;
+    img {
+      height: 200px;
+    }
+  }
+  .information-name {
+    font-weight: 700;
+  }
+  .restaurant-informations {
+    li {
+      padding: 5px 10px;
+    }
+  }
 }
 .information-link {
-	background-color: #00ccbb;
-	color: white;
-	font-size: 15px;
-	padding: 7px 10px;
-	border-radius: 10px;
-	box-shadow: 6px 5px 1px rgba(1, 107, 98, 0.5);
+  background-color: #00ccbb;
+  color: white;
+  font-size: 15px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  box-shadow: 6px 5px 1px rgba(1, 107, 98, 0.5);
 
-	:hover {
-		text-decoration: none;
-		color: black;
-		border: 2px solid;
-	}
+  :hover {
+    text-decoration: none;
+    color: black;
+    border: 2px solid;
+  }
 }
 </style>
