@@ -3,16 +3,18 @@
     <b-button
       id="show-btn"
       variant="primary"
-      @click="$bvModal.show('bv-modal-example')"
+      @click="
+        getSingleProduct(), calcTotalPrice(), $bvModal.show('bv-modal-example')
+      "
       ><i class="fa-solid fa-cart-shopping position-relative"></i
-      ><span v-if="cart.length">
+      ><span>
         {{ cart.length }}
       </span></b-button
     >
     <b-modal v-if="!checkout" id="bv-modal-example" hide-footer>
       <template #modal-title> </template>
       <div class="d-block text-center">
-        <CardDetail :cart="cart" @totalPrice="totalPrice" />
+        <CardDetail :cart="cart" :total="total" :correctCart="correctCart" />
       </div>
       <b-button
         class="mt-3"
@@ -39,7 +41,7 @@
       <template #modal-title> </template>
 
       <div class="d-block text-center">
-        <OrderForm @gotToCart="showCart" :total="total" />
+        <OrderForm @gotToCart="showCart" :total="total" :cart="cart" />
       </div>
     </b-modal>
   </div>
@@ -57,29 +59,28 @@ export default {
   data() {
     return {
       checkout: false,
+      correctCart: [],
       total: 0,
     };
   },
   methods: {
-    totalPrice(price) {
-      this.total = price;
-    },
     gotToFormOrder() {
       this.checkout = true;
     },
     showCart() {
       this.checkout = false;
     },
-  },
-  computed: {
+    getSingleProduct() {
+      this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
+    },
     calcTotalPrice() {
       this.total = this.cart.reduce(
         (total, lineItem) => total + Number(lineItem.price),
         0
       );
-      return this.total;
     },
   },
+  computed: {},
 };
 </script>
 
