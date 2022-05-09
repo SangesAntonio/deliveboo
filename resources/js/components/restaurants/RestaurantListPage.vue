@@ -1,7 +1,7 @@
 <template>
   <div>
     <Loader v-if="isLoading && !users.length" />
-    <div class="container">
+    <div class="container mb-5">
       <div class="row">
         <div class="col-12">
           <h1>Lista dei ristoranti</h1>
@@ -25,6 +25,12 @@
               :selectedCategory = "selectedCategory"
             />
           </div>
+          <div class="col-12 d-flex justify-content-center">
+            <Pagination
+              :pagination="pagination"
+              @on-page-change="getRestaurantPages"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -35,11 +41,13 @@
 import axios from "axios";
 import Card from "../restaurants/Card.vue";
 import Loader from "../Loader.vue";
+import Pagination from "../Pagination.vue";
 export default {
   name: "RestaurantList",
   components: {
     Card,
     Loader,
+    Pagination,
   },
   data() {
     return {
@@ -65,34 +73,34 @@ export default {
           this.isLoading = false;
         });
     },
-    getCategories() {
+
+    getRestaurantPages(page = 1) {
       this.isLoading = true;
       axios
-        .get("http://localhost:8000/api/categories")
+        .get("http://localhost:8000/api/users?page=" + page)
         .then((res) => {
-          this.categories = res.data;
-          console.log(res.data);
+          const { data, current_page, last_page } = res.data;
+
+          this.users = data;
+          this.pagination = {
+            lastPage: last_page,
+            currentPage: current_page,
+          };
         })
         .catch((err) => {
           console.error(err);
+          this.isError = true;
         })
         .then(() => {
+          console.log("Chiamata terminata");
           this.isLoading = false;
         });
     },
-
-  },
-
-  computed :{
-        selectedItems() {
-          return this.users.filter(function (user) {
-            return this.selectedCategory.includes(user.category);
-        }, this);
-      },
   },
   mounted() {
     this.getRestaurants();
-    this. getCategories();
+    this.getRestaurantPages();
+
   },
 };
 </script>
