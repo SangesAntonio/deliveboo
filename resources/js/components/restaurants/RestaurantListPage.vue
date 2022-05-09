@@ -5,12 +5,24 @@
       <div class="row">
         <div class="col-12">
           <h1>Lista dei ristoranti</h1>
+          <!-- check box -->
+          <section id="checkbox">
+            <ul class="category-list" >
+                  <li v-for="category in categories" :key="category.id" :class=" category.name ">
+                        <div class="switch1">
+                          <input v-model="selectedCategory" id="switch1" type="checkbox" :value="category.name">
+                          <label for="switch1">{{ category.name }}</label>
+                        </div>
+                  </li>
+            </ul>
+          </section>
           <div class="col-12 d-flex flex-wrap">
-            <Card
-              v-for="user in users"
+            <Card 
+              v-for="user in selectedItems"
               :key="user.id"
               :user="user"
               class="my-3"
+              :selectedCategory = "selectedCategory"
             />
           </div>
           <div class="col-12 d-flex justify-content-center">
@@ -39,8 +51,10 @@ export default {
   },
   data() {
     return {
+      selectedCategory:[],
       isLoading: false,
       users: [],
+      categories: [],
     };
   },
   methods: {
@@ -59,6 +73,7 @@ export default {
           this.isLoading = false;
         });
     },
+
     getRestaurantPages(page = 1) {
       this.isLoading = true;
       axios
@@ -85,6 +100,7 @@ export default {
   mounted() {
     this.getRestaurants();
     this.getRestaurantPages();
+
   },
 };
 </script>
@@ -97,5 +113,17 @@ h1 {
   border-radius: 20px;
   text-align: center;
   padding: 10px;
+}
+
+ul{
+  margin: 30px 0px;
+  li{
+    list-style-type: none;
+     margin: 20px 0px;
+     .switch1{
+       display: inline;
+    margin: 0 10px;
+     }
+  }
 }
 </style>
