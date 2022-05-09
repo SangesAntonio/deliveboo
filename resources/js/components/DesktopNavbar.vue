@@ -19,7 +19,7 @@
           />
           <div class="h1 m-0 pl-3 t-deliveboo-green fw-bold">DELIVEBOO</div>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between align-items-center">
           <div>
             <router-link to="/home" class="text-decoration-none router-link">
               <i class="fas fa-home t-deliveboo-green"></i>
@@ -65,10 +65,11 @@ export default {
 
 <style lang="scss" scoped>
 a.active span {
-  color: #007377;
+  filter: drop-shadow(0px 1px 0px #007377);
+  font-size: 20px;
 }
 a.active i {
-  color: #007377;
+  filter: drop-shadow(0px 1px 0px #007377);
 }
 
 #logo {
