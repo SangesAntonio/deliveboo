@@ -52,7 +52,7 @@
           <strong>Email:</strong> {{ formOrder.email }}
         </div>
         <div class="col">
-          <h1><strong>Totale ordine:</strong>{{ total }}</h1>
+          <h1><strong>Totale ordine:</strong>{{ total }}&euro;</h1>
         </div>
       </div>
     </div>
@@ -69,13 +69,14 @@ import { add } from "@braintree/class-list";
 
 export default {
   name: "payment",
-  props: ["formOrder", "total"],
+  props: ["formOrder", "total", "cart"],
   data() {
     return {
       instance: null,
       showDropIn: true,
     };
   },
+  computed: {},
   methods: {
     onLoad(instance) {
       this.instance = instance;
@@ -87,7 +88,7 @@ export default {
       console.log("Success!", payload.nonce);
       this.modalSuccess();
       setTimeout(() => {
-        this.$router.push("Home");
+        this.$router.push({ path: "/home" });
       }, 3100);
     },
     onError(error) {

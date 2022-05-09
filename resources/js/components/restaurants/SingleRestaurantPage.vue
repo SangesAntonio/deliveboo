@@ -1,49 +1,54 @@
 <template>
-  <div class="container">
-    <div class="row pt-5">
-      <div class="col-12 pt-md-5">
-        <h3 class="pb-3 mx-3">{{ user.restaurant_name }}</h3>
-        <b-card
-          :img-src="`/storage/${user.image}`"
-          img-alt="Card image"
-          img-left
-          class="mb-3 mx-3"
-        >
-          <b-card-text>
-            <ul>
-              <li class="text-black">{{ user.address }}</li>
-              <li class="text-black">{{ user.restaurant_name }}</li>
-              <ul v-for="category in user.categories" :key="category.id">
-                <li>
-                  {{ category.name }}
-                </li>
+  <keep-alive>
+    <div class="container">
+      <div class="row pt-5">
+        <div class="col-12 pt-md-5">
+          <h3 class="pb-3 mx-3">{{ user.restaurant_name }}</h3>
+          <b-card
+            :img-src="`/storage/${user.image}`"
+            img-alt="Card image"
+            img-left
+            class="mb-3 mx-3"
+          >
+            <b-card-text>
+              <ul>
+                <li class="text-black">{{ user.address }}</li>
+                <li class="text-black">{{ user.restaurant_name }}</li>
+                <ul v-for="category in user.categories" :key="category.id">
+                  <li>
+                    {{ category.name }}
+                  </li>
+                </ul>
               </ul>
-            </ul>
-          </b-card-text>
-        </b-card>
+            </b-card-text>
+          </b-card>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div
-        class="
-          col-12
-          d-flex
-          flex-wrap
-          align-items-center
-          justify-content-between
-        "
-      >
-        <ProductCard
-          @addProduct="addProduct"
-          @removeProduct="removeProduct"
-          v-for="(product, index) in user.products"
-          :key="index"
-          :product="product"
-        />
+      <div class="row">
+        <div
+          class="
+            col-12
+            d-flex
+            flex-wrap
+            align-items-center
+            justify-content-between
+          "
+        >
+          <ProductCard
+            @addProduct="addProduct"
+            @removeProduct="removeProduct"
+            v-for="(product, index) in user.products"
+            :key="index"
+            :product="product"
+          />
+        </div>
       </div>
+      <ModalCart
+        :cart="cart"
+        class="fixed-top pt-md-5 mt-5 mr-3 cart ml-auto"
+      />
     </div>
-    <ModalCart :cart="cart" class="fixed-top pt-md-5 mt-5 mr-3 cart ml-auto" />
-  </div>
+  </keep-alive>
 </template>
 
 <script>
@@ -59,9 +64,29 @@ export default {
   data() {
     return {
       isLoading: false,
+      //correctCart: [],
       user: [],
       cart: [],
     };
+  },
+  computed: {
+    // setLupo() {
+    //   setInterval(() => {
+    //     this.getSingleProduct;
+    //   }, 1000);
+    // },
+    // getSingleProduct() {
+    //   this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
+    //   console.log(this.correctCart);
+    //   return this.correctCart;
+    // },
+    calcTotalPrice() {
+      this.total = this.cart.reduce(
+        (total, lineItem) => total + Number(lineItem.price),
+        0
+      );
+      return this.total;
+    },
   },
   methods: {
     getRestaurant() {
