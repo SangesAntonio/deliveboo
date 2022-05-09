@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import Navbar from "./Navbar.vue";
 import MobileNavbar from "./MobileNavbar.vue";
 import SliderPromotions from "./SliderPromotions.vue";
 import DesktopNavbar from "./DesktopNavbar.vue";
@@ -26,7 +25,7 @@ import Footer from "./Footer.vue";
 export default {
 	name: "App",
 	components: {
-		Navbar,
+		MobileNavbar,
 		DesktopNavbar,
 		Footer,
 		SliderPromotions,
