@@ -105,3 +105,15 @@
         border-radius: 15px;
     }
 }
+
+.Internazionale {
+    &::before {
+        font-family: "Font Awesome 5 free";
+        content: "\f57c";
+        font-weight: 900;
+        background-color: rgb(15, 141, 238);
+        padding: 5px 15px;
+        border: black 1px solid;
+        border-radius: 15px;
+    }
+}
