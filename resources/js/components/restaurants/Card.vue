@@ -38,7 +38,7 @@
 <script>
 export default {
   name: "Card",
-  props: ["user", "selectedCategory", "category"],
+  props: ["user", "category"],
   data() {
     return {};
   },
