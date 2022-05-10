@@ -8,7 +8,7 @@
 		</ul>
 
 		<div class="form">
-			<form>
+			<form method="post" enctype="application/x-www-form-urlencoded">
 				<div class="form-row align-items-center py-4">
 					<div class="col-sm-4 my-1">
 						<label class="sr-only" for="name">Nome</label>
@@ -106,8 +106,6 @@ export default {
 			payment: false,
 			errors: {},
 			formOrder: {
-				products: [],
-				total: 0,
 				client: {
 					name: "",
 					lastname: "",
@@ -115,6 +113,8 @@ export default {
 					city: "",
 					address: "",
 				},
+				products: [],
+				total: 0,
 			},
 		};
 	},
@@ -160,7 +160,7 @@ export default {
 	},
 	mounted() {
 		this.formOrder.total = this.total;
-		this.formOrder.products = this.cart;
+		this.formOrder.products = [...this.cart];
 	},
 };
 </script>

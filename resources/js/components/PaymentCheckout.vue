@@ -98,10 +98,9 @@ export default {
 			console.log("Success!", payload.nonce);
 			this.modalSuccess();
 			axios
-				.post("http://localhost:8000/api/orders/storeorder", this.formOrder)
-				.then((response) => {
-					console.log("Sono in POST" + response.data);
-					console.log(this.formOrder);
+				.post("http://127.0.0.1:8000/api/orders/storeorder", this.formOrder)
+				.then((res) => {
+					console.log("Sono in POST", res.data);
 				})
 				.catch(function (error) {
 					console.log("Sono in error");
@@ -109,16 +108,6 @@ export default {
 			setTimeout(() => {
 				this.$router.push("Home");
 			}, 3100);
-		},
-		getProdIds() {
-			const prod = this.cart.map((p) => {
-				const products = {};
-				products["product_id"] = p.product_id;
-				products["user_id"] = p.user_id;
-				products["quantity"] = p.quantity;
-				return products;
-			});
-			this.formOrder.products = prod;
 		},
 		onError(error) {
 			console.error("Error:", error);
