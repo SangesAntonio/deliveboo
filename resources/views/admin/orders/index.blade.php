@@ -14,6 +14,7 @@
             <th scope="col">Indirizzo</th>
             <th scope="col">Email</th>
             <th scope="col">Totale</th>
+            <th scope="col">Creato il</th>
             <th></th>
           </tr>
         </thead>
@@ -25,6 +26,7 @@
               <td>{{ $order->address }}</td>
               <td>{{ $order->email }}</td>
               <td>{{ $order->total_amount }}&euro;</td>
+              <td>{{ $order->created_at }}</td>
               <td>
                 <button type="button" class="btn btn-primary" data-toggle="modal"
                   data-target="#OrderModal-{{ $order->id }}">
@@ -43,17 +45,17 @@
             <div class="modal-content p-3">
               <div class="modal-header">
 
-                <h5 class="modal-title" id="exampleModalLongTitle">Ordine N.{{ $order->id }}</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Ordine N.{{ $loop->index + 1 }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body border">
                 <div class="col">
-                  <h2>Informazioni del cliente</h2>
-                  <h3>{{ $order->name }} {{ $order->lastname }}</h3>
+                  <h3>Informazioni del cliente</h3>
+                  <h4>{{ $order->name }} {{ $order->lastname }}</h4>
                   <p>Indirizzo:<span class="mx-3"> {{ $order->address }}, {{ $order->city }} </span></p>
-                  <h2>Piatti ordinati</h2>
+                  <h3>Piatti ordinati</h3>
                 </div>
                 <hr>
                 <div class="col">
@@ -69,18 +71,14 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td scope="col">Margherita</td>
-                            <td>2</td>
-                            <td>4&euro;</td>
-                            <td>8&euro;</td>
-                          </tr>
-                          <tr>
-                            <td scope="col">Hot Dog</td>
-                            <td>1</td>
-                            <td>3&euro;</td>
-                            <td>3&euro;</td>
-                          </tr>
+                          @foreach ($order->products as $product)
+                            <tr>
+                              <td scope="col">{{ $product->name }}</td>
+                              <td>{{ $product->pivot->product_quantity }}</td>
+                              <td>{{ $product->price }}&euro;</td>
+                              <td>{{ $product->price * $product->pivot->product_quantity }}&euro;</td>
+                            </tr>
+                          @endforeach
                           <tr>
                             <th colspan='3'>Totale Ordine</th>
                             <th>{{ $order->total_amount }}&euro;</th>

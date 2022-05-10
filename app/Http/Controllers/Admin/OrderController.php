@@ -15,7 +15,7 @@ class OrderController extends Controller
     public function index()
     {
         // DESC per Data
-        $orders = Order::with(['products'])->where('user_id', auth()->id())->paginate(10);
+        $orders = Order::with(['products'])->orderBy('created_at', 'DESC')->where('user_id', auth()->id())->paginate(10);
         return view('admin.orders.index', compact('orders'));
     }
 
