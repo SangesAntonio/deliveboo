@@ -1,76 +1,76 @@
 <template>
-	<div class="container">
-		<br />
+  <div class="container">
+    <br />
 
-		<h1>Braintree Demo</h1>
+    <h1>Braintree Demo</h1>
 
-		<v-braintree
-			v-if="showDropIn"
-			authorization="sandbox_4x2fxjmf_q5k7r9z79n9kztxr"
-			:paypal="{ flow: 'vault' }"
-			:three-d-secure="false"
-			:three-d-secure-parameters="{
-				amount: 100,
-				email: 'francois@witify.io',
-				billingAddress: {
-					givenName: 'John',
-					surname: 'Doe',
+    <v-braintree
+      v-if="showDropIn"
+      authorization="sandbox_4x2fxjmf_q5k7r9z79n9kztxr"
+      :paypal="{ flow: 'vault' }"
+      :three-d-secure="false"
+      :three-d-secure-parameters="{
+        amount: 100,
+        email: 'francois@witify.io',
+        billingAddress: {
+          givenName: 'John',
+          surname: 'Doe',
 
-					locality: 'Laval',
-					streetAddress: '485 boul. dagenais E',
-				},
-			}"
-			@load="onLoad"
-			@loadFail="onLoadFail"
-			@success="onSuccess"
-			@error="onError"
-		>
-			<template id="payment" v-slot:button="slotProps">
-				<input
-					type="submit"
-					@click="slotProps.submit"
-					class="btn btn-warning"
-					value="Paga ora"
-					:formOrder="formOrder"
-				/>
-			</template>
-		</v-braintree>
+          locality: 'Laval',
+          streetAddress: '485 boul. dagenais E',
+        },
+      }"
+      @load="onLoad"
+      @loadFail="onLoadFail"
+      @success="onSuccess"
+      @error="onError"
+    >
+      <template id="payment" v-slot:button="slotProps">
+        <input
+          type="submit"
+          @click="slotProps.submit"
+          class="btn btn-warning"
+          value="Paga ora"
+          :formOrder="formOrder"
+        />
+      </template>
+    </v-braintree>
 
-		<br />
+    <br />
 
-		<br />
-		<div class="container">
-			<h3 class="mb-3 mt-5">Riepilogo dati</h3>
-			<div
-				class="row d-flex flex-column justify-content-center align-items-center"
-			>
-				<div class="col-12">
-					<div class="client name mb-3">
-						<strong>Nome:</strong> {{ formOrder.client.name }}
-						{{ formOrder.client.lastname }}
-					</div>
-				</div>
-				<div class="col-12">
-					<div class="client address mb-3">
-						<strong>Indirizzo:</strong> {{ formOrder.client.address }}
-					</div>
-				</div>
-				<div class="col-12">
-					<div class="client address mb-3">
-						<strong>Email:</strong> {{ formOrder.client.email }}
-					</div>
-				</div>
-				<div class="col">
-					<h3><strong>Totale ordine: </strong>{{ total }}&euro;</h3>
-				</div>
-			</div>
-		</div>
-		<br />
+    <br />
+    <div class="container">
+      <h3 class="mb-3 mt-5">Riepilogo dati</h3>
+      <div
+        class="row d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="col-12">
+          <div class="client name mb-3">
+            <strong>Nome:</strong> {{ formOrder.client.name }}
+            {{ formOrder.client.lastname }}
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="client address mb-3">
+            <strong>Indirizzo:</strong> {{ formOrder.client.address }}
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="client address mb-3">
+            <strong>Email:</strong> {{ formOrder.client.email }}
+          </div>
+        </div>
+        <div class="col">
+          <h3><strong>Totale ordine: </strong>{{ total }}&euro;</h3>
+        </div>
+      </div>
+    </div>
+    <br />
 
-		<button @click="deleteInstance" class="btn btn-danger">
-			Svuota i campi
-		</button>
-	</div>
+    <button @click="deleteInstance" class="btn btn-danger">
+      Svuota i campi
+    </button>
+  </div>
 </template>
 
 <script>
@@ -124,33 +124,32 @@ export default {
 				this.showDropIn = true;
 			}, 1000);
 		},
-
-		modalSuccess() {
-			// Use sweetalert2
-			this.$swal({
-				title: "Deliveboo",
-				text: "Pagamento effettuato con successo",
-				imageUrl: "/img/pubb/clipp-delivery-kradac.gif",
-				imageWidth: 500,
-				imageHeight: 320,
-				imageAlt: "Pagamento effettuato con successo",
-				background: "#00CCBC",
-				timer: 3000,
-			});
-		},
-		modalWrong() {
-			// Use sweetalert2
-			this.$swal({
-				icon: "error",
-				title: "Oops...",
-				text: "Something went wrong!",
-				footer: '<a href="">Why do I have this issue?</a>',
-				background: "#00CCBC",
-				timer: 3000,
-			});
-		},
-	},
-	mounted() {},
+    modalSuccess() {
+      // Use sweetalert2
+      this.$swal({
+        title: "Deliveboo",
+        text: "Pagamento effettuato con successo",
+        imageUrl: "/img/pubb/clipp-delivery-kradac.gif",
+        imageWidth: 500,
+        imageHeight: 320,
+        imageAlt: "Pagamento effettuato con successo",
+        background: "#00CCBC",
+        timer: 3000,
+      });
+    },
+    modalWrong() {
+      // Use sweetalert2
+      this.$swal({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: '<a href="">Why do I have this issue?</a>',
+        background: "#00CCBC",
+        timer: 3000,
+      });
+    },
+  },
+  mounted() {},
 };
 </script>
 

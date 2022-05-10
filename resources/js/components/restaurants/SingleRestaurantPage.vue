@@ -22,7 +22,8 @@
         </b-card>
 
       </div>
-      <div class="row">
+
+      <div class="col-12">
         <div
           class="
             col-12
@@ -30,6 +31,7 @@
             flex-wrap
             align-items-center
             justify-content-between
+            flex-row
           "
         >
           <ProductCard

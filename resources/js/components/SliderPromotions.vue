@@ -68,11 +68,17 @@ export default {
   data() {
     return {
       slides: [
+        "/img/pubb/slider/ad_1_desktop.png",
+        "/img/pubb/slider/ad_2_desktop.png",
+        "/img/pubb/slider/ad_3_desktop.png",
         "/img/pubb/slider/2_desktop.png",
         "/img/pubb/slider/1_desktop.png",
         "/img/pubb/slider/3_desktop.png",
       ],
       mobileSlides: [
+        "/img/pubb/slider/ad_1.png",
+        "/img/pubb/slider/ad_2.png",
+        "/img/pubb/slider/ad_3.png",
         "/img/pubb/slider/2.png",
         "/img/pubb/slider/1.png",
         "/img/pubb/slider/3.png",
