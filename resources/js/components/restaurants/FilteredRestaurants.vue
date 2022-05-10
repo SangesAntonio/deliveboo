@@ -1,6 +1,6 @@
 <template>
   <div class="mt-lg-5 pt-lg-5 pt-5">
-    <Loader v-if="isLoading && !categories" />
+    <Loader v-if="isLoading && !category.length" />
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -31,7 +31,7 @@ export default {
     Loader,
   },
   data() {
-    return { categories: [], isLoading: false };
+    return { category: [], isLoading: false };
   },
   methods: {
     filterCategory() {

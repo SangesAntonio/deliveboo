@@ -18,7 +18,7 @@
                     v-model="selectedCategory"
                     id="switch1"
                     type="checkbox"
-                    :value="category.name"
+                    :value="category"
                     @click="getRestaurants()"
                   />
                   <label for="switch1">{{ category.name }}</label>
@@ -28,11 +28,11 @@
           </section>
           <div class="col-12 d-flex flex-wrap">
             <Card
-              v-for="user in users"
+              v-for="user in filteredArray"
               :key="user.id"
               :user="user"
+              :selectedCategories="selectedCategory"
               class="my-3"
-              :selectedCategory="selectedCategory"
             />
           </div>
           <!-- <div class="col-12 d-flex justify-content-center">
@@ -65,24 +65,46 @@ export default {
       isLoading: false,
       // pagination: [],
       users: [],
+      filteredUsers: [],
 
       categories: [],
       filteredArray: [],
     };
   },
   methods: {
+    // getUnique(users) {
+    //   let result = users.reduce((this.filteredUsers, o) => {
+    //     if (!this.filteredUsers.some((obj) => obj.id === o.id)) {
+    //       this.filteredUsers.push(o);
+    //     }
+    //   });
+    // },
+
+    getSingleProduct() {
+      this.filteredArray = new Set(this.users.filter((numb) => numb === numb));
+    },
     getRestaurants() {
       this.isLoading = true;
       axios
         .get("http://localhost:8000/api/users")
         .then((res) => {
           if (!this.selectedCategory.length) {
-            this.users = res.data;
+            this.filteredArray = res.data;
           } else {
-            this.users = res.data.filter((user) => {
-              if (user.id === 1) {
-                return this.users;
-              }
+            this.filteredArray = [];
+            res.data.forEach((restaurant) => {
+              restaurant["categories"].forEach((type) => {
+                console.log(type["name"], ":categorie dei risoranti");
+
+                this.selectedCategory.filter((user) => {
+                  if (type["name"] === user["name"]) {
+                    if (!this.filteredArray.includes(restaurant)) {
+                      this.filteredArray.push(restaurant);
+                    }
+                  }
+                });
+              });
+              // console.log(user["name"], ":categorie dei check");
             });
           }
         })
