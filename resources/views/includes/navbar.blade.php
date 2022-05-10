@@ -76,7 +76,7 @@
             
             <h6>Vai al sito</h6>
             <li class="nav-link">
-              <a href="/home">
+              <a href="/">
                 <i class="fas fa-home t-deliveboo-green"></i>
                 <span class="text nav-text">Home</span>
               </a>
