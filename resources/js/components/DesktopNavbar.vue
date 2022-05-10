@@ -21,7 +21,7 @@
         </div>
         <div class="d-flex justify-content-between align-items-center">
           <div>
-            <router-link to="/home" class="text-decoration-none router-link">
+            <router-link to="/" class="text-decoration-none router-link">
               <i class="fas fa-home t-deliveboo-green"></i>
               <span class="text nav-text t-deliveboo-green ml-1">Home</span>
             </router-link>

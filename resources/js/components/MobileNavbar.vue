@@ -7,7 +7,7 @@
             <li class="nav-item">
               <router-link
                 exact
-                to="/home"
+                to="/"
                 :class="{ active: $route.name === 'home' }"
                 class="
                   text-decoration-none

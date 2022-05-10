@@ -415,7 +415,7 @@ class UserSeeder extends Seeder
             ],
             // !!! ADMIN SOLO PER TEST !!! 
             [
-                'restaurant_name' => 'admin',
+                'restaurant_name' => 'Osteria i briganti',
                 'email' => 'admin@bool.it',
                 'password' => bcrypt('admin'),
                 'address' => 'Via dell\'admin 1/A, Italia',
