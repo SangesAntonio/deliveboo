@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use app\Mail\OrderCompleted;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
@@ -62,6 +64,11 @@ class OrderController extends Controller
         foreach ($products as $product) {
             $newOrder->products()->attach($product["id"], ['product_quantity' => $product["quantity"]]);
         }
+
+        // MANDO UNA MAIL DI CONFERMA
+        $mail = new OrderCompleted();
+        $receiver = $client['email'];
+        Mail::to($receiver)->send($mail);
 
         return response()->json($data, 201);
     }
