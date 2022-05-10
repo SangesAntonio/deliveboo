@@ -7,7 +7,6 @@ use App\Models\Order;
 use App\Models\Product;
 use App\User;
 use Illuminate\Http\Request;
-use Symfony\Component\VarDumper\VarDumper;
 
 class OrderController extends Controller
 {
