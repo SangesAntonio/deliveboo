@@ -78,64 +78,52 @@ import axios from "axios";
 import { add } from "@braintree/class-list";
 
 export default {
-  name: "payment",
-  props: ["formOrder", "total", "cart"],
-  data() {
-    return {
-      instance: null,
-      showDropIn: true,
-    };
-  },
-  computed: {},
-  methods: {
-    onLoad(instance) {
-      this.instance = instance;
-    },
-    onLoadFail(instance) {
-      console.error("Load fail", instance);
-    },
-    onSuccess(payload) {
-      console.log("Success!", payload.nonce);
-      this.modalSuccess();
-      axios
-        .post("http://localhost:8000/api/orders/storeorder", this.formOrder)
-        .then((response) => {
-          console.log("Sono in POST" + response.data);
-          console.log(this.formOrder);
-        })
-        .catch(function (error) {
-          console.log("Sono in error");
-        });
-      setTimeout(() => {
-        this.$router.push("/");
-      }, 3100);
-    },
-    getProdIds() {
-      const prod = this.cart.map((p) => {
-        const products = {};
-        products["product_id"] = p.product_id;
-        products["user_id"] = p.user_id;
-        products["quantity"] = p.quantity;
-        return products;
-      });
-      this.formOrder.products = prod;
-    },
-    onError(error) {
-      console.error("Error:", error);
-      this.modalWrong();
-    },
-    clearPaymentSelection() {
-      if (this.instance != null) {
-        this.instance.clearSelectedPaymentMethod();
-      }
-    },
-    deleteInstance() {
-      this.showDropIn = false;
-      setInterval(() => {
-        this.showDropIn = true;
-      }, 1000);
-    },
-
+	name: "payment",
+	props: ["formOrder", "total", "cart"],
+	data() {
+		return {
+			instance: null,
+			showDropIn: true,
+		};
+	},
+	computed: {},
+	methods: {
+		onLoad(instance) {
+			this.instance = instance;
+		},
+		onLoadFail(instance) {
+			console.error("Load fail", instance);
+		},
+		onSuccess(payload) {
+			console.log("Success!", payload.nonce);
+			this.modalSuccess();
+			axios
+				.post("http://127.0.0.1:8000/api/orders/storeorder", this.formOrder)
+				.then((res) => {
+					console.log("Sono in POST", res.data);
+				})
+				.catch(function (error) {
+					console.log("Sono in error");
+				});
+			setTimeout(() => {
+				this.$router.push("Home");
+			}, 3100);
+		},
+		onError(error) {
+			console.error("Error:", error);
+			this.modalWrong();
+		},
+		clearPaymentSelection() {
+			if (this.instance != null) {
+				this.instance.clearSelectedPaymentMethod();
+			}
+		},
+		deleteInstance() {
+			this.showDropIn = false;
+			setInterval(() => {
+				this.showDropIn = true;
+			}, 1000);
+		},
     modalSuccess() {
       // Use sweetalert2
       this.$swal({

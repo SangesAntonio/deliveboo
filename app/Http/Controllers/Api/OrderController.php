@@ -43,22 +43,25 @@ class OrderController extends Controller
     public function storeorder(Request $request)
     {
         $data = $request->all();
-        // $products = json_decode($data['products']);
-        // $products = $data['products'];
+        $client = $data['client'];
+        $total = $data['total'];
+        $products = $data['products'];
+        $product = Product::find($products[0]['id']);
+        $user = $product->user_id;
 
-        // $newOrder = new Order();
-        // $newOrder->name = $data['client']['name'];
-        // $newOrder->lastname  = $data['client']['lastname'];
-        // $newOrder->address = $data['client']['address'];
-        // $newOrder->email = $data['client']['email'];
-        // $newOrder->city = $data['client']['city'];
-        // $newOrder->total_amount = $data['total'];
-        // $newOrder->user_id = $data['products']['user_id'];
-        // $newOrder->save();
+        $newOrder = new Order();
+        $newOrder->name = $client['name'];
+        $newOrder->lastname = $client['lastname'];
+        $newOrder->email = $client['email'];
+        $newOrder->city = $client['city'];
+        $newOrder->address = $client['address'];
+        $newOrder->total_amount = $total;
+        $newOrder->user_id = $user;
+        $newOrder->save();
 
-        // foreach ($products as $product) {
-        //     $newOrder->products()->attach($product["id"], ['product_quantity' => $product["quantity"]]);
-        // }
+        foreach ($products as $product) {
+            $newOrder->products()->attach($product["id"], ['product_quantity' => $product["quantity"]]);
+        }
 
         return response()->json($data, 201);
     }
