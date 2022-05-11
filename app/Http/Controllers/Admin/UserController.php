@@ -187,11 +187,11 @@ class UserController extends Controller
 
         $quantity = DB::table('users')
             ->join('products', 'users.id', '=', 'products.user_id')
-            ->join('order_product', 'order_product.product_id', '=', 'product_id')
+            ->join('order_product', 'order_product.product_id', '=', 'products.id')
             ->join('orders', 'order_product.order_id', '=', 'orders.id')
-            ->select(DB::raw('sum(order_product.product_quantity) as quantity , products.name'))
-            ->groupBy('products.name')
+            ->select(DB::raw('sum(order_product.product_quantity) as product_quantity , products.name'))
             ->where('users.id', '=', $idLog)
+            ->groupBy('products.name')
             ->get();
 
         $price = DB::table('users')
@@ -200,18 +200,20 @@ class UserController extends Controller
             ->join('orders', 'order_product.order_id', '=', 'orders.id')
             ->select('orders.created_at', 'orders.total_amount')
             ->where('users.id', '=', $idLog)
+            ->groupBy('order_id')
+            ->orderBy('orders.created_at')
             ->get();
 
         $productName = $quantity->pluck('name');
         $totalQuantity = $quantity->pluck('product_quantity');
 
-        foreach ($price as $item) {
-            $item->created_at = date("d-m-Y", strtotime($item->created_at));
+        foreach ($price as $p) {
+            $p->created_at = date("d-m-Y", strtotime($p->created_at));
         }
 
         $orderDate = $price->pluck('created_at');
         $totalAmount = $price->pluck('total_amount');
 
-        return view('admin.users.statistics', compact('totalQuantity', 'productName', 'quantity', 'user', 'price', 'orderDate', 'totalAmount'));
+        return view('admin.users.statistics', compact('totalQuantity', 'productName', 'orderDate', 'totalAmount'));
     }
 }

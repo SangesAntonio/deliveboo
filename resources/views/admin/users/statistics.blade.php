@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
-  <div id="statistics">
-    <div class="col-xs-12 col-md-6">
-      <canvas id="myChart" height="200px"></canvas>
+  <div id="statistics" class="d-flex flex-wrap">
+    <div class="col-12 col-xl-6">
+      <canvas id="myChart"></canvas>
     </div>
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-xl-6">
       <canvas id="myChart2"></canvas>
     </div>
   </div>
