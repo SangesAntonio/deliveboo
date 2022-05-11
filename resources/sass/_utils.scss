@@ -34,7 +34,8 @@ html body#guest {
 }
 
 main {
-    padding-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -100,5 +101,5 @@ main {
 
 // Borders
 .brd-deliveboo-green {
-    border-bottom: .5px solid $deliveboo-green;
+    border-bottom: 0.5px solid $deliveboo-green;
 }

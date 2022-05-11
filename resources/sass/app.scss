@@ -1,29 +1,29 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 // Variables
-@import 'variables';
+@import "variables";
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 //navbar
-@import 'navbar';
-@import 'navbar2';
+@import "navbar";
 //utilis
-@import 'utils';
+@import "utils";
 //form product
-@import 'form';
+@import "form";
 //statistics
-@import 'statistics';
+@import "statistics";
 //usercard
-@import 'usercard';
+@import "usercard";
 //product
-@import 'product';
+@import "product";
 //orders
-@import 'orders';
+@import "orders";
 //cartModal
-@import 'cartmodal';
+@import "cartmodal";
 // Animations
-@import 'animations';
+@import "animations";
 // sweet
-@import '~sweetalert2/dist/sweetalert2.min.css';
+@import "~sweetalert2/dist/sweetalert2.min.css";
 // sweet
-@import 'foodpills';
+@import "foodpills";

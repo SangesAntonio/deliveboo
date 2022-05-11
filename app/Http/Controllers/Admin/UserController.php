@@ -124,7 +124,7 @@ class UserController extends Controller
                 'email' => ['required', 'string', 'email', Rule::unique('users')->ignore($user->id), 'max:255', 'regex:/^.+@.+$/i', 'email:rfc,dns'],
                 'address' => ['string', 'required', Rule::unique('users')->ignore($user->id), 'max:50', 'regex:/^\s*\S+(?:\s+\S+){2}/'],
                 'vat_number' => ['string', 'required', Rule::unique('users')->ignore($user->id), 'size:11'],
-                'phone_number' => ['string', 'required', Rule::unique('users')->ignore($user->id), 'numeric'],
+                'phone_number' => ['string', 'required', Rule::unique('users')->ignore($user->id)],
                 'image' =>  ['image', 'nullable', Rule::unique('users')->ignore($user->id)]
             ],
             [

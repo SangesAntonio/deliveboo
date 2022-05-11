@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-  <section id="home" class="ml-3 pt-2 pb-4 d-flex align-items-center justify-content-center">
+  <section id="home" class="pb-5 d-flex align-items-center justify-content-center">
     <div class="container-lg container-sm-fluid">
       <div class="row">
         <div class="col-12">

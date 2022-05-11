@@ -2,41 +2,38 @@
 
 @section('content')
   <div class="container">
-    <div class="col text-center">
-      <h1>Ordini ricevuti</h1>
-    </div>
-    <div class=" p-5">
-      <table class="table table-hover rounded order-list table-borderless">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Utente</th>
-            <th scope="col">Indirizzo</th>
-            <th scope="col">Email</th>
-            <th scope="col">Totale</th>
-            <th scope="col">Creato il</th>
-            <th></th>
-          </tr>
-        </thead>
-        @foreach ($orders as $order)
-          <tbody>
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="pb-3">Ordini ricevuti</h1>
+      </div>
+
+      <div class="col-12 table-responsive">
+        <table class="table table-hover rounded order-list table-borderless">
+          <thead>
             <tr>
-              <th scope="row">{{ $loop->index + 1 }}</th>
-              <th>{{ $order->name }} {{ $order->lastname }}</th>
-              <td>{{ $order->address }}</td>
-              <td>{{ $order->email }}</td>
-              <td>{{ $order->total_amount }}&euro;</td>
-              <td>{{ $order->created_at }}</td>
-              <td>
-                <button type="button" class="btn btn-primary" data-toggle="modal"
-                  data-target="#OrderModal-{{ $order->id }}">
-                  Visualizza
-                </button>
-              </td>
+              <th scope="col">ID</th>
+              <th scope="col">Utente</th>
+              <th scope="col">Creato il</th>
+              <th></th>
             </tr>
-          </tbody>
-        @endforeach
-      </table>
+          </thead>
+          @foreach ($orders as $order)
+            <tbody>
+              <tr>
+                <th scope="row">{{ $loop->index + 1 }}</th>
+                <th>{{ $order->name }} {{ $order->lastname }}</th>
+                <td>{{ $order->created_at }}</td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target="#OrderModal-{{ $order->id }}">
+                    Visualizza
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          @endforeach
+        </table>
+      </div>
       @foreach ($orders as $order)
         {{-- modale per visualizzare gli ordini singoli --}}
         <div class="modal fade" id="OrderModal-{{ $order->id }}" tabindex="-1" role="dialog"
@@ -54,14 +51,15 @@
                 <div class="col">
                   <h3>Informazioni del cliente</h3>
                   <h4>{{ $order->name }} {{ $order->lastname }}</h4>
-                  <p>Indirizzo:<span class="mx-3"> {{ $order->address }}, {{ $order->city }} </span></p>
+                  <p>Indirizzo:<span class="ml-3"> {{ $order->address }}, {{ $order->city }} </span></p>
+                  <p>Email:<span class="ml-3"> {{ $order->email }} </span></p>
                   <h3>Piatti ordinati</h3>
                 </div>
                 <hr>
                 <div class="col">
                   <div class="container">
                     <div class="d-flex justify-content-end">
-                      <table class="table table-hover  table-borderless">
+                      <table class="table table-hover table-borderless">
                         <thead>
                           <tr>
                             <th scope="col">Prodotto</th>
@@ -97,12 +95,10 @@
         </div>
       @endforeach
     </div>
-   
-    
-      <div id="pagination-bar" class="d-flex justify-content-center align-items-center">
-        {!! $orders->links() !!}
-      </div>
-    
-   
+
+
+    <div id="pagination-bar" class="d-flex justify-content-center align-items-center">
+      {!! $orders->links() !!}
+    </div>
   </div>
 @endsection

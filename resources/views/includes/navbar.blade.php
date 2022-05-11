@@ -1,9 +1,11 @@
-<div id="app">
+<div id="laravel-mobile">
 
-  <div class="container-fluid header-logo py-4 w-100">
+  <div class="container-fluid header-logo py-4 w-100 slider-border">
     <div class="row text-center">
-      <div class="col-12">
-        <h3>Deliveboo</h3>
+      <div class="col-12 d-flex justify-content-center align-items-center">
+        <img class="logo" src="{{ asset('/img/pubb/deliveboo_loader.gif') }}" alt="logo"
+          class="rounded-lg">
+        <h3 class="text-logo">Deliveboo</h3>
       </div>
     </div>
   </div>
@@ -21,7 +23,7 @@
 
         <div class="text logo-text">
           @auth
-            <span class="name"> {{ Auth::user()->restaurant_name }}</span>
+            <span class="h5"> {{ Auth::user()->restaurant_name }}</span>
           @endauth
         </div>
       </div>
@@ -43,8 +45,8 @@
           @endif
         @endguest
         @auth
+          <hr>
           <ul class="menu-links">
-            <h6>Pannello di controllo</h6>
             <li class="nav-link">
               <a href="{{ route('admin.users.index') }}">
                 <i class="fa-solid fa-user"></i>
@@ -73,8 +75,7 @@
             </li>
 
             <hr>
-            
-            <h6>Vai al sito</h6>
+
             <li class="nav-link">
               <a href="/">
                 <i class="fas fa-home t-deliveboo-green"></i>
@@ -88,6 +89,7 @@
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none text nav-text">
             @csrf
           </form>
+          <hr>
           <a href="{{ route('logout') }}"
             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
             class="d-flex flex-row pb-3 text-decoration-none">
@@ -95,9 +97,90 @@
             <span class="text nav-text text-danger">{{ __('Logout') }} </span>
           </a>
         </div>
-        </li>
       </div>
     @endauth
-</div>
-</nav>
+  </nav>
+
+  <nav id="mobile-nav" class="fixed-bottom d-lg-none">
+    <div class="container-fluid bg-light pt-3 rounded-custom px-3">
+      <div class="row">
+        <div class="col-12">
+          <ul class="d-flex justify-content-around align-items-center pt-1">
+            <li class="nav-item">
+              <a href="{{ route('admin.users.index') }}"
+                class="
+                  text-decoration-none
+                  d-flex
+                  flex-column
+                  align-items-center
+                ">
+                <i class="fas fa-user t-deliveboo-green fa-2x"></i>
+                <span class="pt-1 text nav-text t-deliveboo-green">Profilo</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.orders.index') }}"
+                class="
+                  text-decoration-none
+                  d-flex
+                  flex-column
+                  align-items-center
+                ">
+                <i class="fas fa-note-sticky t-deliveboo-green fa-2x"></i>
+                <span class="pt-1 text nav-text t-deliveboo-green">Ordini</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{{ route('admin.products.index') }}"
+                class="
+                  text-decoration-none
+                  d-flex
+                  flex-column
+                  align-items-center
+                ">
+                <i class="fas fa-rectangle-list t-deliveboo-green fa-2x"></i>
+                <span class="pt-1 text nav-text t-deliveboo-green">Prodotti</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.statistics.index') }}"
+                class="
+                  text-decoration-none
+                  d-flex
+                  flex-column
+                  align-items-center
+                ">
+                <i class="fa-solid fa-ranking-star t-deliveboo-green fa-2x"></i>
+                <span class="pt-1 text nav-text t-deliveboo-green">Statistiche</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/"
+                class="
+                  text-decoration-none
+                  d-flex
+                  flex-column
+                  align-items-center
+                ">
+                <i class="fa-solid fa-home t-deliveboo-green fa-2x"></i>
+                <span class="pt-1 text nav-text t-deliveboo-green">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="text nav-text">
+                @csrf
+              </form>
+              <a href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                class="d-flex flex-column text-decoration-none align-items-center">
+                <i class="fa-solid fa-right-from-bracket text-danger fa-2x"></i>
+                <span class="pt-1 text nav-text text-danger">{{ __('Logout') }} </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
 </div>
