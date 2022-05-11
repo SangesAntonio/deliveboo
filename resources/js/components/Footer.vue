@@ -70,6 +70,9 @@
             </div>
           </div>
         </div>
+        <div class="col mt-4 text-center">
+          <p class="mt-3" style="color: black">Made with &#10084 from Team 1</p>
+        </div>
       </div>
     </div>
   </div>
