@@ -1,9 +1,9 @@
 <template>
   <div class="mt-lg-5 pt-lg-5 pt-5">
     <Loader v-if="isLoading && !category.length" />
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
+        <div class="col-11">
           <h1>{{ category.name }}</h1>
           <div class="col-12 d-flex flex-wrap">
             <Card

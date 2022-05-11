@@ -66,24 +66,19 @@ a.active span {
 a.active i {
   filter: drop-shadow(0px 1px 0px #007377);
 }
-
 #logo {
   max-width: 60px;
 }
-
 i {
   margin-left: 40px;
   font-size: 18px;
 }
-
 a {
   text-decoration: none;
 }
-
 .fw-bold {
   font-weight: bold;
 }
-
 span,
 div {
   font-family: "Koulen", cursive;

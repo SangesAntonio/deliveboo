@@ -63,7 +63,6 @@ export default {
   props: ["cart", "correctCart", "total"],
   data() {
     return {
-      //correctCart: [],
     };
   },
   methods: {
@@ -83,24 +82,9 @@ export default {
     },
   },
   computed: {
-    // calcTotalPrice() {
-    //   this.total = this.cart.reduce(
-    //     (total, lineItem) => total + Number(lineItem.price),
-    //     0
-    //   );
-    //   return this.total;
-    // },
-    // getSingleProduct() {
-    //   this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
-    //   console.log(this.correctCart);
-    //   return this.correctCart;
-    // },
     setQuantityCart() {
       return this.cart.length;
     },
   },
 };
 </script>
-
-<style>
-</style>

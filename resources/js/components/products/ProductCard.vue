@@ -3,10 +3,10 @@
 		<div class="card">
 			<div class="product-image d-flex justify-content-center p-2">
 				<img
-				    :src="`/storage/${product.image}`"
-				    class="card-img-top img-fluid"
-				    :alt="product.name"
-			    />
+					:src="`/storage/${product.image}`"
+					class="card-img-top img-fluid"
+					:alt="product.name"
+				/>
 			</div>
 			<div class="card-body">
 				<h5 class="card-title">{{ product.name }}</h5>
@@ -17,31 +17,38 @@
 			</div>
 			<div class="cart-section d-flex justify-content-end mt-1 mb-3 mr-3 py-1">
 				<div
-				class="d-flex justify-content-center align-items-center quantity-section"
-			>
-				<div class="d-flex justify-content-between align-items-center">
-					<!-- tasto minore -->
-					<i
-						@click="removeProductFromCart(product)"
-						role="button"
-						class="fa-solid fa-circle-minus qnt-btn"
-					></i>
+					class="
+						d-flex
+						justify-content-center
+						align-items-center
+						quantity-section
+					"
+				>
+					<div class="d-flex justify-content-between align-items-center">
+						<!-- tasto minore -->
+						<i
+							@click="removeProductFromCart(product)"
+							role="button"
+							class="fa-solid fa-circle-minus qnt-btn"
+						></i>
 
-					<!-- bottone carrello -->
-					<button class="btn m-0">
-						<i v-if="!product.quantity" class="fa-solid fa-cart-arrow-down">
-						</i>
-						<i v-else style="font-family: 'Koulen'; color:white;">{{ product.quantity }}</i>
-					</button>
+						<!-- bottone carrello -->
+						<button class="btn m-0">
+							<i v-if="!product.quantity" class="fa-solid fa-cart-arrow-down">
+							</i>
+							<i v-else style="font-family: 'Koulen'; color: white">{{
+								product.quantity
+							}}</i>
+						</button>
 
-					<!-- tasto più -->
-					<i
-						@click="addProductToCart(product)"
-						role="button"
-						class="fa-solid fa-circle-plus qnt-btn"
-					></i>
+						<!-- tasto più -->
+						<i
+							@click="addProductToCart(product)"
+							role="button"
+							class="fa-solid fa-circle-plus qnt-btn"
+						></i>
+					</div>
 				</div>
-			</div>
 			</div>
 		</div>
 	</div>
@@ -89,26 +96,26 @@ img {
 	border-radius: 5px;
 	box-shadow: rgb(0, 0, 0, 0.4) 4px 4px;
 }
-.card{
-	background-color: #FFA500;
-	box-shadow: #FF7F00 8px 8px;
-	.product-price{
+.card {
+	background-color: #ffa500;
+	box-shadow: #ff7f00 8px 8px;
+	.product-price {
 		font-family: "Koulen", cursive;
 		font-size: 18px;
 	}
-	.quantity-section{
-		background-color: #00CCBC;
+	.quantity-section {
+		background-color: #00ccbc;
 		width: 40%;
 		height: 100%;
 		border-radius: 50px;
 		box-shadow: #028378 4px 4px;
-		.fa-cart-arrow-down{
+		.fa-cart-arrow-down {
 			color: white;
 		}
-		.qnt-btn{
+		.qnt-btn {
 			color: white;
 		}
-		i{
+		i {
 			font-size: 20px;
 			vertical-align: middle;
 		}

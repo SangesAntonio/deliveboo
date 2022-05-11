@@ -1,6 +1,6 @@
 <template>
-  <div class="footer">
-    <div class="container">
+  <footer>
+    <div class="container pb-5 pb-lg-0">
       <div class="row align-items-center justify-content-between">
         <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
           <div class="informations grow">
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        <div class="bottom-footer col-12 col-md-6 col-lg-3">
+        <div class="bottom-footer col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
           <div
             class="informations d-flex flex-column justify-content-around grow"
           >
@@ -70,12 +70,12 @@
             </div>
           </div>
         </div>
-        <div class="col mt-4 text-center">
-          <p class="mt-3" style="color: black">Made with &#10084 from Team 1</p>
+        <div class="col mt-5 text-center">
+          <p style="color: black">Made with &#10084; from Team 1</p>
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -85,7 +85,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer {
+footer {
   background-color: #f8f9fa;
   padding: 50px;
   color: white;

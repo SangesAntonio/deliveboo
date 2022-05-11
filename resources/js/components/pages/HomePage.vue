@@ -3,7 +3,7 @@
     <div id="homepage">
       <Loader v-if="isLoading && !categories.length" />
       <!-- <SliderPromotions v-if="!isLoading" class="pb-4" /> -->
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div
             class="
@@ -18,16 +18,16 @@
           >
             <div
               id="title-box"
-              class="col-12 d-flex justify-content-center py-1 mb-2"
+              class="col-11 text-center py-1 mb-2"
             >
-              <h2 id="category-title" class="text-center fw-bold m-0">
+              <h2 id="category-title" class=" text-center fw-bold m-0">
                 SCOPRI LE NOSTRE CATEGORIE
               </h2>
             </div>
             <div
               v-for="(category, index) in categories"
               :key="index"
-              class="card px-sm-0 col-12 col-sm-5 col-md-3 col-xl-2 grow"
+              class="card px-sm-0 col-8 col-sm-5 col-md-3 col-xl-2 grow"
               role="button"
             >
               <router-link
@@ -57,14 +57,12 @@
 </template>
 
 <script>
-// import SliderPromotions from "../SliderPromotions.vue";
 import Jumbotron from "../Jumbotron.vue";
 import Loader from "../Loader.vue";
 import axios from "axios";
 export default {
   name: "HomePage",
   components: {
-    // SliderPromotions,
     Jumbotron,
     Loader,
   },
@@ -110,10 +108,11 @@ export default {
 
 @media (min-width: 0px) {
   .restaurant-image {
-    width: 475px;
-    height: 400px;
+    width: 170px;
+    height: 170px;
     border-radius: 15px;
     margin-top: 6px;
+    object-fit: cover;
   }
   .restaurant-title {
     font-size: 30px;
@@ -132,13 +131,6 @@ export default {
     font-size: 22px;
   }
 }
-
-// .slider-promozioni {
-//   background-color: lightblue;
-//   background-image: url(/img/pubb/promotions-bg.jpg);
-//   background-size: cover;
-//   position: relative;
-// }
 #categorie-ristoranti {
   font-size: 20px;
   .card {

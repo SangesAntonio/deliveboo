@@ -7,7 +7,7 @@
           <h1>Lista dei ristoranti</h1>
           <!-- check box -->
           <section id="checkbox">
-            <ul class="category-list d-flex">
+            <ul class="category-list d-flex flex-wrap">
               <li
                 v-for="category in categories"
                 :key="category.id"

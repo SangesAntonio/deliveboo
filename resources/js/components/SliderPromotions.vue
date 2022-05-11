@@ -121,7 +121,6 @@ export default {
 }
 
 #slider-img {
-  // width: 100%;
   display: flex;
   justify-content: center;
   flex-grow: 1;

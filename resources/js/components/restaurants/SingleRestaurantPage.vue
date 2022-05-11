@@ -2,7 +2,7 @@
   <div class="container pb-5">
     <div class="row pt-5">
       <div class="col-12 pt-md-5">
-        <h3 class="pb-3 mx-3 title my-3 h1">{{ user.restaurant_name }}</h3>
+        <h3 class="mb-3 mx-3 title my-3 h1">{{ user.restaurant_name }}</h3>
         <b-card
           :img-src="`/storage/${user.image}`"
           img-alt="Card image"
@@ -64,22 +64,11 @@ export default {
 	data() {
 		return {
 			isLoading: false,
-			//correctCart: [],
 			user: [],
 			cart: [],
 		};
 	},
 	computed: {
-		// setLupo() {
-		//   setInterval(() => {
-		//     this.getSingleProduct;
-		//   }, 1000);
-		// },
-		// getSingleProduct() {
-		//   this.correctCart = new Set(this.cart.filter((numb) => numb === numb));
-		//   console.log(this.correctCart);
-		//   return this.correctCart;
-		// },
 		calcTotalPrice() {
 			this.total = this.cart.reduce(
 				(total, lineItem) => total + Number(lineItem.price),

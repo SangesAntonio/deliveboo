@@ -2,8 +2,6 @@
   <div id="loader" class="d-flex flex-column">
     <div>
       <img id="img-loader" :src="'./img/pubb/deliveboo_loader.gif'" alt="" />
-      <!-- <div class="spinner-grow text-primary" role="status">
-      </div> -->
     </div>
   </div>
 </template>

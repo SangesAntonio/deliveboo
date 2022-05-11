@@ -84,7 +84,6 @@ export default {
 <style lang="scss" scoped>
 .rounded-custom {
   border-radius: 15px 15px 0 0;
-  //   box-shadow: 6px 5px 1px #ff7f00;
 }
 
 ul {

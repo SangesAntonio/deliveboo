@@ -2,7 +2,6 @@
   <div class="container-fluid px-0">
     <header class="header mb-5">
       <div>
-        <!-- Rimpicciolire immagini in desktop -->
         <SliderPromotions class="slider-border" />
         <DesktopNavbar class="d-none d-lg-block slider-border" />
       </div>
@@ -13,7 +12,7 @@
     <div>
       <router-view></router-view>
     </div>
-    <Footer />
+    <Footer class="pb-5 pb-lg-0" />
   </div>
 </template>
 
