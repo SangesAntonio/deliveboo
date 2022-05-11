@@ -97,10 +97,12 @@
         </div>
       @endforeach
     </div>
-    @if ($order->id > 8)
+   
+    
       <div id="pagination-bar" class="d-flex justify-content-center align-items-center">
         {!! $orders->links() !!}
       </div>
-    @endif
+    
+   
   </div>
 @endsection
