@@ -9,15 +9,16 @@
 					<section id="checkbox">
 						<ul class="category-list d-flex flex-wrap justify-content-center">
 							<li
-								v-for="category in categories"
-								:key="category.id"
+								v-for="(category, i) in categories"
+								:key="i"
 								class="
-									col-2
+									col-3 col-md-2
 									d-flex
 									flex-column
 									justify-content-center
 									align-items-center
 								"
+								:class="{ active: i === activeItem }"
 							>
 								<div :class="`switch-${category.id}`">
 									<input
@@ -37,8 +38,11 @@
 											justify-content-center
 											align-items-center
 										"
+										@click="selectItem(i)"
 									>
-										<span class="d-block">{{ category.name }}</span>
+										<span class="d-block">{{
+											category.name
+										}}</span>
 									</label>
 								</div>
 							</li>
@@ -72,6 +76,7 @@ export default {
 	},
 	data() {
 		return {
+			activeItem: null,
 			selectedCategory: [],
 			isLoading: false,
 			users: [],
@@ -82,6 +87,9 @@ export default {
 		};
 	},
 	methods: {
+		selectItem(i) {
+			this.activeItem = i;
+		},
 		getSingleProduct() {
 			this.filteredArray = new Set(this.users.filter((numb) => numb === numb));
 		},

@@ -2,7 +2,7 @@
 	<div class="container">
 		<br />
 
-		<h1>Braintree Demo</h1>
+		<h1>Inserisci i dati per il pagamento</h1>
 
 		<v-braintree
 			v-if="showDropIn"

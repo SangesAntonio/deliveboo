@@ -11,17 +11,17 @@
     <section id="minimal-statistics">
       <div class="row">
         <div class="col-12 my-1">
-          <div class="d-flex justify-content-between">
-            <h4 class="text-uppercase">Lista Prodotti</h4>
-            <div class="d-flex">
-              <div class="d-flex justify-content-end mr-2">
-                <a href="{{ route('admin.products.trash.index') }}" class="btn btn-small btn-secondary text-white">Vedi
-                  Cestino</a>
-              </div>
+          <div class="d-flex flex-column justify-content-between">
+            <h3 class="text-uppercase text-center">Lista Prodotti</h3>
+            <div class="d-flex justify-content-end">
               <a href="{{ route('admin.products.create') }}">
                 <button class="btn btn-success"><i class="fa-solid fa-plus"></i> Nuovo
                   Prodotto</button>
               </a>
+              <div class="d-flex justify-content-end ml-2">
+                <a href="{{ route('admin.products.trash.index') }}" class="btn btn-small btn-danger text-white"><i
+                    class="fa-solid fa-trash"></i></a>
+              </div>
             </div>
           </div>
           @if (count($products) >= 1)

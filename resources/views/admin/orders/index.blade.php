@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="pb-3">Ordini ricevuti</h1>
+        <h3 class="pb-3 text-uppercase">Ordini ricevuti</h3>
       </div>
 
       <div class="col-12 table-responsive">

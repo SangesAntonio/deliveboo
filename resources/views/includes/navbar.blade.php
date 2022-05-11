@@ -108,7 +108,7 @@
           <ul class="d-flex justify-content-around align-items-center pt-1">
             <li class="nav-item">
               <a href="{{ route('admin.users.index') }}"
-                class="
+                class=" @if (Route::currentRouteName() === 'admin.users.index') active @endif
                   text-decoration-none
                   d-flex
                   flex-column
@@ -120,7 +120,7 @@
             </li>
             <li class="nav-item">
               <a href="{{ route('admin.orders.index') }}"
-                class="
+                class=" @if (Route::currentRouteName() === 'admin.orders.index') active @endif
                   text-decoration-none
                   d-flex
                   flex-column
@@ -133,7 +133,7 @@
 
             <li class="nav-item">
               <a href="{{ route('admin.products.index') }}"
-                class="
+                class=" @if (Route::currentRouteName() === 'admin.products.index') active @endif
                   text-decoration-none
                   d-flex
                   flex-column
@@ -145,7 +145,7 @@
             </li>
             <li class="nav-item">
               <a href="{{ route('admin.statistics.index') }}"
-                class="
+                class=" @if (Route::currentRouteName() === 'admin.statistics.index') active @endif
                   text-decoration-none
                   d-flex
                   flex-column

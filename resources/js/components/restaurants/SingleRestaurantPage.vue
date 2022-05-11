@@ -45,7 +45,7 @@
       </div>
       <ModalCart
         :cart="cart"
-        class="fixed-top pt-md-5 mt-5 mr-3 cart ml-auto"
+        class="mr-3 mt-5 cart ml-auto"
       />
     </div>
   </div>
