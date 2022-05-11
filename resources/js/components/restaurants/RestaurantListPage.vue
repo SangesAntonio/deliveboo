@@ -18,6 +18,7 @@
                   justify-content-center
                   align-items-center
                 "
+                :class="{ active: i === activeItem }"
               >
                 <div :class="`switch-${category.id}`">
                   <input
@@ -33,15 +34,15 @@
                     :for="`switch-${category.id}`"
                     class="
                       active-cs
-                      px-3
                       pt-2
+                      px-2
                       d-flex
                       flex-column
                       justify-content-center
                       align-items-center
                     "
                   >
-                    <span class="d-block pb-2">{{ category.name }}</span>
+                    <span class="d-block">{{ category.name }}</span>
                   </label>
                 </div>
               </li>
