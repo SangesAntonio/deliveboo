@@ -32,11 +32,6 @@
                 >Ristoranti</span
               >
             </router-link>
-
-            <router-link to="/order" class="text-decoration-none">
-              <i class="fas fa-shopping-bag t-deliveboo-green"></i>
-              <span class="text nav-text t-deliveboo-green ml-2">Ordine</span>
-            </router-link>
           </div>
 
           <div>

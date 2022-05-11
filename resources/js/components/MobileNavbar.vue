@@ -37,21 +37,7 @@
                 >
               </router-link>
             </li>
-            <li class="nav-item">
-              <router-link
-                exact
-                to="/order"
-                class="
-                  text-decoration-none
-                  d-flex
-                  flex-column
-                  align-items-center
-                "
-              >
-                <i class="fas fa-shopping-bag t-deliveboo-green fa-2x"></i>
-                <span class="pt-1 text nav-text t-deliveboo-green">Ordine</span>
-              </router-link>
-            </li>
+
             <li class="nav-item">
               <a
                 href="/admin"
