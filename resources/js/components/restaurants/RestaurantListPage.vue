@@ -4,14 +4,13 @@
 		<div class="container mb-5">
 			<div class="row">
 				<div class="col-12">
-					<h1>Lista dei ristoranti</h1>
+					<h1 class="title">Lista dei ristoranti</h1>
 					<!-- check box -->
 					<section id="checkbox">
-						<ul class="category-list d-flex flex-wrap">
+						<ul class="category-list d-flex flex-wrap justify-content-center">
 							<li
 								v-for="category in categories"
 								:key="category.id"
-								:class="category.name"
 								class="
 									col-2
 									d-flex
@@ -20,18 +19,27 @@
 									align-items-center
 								"
 							>
-								<div class="switch1">
-									
-										<input
-											v-model="selectedCategory"
-											:id="`switch-${category.id}`"
-											type="checkbox"
-											hidden
-											:value="category"
-											@click="getRestaurants()"
-										/>
-										<label :for="`switch-${category.id}`">{{ category.name }}</label
+								<div :class="`switch-${category.id}`">
+									<input
+										v-model="selectedCategory"
+										:id="`switch-${category.id}`"
+										type="checkbox"
+										hidden
+										:value="category"
+										@click="getRestaurants()"
+									/>
+									<label
+										:class="category.name"
+										:for="`switch-${category.id}`"
+										class="
+											d-flex
+											flex-column
+											justify-content-center
+											align-items-center
+										"
 									>
+										<span class="d-block">{{ category.name }}</span>
+									</label>
 								</div>
 							</li>
 						</ul>
@@ -133,16 +141,15 @@ export default {
 	mounted() {
 		this.getRestaurants();
 		this.getCategory();
-
 	},
 };
 </script>
 
 <style lang="scss" scoped>
-h1 {
+.title {
 	font-family: "Koulen", corsive;
-	background-color: #ffc562;
-	box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5);
+	background-color: #ffa500;
+	box-shadow: 6px 5px 1px #ff7f00;
 	border-radius: 20px;
 	text-align: center;
 	padding: 10px;
