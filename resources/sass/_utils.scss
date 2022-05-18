@@ -1,6 +1,7 @@
 * {
     font-family: "Koulen", cursive;
 }
+
 *::-webkit-scrollbar {
     width: 0 !important;
 }
@@ -25,13 +26,13 @@ body {
 
 html body:not(#guest) {
     padding-left: 250px;
-    background-image: url("../../public/img/background/Desktop-Background.jpg");
+    background-image: url("../../public/img/background/Prova_5.jpg");
     background-position: center;
     background-repeat: repeat;
 }
 
 html body#guest {
-    background-image: url("../../public/img/background/Desktop-Background.jpg");
+    background-image: url("../../public/img/background/Prova_5.jpg");
     background-position: center;
     background-repeat: repeat;
 }
