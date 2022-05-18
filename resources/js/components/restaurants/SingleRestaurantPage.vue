@@ -1,54 +1,59 @@
 <template>
-  <div class="container pb-5">
-    <div class="row pt-5">
-      <div class="col-12 pt-md-5">
-        <h3 class="mb-3 mx-3 title my-3 h1">{{ user.restaurant_name }}</h3>
-        <b-card
-          :img-src="`/storage/${user.image}`"
-          img-alt="Card image"
-          img-left
-          class="mb-3 mx-3 card-res"
-        >
-          <b-card-text >
-                <ul>
-                <li class="text-black h3">{{ user.address }}</li>
-                <ul class="category-list" v-for="category in user.categories" :key="category.id">
-                  <li :class=" category.name ">
-                    {{ category.name }}
-                  </li>
-                </ul>
-                </ul>
-          </b-card-text>
-        </b-card>
+	<div class="container pb-5">
+		<div class="row pt-5">
+			<div class="col-12 pt-md-5">
+				<b-card
+					:img-src="`/storage/${user.image}`"
+					img-alt="Card image"
+					img-left
+					class="mb-3 mx-3 card-res border-0"
+					style="background-color: transparent"
+				>
+					<b-card-text>
+						<ul>
+							<li>
+								<h3 class="mb-3">
+									{{ user.restaurant_name }}
+								</h3>
+							</li>
+							<li class="text-black">{{ user.address }}</li>
+							<ul
+								class="category-list"
+								v-for="category in user.categories"
+								:key="category.id"
+							>
+								<li :class="category.name">
+									{{ category.name }}
+								</li>
+							</ul>
+						</ul>
+					</b-card-text>
+				</b-card>
+			</div>
 
-      </div>
-
-      <div class="col-12">
-        <div
-          class="
-            col-12
-            d-flex
-            flex-wrap
-            align-items-center
-            justify-content-between
-            flex-row
-          "
-        >
-          <ProductCard
-            @addProduct="addProduct"
-            @removeProduct="removeProduct"
-            v-for="(product, index) in user.products"
-            :key="index"
-            :product="product"
-          />
-        </div>
-      </div>
-      <ModalCart
-        :cart="cart"
-        class="mr-3 mt-5 cart ml-auto"
-      />
-    </div>
-  </div>
+			<div class="col-12">
+				<div
+					class="
+						col-12
+						d-flex
+						flex-wrap
+						align-items-center
+						justify-content-between
+						flex-row
+					"
+				>
+					<ProductCard
+						@addProduct="addProduct"
+						@removeProduct="removeProduct"
+						v-for="(product, index) in user.products"
+						:key="index"
+						:product="product"
+					/>
+				</div>
+			</div>
+			<ModalCart :cart="cart" class="mr-3 mt-5 cart ml-auto" />
+		</div>
+	</div>
 </template>
 
 <script>
@@ -111,19 +116,21 @@ export default {
 <style lang="scss" scoped>
 .title {
 	font-family: "Koulen", corsive;
-	background-color: #ffa500;
-	box-shadow: 6px 5px 1px #ff7f00;
+	border-bottom: 2px solid #00ccbc;
 	border-radius: 20px;
 	text-align: center;
 	padding: 10px;
 }
 .card-res {
 	padding: 10px;
-	background-color: #ffa500;
-	box-shadow: 6px 5px 1px #ff7f00;
 }
 img {
-	max-width: 30%;
+	max-width: 50%;
+	height: 300px;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 5px;
+	box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.5);
 }
 .cart {
 	width: 60px;
@@ -138,8 +145,5 @@ ul {
 		margin-bottom: 10px;
 		text-transform: uppercase;
 	}
-}
-img {
-	border-radius: 25px;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
 <div class="col-12 col-md-6 col-xl-4">
-  <div class="card restaurant-details">
+  <div class="restaurant-details">
     <div class="cropper">
-      <img class="card-img-top" :src="`/storage/${user.image}`" alt="Card image cap">  <!--//inserire src qui! -->
+      <img class="" :src="`/storage/${user.image}`" alt="Card image cap">  <!--//inserire src qui! -->
     </div>
-  <div class="card-body">
-    <p class="card-text">
+  <div class="">
+    <p class="">
       <ul class="restaurant-informations mt-3">
         <li class="text-black text-center"><div class="h4 text-uppercase w-100"> {{user.restaurant_name}}</div></li>
         <li class="text-black"><span class="information-name">Indirizzo:</span> {{user.address}}</li>
@@ -57,8 +57,7 @@ ul {
 	padding: 15px;
 	font-family: "Josefin Sans", sans-serif;
 	height: 650px;
-	background-color: #ffa500;
-	box-shadow: 6px 5px 1px #d16b06;
+	border-bottom: 2px solid #00ccbc;
 	border-radius: 0px 40px 12px 40px;
 	.cropper {
 		width: 100%;

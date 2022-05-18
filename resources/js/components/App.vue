@@ -2,11 +2,11 @@
 	<div class="container-fluid px-0">
 		<header class="header mb-5">
 			<div>
+				<div class="d-flex justify-content-end fixed-bottom d-block d-lg-none">
+					<MobileNavbar />
+				</div>
 				<DesktopNavbar class="d-none d-lg-block slider-border" />
 				<SliderPromotions class="slider-border" />
-			</div>
-			<div class="d-flex justify-content-end fixed-bottom d-block d-lg-none">
-				<MobileNavbar />
 			</div>
 		</header>
 		<div>

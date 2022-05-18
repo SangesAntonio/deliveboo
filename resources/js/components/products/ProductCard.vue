@@ -1,6 +1,6 @@
 <template>
 	<div class="col-12 col-md-6 col-xl-4 py-3">
-		<div class="card">
+		<div class="card border-0">
 			<div class="product-image d-flex justify-content-center p-2">
 				<img
 					:src="`/storage/${product.image}`"
@@ -15,7 +15,7 @@
 				</p>
 				<p class="card-text product-price text-mute">{{ product.price }}€</p>
 			</div>
-			<div class="cart-section d-flex justify-content-end mt-1 mb-3 mr-3 py-1">
+			<div class="cart-section d-flex justify-content-end mt-1 mb-3 mr-3">
 				<div
 					class="
 						d-flex
@@ -36,7 +36,7 @@
 						<button class="btn m-0">
 							<i v-if="!product.quantity" class="fa-solid fa-cart-arrow-down">
 							</i>
-							<i v-else style="font-family: 'Koulen'; color: white">{{
+							<i v-else style="color: white">{{
 								product.quantity
 							}}</i>
 						</button>
@@ -93,20 +93,17 @@ img {
 	object-position: center;
 	width: 100%;
 	height: 150px;
-	border-radius: 5px;
-	box-shadow: rgb(0, 0, 0, 0.4) 4px 4px;
 }
 .card {
-	background-color: #ffa500;
-	box-shadow: #ff7f00 8px 8px;
+	box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.5);
 	.product-price {
 		font-family: "Koulen", cursive;
 		font-size: 18px;
 	}
 	.quantity-section {
 		background-color: #00ccbc;
-		width: 40%;
-		height: 100%;
+		width: 100px;
+		height: auto;
 		border-radius: 50px;
 		box-shadow: #028378 4px 4px;
 		.fa-cart-arrow-down {
@@ -116,7 +113,6 @@ img {
 			color: white;
 		}
 		i {
-			font-size: 20px;
 			vertical-align: middle;
 		}
 	}

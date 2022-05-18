@@ -155,8 +155,6 @@ export default {
 <style lang="scss" scoped>
 .title {
   font-family: "Koulen", corsive;
-  background-color: #ffa500;
-  box-shadow: 6px 5px 1px #ff7f00;
   border-radius: 20px;
   text-align: center;
   padding: 10px;
