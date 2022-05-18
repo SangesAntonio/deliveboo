@@ -26,7 +26,7 @@
 						<div
 							v-for="(category, index) in categories"
 							:key="index"
-							class="px-sm-0 col-12 col-lg-6 grow"
+							class="px-sm-0 col-12 col-lg-6 grow img-blur"
 							role="button"
 						>
 							<router-link
@@ -93,10 +93,20 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 #category-title {
 	border-bottom: 2px solid #00ccbc;
 }
-
+.restaurant-image {
+		filter:drop-shadow(0px 0px 2px #000) brightness(0.9) ;
+		&:hover{
+			filter:drop-shadow(0px 0px 2px #000) brightness(0.9) blur(2px);
+		}
+}
+	.restaurant-title{
+		 -webkit-text-stroke: 2px rgba(0, 0, 0, 0.5);
+		 font-family: 'Staatliches', cursive;
+	}
 @media (min-width: 0px) {
 	.restaurant-image {
 		width: 100%;
@@ -105,14 +115,16 @@ export default {
 		margin-top: 6px;
 		object-fit: cover;
 		object-position: center;
+
 	}
 	.restaurant-title {
 		color: #fff;
-		font-size: 50px;
+		font-size: 64px;
 		position: absolute;
 		bottom: 50%;
 		right: 50%;
 		transform: translate(50%, 50%);
+		z-index:1;
 	}
 }
 
