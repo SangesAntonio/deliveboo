@@ -1,11 +1,22 @@
 <template>
 	<div class="container pb-5">
 		<div class="row">
-			<div class="col-12 d-flex flex-row flex-md-column flex-wrap">
-				<div class="col-12 col-md-6 mb-3 mx-3 card-res">
+			<div
+				class="
+					cs-height
+					col-12
+					d-flex
+					flex-row flex-lg-column flex-wrap
+					justify-content-cente
+					align-items-center
+					justify-content-lg-start
+					align-items-lg-center
+				"
+			>
+				<div class="col-12 col-lg-6 card-res">
 					<img :src="`/storage/${user.image}`" :alt="user.restaurant_name" />
 				</div>
-				<div class="col-12 col-md-6 mb-3 mx-3 pt-md-2">
+				<div class="col-12 col-lg-6 mb-3 pt-md-2">
 					<ul>
 						<li>
 							<h3 class="mb-3 text-uppercase">
@@ -118,11 +129,9 @@ export default {
 .card-res {
 	padding: 10px;
 }
+
 img {
 	max-width: 100%;
-	height: 300px;
-	object-fit: cover;
-	object-position: center;
 	border-radius: 5px;
 	box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.5);
 }

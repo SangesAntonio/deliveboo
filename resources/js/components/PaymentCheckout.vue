@@ -29,47 +29,40 @@
 				<input
 					type="submit"
 					@click="slotProps.submit"
-					class="btn btn-warning"
+					class="btn btn-success"
 					value="Paga ora"
 					:formOrder="formOrder"
 				/>
+				<button @click="deleteInstance" class="btn btn-danger">
+					Svuota i campi
+				</button>
 			</template>
 		</v-braintree>
 
 		<br />
 
-		<br />
-		<div class="container">
-			<h3 class="mb-3 mt-5">Riepilogo dati</h3>
-			<div
-				class="row d-flex flex-column justify-content-center align-items-center"
-			>
-				<div class="col-12">
-					<div class="client name mb-3">
-						<strong>Nome:</strong> {{ formOrder.client.name }}
-						{{ formOrder.client.lastname }}
-					</div>
+		<h4 class="my-2 text-left">Riepilogo dati</h4>
+		<div class="row">
+			<div class="col-12 d-flex flex-column">
+				<div class="client-name mb-3 text-left">
+					<span
+						><strong>Nome:</strong> {{ formOrder.client.name }}
+						{{ formOrder.client.lastname }}</span
+					>
 				</div>
-				<div class="col-12">
-					<div class="client address mb-3">
-						<strong>Indirizzo:</strong> {{ formOrder.client.address }}
-					</div>
+				<div class="client-address mb-3 text-left">
+					<span
+						><strong>Indirizzo:</strong> {{ formOrder.client.address }}</span
+					>
 				</div>
-				<div class="col-12">
-					<div class="client address mb-3">
-						<strong>Email:</strong> {{ formOrder.client.email }}
-					</div>
+				<div class="client-email mb-3 text-left">
+					<span><strong>Email:</strong> {{ formOrder.client.email }}</span>
 				</div>
-				<div class="col">
-					<h3><strong>Totale ordine: </strong>{{ total }}&euro;</h3>
+				<div class="total mb-3 text-left">
+					<span><strong>Totale:</strong> {{ total }}&euro;</span>
 				</div>
 			</div>
 		</div>
-		<br />
-
-		<button @click="deleteInstance" class="btn btn-danger">
-			Svuota i campi
-		</button>
 	</div>
 </template>
 
