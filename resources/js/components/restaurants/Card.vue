@@ -2,7 +2,7 @@
 <div class="col-12 col-md-6 col-xl-4">
   <div class="restaurant-details">
     <div class="cropper">
-      <img class="" :src="`/storage/${user.image}`" alt="Card image cap">  <!--//inserire src qui! -->
+      <img class="" :src="`/storage/${user.image}`" :alt="user.restaurant_name">  <!--//inserire src qui! -->
     </div>
   <div class="">
     <p class="">
@@ -67,7 +67,7 @@ ul {
 		border-radius: 0px 40px 12px 40px;
 		img {
 			height: 200px;
-      object-fit: cover;
+			object-fit: cover;
 		}
 	}
 	.information-name {
