@@ -26,7 +26,7 @@
 						<div
 							v-for="(category, index) in categories"
 							:key="index"
-							class="px-sm-0 col-12 col-lg-6"
+							class="px-sm-0 col-12 col-lg-6 grow"
 							role="button"
 						>
 							<router-link

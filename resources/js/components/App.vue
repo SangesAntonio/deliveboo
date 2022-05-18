@@ -38,7 +38,7 @@ export default {
 
 <style scoped lang="scss">
 body {
-	font-family: "Koulen", cursive;
+	font-family: "Montserrat", sans-serif;
 }
 
 .container-fluid {

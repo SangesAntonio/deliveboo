@@ -24,25 +24,26 @@
 			</div>
 
 			<!-- Slider Mobile -->
-			<div
-				class="
-					bg-light
-					p-2
-					shadow
-					d-flex
-					justify-content-center
-					align-items-center
-				"
-			>
-				<img
-					id="logo"
-					:src="'./img/pubb/deliveboo_loader.gif'"
-					class="img-fluid mr-3"
-					alt="Logo Deliveboo"
-				/>
-				<h2 class="t-deliveboo-green fw-bold mb-0">DELIVEBOO</h2>
-			</div>
+
 			<div class="d-block d-lg-none slider-border shadow">
+				<div
+					class="
+						bg-light
+						p-2
+						shadow
+						d-flex
+						justify-content-center
+						align-items-center
+					"
+				>
+					<img
+						id="logo"
+						:src="'./img/pubb/deliveboo_loader.gif'"
+						class="img-fluid mr-3"
+						alt="Logo Deliveboo"
+					/>
+					<h2 class="t-deliveboo-green fw-bold mb-0">DELIVEBOO</h2>
+				</div>
 				<div
 					v-for="(slide, index) in mobileSlides"
 					:key="slide.index"
@@ -125,11 +126,9 @@ export default {
 	justify-content: center;
 	flex-grow: 1;
 }
-
-.fw-bold {
-	font-weight: bold;
+h2 {
+	font-family: "Koulen", cursive;
 }
-
 .slides {
 	height: auto;
 	width: 100%;

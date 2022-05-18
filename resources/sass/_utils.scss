@@ -1,15 +1,16 @@
 * {
-    font-family: "Koulen", cursive;
+    font-family: "Montserrat", sans-serif;
 }
 
-*::-webkit-scrollbar {
-    width: 0 !important;
+::-webkit-scrollbar {
+	width: 6px;
+	height: 2px;
 }
 
-body {
-    scrollbar-width: none;
+::-webkit-scrollbar-thumb {
+	background: $deliveboo-green;
+	border-radius: 10px;
 }
-
 .fw-bold {
     font-weight: bold;
 }

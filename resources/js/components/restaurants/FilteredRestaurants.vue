@@ -1,19 +1,21 @@
 <template>
-	<div class="mt-lg-5 pt-lg-5 pt-5">
+	<div>
 		<Loader v-if="isLoading && !users.length" />
+		<div class="col-12 d-flex justify-content-center py-1 mb-2">
+			<h2 class="title text-uppercase fw-bold m-0 py-2">
+				{{ category.name }}
+			</h2>
+		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-11">
-					<h1>{{ category.name }}</h1>
-					<div class="col-12 d-flex flex-wrap">
-						<Card
-							v-for="user in category.users"
-							:key="user.id"
-							:user="user"
-							:category="category"
-							class="my-3"
-						/>
-					</div>
+				<div class="col-12 d-flex flex-wrap">
+					<Card
+						v-for="user in category.users"
+						:key="user.id"
+						:user="user"
+						:category="category"
+						class="my-3"
+					/>
 				</div>
 			</div>
 		</div>
@@ -56,10 +58,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-	border-radius: 20px;
-	text-align: center;
-	padding: 10px;
+.title {
+	border-bottom: 2px solid #00ccbc;
 }
 .container {
 	padding-top: 30px;

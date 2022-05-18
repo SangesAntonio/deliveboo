@@ -2,8 +2,13 @@
 	<div>
 		<b-button
 			id="show-btn"
-			variant="info"
-			class="d-flex bg-deliveboo-green justify-content-center align-items-center"
+			class="
+				info-cs
+				d-flex
+				bg-deliveboo-green
+				justify-content-center
+				align-items-center
+			"
 			@click="
 				getSingleProduct(), calcTotalPrice(), $bvModal.show('bv-modal-example')
 			"
@@ -17,21 +22,17 @@
 			<div class="d-block text-center">
 				<CardDetail :cart="cart" :total="total" :correctCart="correctCart" />
 			</div>
-			<b-button
-				class="mt-3"
-				variant="warning"
-				block
-				@click="$bvModal.hide('bv-modal-example')"
-				>Chiudi</b-button
-			>
-			<div>
-				<b-button v-if="!cart.length" variant="success" class="mt-3" block
-					>inserisci un prodotto</b-button
+			<div class="d-flex justify-content-between align-items-center">
+				<b-button
+					class="mt-3 w-25"
+					variant="warning"
+					block
+					@click="$bvModal.hide('bv-modal-example')"
+					>Chiudi</b-button
 				>
 				<b-button
-					v-else
 					variant="success"
-					class="mt-3"
+					class="mt-3 w-25"
 					block
 					@click="gotToFormOrder"
 					>Check out</b-button
@@ -87,4 +88,14 @@ export default {
 
 <style lang="scss">
 @import "../../sass/cartmodal.scss";
+.info-cs {
+	color: #fff !important;
+	border-color: #00ccbc !important;
+	background-color: #00ccbc !important;
+	&:hover {
+		color: #fff !important;
+		border-color: rgb(0, 146, 134) !important;
+		background-color: rgb(0, 146, 134) !important;
+	}
+}
 </style>

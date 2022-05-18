@@ -7,32 +7,28 @@
 			<div>
 				<ul class="restaurant-informations mt-3">
 					<li class="text-black text-center">
-						<div class="h4 text-uppercase w-100">
+						<div class="h5 text-uppercase w-100">
 							{{ user.restaurant_name }}
 						</div>
 					</li>
 					<li class="text-black">
 						<span class="information-name">Indirizzo:</span> {{ user.address }}
 					</li>
-					<li><span class="information-name">Categorie:</span></li>
-					<div v-if="user.categories">
-						<div
-							class="food-categories"
+					<li v-if="user.categories" class="food-categories">
+						<span class="information-name">Categorie:</span>
+						<span
 							v-for="category in user.categories"
 							:key="category.id"
+							:class="category.name"
+							id="icon"
+							class="pl-2"
 						>
-							<span :class="category.name" id="icon" class="pl-2">
-								{{ category.name }}
-							</span>
-						</div>
-					</div>
-					<div v-else>
-						<ul class="food-categories mt-3">
-							<li :class="category.name">
-								{{ category.name }}
-							</li>
-						</ul>
-					</div>
+							{{ category.name }}
+						</span>
+					</li>
+					<li v-else :class="category.name" class="food-categories">
+						{{ category.name }}
+					</li>
 				</ul>
 			</div>
 			<router-link
@@ -66,6 +62,7 @@ ul {
 	}
 }
 .restaurant-details {
+	background-color: #fff;
 	padding: 15px;
 	height: 450px;
 	box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.5);

@@ -1,6 +1,6 @@
 <template>
 	<section id="desktop-nav">
-		<nav class="navbar-light bg-light  shadow py-2">
+		<nav class="navbar-light bg-light shadow py-2">
 			<div
 				class="
 					container-fluid
@@ -17,18 +17,22 @@
 						class="img-fluid"
 						alt="Logo Deliveboo"
 					/>
-					<div class="h1 m-0 pl-3 t-deliveboo-green fw-bold">DELIVEBOO</div>
+					<div class="h1 m-0 pl-3 t-deliveboo-green fw-bold koulen">
+						DELIVEBOO
+					</div>
 				</div>
 				<div class="d-flex justify-content-between align-items-center">
 					<div>
 						<router-link to="/" class="text-decoration-none router-link">
 							<i class="fas fa-home t-deliveboo-green"></i>
-							<span class="text nav-text t-deliveboo-green ml-1">Home</span>
+							<span class="text nav-text t-deliveboo-green ml-1 koulen"
+								>Home</span
+							>
 						</router-link>
 
 						<router-link to="/restaurants" class="text-decoration-none">
 							<i class="fas fa-utensils t-deliveboo-green"></i>
-							<span class="text nav-text t-deliveboo-green ml-2"
+							<span class="text nav-text t-deliveboo-green ml-2 koulen"
 								>Ristoranti</span
 							>
 						</router-link>
@@ -37,11 +41,13 @@
 					<div>
 						<a href="/admin" class="text-decoration-none">
 							<i class="fas fa-user t-deliveboo-green"></i>
-							<span class="text nav-text t-deliveboo-green ml-2">Login</span></a
+							<span class="text nav-text t-deliveboo-green ml-2 koulen"
+								>Login</span
+							></a
 						>
 						<a href="/register" class="text-decoration-none">
 							<i class="far fa-user t-deliveboo-green"></i>
-							<span class="text nav-text t-deliveboo-green ml-2"
+							<span class="text nav-text t-deliveboo-green ml-2 koulen"
 								>Register</span
 							></a
 						>
@@ -60,23 +66,29 @@ export default {
 
 <style lang="scss" scoped>
 a.active span {
-	filter: drop-shadow(0px 1px 0px #007377);
+	color: #007377;
 	font-size: 20px;
 }
+
 a.active i {
-	filter: drop-shadow(0px 1px 0px #007377);
+	font-size: 1.5em;
+	color: #007377;
 }
+
 #logo {
 	max-width: 60px;
 }
+
 i {
 	margin-left: 40px;
 	font-size: 18px;
 }
+
 a {
 	text-decoration: none;
 }
-.fw-bold {
-	font-weight: bold;
+
+.koulen {
+	font-family: "Koulen", cursive;
 }
 </style>

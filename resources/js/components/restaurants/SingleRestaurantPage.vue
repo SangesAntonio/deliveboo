@@ -1,14 +1,14 @@
 <template>
 	<div class="container pb-5">
-		<div class="row pt-5">
-			<div class="col-12 d-flex flex-row flex-md-column flex-wrap pt-md-5">
+		<div class="row">
+			<div class="col-12 d-flex flex-row flex-md-column flex-wrap">
 				<div class="col-12 col-md-6 mb-3 mx-3 card-res">
 					<img :src="`/storage/${user.image}`" :alt="user.restaurant_name" />
 				</div>
 				<div class="col-12 col-md-6 mb-3 mx-3 pt-md-2">
 					<ul>
 						<li>
-							<h3 class="mb-3">
+							<h3 class="mb-3 text-uppercase">
 								{{ user.restaurant_name }}
 							</h3>
 						</li>
@@ -141,7 +141,7 @@ ul {
 	li {
 		list-style-type: none;
 		margin-bottom: 10px;
-		text-transform: uppercase;
+		text-transform: capitalize;
 	}
 }
 </style>

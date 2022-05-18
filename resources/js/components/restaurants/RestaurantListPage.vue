@@ -2,7 +2,7 @@
 	<div>
 		<Loader v-if="isLoading && !users.length" />
 		<div class="col-12 d-flex justify-content-center py-1 mb-2">
-			<h2 class="title text-center fw-bold m-0 py-2">Lista dei ristoranti</h2>
+			<h2 class="title text-center fw-bold m-0 py-2">LASCIATI ISPIRARE</h2>
 		</div>
 		<div class="container mb-5">
 			<div class="row">
@@ -43,7 +43,9 @@
 											align-items-center
 										"
 									>
-										<span class="d-block">{{ category.name }}</span>
+										<span class="d-block text-uppercase fw-bold fs-custom">{{
+											category.name
+										}}</span>
 									</label>
 								</div>
 							</li>
@@ -154,14 +156,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fs-custom {
+	font-size: 13px;
+}
 .title {
 	border-bottom: 2px solid #00ccbc;
 }
 .category-box {
-	background-color: #fff6f673;
 	padding: 0 25px;
 	border-radius: 0px 40px 5px 40px;
-	box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.5);
 }
 ul {
 	margin: 30px 0px;
