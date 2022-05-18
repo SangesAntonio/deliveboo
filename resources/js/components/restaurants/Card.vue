@@ -35,7 +35,7 @@
 				class="d-flex justify-content-end text-decoration-none"
 				:to="{ name: 'restaurant-detail', params: { id: user.id } }"
 			>
-				<span class="text nav-text t-deliveboo-green ml-1 information-link"
+				<span class="text nav-text ml-1 information-link"
 					>Scopri il ristorante</span
 				>
 			</router-link>
