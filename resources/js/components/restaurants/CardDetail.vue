@@ -73,7 +73,7 @@ export default {
     removeProductFromCart(product) {
       if (product.quantity > 0) {
         product.quantity--;
-        console.log(this.cart.indexOf(product), "eliminaziojne");
+        console.log(this.cart.indexOf(product), "eliminazione");
 
         return this.cart.splice(this.cart.indexOf(product), 1);
       } else {

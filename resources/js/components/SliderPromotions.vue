@@ -130,10 +130,6 @@ export default {
 	font-weight: bold;
 }
 
-h2 {
-	font-family: "Koulen", cursive;
-}
-
 .slides {
 	height: auto;
 	width: 100%;

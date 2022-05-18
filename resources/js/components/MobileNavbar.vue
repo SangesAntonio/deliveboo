@@ -94,7 +94,6 @@ ul {
 
 span {
   text-transform: uppercase;
-  font-family: "Koulen", cursive;
   font-weight: 500;
   font-size: 18px;
 }

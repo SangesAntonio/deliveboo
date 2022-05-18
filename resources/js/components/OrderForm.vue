@@ -169,16 +169,11 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  h1,
-  button {
-    font-family: "Koulen", cursive;
-  }
   button {
     font-size: 18px;
   }
   ::placeholder {
     font-size: 16px;
-    font-family: "Koulen", cursive;
   }
 }
 </style>

@@ -79,8 +79,4 @@ a {
 .fw-bold {
 	font-weight: bold;
 }
-span,
-div {
-	font-family: "Koulen", cursive;
-}
 </style>

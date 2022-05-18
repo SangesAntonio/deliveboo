@@ -42,7 +42,6 @@ export default {
   border-radius: 15px;
   margin-top: 200px;
   margin-bottom: 50px;
-  font-family: "Koulen", cursive;
   text-align: center;
   box-shadow: 10px 10px 4px 4px rgb(0, 0, 0, 0.5);
   font-size: 50px;

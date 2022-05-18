@@ -35,7 +35,6 @@ export default {
 	.slogan {
 		h1 {
 			font-size: 75px;
-			font-family: "Koulen", cursive;
 			text-shadow: 2px 2px 4px #ff0000;
 		}
 	}

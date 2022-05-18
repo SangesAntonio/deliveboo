@@ -110,7 +110,6 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-	font-family: "Koulen", corsive;
 	border-bottom: 2px solid #00ccbc;
 	border-radius: 20px;
 	text-align: center;

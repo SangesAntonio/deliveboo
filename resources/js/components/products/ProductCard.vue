@@ -98,7 +98,6 @@ img {
 	box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.5);
 	height: 300px;
 	.product-price {
-		font-family: "Koulen", cursive;
 		font-size: 18px;
 	}
 	.quantity-section {

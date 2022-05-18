@@ -67,7 +67,6 @@ ul {
 }
 .restaurant-details {
 	padding: 15px;
-	font-family: "Josefin Sans", sans-serif;
 	height: 450px;
 	box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.5);
 	border-radius: 0px 40px 12px 40px;

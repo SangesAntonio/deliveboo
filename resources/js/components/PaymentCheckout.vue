@@ -127,7 +127,7 @@ export default {
 		modalSuccess() {
 			// Use sweetalert2
 			this.$swal({
-				title: "Deliveboo",
+				title: "Complimenti!",
 				text: "Pagamento effettuato con successo",
 				imageUrl: "/img/pubb/clipp-delivery-kradac.gif",
 				imageWidth: 500,
@@ -142,8 +142,8 @@ export default {
 			this.$swal({
 				icon: "error",
 				title: "Oops...",
-				text: "Something went wrong!",
-				footer: '<a href="">Why do I have this issue?</a>',
+				text: "Qualcosa è andato storto",
+				footer: '<a href="#">Perchè ho questo problema?</a>',
 				background: "#00CCBC",
 				timer: 3000,
 			});

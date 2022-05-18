@@ -96,7 +96,6 @@ footer {
     font-size: 12px;
   }
   h4 {
-    font-family: "Koulen", cursive;
     font-size: 25px;
   }
   li {
@@ -121,7 +120,6 @@ footer {
     }
     h6 {
       font-size: 17px;
-      font-family: "Koulen", cursive;
     }
     select {
       background-color: #026b68;
