@@ -78,7 +78,7 @@
 
             <li class="nav-link">
               <a href="/">
-                <i class="fas fa-home t-deliveboo-green"></i>
+                <i class="fas fa-home"></i>
                 <span class="text nav-text">Home</span>
               </a>
             </li>

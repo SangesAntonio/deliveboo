@@ -5,19 +5,20 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">{{ __('Registra il tuo ristorante') }}</div>
+          <div class="card-header text-center text-white h5 bg-deliveboo-green">{{ __('Registra il tuo ristorante') }}
+          </div>
           <div class="card-body">
 
             {{-- ERRORI FORM --}}
             @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-    @endif
+              <div class="alert alert-danger">
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              </div>
+            @endif
             <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
               @csrf
               <div class="form-group row">
@@ -140,7 +141,8 @@
                   @enderror
                 </div>
                 <div class="col-12 pt-4">
-                  <div class=" d-flex flex-wrap justify-content-center align-items-center @error('categories') is-invalid @enderror">
+                  <div
+                    class=" d-flex flex-wrap justify-content-center align-items-center @error('categories') is-invalid @enderror">
                     @foreach ($categories as $category)
                       <div class="form-check mr-3">
                         <input class="form-check-input" type="checkbox" value="{{ $category->id }}"
@@ -158,15 +160,15 @@
                   @enderror
                 </div>
               </div>
+              <div class="w-100 m-auto">
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn info-cs">
+                    {{ __('Registrati') }}
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
-          <div class="form-group row mb-2">
-            <div class="col-md-6 offset-md-4">
-              <button type="submit" class="btn btn-primary">
-                {{ __('Registrati') }}
-              </button>
-            </div>
-          </div>
-          </form>
         </div>
       </div>
     </div>

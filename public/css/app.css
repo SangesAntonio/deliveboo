@@ -11172,13 +11172,25 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.info-cs {
+  color: #fff !important;
+  border-color: #00ccbc !important;
+  background-color: #00ccbc !important;
+}
+
+.info-cs:hover {
+  color: #fff !important;
+  border-color: rgb(0, 146, 134) !important;
+  background-color: rgb(0, 146, 134) !important;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00ccbc;
+  background: #00ccbc !important;
   border-radius: 10px;
 }
 
@@ -11212,6 +11224,10 @@ html body#guest {
 main {
   padding-top: 50px;
   padding-bottom: 100px;
+}
+
+main:not(#guest) {
+  padding-bottom: 0px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -11264,15 +11280,15 @@ main {
 }
 
 .t-deliveboo-green {
-  color: #00ccbc;
+  color: #00ccbc !important;
 }
 
 .bg-deliveboo-green {
-  background-color: #00ccbc;
+  background-color: #00ccbc !important;
 }
 
 .brd-deliveboo-green {
-  border-bottom: 0.5px solid #00ccbc;
+  border-bottom: 0.5px solid #00ccbc !important;
 }
 
 .switch {
@@ -11414,18 +11430,6 @@ input:checked + .slider:before {
   color: #fff;
 }
 
-.user-card-title {
-  font-size: 42px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-#button-edit-user-index {
-  position: absolute;
-  right: 30px;
-  top: 30px;
-}
-
 .media-body {
   text-decoration: none;
   color: black;
@@ -11446,36 +11450,16 @@ input:checked + .slider:before {
   letter-spacing: 15px;
 }
 
-#pagination-bar .page-item.active .page-link {
-  background-color: #955e26;
-  border: 1px solid #764a1e;
-}
-
-#pagination-bar .page-link,
-#pagination-bar .page-item.disabled .page-link {
-  background-color: #f6993f;
-  color: black;
-  border: 1px solid rgb(48, 29, 0);
-}
-
-#pagination-bar .page-link:hover,
-#pagination-bar .page-item.disabled .page-link:hover {
-  background-color: #955e26;
-  border: 1px solid #9b6127;
-  color: white;
-}
-
 .order-list {
-  background-color: rgba(246, 153, 63, 0.5);
-  border: 1px solid #764a1e;
+  background-color: transparent;
 }
 
 .order-list tr {
-  border: 1px solid #764a1e;
+  border: 1px solid #019480;
 }
 
 .order-list thead {
-  background-color: rgba(149, 94, 38, 0.5);
+  background-color: rgba(0, 167, 153, 0.295);
 }
 
 #orders-show .total {

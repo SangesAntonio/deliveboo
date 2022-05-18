@@ -3,12 +3,8 @@
 @section('content')
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center">
-        <h3 class="pb-3 text-uppercase">Ordini ricevuti</h3>
-      </div>
-
       <div class="col-12 table-responsive">
-        <table class="table table-hover rounded order-list table-borderless">
+        <table class="table order-list table-borderless">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -24,7 +20,7 @@
                 <th>{{ $order->name }} {{ $order->lastname }}</th>
                 <td>{{ $order->created_at }}</td>
                 <td>
-                  <button type="button" class="btn btn-primary" data-toggle="modal"
+                  <button type="button" class="btn info-cs" data-toggle="modal"
                     data-target="#OrderModal-{{ $order->id }}">
                     Visualizza
                   </button>
@@ -36,59 +32,55 @@
       </div>
       @foreach ($orders as $order)
         {{-- modale per visualizzare gli ordini singoli --}}
-        <div class="modal fade" id="OrderModal-{{ $order->id }}" tabindex="-1" role="dialog"
-          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="OrderModal-{{ $order->id }}" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content p-3">
               <div class="modal-header">
-
-                <h5 class="modal-title" id="exampleModalLongTitle">Ordine N.{{ $loop->index + 1 }}</h5>
+                <h5 class="modal-title ml-3" id="exampleModalLongTitle">Ordine N.{{ $loop->index + 1 }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body border">
-                <div class="col">
-                  <h3>Informazioni del cliente</h3>
-                  <h4>{{ $order->name }} {{ $order->lastname }}</h4>
-                  <p>Indirizzo:<span class="ml-3"> {{ $order->address }}, {{ $order->city }} </span></p>
-                  <p>Email:<span class="ml-3"> {{ $order->email }} </span></p>
-                  <h3>Piatti ordinati</h3>
+              <div class="modal-body">
+                <div class="col-12">
+                  <h5>Informazioni del cliente:</h5>
+                  <h6 class="ml-3"><strong>{{ $order->name }} {{ $order->lastname }}</strong></h6>
+                  <p class="mb-0 ml-3"><strong>Indirizzo:</strong><span class="ml-3">
+                      {{ $order->address }},
+                      {{ $order->city }} </span></p>
+                  <p class="ml-3"><strong>Email:</strong><span class="ml-3"> {{ $order->email }}
+                    </span></p>
                 </div>
-                <hr>
-                <div class="col">
-                  <div class="container">
-                    <div class="d-flex justify-content-end">
-                      <table class="table table-hover table-borderless">
-                        <thead>
+                <br />
+                <div class="col-12">
+                  <h5>Piatti ordinati:</h5>
+                  <div>
+                    <table class="table table-borderless">
+                      <thead>
+                        <tr>
+                          <th scope="col">Prodotto</th>
+                          <th scope="col">Quantità</th>
+                          <th scope="col">Prezzo</th>
+                          <th scope="col">Totale</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($order->products as $product)
                           <tr>
-                            <th scope="col">Prodotto</th>
-                            <th scope="col">Quantità</th>
-                            <th scope="col">Prezzo</th>
-                            <th scope="col">Totale</th>
+                            <td scope="col">{{ $product->name }}</td>
+                            <td>{{ $product->pivot->product_quantity }}</td>
+                            <td>{{ $product->price }}&euro;</td>
+                            <td>{{ $product->price * $product->pivot->product_quantity }}&euro;</td>
                           </tr>
-                        </thead>
-                        <tbody>
-                          @foreach ($order->products as $product)
-                            <tr>
-                              <td scope="col">{{ $product->name }}</td>
-                              <td>{{ $product->pivot->product_quantity }}</td>
-                              <td>{{ $product->price }}&euro;</td>
-                              <td>{{ $product->price * $product->pivot->product_quantity }}&euro;</td>
-                            </tr>
-                          @endforeach
-                          <tr>
-                            <th colspan='3'>Totale Ordine</th>
-                            <th>{{ $order->total_amount }}&euro;</th>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                        @endforeach
+                        <tr>
+                          <th colspan='3'>Totale Ordine</th>
+                          <th>{{ $order->total_amount }}&euro;</th>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Chiudi</button>
               </div>
             </div>
           </div>

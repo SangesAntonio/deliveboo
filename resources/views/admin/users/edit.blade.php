@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">{{ __('Aggiorna il tuo ristorante') }}</div>
+          <div class="card-header text-center text-white h5 bg-deliveboo-green">{{ __('Aggiorna il tuo ristorante') }}</div>
 
           {{-- ERRORI FORM --}}
           @if ($errors->any())
@@ -135,16 +135,16 @@
                 </div>
               </div>
           </div>
-          <div class="form-group row mb-2">
-            <div class="col-md-6 offset-md-4">
-              <button type="submit" class="btn btn-primary">
-                {{ __('Aggiorna') }}
-              </button>
-
+          <div class="w-100 m-auto pb-3">
+            <div class="col-12 d-flex justify-content-between">
               {{-- previous --}}
               <a href="{{ url()->previous() }}" class="btn btn-md btn-info shadow-md text-white" type="submit">
                 <i class="fas fa-arrow-left"></i> Indietro
               </a>
+              {{-- update --}}
+              <button type="submit" class="btn info-cs">
+                {{ __('Aggiorna') }}
+              </button>
             </div>
           </div>
           </form>

@@ -12,7 +12,6 @@
       <div class="row">
         <div class="col-12 my-1">
           <div class="d-flex flex-column justify-content-between">
-            <h3 class="text-uppercase text-center">Lista Prodotti</h3>
             <div class="d-flex justify-content-end">
               <a href="{{ route('admin.products.create') }}">
                 <button class="btn btn-success"><i class="fa-solid fa-plus"></i> Nuovo
