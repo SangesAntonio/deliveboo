@@ -96,6 +96,7 @@ img {
 }
 .card {
 	box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.5);
+	height: 300px;
 	.product-price {
 		font-family: "Koulen", cursive;
 		font-size: 18px;
@@ -105,7 +106,7 @@ img {
 		width: 100px;
 		height: auto;
 		border-radius: 50px;
-		box-shadow: #028378 4px 4px;
+		box-shadow: 0px 0px 8px 3px #008378;
 		.fa-cart-arrow-down {
 			color: white;
 		}

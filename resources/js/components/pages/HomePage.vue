@@ -94,7 +94,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 #category-title {
-	font-family: "Koulen", cursive;
 	border-bottom: 2px solid #00ccbc;
 }
 
@@ -108,7 +107,6 @@ export default {
 		object-position: center;
 	}
 	.restaurant-title {
-		text-transform: uppercase;
 		color: #fff;
 		font-size: 50px;
 		position: absolute;

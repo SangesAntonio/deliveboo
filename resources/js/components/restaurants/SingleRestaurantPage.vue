@@ -1,34 +1,30 @@
 <template>
 	<div class="container pb-5">
 		<div class="row pt-5">
-			<div class="col-12 pt-md-5">
-				<b-card
-					:img-src="`/storage/${user.image}`"
-					img-alt="Card image"
-					img-left
-					class="mb-3 mx-3 card-res border-0"
-					style="background-color: transparent"
-				>
-					<b-card-text>
-						<ul>
-							<li>
-								<h3 class="mb-3">
-									{{ user.restaurant_name }}
-								</h3>
+			<div class="col-12 d-flex flex-row flex-md-column flex-wrap pt-md-5">
+				<div class="col-12 col-md-6 mb-3 mx-3 card-res">
+					<img :src="`/storage/${user.image}`" :alt="user.restaurant_name" />
+				</div>
+				<div class="col-12 col-md-6 mb-3 mx-3 pt-md-2">
+					<ul>
+						<li>
+							<h3 class="mb-3">
+								{{ user.restaurant_name }}
+							</h3>
+						</li>
+						<li class="text-black">{{ user.address }}</li>
+						<ul
+							class="category-list"
+							v-for="category in user.categories"
+							:key="category.id"
+						>
+							<li :class="category.name">
+								{{ category.name }}
 							</li>
-							<li class="text-black">{{ user.address }}</li>
-							<ul
-								class="category-list"
-								v-for="category in user.categories"
-								:key="category.id"
-							>
-								<li :class="category.name">
-									{{ category.name }}
-								</li>
-							</ul>
 						</ul>
-					</b-card-text>
-				</b-card>
+					</ul>
+				</div>
+				<ModalCart :cart="cart" class="mr-5 cart ml-auto" />
 			</div>
 
 			<div class="col-12">
@@ -51,7 +47,6 @@
 					/>
 				</div>
 			</div>
-			<ModalCart :cart="cart" class="mr-3 mt-5 cart ml-auto" />
 		</div>
 	</div>
 </template>
@@ -125,7 +120,7 @@ export default {
 	padding: 10px;
 }
 img {
-	max-width: 50%;
+	max-width: 100%;
 	height: 300px;
 	object-fit: cover;
 	object-position: center;
@@ -133,6 +128,10 @@ img {
 	box-shadow: 5px 5px 10px -3px rgba(0, 0, 0, 0.5);
 }
 .cart {
+	z-index: 1;
+	position: fixed;
+	top: 20px;
+	right: -10px;
 	width: 60px;
 }
 .category-list {

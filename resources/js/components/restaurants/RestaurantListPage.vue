@@ -1,10 +1,12 @@
 <template>
 	<div>
 		<Loader v-if="isLoading && !users.length" />
+		<div class="col-12 d-flex justify-content-center py-1 mb-2">
+			<h2 class="title text-center fw-bold m-0 py-2">Lista dei ristoranti</h2>
+		</div>
 		<div class="container mb-5">
 			<div class="row">
 				<div class="col-12">
-					<h1 class="title">Lista dei ristoranti</h1>
 					<!-- check box -->
 					<section id="checkbox">
 						<ul class="category-list d-flex flex-wrap justify-content-center">
@@ -153,10 +155,7 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-	font-family: "Koulen", corsive;
-	border-radius: 20px;
-	text-align: center;
-	padding: 10px;
+	border-bottom: 2px solid #00ccbc;
 }
 .category-box {
 	background-color: #fff6f673;
