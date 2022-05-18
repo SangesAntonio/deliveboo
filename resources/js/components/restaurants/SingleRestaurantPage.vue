@@ -63,7 +63,6 @@ export default {
 	},
 	data() {
 		return {
-			isLoading: false,
 			user: [],
 			cart: [],
 		};

@@ -4,7 +4,7 @@
       <div class="row align-items-center justify-content-between">
         <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
           <div class="informations grow">
-            <h4>Informazioni</h4>
+            <h4 class="pl-3">Informazioni</h4>
             <div class="links">
               <ul>
                 <li><a href="#">Chi siamo</a></li>
@@ -16,7 +16,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
           <div class="informations grow">
-            <h4>Note legali</h4>
+            <h4 class="pl-3">Note legali</h4>
             <div class="links">
               <ul>
                 <li><a href="#">Termini e condizioni</a></li>
@@ -28,7 +28,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
           <div class="informations grow">
-            <h4>Help</h4>
+            <h4 class="pl-3">Help</h4>
             <div class="links">
               <ul>
                 <li><a href="#">Contatti</a></li>
@@ -41,9 +41,9 @@
           <div
             class="informations d-flex flex-column justify-content-around grow"
           >
-            <div class="language d-flex align-items-center">
+            <div class="language d-flex justify-content-center align-items-center">
               <h6 class="mb-0">Lingua</h6>
-              <select name="language" class="ml-4 mr-2">
+              <select name="language" class="mx-3 px-2">
                 <option value="Italiano">Italiano</option>
                 <option value="Francese">Français</option>
                 <option value="Inglese">English</option>
@@ -62,10 +62,10 @@
                 <a href=""><i class="fa-brands fa-instagram"></i></a>
               </div>
               <div class="single-social">
-                <a href=""><i class="fa-brands fa-facebook-square"></i></a>
+                <a href=""><i class="fa-brands fa-github"></i></a>
               </div>
               <div class="single-social">
-                <a href=""><i class="fa-brands fa-google-play"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
               </div>
             </div>
           </div>

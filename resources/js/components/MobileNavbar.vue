@@ -16,7 +16,7 @@
                   align-items-center
                 "
               >
-                <i class="fas fa-home t-deliveboo-green fa-2x"></i>
+                <i class="fas fa-home t-deliveboo-green fa-1x"></i>
                 <span class="pt-1 text nav-text t-deliveboo-green">Home</span>
               </router-link>
             </li>
@@ -31,7 +31,7 @@
                   align-items-center
                 "
               >
-                <i class="fas fa-utensils t-deliveboo-green fa-2x"></i>
+                <i class="fas fa-utensils t-deliveboo-green fa-1x"></i>
                 <span class="pt-1 text nav-text t-deliveboo-green"
                   >Ristoranti</span
                 >
@@ -48,7 +48,7 @@
                   align-items-center
                 "
               >
-                <i class="fas fa-user t-deliveboo-green fa-2x"></i>
+                <i class="fas fa-user t-deliveboo-green fa-1x"></i>
                 <span class="pt-1 text nav-text t-deliveboo-green">Login</span>
               </a>
             </li>
@@ -62,7 +62,7 @@
                   align-items-center
                 "
               >
-                <i class="far fa-user t-deliveboo-green fa-2x"></i>
+                <i class="far fa-user t-deliveboo-green fa-1x"></i>
                 <span class="pt-1 text nav-text t-deliveboo-green"
                   >Register</span
                 >
@@ -104,7 +104,7 @@ a.active span {
   font-size: 20px;
 }
 a.active i {
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: #007377;
 }
 </style>

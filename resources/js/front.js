@@ -18,7 +18,18 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 
 const root = new Vue({
+    // data: { isLoading: false },
     el: "#root",
     router,
     render: (h) => h(App),
 });
+
+// router.beforeEach((to, from, next) => {
+//     App.isLoading = true
+//     next()
+// })
+
+// router.afterEach((to, from, next) => {
+//     setTimeout(() => App.isLoading = false, 1500) // timeout for demo purposes
+//     next()
+// })

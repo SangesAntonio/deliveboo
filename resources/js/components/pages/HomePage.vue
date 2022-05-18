@@ -2,7 +2,6 @@
   <div>
     <div id="homepage">
       <Loader v-if="isLoading && !categories.length" />
-      <!-- <SliderPromotions v-if="!isLoading" class="pb-4" /> -->
       <div class="container-fluid">
         <div class="row">
           <div

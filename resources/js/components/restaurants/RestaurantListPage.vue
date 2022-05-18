@@ -72,7 +72,6 @@ export default {
   components: {
     Card,
     Loader,
-    // Pagination,
   },
   data() {
     return {

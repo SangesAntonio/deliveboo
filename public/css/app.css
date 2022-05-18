@@ -10999,10 +10999,6 @@ body {
 
 /* ===== Mobile navbar ===== */
 
-#laravel-mobile .slider-border {
-  box-shadow: 0px 5px 0px rgb(241, 241, 241);
-}
-
 #laravel-mobile .logo {
   max-width: 60px;
   margin-right: 20px;
@@ -11206,13 +11202,13 @@ body {
 
 html body:not(#guest) {
   padding-left: 250px;
-  background-image: url(/images/Desktop-Background.jpg?786d0b88409b6f44eba65c9bed21056a);
+  background-image: url(/images/Prova_5.jpg?665db6533f0f8e22be3ace80ad44a9a7);
   background-position: center;
   background-repeat: repeat;
 }
 
 html body#guest {
-  background-image: url(/images/Desktop-Background.jpg?786d0b88409b6f44eba65c9bed21056a);
+  background-image: url(/images/Prova_5.jpg?665db6533f0f8e22be3ace80ad44a9a7);
   background-position: center;
   background-repeat: repeat;
 }
@@ -11616,7 +11612,8 @@ input:checked + .slider:before {
   border-radius: 15px;
 }
 
-#checkbox li.active {
-  background-color: #00ccbc;
+input:checked + .active-cs {
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px 3px rgba(180, 108, 34, 0.8);
 }
 
