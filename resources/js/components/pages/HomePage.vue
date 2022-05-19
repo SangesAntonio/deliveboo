@@ -93,20 +93,20 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 #category-title {
 	border-bottom: 2px solid #00ccbc;
 }
 .restaurant-image {
-		filter:drop-shadow(0px 0px 2px #000) brightness(0.9) ;
-		&:hover{
-			filter:drop-shadow(0px 0px 2px #000) brightness(0.9) blur(2px);
-		}
-}
-	.restaurant-title{
-		 -webkit-text-stroke: 2px rgba(0, 0, 0, 0.5);
-		 font-family: 'Staatliches', cursive;
+	filter: drop-shadow(0px 0px 2px #000) brightness(1);
+	&:hover {
+		filter: drop-shadow(0px 0px 2px #000) brightness(.7);
 	}
+}
+.restaurant-title {
+	-webkit-text-stroke: 2px rgba(0, 0, 0, 0.5);
+	font-family: "Staatliches", cursive;
+}
 @media (min-width: 0px) {
 	.restaurant-image {
 		width: 100%;
@@ -115,7 +115,6 @@ export default {
 		margin-top: 6px;
 		object-fit: cover;
 		object-position: center;
-
 	}
 	.restaurant-title {
 		color: #fff;
@@ -124,7 +123,7 @@ export default {
 		bottom: 50%;
 		right: 50%;
 		transform: translate(50%, 50%);
-		z-index:1;
+		z-index: 1;
 	}
 }
 

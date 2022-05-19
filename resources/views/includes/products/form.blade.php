@@ -53,12 +53,12 @@
     <!--Input immagine-->
     <div class="mb-2 mt-3 d-flex justify-content-between">
       <div class="custom-file col-6">
-        <label for="image-input" class="custom-file-label w-50">Immagine</label>
+        <label for="image-input" class="custom-file-label">Immagine</label>
         <input type="file" id="image-input" class=" w-50"  name="image" >
       </div>
 
         {{-- preview image --}}
-      <div class="imag-preview   ">
+      <div class="imag-preview cropper">
           @if($product->image)
             <img src="{{asset("storage/$product->image")}}" id="image-preview" class=" border ml-auto rounded-lg" />
             @else
@@ -84,13 +84,13 @@
         type="submit">
         <i class="fas fa-arrow-left"></i> Indietro
       </a>
-        <button type="submit" class='btn btn-primary ml-3'>Modifica</button>
+        <button type="submit" class='btn info-cs ml-3'>Modifica</button>
       @else
       <a href="{{ route('admin.products.index', $product->id) }}" class="btn btn-md btn-info shadow-md text-white"
         type="submit">
         <i class="fas fa-arrow-left"></i> Indietro
       </a>
-        <button type="submit" class='btn btn-primary'>Aggiungi</button>
+        <button type="submit" class='btn info-cs'>Aggiungi</button>
       @endif
     </div>
     </form>

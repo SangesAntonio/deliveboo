@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="container-fluid" id="products">
+  <div class="container" id="products">
     <section id="minimal-statistics">
       <div class="row">
         <div class="col-12 my-1">
@@ -28,15 +28,15 @@
       <div class="row">
         <div class="col-12 mt-2">
           @if (count($products) >= 1)
-            <p class="text-uppercase">Prodotti visibili</p>
+            <p class="text-uppercase font-weight-bold">Prodotti visibili</p>
           @endif
         </div>
         @forelse($products as $product)
           <a role="button" href="{{ route('admin.products.show', $product->id) }}" class="text-decoration-none">
             @if ($product->visibility && !$product->deleted_at)
               <div class="col-xl-4 col-md-6 col-12 my-2">
-                <div class="media">
-                  <div>
+                <div class="media product-details">
+                  <div class="cropper">
                     @if (isset($product->image))
                       <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
                         class="rounded-lg img-fluid">
@@ -60,7 +60,7 @@
 
 
                       {{-- modale eliminazione --}}
-                      <div class="ml-1">
+                      <div>
                         <button class="btn btn-sm btn-danger" type=" submit" data-toggle="modal"
                           data-target="#ModalTrash{{ $product->id }}">
                           <i class="fas fa-trash"></i>
@@ -79,14 +79,14 @@
                               Vuoi cestinare: {{ $product->name }}
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">Annulla</button>
+                              <button type="button" class="btn info-cs w-25" data-dismiss="modal">Annulla</button>
 
                               {{-- form eliminazione modale --}}
                               <form action="{{ route('admin.products.destroy', $product->id) }}" method="post"
                                 class="delete-form">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger w-25">Elimina</button>
+                                <button type="submit" class="btn btn-danger">Elimina</button>
                               </form>
                             </div>
                           </div>
@@ -104,11 +104,11 @@
       </div>
     </section>
 
-    <section id="stats-subtitle">
+    <section id="stats-subtitle" class="pt-5">
       <div class="row">
         <div class="col-12 mt-2">
           @if (count($products) >= 1)
-            <p class="text-uppercase">Prodotti non visibili</p>
+            <p class="text-uppercase font-weight-bold">Prodotti non visibili</p>
           @endif
         </div>
       </div>
@@ -118,8 +118,8 @@
           <a role="button" href="{{ route('admin.products.show', $product->id) }}" class="text-decoration-none">
             @if (!$product->visibility && !$product->deleted_at)
               <div class="col-xl-4 col-md-6 col-12 my-2">
-                <div class="media">
-                  <div>
+                <div class="media product-details">
+                  <div class="cropper">
                     @if (isset($product->image))
                       <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
                         class="rounded-lg">
@@ -140,8 +140,9 @@
                           </button>
                         </div>
                       </a>
+
                       {{-- modale eliminazione --}}
-                      <div class="ml-1">
+                      <div>
                         <button class="btn btn-sm btn-danger" type=" submit" data-toggle="modal"
                           data-target="#ModalTrash{{ $product->id }}">
                           <i class="fas fa-trash"></i>
@@ -160,14 +161,14 @@
                               Vuoi cestinare: {{ $product->name }}
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">Annulla</button>
+                              <button type="button" class="btn info-cs w-25" data-dismiss="modal">Annulla</button>
 
                               {{-- form eliminazione modale --}}
                               <form action="{{ route('admin.products.destroy', $product->id) }}" method="post"
                                 class="delete-form">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger w-25">Elimina</button>
+                                <button type="submit" class="btn btn-danger">Elimina</button>
                               </form>
                             </div>
                           </div>

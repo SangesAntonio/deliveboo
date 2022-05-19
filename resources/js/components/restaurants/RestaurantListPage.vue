@@ -4,7 +4,7 @@
 		<div class="col-12 d-flex justify-content-center py-1 mb-2">
 			<h2 class="title text-center fw-bold m-0 py-2">LASCIATI ISPIRARE</h2>
 		</div>
-		<div class="container mb-5">
+		<div class="container-fluid mb-5">
 			<div class="row">
 				<div class="col-12">
 					<!-- check box -->
@@ -14,7 +14,7 @@
 								v-for="(category, i) in categories"
 								:key="i"
 								class="
-									col-4 col-md-3
+									col-4 col-md-3 col-xl-2
 									d-flex
 									flex-column
 									justify-content-center
