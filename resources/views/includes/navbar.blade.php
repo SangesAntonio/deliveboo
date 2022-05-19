@@ -101,7 +101,7 @@
     @endauth
   </nav>
 
-  <nav id="mobile-nav" class="fixed-bottom d-lg-none">
+  <nav id="laravel-mobile" class="fixed-bottom d-lg-none">
     <div class="container-fluid bg-light pt-3 rounded-custom px-3">
       <div class="row">
         <div class="col-12">
